@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>rmarkdown1.utf8</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Beatriz Milz" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css\metropolis.css" type="text/css" />
+    <link rel="stylesheet" href="css\metropolis-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="css\footer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# <center>
+<img src= 'img/Horst/rmarkdown_wizards.png' width = '60%' alt=''></br>
+</center>
+<center>
+<b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> <span class="citation">@allison_horst</span></a> </b>
+</center>
+## Pacote <code>rmarkdown</code> - Parte I
+### Beatriz Milz
+### 2º semestre/2020 - Atualizado em 04 de julho de 2020
+
+---
+
+layout: true
+  
+&lt;div class="my-footer"&gt;&lt;span&gt;
+
+
+&lt;a href="https://beatrizmilz.com"&gt;Beatriz Milz&lt;/a&gt; - Email: &lt;a href="mailto:beatriz.milz@usp.br"&gt;beatriz.milz@usp.br&lt;/a&gt;
+
+
+&lt;/span&gt;&lt;/div&gt; 
+---
+class:
+
+
+
+# Beatriz Milz
+- Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) - Instituto de Energia e Ambiente - Universidade de São Paulo
+
+  - Bolsista FAPESP - Processo nº 2018/23771-6 
+  
+  - Projeto Temático FAPESP Macroamb - Processo nº 2015/03804-9 
+  
+&lt;img src="img/logos_bia.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+- Equipe da Secretaria Executiva  Editorial - [Revista Ambiente &amp; Sociedade](http://scielo.br/asoc)
+
+- Co-organizadora - [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) 💜
+
+- [Currículo disponível neste link](https://beatrizmilz.github.io/resume/index.pdf)
+
+- Anteriormente: Mestre em Ciências - UNIFESP; Bacharel em Gestão Ambiental - EACH/USP
+
+---
+
+class: 
+
+# Pré-requisitos
+
+## R
+- Download em: https://cran.r-project.org/
+
+## RStudio
+- Download em: https://www.rstudio.com/products/rstudio/download/
+
+- Também existe a opção de utilizar o RStudio Cloud: https://rstudio.cloud/
+
+---
+class: 
+
+# Pacote rmarkdown
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/rlogos/hex-rmarkdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Logo: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="25%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Logo: &lt;a href='https://rmarkdown.rstudio.com'&gt;Pacote `rmarkdown`&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+- Mantido pela [RStudio](https://rstudio.com/)
+
+- extensão `.Rmd`
+
+- Possibilita a utilização de códigos `R`, `Markdown`, `HTML` e outros.
+
+---
+class:  
+
+# Pacote rmarkdown
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/rmarkdown/markdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Fonte: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="50%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Fonte: &lt;a href='https://rmarkdown.rstudio.com'&gt;Pacote `rmarkdown`&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+---
+class:  
+
+# Começando com a estrutura
+
+- Criar um projeto no RStudio. Facilita muito para organizar os arquivos, posteriormente sincronizar com o GitHub, entre outros.Neste post da [Curso-R](https://www.curso-r.com), tem mais informações sobre [RProj e diretórios](https://www.curso-r.com/blog/2019-07-16-zen-do-r-3/).
+
+  - File &gt; New Project &gt; New Directory &gt; New Project
+  
+  - Dê um nome para seu projeto (será o nome da pasta), escolha a pasta no seu computador, e clique em `Create Project`.
+  
+  - 
+
+---
+class:  
+ 
+# Criar um arquivo rmarkdown
+
+  - File &gt; New File &gt; R Markdown... ok :)
+  
+  
+- __Atualizar imagem__
+  
+---
+class:  
+
+# Estrutura do arquivo rmarkdown
+
+
+- yaml - Metadados do documento
+
+- Code chunk - códigos R (porém pode receber outros tipos, como SQL e Python)
+
+&lt;img src="img/rmarkdown/rmd-estrutura.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class:  
+
+# Compilar o arquivo
+
+- Botão Knit, ou usando o atalho: `Ctrl + Shift + K`
+
+&lt;img src="img/rmarkdown/knit-button.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class:
+
+
+# Alterar yaml
+
+- O `yaml` possui informações importantes para a apresentação, como o título, subtítulo, autor, instituição, data, etc.
+
+- __output:__ formato (Ex: html_document, pdf_document, etc). 
+- Cuidado com a identação!
+
+&lt;img src="https://media0.giphy.com/media/xT9IgIc0lryrxvqVGM/giphy-downsized.gif" style="display: block; margin: auto;" /&gt;
+
+
+---
+class:
+
+# ERRO NO KNITR!
+
+- Boa prática: compilar com frequência. 
+
+- É bem comum dar erro ao compilar o arquivo pois **qualquer** código errado causa isso. Algumas coisas pra se observar:
+
+- **yaml header** - se algo estiver errado, vai dar erro ao compilar. 
+Muito cuidado com a identação!
+
+- **Código nos chunks** - teste o _Run All Chunks_ e veja se aparece erro em algum chunk específico.
+Se descobrir, tente verificar o que há de errado no código (pode ser a falta de um parênteses, vírgula, entre outros).
+
+&lt;img src="https://media.giphy.com/media/j9GASQ5ocrIRicnmyq/giphy.gif" width="30%" style="display: block; margin: auto;" /&gt;
+
+---
+class:
+
+# Markdown
+
+- O RMarkdown possibilita a utilização da linguagem de marcação simples Markdown. Essa linguagem de marcação foi elaborada para ser fácil de ler e  fácil de escrever.
+
+* Confira as cheatsheets: [`rmarkdown` Cheatsheet 2.0](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf) e [`rmarkdown` Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
+
+
+---
+class:
+
+# Elementos básicos 
+
+`**negrito**` - **negrito**
+
+`_itálico_` - _itálico_
+
+`~~riscado~~` - ~~riscado~~ 
+
+---
+class:
+
+# Títulos
+
+
+
+
+`# Título 1`
+
+
+`## Título 2`
+## Título 2
+
+`### Título 3`
+### Título 3
+
+---
+class:
+
+# Listas
+
+Você pode fazer uma lista escrevendo com hifens ou asteriscos, como a seguir:
+
+`* Maçã`
+
+`* Banana`
+
+`* Uva`
+
+ou desta forma:
+
+`- Maçã`
+
+`- Banana`
+
+`- Uva`
+
+Cada um vai aparecer como:
+
+- Maçã
+- Banana
+- Uva
+
+---
+class:
+
+# Fazendo uma lista enumerada
+Você pode fazer uma lista numerada usando somente números. Você pode usar o mesmo número quantas vezes quiser: 
+
+`1. Maçã`
+
+`1. Banana`
+
+`1. Uva`
+
+Isso irá aparecer como:
+
+1. Maçã
+1. Banana
+1. Uva
+
+---
+class:
+
+
+# Outros elementos em markdown
+
+- Você pode fazer um hiperlink dessa forma: `[texto para mostrar](http://the-web-page.com)`.
+
+- Você pode incluir arquivo de imagem dessa forma: `![título](http://url/for/file)`
+
+- Se você utiliza equações em LaTeX, ficará feliz em saber que pode usar `$$` para inserir equações matemáticas, como: 
+
+
+```r
+$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
+```
+
+`$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$`
+
+---
+class:
+
+# Chunks de Código R
+
+Os chunks são campos onde podemos inserir código de R (ou Python, SQL,  Bash...) em um arquivo RMarkdown. Existe um atalho do teclado para criar chunks no RStudio:  `Ctrl + ALt + I`. Também é possível criar um chunk clicando no seguinte botão do RStudio:
+
+
+&lt;img src="img/rmarkdown/create-chunck.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class:
+
+# Exemplo:
+
+
+```r
+summary(mtcars)
+```
+
+```
+##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
+```
+
+---
+class:
+
+# Exemplo:
+
+.left-code[
+
+```r
+library(ggplot2)
+ggplot(mtcars) +
+  aes(x = hp,
+      y = mpg,
+      colour = cyl) +
+  geom_point(size = 2L)
+```
+]
+
+.right-plot[
+![](rmarkdown1_files/figure-html/plot-exemplo-ggplot2-1.png)
+]
+
+
+---
+class:
+
+# Opções de Chunk
+
+- Há uma variedade de opções de chunk que podem afetar como os chunks de código são compilados. Exemplos: 
+
+- `echo=FALSE`- evita que o próprio código apareça
+
+- `eval=FALSE` - mostra o código, mas ele não é executado
+
+- `warning=FALSE` e `message=FALSE` - oculta mensagens de avisos produzidas
+
+- `out.width` - controla o a largura das figuras, gráficos, tabelas geradas (Ex: out.width = "100%")
+
+- Ex de configuração do chunk: `{r, warning=FALSE, message=FALSE}`
+
+
+---
+class:
+
+# Códigos em R - Opções de chunk
+
+.pull-left[
+### Código + Resultado
+- `echo=TRUE`
+
+```r
+nrow(mtcars)
+```
+
+```
+## [1] 32
+```
+]
+
+.pull-right[
+
+### Apenas código
+- `echo=TRUE, eval=FALSE`
+
+```r
+nrow(mtcars)
+```
+
+### Apenas resultado
+- `echo=FALSE`
+
+```
+## [1] 32
+```
+
+]
+
+---
+class:
+
+# Código inline
+
+A base mtcars possui 32 carros.
+
+**Código Markdown:**
+
+
+```r
+#   A base mtcars possui `r nrow(mtcars)` carros.
+```
+
+
+---
+class:
+
+# Opções globais de Chunk
+
+As opções globais de chunk são opções de chunk que são válidas para o documento inteiro. Algumas opções são úteis, como `fig.align = "center"`.
+Para configurar as opções globais de chunk, modifique o código abaixo e insira após o código `yaml` (retire os `#` no início de cada linha):
+
+- Ex:
+  - Configurações do chunk:
+`{r setup, include=FALSE}`
+  - Conteúdo do chunk:
+`knitr::opts_chunk$set(...)`
+
+
+
+---
+class:
+
+# Adicionando imagens usando o knitr
+
+Função: `knitr::include_graphics()`
+
+Exemplo:
+&lt;img src="https://www.r-project.org/Rlogo.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+class:
+
+# Adicionando imagens usando knitr
+
+## Opções de Chunk 
+
+- `out.width = "50%"` - tamanho da imagem
+
+
+&lt;img src="https://www.r-project.org/Rlogo.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+[Opções do KnitR](https://yihui.name/knitr/options/#chunk-options)
+
+---
+class:
+
+# Adicionando imagens usando knitr
+
+## Opções de Chunk 
+
+- **Alinhamento da figura**
+- `fig.align = 'center', 'default', **'left'**,'right'` 
+
+&lt;img src="https://www.r-project.org/Rlogo.png" width="20%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+- `fig.align = 'center', 'default', 'left', **'right' **`
+
+&lt;img src="https://www.r-project.org/Rlogo.png" width="20%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+---
+class:
+
+# Adicionando imagens usando knitr
+
+## Opções de Chunk 
+
+- Legenda de figura 
+
+- `fig.cap="Logo R"`
+
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="https://www.r-project.org/Rlogo.png" alt="R Logo" width="50%" /&gt;
+&lt;p class="caption"&gt;R Logo&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+---
+class:
+
+# Adicionando tabelas 
+
+- Markdown
+- `knitr::kable()`
+- `DT::datatable(iris)`
+
+- Exemplo com knitr:
+
+```r
+knitr::kable(x = head(iris), format = "html")
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
