@@ -78,6 +78,16 @@ class:
 ---
 class: 
 
+# O ciclo da ciência de dados
+
+```{r, out.width="90%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> - Adaptado de WICKHAM & GROLEMUND, 2017</b></center>"}
+knitr::include_graphics("img/Horst/data-analysis.jpg")
+```
+
+
+---
+class: 
+
 # Pacote rmarkdown
 
 ```{r, out.width="25%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
@@ -100,9 +110,32 @@ knitr::include_graphics("img/rmarkdown/markdown.png")
 ```
 
 ---
+class: 
+
+
+## O que podemos adicionar no documento? 
+
+- Texto
+
+- Markdown
+
+- Links
+
+- Código R
+
+- Tabelas
+
+- Gráficos
+
+- Fórmulas
+
+- Qualquer resultado de código de R :) Visualizações, gráficos, tabelas, etc.
+
+
+---
 class:  
 
-# Começando com a estrutura
+# Criando a estrutura
 
 - Criar um projeto no RStudio. Facilita muito para organizar os arquivos, posteriormente sincronizar com o GitHub, entre outros.Neste post da [Curso-R](https://www.curso-r.com), tem mais informações sobre [RProj e diretórios](https://www.curso-r.com/blog/2019-07-16-zen-do-r-3/).
 
@@ -110,7 +143,7 @@ class:
   
   - Dê um nome para seu projeto (será o nome da pasta), escolha a pasta no seu computador, e clique em `Create Project`.
   
-  - 
+  
 
 ---
 class:  
@@ -179,7 +212,7 @@ Muito cuidado com a identação!
 - **Código nos chunks** - teste o _Run All Chunks_ e veja se aparece erro em algum chunk específico.
 Se descobrir, tente verificar o que há de errado no código (pode ser a falta de um parênteses, vírgula, entre outros).
 
-```{r echo=FALSE, out.width="30%"}
+```{r echo=FALSE, out.width="20%"}
 knitr::include_graphics("https://media.giphy.com/media/j9GASQ5ocrIRicnmyq/giphy.gif")
 ```
 
@@ -483,4 +516,71 @@ class:
 ```{r echo=TRUE}
 knitr::kable(x = head(iris), format = "html")
 ```
+
+
+---
+class: middle
+
+```{r, out.width="70%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
+knitr::include_graphics("img/Horst/community1.jpg")
+```
+
+
+---
+class: middle
+
+# Referências
+
+- **RMarkdown**:
+  - [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+  
+  - [R Markdown from RStudio](https://rmarkdown.rstudio.com/lesson-1.html)
+  
+  - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+  
+  - [R for Data Science - Cap 27: R Markdown](https://r4ds.had.co.nz/r-markdown.html)
+  
+  - [Software Carpentry - Producing Reports With knitr ](https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/)
+
+  - [Advanced R Markdown](https://slides.yihui.name/2017-rstudio-conf-rmarkdown-Yihui-Xie.html)
+
+
+
+---
+class:  middle
+
+## Obrigada!
+.pull-left[
+
+```{r, out.width="100%"}
+knitr::include_graphics("https://media1.giphy.com/media/3oz8xIsloV7zOmt81G/giphy.gif")
+```
+
+- **Contato**:
+
+  - Email: <a href="mailto:beatriz.milz@usp.br">beatriz.milz@usp.br</a>
+  - Webpage: https://beatrizmilz.com
+  - Github: <a href="http://github.com/beatrizmilz">@beatrizmilz</a>
+  - Twitter: <a href="http://twitter.com/beatrizmilz">@BeaMilz</a> 
+  - Linkedin: <a href="https://www.linkedin.com/in/beatrizmilz">Beatriz Milz</a>
+
+
+- Apresentação feita com [Xaringan](https://github.com/yihui/xaringan) e o tema Metropolis modificado.
+
+]
+
+
+.pull-right[
+**Agradecimentos especiais**:
+- [R-Ladies](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) - Sem essa comunidade, nada disso seria possível :)
+- [Yihui Xie](https://github.com/yihui) - Pelo pacotes, livros, blogposts, vídeos 
+- [Bruna Wundervald](http://brunaw.com/), [Haydee Svab](https://br.linkedin.com/in/hsvab), Mariana Guilardi - Por ajudar nas apresentações anteriores sobre xaringan (e pelas sugestões!)
+- [Julio Trecenti](https://github.com/jtrecenti), [Curso-R](https://www.curso-r.com/) e [13 aMostra de Estatística - IME  USP](https://www.ime.usp.br/~amostra/) pelo mini-curso de RMarkdown (em 2018! `r emo::ji("purple_heart")`)
+
+]
+
+
+
+
+
 

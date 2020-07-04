@@ -73,6 +73,17 @@ class:
 ---
 class: 
 
+# O ciclo da ciência de dados
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/Horst/data-analysis.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; - Adaptado de WICKHAM &amp;amp; GROLEMUND, 2017&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="90%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; - Adaptado de WICKHAM &amp; GROLEMUND, 2017&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+class: 
+
 # Pacote rmarkdown
 
 &lt;div class="figure" style="text-align: center"&gt;
@@ -97,9 +108,32 @@ class:
 &lt;/div&gt;
 
 ---
+class: 
+
+
+## O que podemos adicionar no documento? 
+
+- Texto
+
+- Markdown
+
+- Links
+
+- Código R
+
+- Tabelas
+
+- Gráficos
+
+- Fórmulas
+
+- Qualquer resultado de código de R :) Visualizações, gráficos, tabelas, etc.
+
+
+---
 class:  
 
-# Começando com a estrutura
+# Criando a estrutura
 
 - Criar um projeto no RStudio. Facilita muito para organizar os arquivos, posteriormente sincronizar com o GitHub, entre outros.Neste post da [Curso-R](https://www.curso-r.com), tem mais informações sobre [RProj e diretórios](https://www.curso-r.com/blog/2019-07-16-zen-do-r-3/).
 
@@ -107,7 +141,7 @@ class:
   
   - Dê um nome para seu projeto (será o nome da pasta), escolha a pasta no seu computador, e clique em `Create Project`.
   
-  - 
+  
 
 ---
 class:  
@@ -170,7 +204,7 @@ Muito cuidado com a identação!
 - **Código nos chunks** - teste o _Run All Chunks_ e veja se aparece erro em algum chunk específico.
 Se descobrir, tente verificar o que há de errado no código (pode ser a falta de um parênteses, vírgula, entre outros).
 
-&lt;img src="https://media.giphy.com/media/j9GASQ5ocrIRicnmyq/giphy.gif" width="30%" style="display: block; margin: auto;" /&gt;
+&lt;img src="https://media.giphy.com/media/j9GASQ5ocrIRicnmyq/giphy.gif" width="20%" style="display: block; margin: auto;" /&gt;
 
 ---
 class:
@@ -555,6 +589,67 @@ knitr::kable(x = head(iris), format = "html")
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
+
+---
+class: middle
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/Horst/community1.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; &amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="70%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; &lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+class: middle
+
+# Referências
+
+- **RMarkdown**:
+  - [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+  
+  - [R Markdown from RStudio](https://rmarkdown.rstudio.com/lesson-1.html)
+  
+  - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+  
+  - [R for Data Science - Cap 27: R Markdown](https://r4ds.had.co.nz/r-markdown.html)
+  
+  - [Software Carpentry - Producing Reports With knitr ](https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/)
+
+  - [Advanced R Markdown](https://slides.yihui.name/2017-rstudio-conf-rmarkdown-Yihui-Xie.html)
+
+
+
+---
+class:  middle
+
+## Obrigada!
+.pull-left[
+
+&lt;img src="https://media1.giphy.com/media/3oz8xIsloV7zOmt81G/giphy.gif" width="100%" style="display: block; margin: auto;" /&gt;
+
+- **Contato**:
+
+  - Email: &lt;a href="mailto:beatriz.milz@usp.br"&gt;beatriz.milz@usp.br&lt;/a&gt;
+  - Webpage: https://beatrizmilz.com
+  - Github: &lt;a href="http://github.com/beatrizmilz"&gt;@beatrizmilz&lt;/a&gt;
+  - Twitter: &lt;a href="http://twitter.com/beatrizmilz"&gt;@BeaMilz&lt;/a&gt; 
+  - Linkedin: &lt;a href="https://www.linkedin.com/in/beatrizmilz"&gt;Beatriz Milz&lt;/a&gt;
+
+
+- Apresentação feita com [Xaringan](https://github.com/yihui/xaringan) e o tema Metropolis modificado.
+
+]
+
+
+.pull-right[
+**Agradecimentos especiais**:
+- [R-Ladies](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) - Sem essa comunidade, nada disso seria possível :)
+- [Yihui Xie](https://github.com/yihui) - Pelo pacotes, livros, blogposts, vídeos 
+- [Bruna Wundervald](http://brunaw.com/), [Haydee Svab](https://br.linkedin.com/in/hsvab), Mariana Guilardi - Por ajudar nas apresentações anteriores sobre xaringan (e pelas sugestões!)
+- [Julio Trecenti](https://github.com/jtrecenti), [Curso-R](https://www.curso-r.com/) e [13 aMostra de Estatística - IME  USP](https://www.ime.usp.br/~amostra/) pelo mini-curso de RMarkdown (em 2018! 💜)
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
