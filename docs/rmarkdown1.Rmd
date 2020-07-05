@@ -126,7 +126,7 @@ class:
 class: 
 
 
-## O que podemos adicionar no documento? 
+# O que podemos adicionar no documento? 
 
 - Texto
 
@@ -334,14 +334,16 @@ class:
 
 
 
-$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
-
 
 ---
 class: 
 
 # Equações
 
+
+## Equação centralizada
+
+$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
 
 ## Equação junto ao texto
 
@@ -355,7 +357,7 @@ $$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
 ```
 
 
-
+$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
 
 ---
 class:
