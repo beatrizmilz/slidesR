@@ -7,12 +7,12 @@ Este repositório tem como objetivo oferecer alguns conteúdos sobre R. Anterior
 
   - __Rmarkdown__
 
-    - Rmarkdown - parte 1: __primeira versão em desenvolvimento__.
+    - Rmarkdown - parte 1: __primeira versão em desenvolvimento [aqui](https://beatrizmilz.github.io/slidesR/rmarkdown1.html)__.
     
     - Rmarkdown - parte 2: em breve.
     
-    - Outputs para Rmarkdown: apresentações com o pacote xaringan - parte 1: em breve.
+    - Outputs para Rmarkdown: apresentações com o pacote xaringan: __primeira versão em desenvolvimento [aqui](https://beatrizmilz.github.io/slidesR/xaringan.html)__.
     
-    - Outputs para Rmarkdown: apresentações com o pacote xaringan - parte 2: em breve.
+
     
 

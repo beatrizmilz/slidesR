@@ -15,6 +15,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      beforeInit: "https://platform.twitter.com/widgets.js"
 # Para exportar em PDF: pagedown::chrome_print("index.html", timeout = 600)
 knit: pagedown::chrome_print
 ---
@@ -112,6 +113,18 @@ knitr::include_graphics("img/rmarkdown/markdown.png")
 ---
 class: 
 
+# RMarkdown Cheatsheet
+
+- **Online**: [https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+- **No RStudio**: No RStudio > Help > Cheatsheets > RMarkdown CheatCheet
+
+- Outras Cheatsheets: [RStudio Resources](https://www.rstudio.com/resources/cheatsheets/)
+
+
+---
+class: 
+
 
 ## O que podemos adicionar no documento? 
 
@@ -129,7 +142,17 @@ class:
 
 - Fórmulas
 
+- Imagens e Gifs
+
+- Tweets
+
+- Emojis `r emo::ji("smile")`
+
+- Videos do youtube `r emo::ji("movie_camera")`
+
+
 - Qualquer resultado de código de R :) Visualizações, gráficos, tabelas, etc.
+
 
 
 ---
@@ -309,13 +332,30 @@ class:
 
 - Você pode incluir arquivo de imagem dessa forma: `![título](http://url/for/file)`
 
-- Se você utiliza equações em LaTeX, ficará feliz em saber que pode usar `$$` para inserir equações matemáticas, como: 
+
+
+$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
+
+
+---
+class: 
+
+# Equações
+
+
+## Equação junto ao texto
+
+Ou também na linha $y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$, junto ao texto!
+
+**Código Markdown:**
+
 
 ```{r, echo=TRUE, eval=FALSE}
 $$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
 ```
 
-$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
+
+
 
 ---
 class:
@@ -504,30 +544,152 @@ knitr::include_graphics("https://www.r-project.org/Rlogo.png")
 
 
 ---
-class:
+class: 
 
-# Adicionando tabelas 
+# Tabelas
 
-- Markdown
-- `knitr::kable()`
-- `DT::datatable(iris)`
+## Tabelas em Markdown
 
-- Exemplo com knitr:
+| Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |
+|------------:|-----------:|------------:|-----------:|:-------|
+|          5.1|         3.5|          1.4|         0.2|setosa  |
+|          4.9|         3.0|          1.4|         0.2|setosa  |
+|          4.7|         3.2|          1.3|         0.2|setosa  |
+|          4.6|         3.1|          1.5|         0.2|setosa  |
+|          5.0|         3.6|          1.4|         0.2|setosa  |
+|          5.4|         3.9|          1.7|         0.4|setosa  |
+
+- **Código Markdown**:
+
+
+```{r echo=TRUE}
+# | Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |
+# |------------:|-----------:|------------:|-----------:|:-------|
+# |          5.1|         3.5|          1.4|         0.2|setosa  |
+# |          4.9|         3.0|          1.4|         0.2|setosa  |
+# |          4.7|         3.2|          1.3|         0.2|setosa  |
+# |          4.6|         3.1|          1.5|         0.2|setosa  |
+# |          5.0|         3.6|          1.4|         0.2|setosa  |
+# |          5.4|         3.9|          1.7|         0.4|setosa  |
+```
+
+
+
+---
+class: 
+
+# Tabelas
+
+## Tabelas com R
+
 ```{r echo=TRUE}
 knitr::kable(x = head(iris), format = "html")
 ```
 
+- Outra opção:  `DT::datatable(iris)`  
+
+
 
 ---
-class: middle
+class: 
 
-```{r, out.width="70%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
+## GIFs
+
+```{r echo=TRUE, out.width="60%"}
+knitr::include_graphics("https://media2.giphy.com/media/S857VNxM6HwlZuYXrU/giphy.gif")
+```
+
+
+- O Addin [giphyr](https://github.com/haozhu233/giphyr) ajuda a procurar Gifs diretamente do RStudio!
+
+```{r echo=TRUE, eval=FALSE}
+devtools::install_github("haozhu233/giphyr")
+```
+
+---
+class: 
+
+# Tweets 
+<center><blockquote class="twitter-tweet" data-lang="pt"><p lang="pt" dir="ltr">Sábado passado aconteceu o <a href="https://twitter.com/hashtag/meetup?src=hash&amp;ref_src=twsrc%5Etfw">#meetup</a> de aniversário de 1 ano da <a href="https://twitter.com/hashtag/RLadies?src=hash&amp;ref_src=twsrc%5Etfw">#RLadies</a> São Paulo! O evento aconteceu lá na <a href="https://twitter.com/thoughtworksbr?ref_src=twsrc%5Etfw">@thoughtworksbr</a> , fomos super bem recebidas pela Chris, agradecemos muito pelo espaço e coffe break! Segue algumas fotos: <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/rstatsbr?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsbr</a> <a href="https://t.co/FfW8Et1FVx">pic.twitter.com/FfW8Et1FVx</a></p>&mdash; R-Ladies São Paulo (@RLadiesSaoPaulo) <a href="https://twitter.com/RLadiesSaoPaulo/status/1165359598376771585?ref_src=twsrc%5Etfw">24 de agosto de 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+
+
+
+
+---
+class: 
+
+# Tweets 
+
+- Adicione o seguinte código no `yaml`:
+```{r echo=TRUE, eval=FALSE}
+    # nature:
+    #   beforeInit: "https://platform.twitter.com/widgets.js"
+```
+
+
+- No twitter, copie o código disponível em "Incorporar esse tweet".
+
+
+---
+Class:
+
+# Emojis
+
+- Para utilizar emojis, instale o pacote:
+```{r echo=TRUE, eval=FALSE}
+devtools::install_github("hadley/emo")
+```
+
+
+- Exemplo:
+```{r echo=TRUE}
+# `r emo::ji("purple_heart")`
+```
+
+`r emo::ji("purple_heart")`
+
+- O addin `ermoji` ajuda a procurar emojis!
+
+```{r echo=TRUE, eval=FALSE}
+devtools::install_github("gadenbuie/ermoji")
+```
+
+
+---
+Class:
+
+# Videos do YouTube
+
+- Opção Compartilhar > Incorporar: 
+
+<center><iframe width="720" height="405" src="https://www.youtube.com/embed/sNphW6nBNU8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+`r emo::ji("musical_note")` - Cuando Los Ángeles Lloran - Maná
+
+
+---
+class: 
+
+# Dicas - RStudio
+
+- __atualizar essa imagem!__
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/xaringan/rmd-dicas.png")
+```
+
+
+---
+class: 
+
+```{r, out.width="50%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
 knitr::include_graphics("img/Horst/community1.jpg")
 ```
 
 
 ---
-class: middle
+class: 
 
 # Referências
 
@@ -547,7 +709,7 @@ class: middle
 
 
 ---
-class:  middle
+class:  
 
 ## Obrigada!
 .pull-left[
