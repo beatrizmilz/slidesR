@@ -1,6 +1,6 @@
 ---
-title: "<center><img src= 'img/Horst/rmarkdown_wizards.png' width = '60%' alt=''></br></center> <center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center> "
-subtitle: "Pacote `rmarkdown` - Parte I"
+title: "Pacote `rmarkdown` - Parte I"
+subtitle: "<center><img src= 'img/rmarkdown_wizards.png' width = '60%' alt=''></br></center> <center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"
 author: "Beatriz Milz"
 date: "2º semestre/2020 - Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`"
 encoding: "UTF-8"
@@ -31,6 +31,12 @@ layout: true
 ---
 class:
 
+```{r pacotes}
+# if (!require("devtools")) install.packages("devtools")
+# if (!require("emo")) devtools::install_github("hadley/emo")
+```
+
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
@@ -51,7 +57,7 @@ library(tidyverse)
   - Projeto Temático FAPESP Macroamb - Processo nº 2015/03804-9 
   
 ```{r echo=FALSE, out.width="60%"}
-knitr::include_graphics("img/logos_bia.png")
+knitr::include_graphics("../img/logos_bia.png")
 ```
 
 - Equipe da Secretaria Executiva  Editorial - [Revista Ambiente & Sociedade](http://scielo.br/asoc)
@@ -82,7 +88,7 @@ class:
 # O ciclo da ciência de dados
 
 ```{r, out.width="90%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> - Adaptado de WICKHAM & GROLEMUND, 2017</b></center>"}
-knitr::include_graphics("img/Horst/data-analysis.jpg")
+knitr::include_graphics("../img/Horst/data-analysis.jpg")
 ```
 
 
@@ -92,7 +98,7 @@ class:
 # Pacote rmarkdown
 
 ```{r, out.width="25%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
-knitr::include_graphics("img/rlogos/hex-rmarkdown.png")
+knitr::include_graphics("../img/rlogos/hex-rmarkdown.png")
 ```
 
 - Mantido pela [RStudio](https://rstudio.com/)
@@ -107,7 +113,7 @@ class:
 # Pacote rmarkdown
 
 ```{r, out.width="50%", fig.cap="<center><b>Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
-knitr::include_graphics("img/rmarkdown/markdown.png")
+knitr::include_graphics("../img/rmarkdown/markdown.png")
 ```
 
 ---
@@ -189,7 +195,7 @@ class:
 - Code chunk - códigos R (porém pode receber outros tipos, como SQL e Python)
 
 ```{r, out.width="90%"}
-knitr::include_graphics("img/rmarkdown/rmd-estrutura.png")
+knitr::include_graphics("../img/rmarkdown/rmd-estrutura.png")
 ```
 
 
@@ -201,7 +207,7 @@ class:
 - Botão Knit, ou usando o atalho: `Ctrl + Shift + K`
 
 ```{r, out.width="90%"}
-knitr::include_graphics("img/rmarkdown/knit-button.png")
+knitr::include_graphics("../img/rmarkdown/knit-button.png")
 ```
 
 ---
@@ -368,7 +374,7 @@ Os chunks são campos onde podemos inserir código de R (ou Python, SQL,  Bash..
 
 
 ```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("img/rmarkdown/create-chunck.png")
+knitr::include_graphics("../img/rmarkdown/create-chunck.png")
 ```
 
 ---
@@ -678,7 +684,7 @@ class:
 - __atualizar essa imagem!__
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/xaringan/rmd-dicas.png")
+knitr::include_graphics("../img/xaringan/rmd-dicas.png")
 ```
 
 
@@ -686,7 +692,7 @@ knitr::include_graphics("img/xaringan/rmd-dicas.png")
 class: 
 
 ```{r, out.width="50%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
-knitr::include_graphics("img/Horst/community1.jpg")
+knitr::include_graphics("../img/Horst/community1.jpg")
 ```
 
 

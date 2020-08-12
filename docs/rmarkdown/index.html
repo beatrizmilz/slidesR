@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>rmarkdown1.utf8</title>
+    <title>Pacote rmarkdown - Parte I</title>
     <meta charset="utf-8" />
     <meta name="author" content="Beatriz Milz" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
@@ -13,15 +13,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# <center>
-<img src= 'img/Horst/rmarkdown_wizards.png' width = '60%' alt=''></br>
+# Pacote <code>rmarkdown</code> - Parte I
+## <center>
+<img src= 'img/rmarkdown_wizards.png' width = '60%' alt=''></br>
 </center>
 <center>
 <b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> <span class="citation">@allison_horst</span></a> </b>
 </center>
-## Pacote <code>rmarkdown</code> - Parte I
 ### Beatriz Milz
-### 2º semestre/2020 - Atualizado em 04 de julho de 2020
+### 2º semestre/2020 - Atualizado em 11 de agosto de 2020
 
 ---
 
@@ -38,6 +38,13 @@ layout: true
 class:
 
 
+```r
+# if (!require("devtools")) install.packages("devtools")
+# if (!require("emo")) devtools::install_github("hadley/emo")
+```
+
+
+
 
 # Beatriz Milz
 - Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) - Instituto de Energia e Ambiente - Universidade de São Paulo
@@ -46,7 +53,7 @@ class:
   
   - Projeto Temático FAPESP Macroamb - Processo nº 2015/03804-9 
   
-&lt;img src="img/logos_bia.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="../img/logos_bia.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 - Equipe da Secretaria Executiva  Editorial - [Revista Ambiente &amp; Sociedade](http://scielo.br/asoc)
 
@@ -76,7 +83,7 @@ class:
 # O ciclo da ciência de dados
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/Horst/data-analysis.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; - Adaptado de WICKHAM &amp;amp; GROLEMUND, 2017&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="90%" /&gt;
+&lt;img src="../img/Horst/data-analysis.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; - Adaptado de WICKHAM &amp;amp; GROLEMUND, 2017&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="90%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; - Adaptado de WICKHAM &amp; GROLEMUND, 2017&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;/div&gt;
 
@@ -87,7 +94,7 @@ class:
 # Pacote rmarkdown
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/rlogos/hex-rmarkdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Logo: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="25%" /&gt;
+&lt;img src="../img/rlogos/hex-rmarkdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Logo: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="25%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Logo: &lt;a href='https://rmarkdown.rstudio.com'&gt;Pacote `rmarkdown`&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;/div&gt;
 
@@ -103,7 +110,7 @@ class:
 # Pacote rmarkdown
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/rmarkdown/markdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Fonte: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="50%" /&gt;
+&lt;img src="../img/rmarkdown/markdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Fonte: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="50%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Fonte: &lt;a href='https://rmarkdown.rstudio.com'&gt;Pacote `rmarkdown`&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;/div&gt;
 
@@ -185,7 +192,7 @@ class:
 
 - Code chunk - códigos R (porém pode receber outros tipos, como SQL e Python)
 
-&lt;img src="img/rmarkdown/rmd-estrutura.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="../img/rmarkdown/rmd-estrutura.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -195,7 +202,7 @@ class:
 
 - Botão Knit, ou usando o atalho: `Ctrl + Shift + K`
 
-&lt;img src="img/rmarkdown/knit-button.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="../img/rmarkdown/knit-button.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 class:
@@ -357,7 +364,7 @@ class:
 Os chunks são campos onde podemos inserir código de R (ou Python, SQL,  Bash...) em um arquivo RMarkdown. Existe um atalho do teclado para criar chunks no RStudio:  `Ctrl + ALt + I`. Também é possível criar um chunk clicando no seguinte botão do RStudio:
 
 
-&lt;img src="img/rmarkdown/create-chunck.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="../img/rmarkdown/create-chunck.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -412,7 +419,7 @@ ggplot(mtcars) +
 ]
 
 .right-plot[
-![](rmarkdown1_files/figure-html/plot-exemplo-ggplot2-1.png)
+![](index_files/figure-html/plot-exemplo-ggplot2-1.png)
 ]
 
 
@@ -758,14 +765,14 @@ class:
 
 - __atualizar essa imagem!__
 
-&lt;img src="img/xaringan/rmd-dicas.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="../img/xaringan/rmd-dicas.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 
 ---
 class: 
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/Horst/community1.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; &amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="50%" /&gt;
+&lt;img src="../img/Horst/community1.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; &amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="50%" /&gt;
 &lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; &lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;/div&gt;
 
