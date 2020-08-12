@@ -67,9 +67,9 @@ position: absolute;
   font-size: 40px;
   text-shadow: none;
   font-weight: 400;
-  text-align: left;
+  text-align: center;
   margin-left: 15px;
-  padding-top: 0px;
+  padding-top: 50px;
 }
 .title-slide > h2  {
   margin-top: 5px;
@@ -78,7 +78,7 @@ position: absolute;
   text-shadow: none;
   font-weight: 300;
   font-size: 35px;
-  text-align: left;
+  text-align: center;
   margin-left: 15px;
 }
 .title-slide > h3  {

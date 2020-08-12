@@ -17,7 +17,7 @@ output:
       countIncrementalSlides: false
       beforeInit: "https://platform.twitter.com/widgets.js"
 # Para exportar em PDF: pagedown::chrome_print("index.html", timeout = 600)
-knit: pagedown::chrome_print
+# knit: pagedown::chrome_print
 ---
 layout: true
   
@@ -31,7 +31,7 @@ layout: true
 ---
 class:
 
-```{r pacotes}
+```{r pacotes, eval=FALSE, include=FALSE}
 # if (!require("devtools")) install.packages("devtools")
 # if (!require("emo")) devtools::install_github("hadley/emo")
 ```
