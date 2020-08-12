@@ -5,9 +5,9 @@ Este repositório tem como objetivo oferecer alguns conteúdos sobre R. Anterior
 
 - Ideias para a estrutura:
 
-  - __R-Ladies__ - Slide de apresentação da comunidade
+  - __R-Ladies__ - Slide de apresentação da comunidade: [html](https://beatrizmilz.github.io/slidesR/rladies/index.pdf) e [PDF](https://beatrizmilz.github.io/slidesR/rladies/index.pdf)
   
-  - __Introdução ao R__
+  - __Introdução ao R__ - **em breve**
   
   - __Rmarkdown__
 
