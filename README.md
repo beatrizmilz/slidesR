@@ -15,7 +15,9 @@ Este repositório tem como objetivo oferecer alguns conteúdos sobre R. Anterior
     
     - Rmarkdown - parte 2: em breve. Ideias de conteúdo: como usar referências - incluindo ABNT, relatórios com parâmetros. 
     
-    - Outputs para Rmarkdown: apresentações com o pacote xaringan: __primeira versão em desenvolvimento [aqui](https://beatrizmilz.github.io/slidesR/xaringan.html)__.
+    - Outputs para Rmarkdown:
+    
+      -  Apresentações com o pacote xaringan: __primeira versão em desenvolvimento [aqui](https://beatrizmilz.github.io/slidesR/xaringan/index.html)__.
     
 
     

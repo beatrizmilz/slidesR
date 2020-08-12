@@ -1,6 +1,6 @@
 ---
-title: "<center><img src= 'img/rlogos/hex-xaringan.png' width = '30%' alt=''></br></center> <center><b>Logo do pacote <a href='https://github.com/yihui/xaringan'> xaringan</a> </b></center> "
-subtitle: "Pacote `xaringan`"
+title: "Pacote `xaringan`"
+subtitle: "<center><img src= 'img/hex-xaringan.png' width = '30%' alt=''></br></center> <center><b>Logo do pacote <a href='https://github.com/yihui/xaringan'> xaringan</a> </b></center> "
 author: "Beatriz Milz"
 date: "2º semestre/2020 - Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`"
 encoding: "UTF-8"
@@ -17,7 +17,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 # Para exportar em PDF: pagedown::chrome_print("index.html", timeout = 600)
-knit: pagedown::chrome_print
+# knit: pagedown::chrome_print
 ---
 layout: true
   
@@ -51,7 +51,7 @@ library(tidyverse)
   - Projeto Temático FAPESP Macroamb - Processo nº 2015/03804-9 
   
 ```{r echo=FALSE, out.width="60%"}
-knitr::include_graphics("img/logos_bia.png")
+knitr::include_graphics("../img/logos_bia.png")
 ```
 
 - Equipe da Secretaria Executiva  Editorial - [Revista Ambiente & Sociedade](http://scielo.br/asoc)
@@ -85,7 +85,7 @@ class:
 # O ciclo da ciência de dados
 
 ```{r, out.width="90%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> - Adaptado de WICKHAM & GROLEMUND, 2017</b></center>"}
-knitr::include_graphics("img/Horst/data-analysis.jpg")
+knitr::include_graphics("../img/Horst/data-analysis.jpg")
 ```
 
 
@@ -95,7 +95,7 @@ class:
 # Pacote rmarkdown
 
 ```{r, out.width="25%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
-knitr::include_graphics("img/rlogos/hex-rmarkdown.png")
+knitr::include_graphics("../img/rlogos/hex-rmarkdown.png")
 ```
 
 - Mantido pela [RStudio](https://rstudio.com/)
@@ -110,7 +110,7 @@ class:
 # Pacote rmarkdown
 
 ```{r, out.width="50%", fig.cap="<center><b>Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
-knitr::include_graphics("img/rmarkdown/markdown.png")
+knitr::include_graphics("../img/rmarkdown/markdown.png")
 ```
 
 ---
@@ -119,7 +119,7 @@ class:
 # Pacote xaringan
 
 ```{r, out.width="30%", fig.cap="<center><b>Logo: <a href='https://github.com/yihui/xaringan'>Pacote xaringan</a></b></center>"}
-knitr::include_graphics("img/rlogos/hex-xaringan.png")
+knitr::include_graphics("../img/rlogos/hex-xaringan.png")
 ```
 
 - Possibilita criar apresentações **ninja** com `RMarkdown`
@@ -133,7 +133,7 @@ class:
 
 
 ```{r, out.width="70%", fig.cap="<center><b>Naruto? Sharingan? Xaringan? </b></center>"}
-knitr::include_graphics("img/xaringan/naruto.jpg")
+knitr::include_graphics("../img/xaringan/naruto.jpg")
 ```
 ---
 class: 
@@ -192,7 +192,7 @@ class:
   - Apagar todo o conteúdo após o código `yaml`
   
 ```{r, out.width="50%"}
-knitr::include_graphics("img/xaringan/criar-xaringan.JPG")
+knitr::include_graphics("../img/xaringan/criar-xaringan.JPG")
 ```
 
 ---
@@ -201,7 +201,7 @@ class:
 # Estrutura arquivo rmarkdown
 
 ```{r, out.width="90%"}
-knitr::include_graphics("img/xaringan/rmd-estrutura-xaringan.png")
+knitr::include_graphics("../img/xaringan/rmd-estrutura-xaringan.png")
 ```
 
 ---
@@ -216,7 +216,7 @@ class:
 
 
 ```{r echo=FALSE, out.width="50%", eval = TRUE}
-knitr::include_graphics("img/xaringan/html-css-javascript.jpg")
+knitr::include_graphics("../img/xaringan/html-css-javascript.jpg")
 ```
 
 
@@ -227,7 +227,7 @@ class:
 # Estrutura da apresentação
 
 ```{r echo=FALSE, out.width="50%", eval = TRUE}
-knitr::include_graphics("img/xaringan/html-css-javascript.jpg")
+knitr::include_graphics("../img/xaringan/html-css-javascript.jpg")
 ```
 
   - **HTML** (HyperText Markup Language - Linguagem de Marcação de Hipertexto) - é uma linguagem de marcação, é usado para estruturar a página.
@@ -446,7 +446,7 @@ class:
 # Dicas - RStudio
 
 ```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("img/xaringan/rmd-dicas.png")
+knitr::include_graphics("../img/xaringan/rmd-dicas.png")
 ```
 
 
@@ -522,7 +522,7 @@ Class:
 class: 
 
 ```{r, out.width="50%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
-knitr::include_graphics("img/Horst/community1.jpg")
+knitr::include_graphics("../img/Horst/community1.jpg")
 ```
 
 ---
