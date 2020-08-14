@@ -1,0 +1,138 @@
+---
+title: "Introdução ao R"
+author: "Beatriz Milz"
+encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: center, middle, hide-logo
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#88398a",
+  secondary_color = "#58519b",
+  inverse_header_color = "#FFFFFF"
+)
+```
+
+```{r xaringanExtra, echo=FALSE}
+#devtools::install_github("gadenbuie/xaringanExtra")
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "img/rainbow-inclusive.png"
+)
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+```{r xaringan-fit-screen, echo=FALSE}
+xaringanExtra::use_fit_screen()
+```
+
+```{r xaringan-extra-styles, echo=FALSE}
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         #<<
+  mute_unhighlighted_code = TRUE  #<<
+)
+```
+
+
+
+
+.pull-left[
+
+# Introdução ao R
+
+### Beatriz Milz
+
+__.can-edit[Meetup R-Ladies Curitiba]__
+
+
+__.can-edit[2º semestre/2020]__
+
+Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`
+
+
+
+]
+
+.pull-right[
+
+```{r echo=FALSE}
+knitr::include_graphics("img/Horst/community1.jpg")
+```
+
+<right>Ilustração por <a href='https://twitter.com/allison_horst/'> Allison Horst</a></right>
+
+]
+
+---
+
+# Beatriz Milz
+- Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) 
+  - Instituto de Energia e Ambiente - Universidade de São Paulo
+
+- Equipe da Secretaria Executiva  Editorial - [Revista Ambiente & Sociedade](http://scielo.br/asoc)
+
+- Co-organizadora: [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) `r emo::ji("purple_heart")`, [satRday São Paulo](https://twitter.com/satRdaySP)
+
+- Comitê organizador: [LatinR](https://twitter.com/LatinR_Conf)
+
+- Saiba mais: [Currículo](https://beatrizmilz.github.io/resume/resume.pdf), [Website](https://beatrizmilz.com)
+
+- Anteriormente: 
+  - Mestre em Ciências - UNIFESP; 
+  - Bacharel em Gestão Ambiental - EACH/USP
+  
+
+---
+
+# Sobre esse material
+
+- Público-alvo: pessoas com interesse em começar a utilizar o R para análise de dados. 
+
+- Pré-requisitos: interesse em aprender R :) 
+
+- Parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/2020-R-Ladies-SP-Basico/#1) da R-Ladies São Paulo.
+
+- Conteúdo: principais conceitos necessários antes de começar a aprender o `Tidyverse`
+
+```{r echo=FALSE, out.width="70%", fig.align="center"}
+knitr::include_graphics("img/Horst/data-analysis.jpg")
+
+# Talvez seja interessante procurar em português
+```
+
+---
+
+Em desenvolvimento :)
+
+---
+
+class: center, middle
+
+# Obrigada!
+
+Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/).
