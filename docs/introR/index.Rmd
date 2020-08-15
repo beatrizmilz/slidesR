@@ -64,8 +64,10 @@ xaringanExtra::use_extra_styles(
 
 ```{r include=FALSE}
 # remotes::install_github("cienciadedatos/dados")
+# remotes::install_github("carpentries/glosario-r")
 library(dados)
 library(tidyverse)
+library(glosario)
 ```
 
 
@@ -132,7 +134,7 @@ knitr::include_graphics("img/Horst/data-analysis.jpg")
 ---
 class: middle
 
-- Conteúdo: principais conceitos necessários antes de começar a aprender o `tidyverse`
+- Conteúdo: principais conceitos necessários antes de começar a aprender o `r glosario::gdef('tidyverse', 'tidyverse')`
 
 - Dados tabulares:
 
@@ -416,6 +418,113 @@ ativo
 # COLOCAR UM EXERCÍCIO
 
 ---
+# Operadores Relacionais
+
+- Igual a: **==** 
+
+- Diferente de: **!=** 
+
+- Maior que: **>** 
+
+- Maior ou igual: **>=** 
+
+- Menor que: **<** 
+
+- Menor ou igual: **<=** 
+
+---
+   
+
+
+#  Operadores Relacionais
+
+Igual a: **==**
+```{r}
+TRUE == TRUE
+
+TRUE == FALSE
+```
+---
+
+
+# Operadores Relacionais
+
+Diferente de **!=**
+```{r}
+TRUE != TRUE
+
+TRUE != FALSE
+```
+---
+
+#  Operadores Relacionais
+
+Menor que: **<**
+```{r}
+3 < 5
+```
+
+Maior ou igual a: **>=**
+```{r}
+10 >= 10
+```
+
+Maior que: **>=**
+```{r}
+10 > 10
+```
+
+---
+
+# Operadores Lógicos
+
+- E: **&**
+
+Será verdadeiro se os dois forem verdadeiros (`TRUE`)
+
+```{r}
+x <- 5
+
+ x >= 3 & x <=7
+```
+```{r}
+y <- 2
+
+ y >= 3 & y <= 7
+```
+---
+
+# Operadores Lógicos
+
+- OU: **|**
+
+Será verdadeiro se um dos dois forem verdadeiros (`TRUE`)
+
+```{r}
+y <- 2
+
+ y >= 3 | y <=7
+```
+
+```{r}
+y <- 1
+
+ y >= 3 | y == 0
+```
+---
+
+# Operadores Lógicos
+
+- Negação: **!** 
+
+
+```{r}
+x <- 5
+(!x < 4)
+```
+
+
+---
 
 # Tipos básicos de dados
 
@@ -573,15 +682,22 @@ NA / 2
 # NA
 
 
-E o mais confuso:
-
 ```{r}
 NA == NA
 ```
 
-<br></br>
 
-**is.na()** é a função que testa se um objeto é NA.
+---
+
+# NA
+
+`is.na()` é a função que testa se um objeto é NA.
+
+```{r}
+vetor_logico <- c(NA, TRUE, FALSE, FALSE, TRUE, NA)
+is.na(vetor_logico)
+!is.na(vetor_logico)
+```
 
 
 ---
@@ -631,6 +747,15 @@ as.numeric(frutas)
 as.character(frutas)
 as.factor(frutas)
 ```
+---
+# Tipos de objetos
+
+- No R, os 4 principais tipos de dados são: `vetor`, `matriz`, `lista`, `data.frame`
+
+- Vamos focar em dois:  `vetor` e `data.frame`
+
+
+
 
 ---
 class: center, middle

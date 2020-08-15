@@ -8,7 +8,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x0d8cdf250a1449d9316f2fe625c8bc3","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x06250c778444a39b885f810e4ce3254","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -115,7 +115,7 @@ Atualizado em 15 de agosto de 2020
 ---
 class: middle
 
-- Conteúdo: principais conceitos necessários antes de começar a aprender o `tidyverse`
+- Conteúdo: principais conceitos necessários antes de começar a aprender o &lt;span class="glosario_def"&gt;[tidyverse](https://carpentries.github.io/glosario/en/#tidyverse)&lt;/span&gt;
 
 - Dados tabulares:
 
@@ -483,6 +483,175 @@ ativo
 # COLOCAR UM EXERCÍCIO
 
 ---
+# Operadores Relacionais
+
+- Igual a: **==** 
+
+- Diferente de: **!=** 
+
+- Maior que: **&gt;** 
+
+- Maior ou igual: **&gt;=** 
+
+- Menor que: **&lt;** 
+
+- Menor ou igual: **&lt;=** 
+
+---
+   
+
+
+#  Operadores Relacionais
+
+Igual a: **==**
+
+```r
+TRUE == TRUE
+```
+
+```
+## [1] TRUE
+```
+
+```r
+TRUE == FALSE
+```
+
+```
+## [1] FALSE
+```
+---
+
+
+# Operadores Relacionais
+
+Diferente de **!=**
+
+```r
+TRUE != TRUE
+```
+
+```
+## [1] FALSE
+```
+
+```r
+TRUE != FALSE
+```
+
+```
+## [1] TRUE
+```
+---
+
+#  Operadores Relacionais
+
+Menor que: **&lt;**
+
+```r
+3 &lt; 5
+```
+
+```
+## [1] TRUE
+```
+
+Maior ou igual a: **&gt;=**
+
+```r
+10 &gt;= 10
+```
+
+```
+## [1] TRUE
+```
+
+Maior que: **&gt;=**
+
+```r
+10 &gt; 10
+```
+
+```
+## [1] FALSE
+```
+
+---
+
+# Operadores Lógicos
+
+- E: **&amp;**
+
+Será verdadeiro se os dois forem verdadeiros (`TRUE`)
+
+
+```r
+x &lt;- 5
+
+ x &gt;= 3 &amp; x &lt;=7
+```
+
+```
+## [1] TRUE
+```
+
+```r
+y &lt;- 2
+
+ y &gt;= 3 &amp; y &lt;= 7
+```
+
+```
+## [1] FALSE
+```
+---
+
+# Operadores Lógicos
+
+- OU: **|**
+
+Será verdadeiro se um dos dois forem verdadeiros (`TRUE`)
+
+
+```r
+y &lt;- 2
+
+ y &gt;= 3 | y &lt;=7
+```
+
+```
+## [1] TRUE
+```
+
+
+```r
+y &lt;- 1
+
+ y &gt;= 3 | y == 0
+```
+
+```
+## [1] FALSE
+```
+---
+
+# Operadores Lógicos
+
+- Negação: **!** 
+
+
+
+```r
+x &lt;- 5
+(!x &lt; 4)
+```
+
+```
+## [1] TRUE
+```
+
+
+---
 
 # Tipos básicos de dados
 
@@ -758,8 +927,6 @@ NA / 2
 # NA
 
 
-E o mais confuso:
-
 
 ```r
 NA == NA
@@ -769,9 +936,30 @@ NA == NA
 ## [1] NA
 ```
 
-&lt;br&gt;&lt;/br&gt;
 
-**is.na()** é a função que testa se um objeto é NA.
+---
+
+# NA
+
+`is.na()` é a função que testa se um objeto é NA.
+
+
+```r
+vetor_logico &lt;- c(NA, TRUE, FALSE, FALSE, TRUE, NA)
+is.na(vetor_logico)
+```
+
+```
+## [1]  TRUE FALSE FALSE FALSE FALSE  TRUE
+```
+
+```r
+!is.na(vetor_logico)
+```
+
+```
+## [1] FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+```
 
 
 ---
@@ -875,6 +1063,15 @@ as.factor(frutas)
 ## [1] banana   maça     melancia
 ## Levels: banana maça melancia
 ```
+---
+# Tipos de objetos
+
+- No R, os 4 principais tipos de dados são: `vetor`, `matriz`, `lista`, `data.frame`
+
+- Vamos focar em dois:  `vetor` e `data.frame`
+
+
+
 
 ---
 class: center, middle
