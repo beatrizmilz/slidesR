@@ -8,7 +8,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x49adfb547f64aefb3036404c8d5d9bd","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x0c0fe073d4f4952bc6140e6a6602ccb","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -21,6 +21,7 @@
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -59,7 +60,7 @@ class: center, middle, hide-logo
 
 .pull-left[
 
-# Introdução ao R
+# Introdução a Linguagem R
 
 ### Beatriz Milz
 
@@ -68,7 +69,7 @@ __.can-edit[Meetup R-Ladies Curitiba]__
 
 __.can-edit[2º semestre/2020]__
 
-Atualizado em 11 de agosto de 2020
+Atualizado em 15 de agosto de 2020
 
 
 
@@ -76,7 +77,7 @@ Atualizado em 11 de agosto de 2020
 
 .pull-right[
 
-![](img/Horst/community1.jpg)&lt;!-- --&gt;
+&lt;img src="img/Horst/community1.jpg" style="display: block; margin: auto;" /&gt;
 
 &lt;right&gt;Ilustração por &lt;a href='https://twitter.com/allison_horst/'&gt; Allison Horst&lt;/a&gt;&lt;/right&gt;
 
@@ -92,7 +93,7 @@ Atualizado em 11 de agosto de 2020
 
 - Co-organizadora: [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) 💜, [satRday São Paulo](https://twitter.com/satRdaySP)
 
-- Comitê organizador: [LatinR](https://twitter.com/LatinR_Conf)
+- Comitê organizador: [LatinR](https://twitter.com/LatinR_Conf) e [useR! 2021](https://user2021.r-project.org/)
 
 - Saiba mais: [Currículo](https://beatrizmilz.github.io/resume/resume.pdf), [Website](https://beatrizmilz.com)
 
@@ -107,8 +108,6 @@ Atualizado em 11 de agosto de 2020
 
 - Público-alvo: pessoas com interesse em começar a utilizar o R para análise de dados. 
 
-- Pré-requisitos: interesse em aprender R :) 
-
 - Parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/2020-R-Ladies-SP-Basico/#1) da R-Ladies São Paulo.
 
 - Conteúdo: principais conceitos necessários antes de começar a aprender o `Tidyverse`
@@ -117,6 +116,357 @@ Atualizado em 11 de agosto de 2020
 
 ---
 
+# Pré-requisitos
+
+- `R` e `RStudio` instalados no seu computador:
+
+&lt;img src="img/rstudio-r.jpg" width="40%" style="display: block; margin: auto;" /&gt;
+
+- Links para instalação:
+  - [R](https://cran.r-project.org/bin/windows/base/)
+  - [RStudio](https://rstudio.com/products/rstudio/download/)
+
+
+
+---
+# O que é o R?
+
+&gt; "R é um ambiente de software livre para computação estatística e gráficos". (https://www.r-project.org/)
+
+--
+
+- **Por que usar o R**?
+
+  - É uma linguagem de programação que possui muitas ferramentas para análise de dados
+
+  - É _código aberto_ (open source)
+
+  - Possui uma comunidade ativa de pessoas desenvolvedoras
+
+  - É flexível, permite desenvolver funções e pacotes para facilitar o trabalho 
+
+  - Está disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac
+    
+  - Mantido pela [R Development Core Team](https://cran.r-project.org/)
+
+---
+
+# RStudio
+
+**RStudio** é uma IDE (_integrated development environment_) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.
+
+&lt;img src="img/01-rstudio.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+# RStudio
+
+&lt;img src="img/haydee1.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+# RStudio
+
+&lt;img src="img/haydee2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+# RStudio
+
+&lt;img src="img/haydee3.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+
+# RStudio
+
+&lt;img src="img/haydee4.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+# RStudio
+
+&lt;img src="img/haydee5.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+
+# RStudio
+
+&lt;img src="img/haydee6.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+
+&lt;img src="img/haydee7.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+  
+
+&lt;img src="img/haydee8.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+# Help!
+
+- Pedir ajuda: **help**(nome_da_funcao) ou **?**nome_da_funcao.
+
+
+```r
+help(sum)
+?sum
+```
+
+
+- Se a dúvida permanecer, procure no [Stack OverFlow](https://stackoverflow.com/) ou Google.
+
+- E se ainda tiver dúvidas, pergunte para a comunidade (há grupos no Telegram e outras redes sociais).
+
+---
+
+# Começando
+
+- Abrir o `RStudio` no seu computador 
+
+- Crie um novo `R` script (file -&gt; new file -&gt; `R` script)
+
+&lt;img src="img/01-rstudio-script.png" width="80%" style="display: block; margin: auto;" /&gt;
+---
+
+# `R` como calculadora
+
+- O `R` permite realizar muitas operações aritméticas em seu console!
+
+
+```r
+2 + 5    # adição
+```
+
+```
+## [1] 7
+```
+
+```r
+9 - 4    # subtração
+```
+
+```
+## [1] 5
+```
+
+```r
+5 * 2    # multiplicação
+```
+
+```
+## [1] 10
+```
+
+```r
+7 / 5    # divisão
+```
+
+```
+## [1] 1.4
+```
+
+
+- `CTRL + ENTER`: executa a linha selecionada no script.
+
+
+---
+
+
+# `R` como calculadora
+
+
+```r
+9 %% 4   # resto da divisão de 9 por 4
+```
+
+```
+## [1] 1
+```
+
+```r
+7 %/% 4  # parte inteira da divisão de 7 por 4
+```
+
+```
+## [1] 1
+```
+
+```r
+8 ^ 2    # potenciação
+```
+
+```
+## [1] 64
+```
+
+```r
+sqrt(1024) # radiciação
+```
+
+```
+## [1] 32
+```
+
+A ordem matemática das operações também vale no R.
+
+---
+
+
+# Funções matemáticas
+
+
+```r
+sin(1)  # funções trigonométricas
+```
+
+```
+## [1] 0.841471
+```
+
+```r
+log(1)  # logaritmo natural (base e)
+```
+
+```
+## [1] 0
+```
+
+```r
+log10(10) # logaritmo na base 10
+```
+
+```
+## [1] 1
+```
+
+```r
+exp(0.5) # e^(1/2)
+```
+
+```
+## [1] 1.648721
+```
+
+Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html)
+
+---
+
+# COLOCAR UM EXERCÍCIO
+
+---
+
+# O que é um objeto?
+
+- Ao se desenvolver um projeto, você irá trabalhar com diversos tipos de arquivos, além de informações que serão repetidas ao longo do script.
+
+- Para reutilizar essas informações ao longo do script utilizamos o que chamamos de **objeto**
+
+- Um objeto retém e representa um valor, função ou base de dados
+
+---
+
+## Atribuindo valor a um objeto no R
+
+- Para atribuir um valor a um objeto no R, utilizamos o operador **&lt;-**  
+
+.center[`nome_do_objeto &lt;- valor`]
+
+- Atalho: `ALT` + `-`: cria o `&lt;-` sinal de atribuição.
+
+Exemplo:
+
+
+```r
+minha_idade &lt;- 27
+minha_idade
+```
+
+```
+## [1] 27
+```
+
+
+---
+
+## Exemplo: 
+
+
+```r
+nome &lt;- "Daenerys Targaryen"
+nome
+```
+
+```
+## [1] "Daenerys Targaryen"
+```
+
+```r
+horas_trabalhadas &lt;- 160
+horas_trabalhadas
+```
+
+```
+## [1] 160
+```
+
+```r
+salario &lt;- 3984.23
+salario
+```
+
+```
+## [1] 3984.23
+```
+
+```r
+ativo &lt;- TRUE
+ativo
+```
+
+```
+## [1] TRUE
+```
+
+
+---
+# Nomes de objetos
+
+- Os nomes devem começar com uma letra. Podem conter letras, números, _ e .
+
+- Não usar acentuação e espaços nos nomes de objetos.
+
+- Recomendação do autor do livro `R` For Data Science: **usar_snake_case**, ou seja, palavras escritas em minúsculo separadas pelo underscore (`_`).
+
+- O `R` é *case sensitive*, isto é, faz a diferenciação entre as letras minúsculas e maiúsculas. Portanto, um objeto chamado `teste` é diferente de uma outro objeto chamada `Teste`.
+
+---
+
+# COLOCAR UM EXERCÍCIO
+
+
+---
 Em desenvolvimento :)
 
 ---

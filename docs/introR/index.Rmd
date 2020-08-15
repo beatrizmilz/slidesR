@@ -7,7 +7,7 @@ output:
     seal: false
     lib_dir: libs
     chakra: libs/remark-latest.min.js
-    css: xaringan-themer.css
+    css: [xaringan-themer.css, custom.css]
     nature:
       highlightStyle: github
       highlightLines: true
@@ -17,6 +17,10 @@ class: center, middle, hide-logo
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+
+knitr::opts_chunk$set(fig.align = "center",
+                      message = FALSE,
+                      warning = FALSE)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -63,7 +67,7 @@ xaringanExtra::use_extra_styles(
 
 .pull-left[
 
-# Introdução ao R
+# Introdução a Linguagem R
 
 ### Beatriz Milz
 
@@ -98,7 +102,7 @@ knitr::include_graphics("img/Horst/community1.jpg")
 
 - Co-organizadora: [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) `r emo::ji("purple_heart")`, [satRday São Paulo](https://twitter.com/satRdaySP)
 
-- Comitê organizador: [LatinR](https://twitter.com/LatinR_Conf)
+- Comitê organizador: [LatinR](https://twitter.com/LatinR_Conf) e [useR! 2021](https://user2021.r-project.org/)
 
 - Saiba mais: [Currículo](https://beatrizmilz.github.io/resume/resume.pdf), [Website](https://beatrizmilz.com)
 
@@ -113,8 +117,6 @@ knitr::include_graphics("img/Horst/community1.jpg")
 
 - Público-alvo: pessoas com interesse em começar a utilizar o R para análise de dados. 
 
-- Pré-requisitos: interesse em aprender R :) 
-
 - Parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/2020-R-Ladies-SP-Basico/#1) da R-Ladies São Paulo.
 
 - Conteúdo: principais conceitos necessários antes de começar a aprender o `Tidyverse`
@@ -127,6 +129,279 @@ knitr::include_graphics("img/Horst/data-analysis.jpg")
 
 ---
 
+# Pré-requisitos
+
+- `R` e `RStudio` instalados no seu computador:
+
+```{r, echo=FALSE, out.width="40%"}
+knitr::include_graphics("img/rstudio-r.jpg")
+```
+
+- Links para instalação:
+  - [R](https://cran.r-project.org/bin/windows/base/)
+  - [RStudio](https://rstudio.com/products/rstudio/download/)
+
+
+
+---
+# O que é o R?
+
+> "R é um ambiente de software livre para computação estatística e gráficos". (https://www.r-project.org/)
+
+--
+
+- **Por que usar o R**?
+
+  - É uma linguagem de programação que possui muitas ferramentas para análise de dados
+
+  - É _código aberto_ (open source)
+
+  - Possui uma comunidade ativa de pessoas desenvolvedoras
+
+  - É flexível, permite desenvolver funções e pacotes para facilitar o trabalho 
+
+  - Está disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac
+    
+  - Mantido pela [R Development Core Team](https://cran.r-project.org/)
+
+---
+
+# RStudio
+
+**RStudio** é uma IDE (_integrated development environment_) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/01-rstudio.png")
+```
+
+
+---
+# RStudio
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/haydee1.jpg")
+```
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+# RStudio
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/haydee2.jpg")
+```
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+# RStudio
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/haydee3.jpg")
+```
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+
+# RStudio
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/haydee4.jpg")
+```
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+# RStudio
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/haydee5.jpg")
+```
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+
+# RStudio
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/haydee6.jpg")
+```
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/haydee7.jpg")
+```
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+# RStudio
+  
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/haydee8.jpg")
+```
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+# Help!
+
+- Pedir ajuda: **help**(nome_da_funcao) ou **?**nome_da_funcao.
+
+```{r, eval=FALSE}
+help(sum)
+?sum
+```
+
+
+- Se a dúvida permanecer, procure no [Stack OverFlow](https://stackoverflow.com/) ou Google.
+
+- E se ainda tiver dúvidas, pergunte para a comunidade (há grupos no Telegram e outras redes sociais).
+
+---
+
+# Começando
+
+- Abrir o `RStudio` no seu computador 
+
+- Crie um novo `R` script (file -> new file -> `R` script)
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/01-rstudio-script.png")
+```
+---
+
+# `R` como calculadora
+
+- O `R` permite realizar muitas operações aritméticas em seu console!
+
+```{r}
+2 + 5    # adição
+
+9 - 4    # subtração
+
+5 * 2    # multiplicação
+
+7 / 5    # divisão
+```
+
+
+- `CTRL + ENTER`: executa a linha selecionada no script.
+
+
+---
+
+
+# `R` como calculadora
+
+```{r}
+9 %% 4   # resto da divisão de 9 por 4
+
+7 %/% 4  # parte inteira da divisão de 7 por 4
+
+8 ^ 2    # potenciação
+
+sqrt(1024) # radiciação
+```
+
+A ordem matemática das operações também vale no R.
+
+---
+
+
+# Funções matemáticas
+
+```{r}
+sin(1)  # funções trigonométricas
+
+log(1)  # logaritmo natural (base e)
+
+log10(10) # logaritmo na base 10
+
+exp(0.5) # e^(1/2)
+
+```
+
+Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html)
+
+---
+
+# COLOCAR UM EXERCÍCIO
+
+---
+
+# O que é um objeto?
+
+- Ao se desenvolver um projeto, você irá trabalhar com diversos tipos de arquivos, além de informações que serão repetidas ao longo do script.
+
+- Para reutilizar essas informações ao longo do script utilizamos o que chamamos de **objeto**
+
+- Um objeto retém e representa um valor, função ou base de dados
+
+---
+
+## Atribuindo valor a um objeto no R
+
+- Para atribuir um valor a um objeto no R, utilizamos o operador **<-**  
+
+.center[`nome_do_objeto <- valor`]
+
+- Atalho: `ALT` + `-`: cria o `<-` sinal de atribuição.
+
+Exemplo:
+
+```{r echo=TRUE}
+minha_idade <- 27
+minha_idade
+```
+
+
+---
+
+## Exemplo: 
+
+```{r}
+nome <- "Daenerys Targaryen"
+nome
+horas_trabalhadas <- 160
+horas_trabalhadas
+salario <- 3984.23
+salario
+ativo <- TRUE
+ativo
+```
+
+
+---
+# Nomes de objetos
+
+- Os nomes devem começar com uma letra. Podem conter letras, números, _ e .
+
+- Não usar acentuação e espaços nos nomes de objetos.
+
+- Recomendação do autor do livro `R` For Data Science: **usar_snake_case**, ou seja, palavras escritas em minúsculo separadas pelo underscore (`_`).
+
+- O `R` é *case sensitive*, isto é, faz a diferenciação entre as letras minúsculas e maiúsculas. Portanto, um objeto chamado `teste` é diferente de uma outro objeto chamada `Teste`.
+
+---
+
+# COLOCAR UM EXERCÍCIO
+
+
+---
 Em desenvolvimento :)
 
 ---
