@@ -3,9 +3,14 @@
 Este repositório tem como objetivo oferecer alguns conteúdos sobre R. Anteriormente, fiz algumas apresentações e elas estão em diversos repositórios diferentes no meu GitHub. A ideia é organizar as próximas apresentações neste repositório, e ir aprimorando o material aqui (ao invés de criar um novo repositório a cada palestra).
 
 
-- Ideias para a estrutura:
+## Comunidades:
 
   - __R-Ladies__ - Slide de apresentação da comunidade: [html](https://beatrizmilz.github.io/slidesR/rladies/index.html) e [PDF](https://beatrizmilz.github.io/slidesR/rladies/index.pdf)
+  
+  
+  - Carpentries - Em breve
+  
+## R
   
   - __Introdução ao R__ - primeira versão __em desenvolvimento__ [aqui](https://beatrizmilz.github.io/slidesR/introR/index.html).
   
