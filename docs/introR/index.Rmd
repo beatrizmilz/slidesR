@@ -62,6 +62,11 @@ xaringanExtra::use_extra_styles(
 )
 ```
 
+```{r include=FALSE}
+# remotes::install_github("cienciadedatos/dados")
+library(dados)
+library(tidyverse)
+```
 
 
 
@@ -119,13 +124,23 @@ knitr::include_graphics("img/Horst/community1.jpg")
 
 - Parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/2020-R-Ladies-SP-Basico/#1) da R-Ladies São Paulo.
 
-- Conteúdo: principais conceitos necessários antes de começar a aprender o `Tidyverse`
-
-```{r echo=FALSE, out.width="70%", fig.align="center"}
+```{r echo=FALSE, out.width="90%", fig.align="center"}
 knitr::include_graphics("img/Horst/data-analysis.jpg")
 
 # Talvez seja interessante procurar em português
 ```
+---
+class: middle
+
+- Conteúdo: principais conceitos necessários antes de começar a aprender o `tidyverse`
+
+- Dados tabulares:
+
+```{r echo=FALSE}
+dados::diamante %>% head() %>%  knitr::kable()
+```
+
+Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.github.io/dados/).
 
 ---
 
@@ -400,12 +415,224 @@ ativo
 
 # COLOCAR UM EXERCÍCIO
 
-
----
-Em desenvolvimento :)
-
 ---
 
+# Tipos básicos de dados
+
+São os tipos básicos de dados que podem ser representados na linguagem R. É neles que guardamos as informações que necessitamos para um algoritmo.
+
+- **Integer**: números inteiros 
+
+- **Double/Numeric**: números racionais 
+
+- **Logical**: tipos lógicos, `TRUE` ou `FALSE` 
+
+- **Character**: texto (sempre entre aspas)
+
+- **Factor**: dados categóricos
+
+
+
+- A função `class()` retorna o tipo do dado.
+
+---
+## Números
+
+- Um número inteiro seguido de `L` será considerado do tipo `integer`:
+
+```{r}
+class(3L)
+```
+- Números racionais serão considerados como `double/numeric`: 
+
+```{r}
+class(3)
+```
+```{r}
+class(3.1)
+```
+
+---
+## Exemplos: Lógicos
+
+- Verdadeiro (`TRUE`) ou Falso (`FALSE`)
+
+```{r}
+class(TRUE)
+```
+
+- O R entende `TRUE` sendo igual a um, e `FALSE` sendo igual a zero. 
+
+- Isso significa que podemos fazer operações matemáticas com eles (como por exemplo somar):
+
+```{r}
+TRUE + TRUE + TRUE + FALSE
+```
+
+---
+
+## Exemplos: Textos
+
+- **Qualquer** código entre aspas será interpretado como texto (`character`):
+
+```{r}
+class("TEXTO")
+```
+```{r}
+escola <- c("Fundamental", "Médio", "Superior")
+
+class(escola)
+```
+
+```{r}
+class("3")
+```
+
+
+---
+## Exemplos: Fatores
+
+```{r}
+# Criando factor
+
+escola_categorias <- factor(c("Fundamental", "Médio", "Superior"))
+
+escola_categorias
+
+class(escola_categorias)
+```
+
+
+A função `as.factor()` cria um objeto do tipo factor, ou converte um objeto existente.
+
+Na linha `levels` aparecem os rótulos do fator.
+
+---
+## Exercícios
+
+1) Tente adivinhar o tipo de dado dos objetos abaixo:
+
+```{r}
+cor_favorita <- "rosa"
+idade <- 27L
+altura <- "1.75"
+peso <- 61.1
+gosta_brocolis <- TRUE
+gosta_carne <- "FALSE"
+```
+
+> a) character, numeric, character, integer, logical, logical
+
+> b) factor, integer, numeric, numeric, character, character
+
+> c) character, integer, character, numeric, logical, character
+
+> d) factor, numeric, numeric, numeric, logical, logical
+
+
+
+2) Use a função `class()` e descubra qual é o tipo dos objetos acima.
+
+---
+
+Resposta do exercício:
+
+```{r}
+class(cor_favorita)
+class(idade)
+class(altura)
+class(peso)
+class(gosta_brocolis)
+class(gosta_carne)
+
+```
+
+---
+
+# NA
+
+Uma característica importante do R que pode dificultar a comparação são os valores ausentes ou **NAs** (não disponíveis). 
+
+**NA** representa um valor desconhecido. 
+
+---
+
+# NA
+
+-  Operações envolvendo um valor desconhecido também será desconhecido:
+
+```{r}
+NA > 10
+10 == NA
+NA + 10
+NA / 2
+```
+
+---
+
+# NA
+
+
+E o mais confuso:
+
+```{r}
+NA == NA
+```
+
+<br></br>
+
+**is.na()** é a função que testa se um objeto é NA.
+
+
+---
+
+# Conversão de classes
+
+Podemos alterar o tipo de dado de um objeto com as funções iniciadas com `as.`:  
+
+
+
+- `as.numeric()`
+
+- `as.integer()`
+
+- `as.logical()`
+
+- `as.character()` 
+
+- `as.factor()` 
+
+
+---
+
+# Conversão de classes
+
+**Exemplos de conversão de classes**
+
+```{r}
+vetor_logical <- c(TRUE, FALSE, TRUE, FALSE)
+
+as.integer(vetor_logical)
+as.numeric(vetor_logical)
+as.character(vetor_logical)
+as.factor(vetor_logical)
+```
+---
+
+# Conversão de classes
+
+**Exemplos de conversão de classes**
+
+```{r}
+frutas <- c("banana", "maça", "melancia")
+
+as.integer(frutas)
+as.numeric(frutas)
+as.character(frutas)
+as.factor(frutas)
+```
+
+---
 class: center, middle
 
 # Obrigada!
