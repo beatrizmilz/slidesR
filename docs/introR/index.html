@@ -8,7 +8,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x06250c778444a39b885f810e4ce3254","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x8f15742322142ffb029f22a366c95b7","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -390,7 +390,9 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 
 ---
 
-# COLOCAR UM EXERCÍCIO
+# Exercício
+
+xxxxxxxx
 
 ---
 
@@ -406,7 +408,7 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 
 ## Atribuindo valor a um objeto no R
 
-- Para atribuir um valor a um objeto no R, utilizamos o operador **&lt;-**  
+- Para atribuir um valor a um objeto no R, utilizamos o operador `&lt;-` 
 
 .center[`nome_do_objeto &lt;- valor`]
 
@@ -481,6 +483,11 @@ ativo
 ---
 
 # COLOCAR UM EXERCÍCIO
+
+---
+# Funções
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 # Operadores Relacionais
@@ -649,7 +656,11 @@ x &lt;- 5
 ```
 ## [1] TRUE
 ```
+---
 
+# Exercício
+
+xxxxxxxx
 
 ---
 
@@ -1070,7 +1081,146 @@ as.factor(frutas)
 
 - Vamos focar em dois:  `vetor` e `data.frame`
 
+---
+# Vetores
 
+- Armazena elementos de mesma classe, apenas uma dimensão.
+
+- São criados usando a função `c()`
+
+- Exemplo:
+
+
+```r
+primeiro_semestre &lt;- c("Janeiro", "Fevereiro", "Março",
+                       "Abril", "Maio", "Junho")
+```
+---
+# Vetores
+
+- Selecionando elementos por índice: utilizar `[]`
+
+
+```r
+primeiro_semestre[1] # primeiro elemento do vetor
+```
+
+```
+## [1] "Janeiro"
+```
+
+```r
+primeiro_semestre[1:2] # primeiro elemento até o segundo
+```
+
+```
+## [1] "Janeiro"   "Fevereiro"
+```
+
+```r
+primeiro_semestre[-1] # remove o elemento 1
+```
+
+```
+## [1] "Fevereiro" "Março"     "Abril"     "Maio"      "Junho"
+```
+
+```r
+primeiro_semestre[6:4] # seleciona o elemento seis até o
+```
+
+```
+## [1] "Junho" "Maio"  "Abril"
+```
+
+```r
+# quatro (e muda a ordem dos elementos)
+```
+
+
+---
+
+# Exercício
+
+xxxxxxxx
+
+
+---
+# Dataframes
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+---
+
+# Exercício
+
+xxxxxxxx
+
+
+---
+# Pacotes no R
+
+**Pacotes** são coleções de funções, dados e documentação que estendem as capacidades do `R` básico.
+
+Eles precisam ser instalados e carregados.
+
+
+&lt;img src="img/icon-packages.jpg" width="45%" style="display: block; margin: auto;" /&gt;
+
+---
+    
+
+
+## Instalação de Pacotes:
+
+- Via CRAN: 
+
+
+`install.packages("nome-do-pacote")`
+
+
+```r
+install.packages("tidyverse")
+```
+
+- Via GitHub:
+
+
+`devtools::install_github("nome-da-org/nome-do-repo)`
+
+
+```r
+devtools::install_github("tidyverse/dplyr")
+```
+
+---
+
+## Carregar pacotes:
+
+-  Função: `library(nome-do-pacote)`
+
+
+```r
+library(tidyverse)
+```
+
+
+## Dicas sobre Pacotes
+
+1. Você só precisa instalar o pacote uma vez, mas precisa carregá-lo sempre que começar uma nova sessão;
+
+2. Para instalar o pacote use as aspas;  
+
+3. Para carregar o pacote, não é necessário utilizar aspas.
+
+---
+background-image: url("img/Horst/tidyverse_celestial.png")
+background-position: center
+background-size: contain
+
+
+
+Ilustração por &lt;a href='https://twitter.com/allison_horst/'&gt; Allison Horst&lt;/a&gt;
 
 
 ---
@@ -1078,7 +1228,9 @@ class: center, middle
 
 # Obrigada!
 
-Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/).
+Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
+
+Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/).
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>

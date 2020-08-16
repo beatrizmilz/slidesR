@@ -356,7 +356,9 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 
 ---
 
-# COLOCAR UM EXERCÍCIO
+# Exercício
+
+xxxxxxxx
 
 ---
 
@@ -372,7 +374,7 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 
 ## Atribuindo valor a um objeto no R
 
-- Para atribuir um valor a um objeto no R, utilizamos o operador **<-**  
+- Para atribuir um valor a um objeto no R, utilizamos o operador `<-` 
 
 .center[`nome_do_objeto <- valor`]
 
@@ -416,6 +418,11 @@ ativo
 ---
 
 # COLOCAR UM EXERCÍCIO
+
+---
+# Funções
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 # Operadores Relacionais
@@ -522,7 +529,11 @@ y <- 1
 x <- 5
 (!x < 4)
 ```
+---
 
+# Exercício
+
+xxxxxxxx
 
 ---
 
@@ -754,7 +765,122 @@ as.factor(frutas)
 
 - Vamos focar em dois:  `vetor` e `data.frame`
 
+---
+# Vetores
 
+- Armazena elementos de mesma classe, apenas uma dimensão.
+
+- São criados usando a função `c()`
+
+- Exemplo:
+
+```{r}
+primeiro_semestre <- c("Janeiro", "Fevereiro", "Março",
+                       "Abril", "Maio", "Junho")
+
+```
+---
+# Vetores
+
+- Selecionando elementos por índice: utilizar `[]`
+
+```{r}
+primeiro_semestre[1] # primeiro elemento do vetor
+
+primeiro_semestre[1:2] # primeiro elemento até o segundo
+
+primeiro_semestre[-1] # remove o elemento 1
+
+primeiro_semestre[6:4] # seleciona o elemento seis até o
+# quatro (e muda a ordem dos elementos)
+
+```
+
+
+---
+
+# Exercício
+
+xxxxxxxx
+
+
+---
+# Dataframes
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+---
+
+# Exercício
+
+xxxxxxxx
+
+
+---
+# Pacotes no R
+
+**Pacotes** são coleções de funções, dados e documentação que estendem as capacidades do `R` básico.
+
+Eles precisam ser instalados e carregados.
+
+
+```{r echo=FALSE, out.width="45%"}
+knitr::include_graphics("img/icon-packages.jpg")
+```
+
+---
+    
+
+
+## Instalação de Pacotes:
+
+- Via CRAN: 
+
+
+`install.packages("nome-do-pacote")`
+
+```{r, include=TRUE, eval = FALSE }
+install.packages("tidyverse")
+```
+
+- Via GitHub:
+
+
+`devtools::install_github("nome-da-org/nome-do-repo)`
+
+```{r, include=TRUE, eval = FALSE }
+devtools::install_github("tidyverse/dplyr")
+```
+
+---
+
+## Carregar pacotes:
+
+-  Função: `library(nome-do-pacote)`
+
+```{r, eval=TRUE, message=FALSE}
+library(tidyverse)
+```
+
+
+## Dicas sobre Pacotes
+
+1. Você só precisa instalar o pacote uma vez, mas precisa carregá-lo sempre que começar uma nova sessão;
+
+2. Para instalar o pacote use as aspas;  
+
+3. Para carregar o pacote, não é necessário utilizar aspas.
+
+---
+background-image: url("img/Horst/tidyverse_celestial.png")
+background-position: center
+background-size: contain
+
+```{r echo=FALSE, out.width="80%"}
+#knitr::include_graphics("img/Horst/tidyverse_celestial.png")
+```
+
+Ilustração por <a href='https://twitter.com/allison_horst/'> Allison Horst</a>
 
 
 ---
@@ -762,4 +888,6 @@ class: center, middle
 
 # Obrigada!
 
-Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/).
+Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
+
+Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/).
