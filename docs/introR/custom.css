@@ -7,3 +7,15 @@ p{
 li{
  font-size: 1.2rem;
 }
+
+
+.destaque{
+  background-color: #ffffff;
+}
+
+.minirodape{
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 60px;
+  padding-right: 4em;
+}

@@ -7,7 +7,7 @@ function addLogo() {
     return
   } else {
   	document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
-    	.forEach(el => el.innerHTML += '<div class="xaringan-extra-logo"></div>')
+    	.forEach(el => el.innerHTML += '<a href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" class="xaringan-extra-logo"></a>')
   }
 }
 document.addEventListener('DOMContentLoaded', addLogo)

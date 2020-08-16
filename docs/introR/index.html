@@ -8,7 +8,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x8f15742322142ffb029f22a366c95b7","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b6ba9fc0d5ac491899a1ccd5b9875216","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -32,10 +32,6 @@ class: center, middle, hide-logo
 
 
 
-
-
-
-
 <style type="text/css">
 .xaringan-extra-logo {
   width: 110px;
@@ -54,39 +50,33 @@ class: center, middle, hide-logo
 
 
 
-
-
-
-
-
 .pull-left[
 
 # Introdução a Linguagem R
 
-### Beatriz Milz
+**Beatriz Milz**
 
 __.can-edit[Meetup R-Ladies Curitiba]__
 
 
 __.can-edit[2º semestre/2020]__
 
-Atualizado em 15 de agosto de 2020
-
-
 
 ]
 
 .pull-right[
 
-&lt;img src="img/Horst/community1.jpg" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/Horst/community1.jpg" width="400px" style="display: block; margin: auto;" /&gt;
 
 &lt;right&gt;Ilustração por &lt;a href='https://twitter.com/allison_horst/'&gt; Allison Horst&lt;/a&gt;&lt;/right&gt;
 
 ]
 
+.minirodape[Atualizado em 16 de agosto de 2020. &lt;br&gt; Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
+
 ---
 
-# Beatriz Milz
+## Beatriz Milz
 - Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) 
   - Instituto de Energia e Ambiente - Universidade de São Paulo
 
@@ -105,13 +95,17 @@ Atualizado em 15 de agosto de 2020
 
 ---
 
-# Sobre esse material
+## Sobre esse material
 
 - Público-alvo: pessoas com interesse em começar a utilizar o R para análise de dados. 
 
 - Parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/2020-R-Ladies-SP-Basico/#1) da R-Ladies São Paulo.
 
-&lt;img src="img/Horst/data-analysis.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/Horst/data-analysis.jpg" width="700px" style="display: block; margin: auto;" /&gt;
+Ilustração por &lt;a href='https://twitter.com/allison_horst/'&gt; Allison Horst&lt;/a&gt;
+
+
+
 ---
 class: middle
 
@@ -133,7 +127,7 @@ Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.
 
 ---
 
-# Pré-requisitos
+## Pré-requisitos
 
 - `R` e `RStudio` instalados no seu computador:
 
@@ -144,9 +138,14 @@ Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.
   - [RStudio](https://rstudio.com/products/rstudio/download/)
 
 
+---
+class: middle, center, inverse
+
+# R e RStudio
+
 
 ---
-# O que é o R?
+## O que é o R?
 
 &gt; "R é um ambiente de software livre para computação estatística e gráficos". (https://www.r-project.org/)
 
@@ -168,80 +167,80 @@ Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.
 
 ---
 
-# RStudio
+## RStudio
 
 **RStudio** é uma IDE (_integrated development environment_) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.
 
-&lt;img src="img/01-rstudio.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/01-rstudio.png" width="700px" style="display: block; margin: auto;" /&gt;
 
 
 ---
-# RStudio
+## RStudio
 
-&lt;img src="img/haydee1.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/haydee1.jpg" width="700px" style="display: block; margin: auto;" /&gt;
 
 Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
 
 ---
 
-# RStudio
+## RStudio
 
-&lt;img src="img/haydee2.jpg" width="100%" style="display: block; margin: auto;" /&gt;
-
-Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
-
----
-
-# RStudio
-
-&lt;img src="img/haydee3.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/haydee2.jpg" width="700px" style="display: block; margin: auto;" /&gt;
 
 Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
 
 ---
 
+## RStudio
 
-# RStudio
-
-&lt;img src="img/haydee4.jpg" width="100%" style="display: block; margin: auto;" /&gt;
-
-Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
-
----
-
-# RStudio
-
-&lt;img src="img/haydee5.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/haydee3.jpg" width="700px" style="display: block; margin: auto;" /&gt;
 
 Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
 
 ---
 
 
-# RStudio
+## RStudio
 
-&lt;img src="img/haydee6.jpg" width="100%" style="display: block; margin: auto;" /&gt;
-
-Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
-
----
-# RStudio
-
-&lt;img src="img/haydee7.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/haydee4.jpg" width="700px" style="display: block; margin: auto;" /&gt;
 
 Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
 
 ---
-# RStudio
+
+## RStudio
+
+&lt;img src="img/haydee5.jpg" width="700px" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+
+
+## RStudio
+
+&lt;img src="img/haydee6.jpg" width="700px" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+## RStudio
+
+&lt;img src="img/haydee7.jpg" width="700px" style="display: block; margin: auto;" /&gt;
+
+Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
+
+---
+## RStudio
   
 
-&lt;img src="img/haydee8.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/haydee8.jpg" width="700px" style="display: block; margin: auto;" /&gt;
 
 Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
 
 ---
 
-# Help!
+## Help!
 
 - Pedir ajuda: **help**(nome_da_funcao) ou **?**nome_da_funcao.
 
@@ -256,18 +255,24 @@ help(sum)
 
 - E se ainda tiver dúvidas, pergunte para a comunidade (há grupos no Telegram e outras redes sociais).
 
----
 
-# Começando
+---
+class: middle, center, inverse
+
+# Começando! 
+
+---
+## Começando
 
 - Abrir o `RStudio` no seu computador 
 
 - Crie um novo `R` script (file -&gt; new file -&gt; `R` script)
 
-&lt;img src="img/01-rstudio-script.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/01-rstudio-script.png" width="700px" style="display: block; margin: auto;" /&gt;
+
 ---
 
-# `R` como calculadora
+## `R` como calculadora
 
 - O `R` permite realizar muitas operações aritméticas em seu console!
 
@@ -311,7 +316,7 @@ help(sum)
 ---
 
 
-# `R` como calculadora
+- **`R` como calculadora**
 
 
 ```r
@@ -351,7 +356,7 @@ A ordem matemática das operações também vale no R.
 ---
 
 
-# Funções matemáticas
+## Funções matemáticas
 
 
 ```r
@@ -390,13 +395,13 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 
 ---
 
-# Exercício
+## Exercícios
 
 xxxxxxxx
 
 ---
 
-# O que é um objeto?
+## O que é um objeto?
 
 - Ao se desenvolver um projeto, você irá trabalhar com diversos tipos de arquivos, além de informações que serão repetidas ao longo do script.
 
@@ -470,7 +475,7 @@ ativo
 
 
 ---
-# Nomes de objetos
+## Nomes de objetos
 
 - Os nomes devem começar com uma letra. Podem conter letras, números, _ e .
 
@@ -482,15 +487,21 @@ ativo
 
 ---
 
-# COLOCAR UM EXERCÍCIO
+## COLOCAR UM EXERCÍCIO
 
 ---
-# Funções
+## Funções
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
-# Operadores Relacionais
+class: middle, center, inverse
+
+# Operadores Relacionais e Lógicos
+
+
+---
+## Operadores Relacionais
 
 - Igual a: **==** 
 
@@ -505,10 +516,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - Menor ou igual: **&lt;=** 
 
 ---
-   
-
-
-#  Operadores Relacionais
+##  Operadores Relacionais
 
 Igual a: **==**
 
@@ -527,10 +535,9 @@ TRUE == FALSE
 ```
 ## [1] FALSE
 ```
+
 ---
-
-
-# Operadores Relacionais
+## Operadores Relacionais
 
 Diferente de **!=**
 
@@ -549,9 +556,10 @@ TRUE != FALSE
 ```
 ## [1] TRUE
 ```
+
 ---
 
-#  Operadores Relacionais
+##  Operadores Relacionais
 
 Menor que: **&lt;**
 
@@ -585,7 +593,7 @@ Maior que: **&gt;=**
 
 ---
 
-# Operadores Lógicos
+## Operadores Lógicos
 
 - E: **&amp;**
 
@@ -611,9 +619,11 @@ y &lt;- 2
 ```
 ## [1] FALSE
 ```
+
+
 ---
 
-# Operadores Lógicos
+## Operadores Lógicos
 
 - OU: **|**
 
@@ -640,9 +650,10 @@ y &lt;- 1
 ```
 ## [1] FALSE
 ```
+
 ---
 
-# Operadores Lógicos
+## Operadores Lógicos
 
 - Negação: **!** 
 
@@ -656,15 +667,21 @@ x &lt;- 5
 ```
 ## [1] TRUE
 ```
+
 ---
 
-# Exercício
+## Exercício
 
 xxxxxxxx
 
 ---
+class: middle, center, inverse
 
 # Tipos básicos de dados
+
+---
+
+## Tipos básicos de dados
 
 São os tipos básicos de dados que podem ser representados na linguagem R. É neles que guardamos as informações que necessitamos para um algoritmo.
 
@@ -715,7 +732,7 @@ class(3.1)
 ```
 
 ---
-## Exemplos: Lógicos
+## Lógicos
 
 - Verdadeiro (`TRUE`) ou Falso (`FALSE`)
 
@@ -743,7 +760,7 @@ TRUE + TRUE + TRUE + FALSE
 
 ---
 
-## Exemplos: Textos
+##  Textos
 
 - **Qualquer** código entre aspas será interpretado como texto (`character`):
 
@@ -777,7 +794,7 @@ class("3")
 
 
 ---
-## Exemplos: Fatores
+##  Fatores
 
 
 ```r
@@ -809,7 +826,7 @@ Na linha `levels` aparecem os rótulos do fator.
 ---
 ## Exercícios
 
-1) Tente adivinhar o tipo de dado dos objetos abaixo:
+1) Primeiro, tente adivinhar o tipo de dado dos objetos abaixo: 
 
 
 ```r
@@ -820,15 +837,6 @@ peso &lt;- 61.1
 gosta_brocolis &lt;- TRUE
 gosta_carne &lt;- "FALSE"
 ```
-
-&gt; a) character, numeric, character, integer, logical, logical
-
-&gt; b) factor, integer, numeric, numeric, character, character
-
-&gt; c) character, integer, character, numeric, logical, character
-
-&gt; d) factor, numeric, numeric, numeric, logical, logical
-
 
 
 2) Use a função `class()` e descubra qual é o tipo dos objetos acima.
@@ -888,7 +896,7 @@ class(gosta_carne)
 
 ---
 
-# NA
+## NA
 
 Uma característica importante do R que pode dificultar a comparação são os valores ausentes ou **NAs** (não disponíveis). 
 
@@ -896,7 +904,7 @@ Uma característica importante do R que pode dificultar a comparação são os v
 
 ---
 
-# NA
+## NA
 
 -  Operações envolvendo um valor desconhecido também será desconhecido:
 
@@ -935,7 +943,7 @@ NA / 2
 
 ---
 
-# NA
+## NA
 
 
 
@@ -950,7 +958,7 @@ NA == NA
 
 ---
 
-# NA
+## NA
 
 `is.na()` é a função que testa se um objeto é NA.
 
@@ -975,7 +983,7 @@ is.na(vetor_logico)
 
 ---
 
-# Conversão de classes
+## Conversão de classes
 
 Podemos alterar o tipo de dado de um objeto com as funções iniciadas com `as.`:  
 
@@ -994,7 +1002,7 @@ Podemos alterar o tipo de dado de um objeto com as funções iniciadas com `as.`
 
 ---
 
-# Conversão de classes
+## Conversão de classes
 
 **Exemplos de conversão de classes**
 
@@ -1033,9 +1041,10 @@ as.factor(vetor_logical)
 ## [1] TRUE  FALSE TRUE  FALSE
 ## Levels: FALSE TRUE
 ```
+
 ---
 
-# Conversão de classes
+## Conversão de classes
 
 **Exemplos de conversão de classes**
 
@@ -1074,15 +1083,23 @@ as.factor(frutas)
 ## [1] banana   maça     melancia
 ## Levels: banana maça melancia
 ```
+
 ---
+class: middle, center, inverse
+
 # Tipos de objetos
+
+
+---
+
+## Tipos de objetos
 
 - No R, os 4 principais tipos de dados são: `vetor`, `matriz`, `lista`, `data.frame`
 
 - Vamos focar em dois:  `vetor` e `data.frame`
 
 ---
-# Vetores
+## Vetores
 
 - Armazena elementos de mesma classe, apenas uma dimensão.
 
@@ -1095,8 +1112,9 @@ as.factor(frutas)
 primeiro_semestre &lt;- c("Janeiro", "Fevereiro", "Março",
                        "Abril", "Maio", "Junho")
 ```
+
 ---
-# Vetores
+## Vetores
 
 - Selecionando elementos por índice: utilizar `[]`
 
@@ -1140,32 +1158,38 @@ primeiro_semestre[6:4] # seleciona o elemento seis até o
 
 ---
 
-# Exercício
+## Exercício
 
 xxxxxxxx
 
 
 ---
-# Dataframes
+## Dataframes
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
-# Exercício
+## Exercício
 
 xxxxxxxx
 
+---
+class: middle, center, inverse
+
+# Pacotes no R
+
+
 
 ---
-# Pacotes no R
+## Pacotes no R
 
 **Pacotes** são coleções de funções, dados e documentação que estendem as capacidades do `R` básico.
 
 Eles precisam ser instalados e carregados.
 
 
-&lt;img src="img/icon-packages.jpg" width="45%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/icon-packages.jpg" width="400px" style="display: block; margin: auto;" /&gt;
 
 ---
     
@@ -1216,11 +1240,11 @@ library(tidyverse)
 ---
 background-image: url("img/Horst/tidyverse_celestial.png")
 background-position: center
-background-size: contain
+background-size: cover
 
 
 
-Ilustração por &lt;a href='https://twitter.com/allison_horst/'&gt; Allison Horst&lt;/a&gt;
+.destaque[Ilustração por &lt;a href='https://twitter.com/allison_horst/'&gt; Allison Horst&lt;/a&gt;]
 
 
 ---

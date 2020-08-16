@@ -35,32 +35,26 @@ style_duo_accent(
 ```{r xaringanExtra, echo=FALSE}
 #devtools::install_github("gadenbuie/xaringanExtra")
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
-```
 
-```{r xaringan-editable, echo=FALSE}
 xaringanExtra::use_editable(expires = 1)
-```
 
-```{r xaringan-logo, echo=FALSE}
 xaringanExtra::use_logo(
-  image_url = "img/rainbow-inclusive.png"
+  image_url = "img/rainbow-inclusive.png",
+  link_url = "https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil"
 )
-```
 
-```{r xaringanExtra-clipboard, echo=FALSE}
 xaringanExtra::use_clipboard()
-```
 
-```{r xaringan-fit-screen, echo=FALSE}
 xaringanExtra::use_fit_screen()
-```
 
-```{r xaringan-extra-styles, echo=FALSE}
 xaringanExtra::use_extra_styles(
   hover_code_line = TRUE,         #<<
   mute_unhighlighted_code = TRUE  #<<
 )
+
+
 ```
+
 
 ```{r include=FALSE}
 # remotes::install_github("cienciadedatos/dados")
@@ -76,22 +70,19 @@ library(glosario)
 
 # Introdução a Linguagem R
 
-### Beatriz Milz
+**Beatriz Milz**
 
 __.can-edit[Meetup R-Ladies Curitiba]__
 
 
 __.can-edit[2º semestre/2020]__
 
-Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`
-
-
 
 ]
 
 .pull-right[
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="400px"}
 knitr::include_graphics("img/Horst/community1.jpg")
 ```
 
@@ -99,9 +90,11 @@ knitr::include_graphics("img/Horst/community1.jpg")
 
 ]
 
+.minirodape[Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`. <br> Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
+
 ---
 
-# Beatriz Milz
+## Beatriz Milz
 - Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) 
   - Instituto de Energia e Ambiente - Universidade de São Paulo
 
@@ -120,17 +113,21 @@ knitr::include_graphics("img/Horst/community1.jpg")
 
 ---
 
-# Sobre esse material
+## Sobre esse material
 
 - Público-alvo: pessoas com interesse em começar a utilizar o R para análise de dados. 
 
 - Parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/2020-R-Ladies-SP-Basico/#1) da R-Ladies São Paulo.
 
-```{r echo=FALSE, out.width="90%", fig.align="center"}
+```{r echo=FALSE, out.width="700px", fig.align="center"}
 knitr::include_graphics("img/Horst/data-analysis.jpg")
 
 # Talvez seja interessante procurar em português
 ```
+Ilustração por <a href='https://twitter.com/allison_horst/'> Allison Horst</a>
+
+
+
 ---
 class: middle
 
@@ -146,7 +143,7 @@ Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.
 
 ---
 
-# Pré-requisitos
+## Pré-requisitos
 
 - `R` e `RStudio` instalados no seu computador:
 
@@ -159,9 +156,14 @@ knitr::include_graphics("img/rstudio-r.jpg")
   - [RStudio](https://rstudio.com/products/rstudio/download/)
 
 
+---
+class: middle, center, inverse
+
+# R e RStudio
+
 
 ---
-# O que é o R?
+## O que é o R?
 
 > "R é um ambiente de software livre para computação estatística e gráficos". (https://www.r-project.org/)
 
@@ -183,19 +185,19 @@ knitr::include_graphics("img/rstudio-r.jpg")
 
 ---
 
-# RStudio
+## RStudio
 
 **RStudio** é uma IDE (_integrated development environment_) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.
 
-```{r echo=FALSE, out.width="80%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/01-rstudio.png")
 ```
 
 
 ---
-# RStudio
+## RStudio
 
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/haydee1.jpg")
 ```
 
@@ -203,9 +205,9 @@ Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-
 
 ---
 
-# RStudio
+## RStudio
 
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/haydee2.jpg")
 ```
 
@@ -213,9 +215,9 @@ Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-
 
 ---
 
-# RStudio
+## RStudio
 
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/haydee3.jpg")
 ```
 
@@ -224,9 +226,9 @@ Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-
 ---
 
 
-# RStudio
+## RStudio
 
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/haydee4.jpg")
 ```
 
@@ -234,9 +236,9 @@ Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-
 
 ---
 
-# RStudio
+## RStudio
 
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/haydee5.jpg")
 ```
 
@@ -245,28 +247,28 @@ Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-
 ---
 
 
-# RStudio
+## RStudio
 
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/haydee6.jpg")
 ```
 
 Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
 
 ---
-# RStudio
+## RStudio
 
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/haydee7.jpg")
 ```
 
 Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-de-dados-primeiros-passos-com-r)
 
 ---
-# RStudio
+## RStudio
   
 
-```{r echo=FALSE, out.width="100%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/haydee8.jpg")
 ```
 
@@ -274,7 +276,7 @@ Fonte: [Haydee Svab](https://www.slideshare.net/mobile/haydeesvab/anlise-crtica-
 
 ---
 
-# Help!
+## Help!
 
 - Pedir ajuda: **help**(nome_da_funcao) ou **?**nome_da_funcao.
 
@@ -288,20 +290,26 @@ help(sum)
 
 - E se ainda tiver dúvidas, pergunte para a comunidade (há grupos no Telegram e outras redes sociais).
 
----
 
-# Começando
+---
+class: middle, center, inverse
+
+# Começando! 
+
+---
+## Começando
 
 - Abrir o `RStudio` no seu computador 
 
 - Crie um novo `R` script (file -> new file -> `R` script)
 
-```{r echo=FALSE, out.width="80%"}
+```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/01-rstudio-script.png")
 ```
+
 ---
 
-# `R` como calculadora
+## `R` como calculadora
 
 - O `R` permite realizar muitas operações aritméticas em seu console!
 
@@ -322,7 +330,7 @@ knitr::include_graphics("img/01-rstudio-script.png")
 ---
 
 
-# `R` como calculadora
+- **`R` como calculadora**
 
 ```{r}
 9 %% 4   # resto da divisão de 9 por 4
@@ -339,7 +347,7 @@ A ordem matemática das operações também vale no R.
 ---
 
 
-# Funções matemáticas
+## Funções matemáticas
 
 ```{r}
 sin(1)  # funções trigonométricas
@@ -356,13 +364,13 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 
 ---
 
-# Exercício
+## Exercícios
 
 xxxxxxxx
 
 ---
 
-# O que é um objeto?
+## O que é um objeto?
 
 - Ao se desenvolver um projeto, você irá trabalhar com diversos tipos de arquivos, além de informações que serão repetidas ao longo do script.
 
@@ -405,7 +413,7 @@ ativo
 
 
 ---
-# Nomes de objetos
+## Nomes de objetos
 
 - Os nomes devem começar com uma letra. Podem conter letras, números, _ e .
 
@@ -417,15 +425,21 @@ ativo
 
 ---
 
-# COLOCAR UM EXERCÍCIO
+## COLOCAR UM EXERCÍCIO
 
 ---
-# Funções
+## Funções
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
-# Operadores Relacionais
+class: middle, center, inverse
+
+# Operadores Relacionais e Lógicos
+
+
+---
+## Operadores Relacionais
 
 - Igual a: **==** 
 
@@ -440,10 +454,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - Menor ou igual: **<=** 
 
 ---
-   
-
-
-#  Operadores Relacionais
+##  Operadores Relacionais
 
 Igual a: **==**
 ```{r}
@@ -451,10 +462,9 @@ TRUE == TRUE
 
 TRUE == FALSE
 ```
+
 ---
-
-
-# Operadores Relacionais
+## Operadores Relacionais
 
 Diferente de **!=**
 ```{r}
@@ -462,9 +472,10 @@ TRUE != TRUE
 
 TRUE != FALSE
 ```
+
 ---
 
-#  Operadores Relacionais
+##  Operadores Relacionais
 
 Menor que: **<**
 ```{r}
@@ -483,7 +494,7 @@ Maior que: **>=**
 
 ---
 
-# Operadores Lógicos
+## Operadores Lógicos
 
 - E: **&**
 
@@ -499,9 +510,11 @@ y <- 2
 
  y >= 3 & y <= 7
 ```
+
+
 ---
 
-# Operadores Lógicos
+## Operadores Lógicos
 
 - OU: **|**
 
@@ -518,9 +531,10 @@ y <- 1
 
  y >= 3 | y == 0
 ```
+
 ---
 
-# Operadores Lógicos
+## Operadores Lógicos
 
 - Negação: **!** 
 
@@ -529,15 +543,21 @@ y <- 1
 x <- 5
 (!x < 4)
 ```
+
 ---
 
-# Exercício
+## Exercício
 
 xxxxxxxx
 
 ---
+class: middle, center, inverse
 
 # Tipos básicos de dados
+
+---
+
+## Tipos básicos de dados
 
 São os tipos básicos de dados que podem ser representados na linguagem R. É neles que guardamos as informações que necessitamos para um algoritmo.
 
@@ -573,7 +593,7 @@ class(3.1)
 ```
 
 ---
-## Exemplos: Lógicos
+## Lógicos
 
 - Verdadeiro (`TRUE`) ou Falso (`FALSE`)
 
@@ -591,7 +611,7 @@ TRUE + TRUE + TRUE + FALSE
 
 ---
 
-## Exemplos: Textos
+##  Textos
 
 - **Qualquer** código entre aspas será interpretado como texto (`character`):
 
@@ -610,7 +630,7 @@ class("3")
 
 
 ---
-## Exemplos: Fatores
+##  Fatores
 
 ```{r}
 # Criando factor
@@ -630,7 +650,7 @@ Na linha `levels` aparecem os rótulos do fator.
 ---
 ## Exercícios
 
-1) Tente adivinhar o tipo de dado dos objetos abaixo:
+1) Primeiro, tente adivinhar o tipo de dado dos objetos abaixo: 
 
 ```{r}
 cor_favorita <- "rosa"
@@ -640,15 +660,6 @@ peso <- 61.1
 gosta_brocolis <- TRUE
 gosta_carne <- "FALSE"
 ```
-
-> a) character, numeric, character, integer, logical, logical
-
-> b) factor, integer, numeric, numeric, character, character
-
-> c) character, integer, character, numeric, logical, character
-
-> d) factor, numeric, numeric, numeric, logical, logical
-
 
 
 2) Use a função `class()` e descubra qual é o tipo dos objetos acima.
@@ -669,7 +680,7 @@ class(gosta_carne)
 
 ---
 
-# NA
+## NA
 
 Uma característica importante do R que pode dificultar a comparação são os valores ausentes ou **NAs** (não disponíveis). 
 
@@ -677,7 +688,7 @@ Uma característica importante do R que pode dificultar a comparação são os v
 
 ---
 
-# NA
+## NA
 
 -  Operações envolvendo um valor desconhecido também será desconhecido:
 
@@ -690,7 +701,7 @@ NA / 2
 
 ---
 
-# NA
+## NA
 
 
 ```{r}
@@ -700,7 +711,7 @@ NA == NA
 
 ---
 
-# NA
+## NA
 
 `is.na()` é a função que testa se um objeto é NA.
 
@@ -713,7 +724,7 @@ is.na(vetor_logico)
 
 ---
 
-# Conversão de classes
+## Conversão de classes
 
 Podemos alterar o tipo de dado de um objeto com as funções iniciadas com `as.`:  
 
@@ -732,7 +743,7 @@ Podemos alterar o tipo de dado de um objeto com as funções iniciadas com `as.`
 
 ---
 
-# Conversão de classes
+## Conversão de classes
 
 **Exemplos de conversão de classes**
 
@@ -744,9 +755,10 @@ as.numeric(vetor_logical)
 as.character(vetor_logical)
 as.factor(vetor_logical)
 ```
+
 ---
 
-# Conversão de classes
+## Conversão de classes
 
 **Exemplos de conversão de classes**
 
@@ -758,15 +770,23 @@ as.numeric(frutas)
 as.character(frutas)
 as.factor(frutas)
 ```
+
 ---
+class: middle, center, inverse
+
 # Tipos de objetos
+
+
+---
+
+## Tipos de objetos
 
 - No R, os 4 principais tipos de dados são: `vetor`, `matriz`, `lista`, `data.frame`
 
 - Vamos focar em dois:  `vetor` e `data.frame`
 
 ---
-# Vetores
+## Vetores
 
 - Armazena elementos de mesma classe, apenas uma dimensão.
 
@@ -779,8 +799,9 @@ primeiro_semestre <- c("Janeiro", "Fevereiro", "Março",
                        "Abril", "Maio", "Junho")
 
 ```
+
 ---
-# Vetores
+## Vetores
 
 - Selecionando elementos por índice: utilizar `[]`
 
@@ -799,32 +820,38 @@ primeiro_semestre[6:4] # seleciona o elemento seis até o
 
 ---
 
-# Exercício
+## Exercício
 
 xxxxxxxx
 
 
 ---
-# Dataframes
+## Dataframes
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
-# Exercício
+## Exercício
 
 xxxxxxxx
 
+---
+class: middle, center, inverse
+
+# Pacotes no R
+
+
 
 ---
-# Pacotes no R
+## Pacotes no R
 
 **Pacotes** são coleções de funções, dados e documentação que estendem as capacidades do `R` básico.
 
 Eles precisam ser instalados e carregados.
 
 
-```{r echo=FALSE, out.width="45%"}
+```{r echo=FALSE, out.width="400px"}
 knitr::include_graphics("img/icon-packages.jpg")
 ```
 
@@ -874,13 +901,11 @@ library(tidyverse)
 ---
 background-image: url("img/Horst/tidyverse_celestial.png")
 background-position: center
-background-size: contain
+background-size: cover
 
-```{r echo=FALSE, out.width="80%"}
-#knitr::include_graphics("img/Horst/tidyverse_celestial.png")
-```
 
-Ilustração por <a href='https://twitter.com/allison_horst/'> Allison Horst</a>
+
+.destaque[Ilustração por <a href='https://twitter.com/allison_horst/'> Allison Horst</a>]
 
 
 ---
