@@ -14,6 +14,8 @@ Este repositório tem como objetivo oferecer alguns conteúdos sobre R. Anterior
   
   - __Introdução ao R__ - primeira versão __em desenvolvimento__ [aqui](https://beatrizmilz.github.io/slidesR/introR/index.html).
   
+    - __Utilizando o Git e GitHub no RStudio__ - primeira versão __em desenvolvimento__ [aqui](https://beatrizmilz.github.io/slidesR/git_rstudio/index.html).
+  
   - __Rmarkdown__
 
     - Rmarkdown - parte 1: primeira versão __em desenvolvimento__ [aqui](https://beatrizmilz.github.io/slidesR/rmarkdown/index.html).

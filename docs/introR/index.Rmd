@@ -113,7 +113,7 @@ knitr::include_graphics("img/Horst/community1.jpg")
 
 ---
 
-## Sobre esse material
+## Sobre este material
 
 - Público-alvo: pessoas com interesse em começar a utilizar o R para análise de dados. 
 

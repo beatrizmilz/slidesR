@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Git e RStudio</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Beatriz Milz" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xac15ea0816347c5a04fd63fa4aefc3e","expires":1}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
+    <script src="libs/xaringanExtra-logo/logo.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, hide-logo
+
+
+
+
+
+<style type="text/css">
+.xaringan-extra-logo {
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+  background-image: url('img/rainbow-inclusive.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:1em;right:1em;
+}
+</style>
+
+
+
+
+
+
+
+
+# Utilizando o Git e GitHub no RStudio
+
+**Beatriz Milz**
+
+__.can-edit[Meetup R-Ladies GYN]__
+
+
+__.can-edit[2º semestre/2020]__
+
+
+
+.minirodape[Atualizado em 16 de agosto de 2020. &lt;br&gt; Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
+
+---
+
+## Beatriz Milz
+- Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) 
+  - Instituto de Energia e Ambiente - Universidade de São Paulo
+
+- Equipe da Secretaria Executiva  Editorial - [Revista Ambiente &amp; Sociedade](http://scielo.br/asoc)
+
+- Co-organizadora: [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) 💜, [satRday São Paulo](https://twitter.com/satRdaySP)
+
+- Comitê organizador: [LatinR](https://twitter.com/LatinR_Conf) e [useR! 2021](https://user2021.r-project.org/)
+
+- Saiba mais: [Currículo](https://beatrizmilz.github.io/resume/resume.pdf), [Website](https://beatrizmilz.com)
+
+- Anteriormente: 
+  - Mestre em Ciências - UNIFESP; 
+  - Bacharel em Gestão Ambiental - EACH/USP
+  
+---
+
+## Sobre este material
+
+- **Público-alvo:** pessoas que utilizam o R para análise de dados, tem um conhecimento básico sobre Git e GitHub e querem utilizar essas ferramentas diretamente do RStudio. 
+
+- Partindo do ponto que: 
+  - Você já conhece os conceitos básicos de Git
+  - Você já sabe porque é interessante usar Git
+
+
+- A maior parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/RLadies-Git-RStudio-2019/#1), oferecido por mim em um meetup da R-Ladies São Paulo em Setembro/2019.
+
+---
+
+## Comentários importantes
+
+- Você pode usar o Git através da [linha de comando](https://git-scm.com/), ou usando interfaces gráficas como  [GitHub Desktop](https://desktop.github.com/), [Sourcetree](https://www.sourcetreeapp.com/), RStudio, etc. Aqui apresento com o RStudio, mas escolha o que é mais confortável para você :)
+
+- Independente de qual ferramenta você escolher, é importante qual comando do Git equivale a um botão no RStudio (ou outro software, o importante é entender as equivalências!).
+
+- Ideias para melhorar:
+  - Colocar um lembrete dos principais comandos do git
+  - Mostrar o que fazer depois que alguém faz uma revisão do seu PR
+  - Como disponibilizar algo no GitHub
+
+---
+class: middle, center, inverse
+
+# Pré-requisitos
+
+---
+class: middle
+
+.pull-left[
+## R 
+  - [Download neste link](https://cran.r-project.org/)
+  - Use a versão mais recente 😉
+
+
+  
+]
+
+.pull-right[
+&lt;img src="img/R_logo.svg.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+class:middle
+
+&lt;img src="img/prints/install_R.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle
+
+
+.pull-left[
+## RStudio
+  - [Download neste link](https://www.rstudio.com/products/rstudio/download/)
+  - Use a versão mais recente 😉
+  
+
+  
+]
+
+.pull-right[
+&lt;img src="img/rstudio.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: middle
+
+&lt;img src="img/prints/install_RStudio.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+
+.pull-left[
+## Conta no GitHub
+  - [Neste link](https://github.com/)
+  - Caso já tenha, não é preciso criar uma nova conta.
+  
+  
+  - Se for estudante: 
+    - [GitHub Student Developer Pack](https://education.github.com/pack) - utiliza email institucional da universidade.
+  
+]
+
+.pull-right[
+&lt;img src="img/github-logo.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+class: middle
+
+.pull-left[
+
+## Git 
+  - [Download neste link](https://git-scm.com/downloads)
+
+  
+
+]
+
+
+.pull-right[
+&lt;img src="https://git-scm.com/images/logo@2x.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class:middle
+
+&lt;img src="img/prints/install-git.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle
+
+
+## Instalação de pacotes
+
+- Instalar o Pacote [`usethis`](https://usethis.r-lib.org/)
+
+
+```r
+install.packages("usethis")
+library(usethis)
+```
+
+&lt;img src="https://usethis.r-lib.org/reference/figures/logo.png" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle, center, inverse
+
+# Configurando o Git
+
+---
+class: middle
+
+## Configurando o Git
+
+- É necessário fazer apenas uma vez (por computador)!
+
+- Duas possibilidades: no Git, ou no RStudio.
+
+- Informar para o Git seu nome, e email.
+
+- Utilize o mesmo email associado à sua conta do GitHub.
+
+  - No RStudio:
+
+
+```r
+usethis::use_git_config(# Seu nome
+                        user.name = "Beatriz Milz", 
+                        # Seu email
+                        user.email = "beatriz.milz@hotmail.com") 
+```
+
+---
+class: middle
+
+## Configurando o Git
+
+- No Git:
+
+
+```git
+$ git config --global user.name "Beatriz Milz"
+
+
+$ git config --global user.email beatriz.milz@hotmail.com
+```
+
+
+
+
+&lt;img src="img/prints/configurar_git.PNG" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+class: middle, center, inverse
+
+# Configurando o GitHub no RStudio
+
+---
+class: middle
+
+## Configurando o GitHub + RStudio
+
+- Criar um novo token no GitHub:
+
+
+```r
+usethis::browse_github_token()
+# ✔ Opening URL 'https://github.com/settings/tokens/new?scopes=repo,gist&amp;description=R:GITHUB_PAT'
+# ● Call `usethis::edit_r_environ()` to open '.Renviron'.
+# ● Store your PAT with a line like:
+*#   GITHUB_PAT=xxxyyyzzz
+#   [Copied to clipboard]
+# ● Make sure '.Renviron' ends with a newline!
+```
+
+- Uma página do GitHub irá abrir, com as configurações necessárias. Você pode alterar o nome do token, para saber em qual computador está vinculando. Crie o novo token.
+
+---
+class: middle  
+
+- Exemplo:
+
+&lt;img src="img/gifs/browse-github-token2.gif" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+- Copie o token gerado:
+
+&lt;img src="img/prints/copy-token.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+- Abra o arquivo `.Renviron`:
+
+```r
+usethis::edit_r_environ()
+# ● Modify 'C:/Users/beatr/Documents/.Renviron'
+# ● Restart R for changes to take effect
+```
+
+- Crie uma nova linha na forma `GITHUB_PAT=SEU_TOKEN`, adicione o token, pule uma linha e salve o arquivo.
+&lt;img src="img/prints/githubpath.png" width="60%" style="display: block; margin: auto;" /&gt;
+- **Reinicie o RStudio**:  CTRL + SHIFT + F10
+
+---
+class: middle, center, inverse
+
+# Interface gráfica do RStudio
+
+---
+class: middle
+
+## Interface Gráfica RStudio
+
+- O RStudio oferece um cliente Git **simples**, na aba "Git" (em inglês, é chamado de Git Pane).
+
+- Esse painel somente aparecerá em projetos que estejam versionados com Git.
+
+&lt;img src="img/prints/git-pane.PNG" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+## Interface Gráfica RStudio
+
+&lt;img src="img/prints/cheatsheet.PNG" width="95%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [RStudio Cheatsheet](https://www.rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf)
+
+---
+class: middle
+
+## Branch
+
+&lt;img src="img/prints/git-pane-branch.png" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+## Botão Diff -&gt; Review changes
+
+&lt;img src="img/prints/git-pane-diff.PNG" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+## Botão 🕒 (history) -&gt; Review changes
+
+&lt;img src="img/prints/git-pane-history.PNG" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle
+
+## Git pane - Staged  ✅
+
+&lt;img src="img/prints/git-pane-stage.png" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+## Git pane - Commit
+
+&lt;img src="img/prints/git-pane-commit.PNG" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+## Git pane - Commit
+
+&lt;img src="img/prints/git_commit.PNG" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+class: middle, center, inverse
+
+# Trabalhando com projetos no RStudio + GitHub
+
+---
+## Método 1
+
+- **Clonando um repositório do GitHub**
+
+- Crie um repositório no GitHub, ou abra a página de um repositório já existente.
+
+- No RStudio, crie um novo projeto: File &gt; New Project 
+.pull-left[
+- Na aba "Create Project", selecione a opção **Version Control**.
+
+&lt;img src="img/prints/proj-version-control-1.PNG" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+- Na aba "Create Project from Version Control", selecione a opção **Git**.
+&lt;img src="img/prints/proj-version-control-2.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+
+---
+- Na aba "Clone Git Repository":
+  - **Repository URL**: Cole o link para o repositório
+  - **Project directory name**: Após inserir o repository URL, esse campo será preenchido automaticamente.
+  - **Create project as subdirectory of**: Selecione o diretório onde você deseja manter sua cópia local do repositório.
+&lt;img src="img/prints/proj-version-control-3.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+- O **RStudio** irá fazer o clone do repositório, e abrirá um RProj para ele (caso não exista um ainda, será criado).
+
+---
+
+## Método 2
+
+- **Criando um repositório novo, diretamente do RStudio**
+
+- Vamos usar a função `create_project()` 
+  - Cria um projeto `.Rproj`
+  - Argumento importante: `path = ` 	É o "caminho" para o diretório (pasta). Se o diretório já existe, é utilizado. Se não existe, é criado. 
+  - Cuidado com o nome do projeto, pois será o mesmo nome que será utilizado no repositório. Você não deve usar o nome de algum repositório já existente no seu GitHub.
+
+---
+
+### Criando um projeto
+- No meu caso, tenho o hábito de deixar todos os repositórios do GitHub, na pasta `GitHub/`. No exemplo abaixo, dentro da pasta GitHub, criei o projeto chamado Teste-MeetupR. Esse será o nome da pasta criada e posteriormente do repositório no GitHub.
+
+
+```r
+usethis::create_project("GitHub/Teste-MeetupR") 
+# ✔ Creating 'GitHub/Teste-MeetupR/'
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/Teste-MeetupR'
+# ✔ Creating 'R/'
+# ✔ Writing 'Teste-MeetupR.Rproj'
+# ✔ Adding '.Rproj.user' to '.gitignore'
+# ✔ Opening 'GitHub/Teste-MeetupR/' in new RStudio session
+# ✔ Setting active project to '&lt;no active project&gt;'
+```
+- O RStudio abrirá outra janela, com o novo projeto criado.
+
+---
+### Novo projeto criado! 
+
+- Projeto ✔️
+
+- Git ❌
+
+- GitHub ❌
+
+&lt;img src="img/prints/novo_projeto.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+usethis::use_git()
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/Teste-MeetupR'
+# ✔ Initialising Git repo
+# ✔ Adding '.Rhistory', '.RData' to '.gitignore'
+# There are 2 uncommitted files:
+# * '.gitignore'
+# * 'Teste-MeetupR.Rproj'
+# Is it ok to commit them?
+# 
+*# 1: Absolutely  
+# 2: Negative
+# 3: No
+# 
+# Selection: 1
+# ✔ Adding files
+# ✔ Commit with message 'Initial commit'
+# ● A restart of RStudio is required to activate the Git pane
+# Restart now?
+# 
+# 1: No way
+*# 2: For sure
+# 3: Negative
+# 
+# Selection: 2
+```
+
+- O RStudio irá reiniciar para que apareça o painel do Git
+
+---
+### Usando Git
+
+- Projeto ✔️
+
+- Git ✔️
+
+- GitHub ❌
+
+&lt;img src="img/prints/novo_projeto_com_git.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+```r
+usethis::use_github()
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/Teste-MeetupR'
+# ✔ Checking that current branch is 'master'
+# Which git protocol to use? (enter 0 to exit) 
+# 
+# 1: ssh   &lt;-- presumes that you have set up ssh keys
+*# 2: https &lt;-- choose this if you don't have ssh keys (or don't know if you do)
+# 
+# Selection: 2
+# ● Tip: To suppress this menu in future, put
+#   `options(usethis.protocol = "https")`
+#   in your script or in a user- or project-level startup file, '.Rprofile'.
+#   Call `usethis::edit_r_profile()` to open it for editing.
+# ● Check title and description
+#   Name:        Teste-MeetupR
+#   Description: 
+# Are title and description ok?
+# 
+# 1: No way
+*# 2: Definitely
+# 3: Nope
+# 
+# Selection: 2
+# ✔ Creating GitHub repository
+# ✔ Setting remote 'origin' to 'https://github.com/beatrizmilz/Teste-MeetupR.git'
+# ✔ Pushing 'master' branch to GitHub and setting remote tracking branch
+# ✔ Opening URL 'https://github.com/beatrizmilz/Teste-MeetupR'
+```
+
+---
+### Repositório criado!
+
+- Projeto ✔️
+
+- Git ✔️
+
+- GitHub ✔️
+
+&lt;img src="img/prints/criou-repositorio-github.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Função para criar um arquivo `README.md`
+
+```r
+usethis::use_readme_md()
+```
+- O arquivo será criado e aberto, para ser editado e salvo.
+
+&lt;img src="https://media2.giphy.com/media/1iu8uG2cjYFZS6wTxv/giphy-downsized.gif" width="30%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle  bg-main4
+
+### Exemplo:
+
+&lt;img src="img/gifs/create-proj2.gif" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Método 3
+
+- **A partir de um repositório existente, fazer um fork e clonar diretamente do RStudio**
+
+- Para isso, usaremos a função `usethis::create_from_github()`.
+- Argumentos importantes:
+  - `repo_spec = ` repositório que quer trabalhar. Deve estar no formato: "usuario_github/repositorio". Veja o exemplo abaixo.
+  - `destdir =` diretório onde quer que os arquivos sejam salvos
+  - `fork =` se igual a TRUE, irá fazer o fork do repositório. Só funcionará se o token do GitHub foi configurado corretamente.
+
+---
+### Exemplo do uso da função `create_from_github()`
+- Exemplo: fork e clone do projeto [Data Science in a Box](https://github.com/rstudio-education/datascience-box/):
+
+https://github.com/rstudio-education/datascience-box/
+
+
+```r
+usethis::create_from_github("rstudio-education/datascience-box",
+                   destdir = "C:/Users/beatr/Documents/GitHub", 
+                   fork = TRUE)
+# ✔ Creating 'C:/Users/beatr/Documents/GitHub/datascience-box/'
+# ✔ Forking 'rstudio-education/datascience-box'
+# ✔ Cloning repo from 'https://github.com/beatrizmilz/datascience-box.git' into 'C:/Users/beatr/Documents/GitHub/datascience-box'
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/datascience-box'
+# ✔ Adding 'upstream' remote: 'https://github.com/rstudio-education/datascience-box.git'
+# ✔ Pulling changes from GitHub source repo 'upstream/master'
+# ✔ Setting remote tracking branch for local 'master' branch to 'upstream/master'
+# ✔ Opening 'C:/Users/beatr/Documents/GitHub/datascience-box/' in new RStudio session
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/RLadies-Git-RStudio-2019'
+```
+
+
+---
+### Crie uma branch
+
+- Antes de fazer qualquer modificação, crie uma branch, usando a função `usethis::pr_init()`. 
+- Argumento importante: `branch =` indica o nome da branch que você quer criar. 
+
+
+```r
+usethis::pr_init(branch = "teste")
+
+# ✔ Checking that local branch 'master' has the changes in 'origin/master'
+# ✔ Creating local PR branch 'teste'
+# ✔ Switching to branch 'teste'
+# ● Use `pr_push()` to create PR
+```
+
+- Faça suas contribuições, e sempre faça commits com mensagens que deixem claro as mudanças.
+
+- Quando terminar as contribuições necessárias, utilizar a função `pr_push()`:
+
+
+```r
+pr_push()
+# ✔ Pushing local 'teste' branch to 'origin:teste'
+# ✔ Setting upstream tracking branch for 'teste' to 'origin/teste'
+# ✔ Create PR at link given below
+# ✔ Opening URL 'https://github.com/beatrizmilz/RLadies-Git-RStudio-2019/compare/teste'
+```
+
+- A página do GitHub será aberta, para que possa completar o Pull Request.
+
+---
+class: middle 
+
+### Crie um Pull Request: 
+&lt;img src="img/prints/pr-push.PNG" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle 
+
+### Open a Pull Request: 
+&lt;img src="img/prints/pr-push2.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle 
+
+### Exemplo: PR foi aberto
+&lt;img src="img/prints/pr-push3.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+- Depois dessa etapa, você deve esperar o mantenedor do repositório responder aceitando seu PR, fazendo sujestões para melhorias, etc.
+
+---
+class: middle 
+
+### Depois que o PR é aceito:  Merged
+
+&lt;img src="img/prints/pr-push4.PNG" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle 
+
+### Última etapa: voltar para a master, atualizar (pull) o conteúdo e deletar a branch criada
+
+
+```r
+pr_finish()
+# ✔ Switching back to 'master' branch
+# ✔ Pulling changes from GitHub source repo 'origin/master'
+# ✔ Deleting local 'teste' branch
+```
+
+- Pronto! 
+
+---
+class: center, middle 
+
+## Linha de comando ou interface gráfica?
+## Use o que for melhor para **você**!
+
+&lt;img src="https://media0.giphy.com/media/dNgK7Ws7y176U/giphy.gif" width="50%" style="display: block; margin: auto;" /&gt;
+
+Confira a [cheatsheet do Git](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)!
+
+---
+class:  middle 
+
+# Check-list da configuração! 
+
+## Para o tempo restante (ou para 🏠) 
+
+
+1) Verifique se você tem instalado no seu computador: R, RStudio e Git.
+
+2) Caso não esteja configurado, configure o Git: conte para ele seu nome e seu email 😃
+
+3) No RStudio, verifique se você tem o pacote `usethis` instalado. Caso não esteja instalado, instale. Utilize a função `library(usethis)` para deixar a função `usethis` disponível para uso.
+
+4) No RStudio, configure o GitHub token.
+
+
+
+
+
+
+---
+class:  middle
+
+ **Preparades para a Hacktoberfest 2020?**
+
+
+https://hacktoberfest.digitalocean.com/
+
+&lt;img src="https://hacktoberfest.digitalocean.com/og-hf-teaser.png" width="600px" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+---
+class: middle 
+
+# Referências
+
+- Parte deste material foi baseado/inspirado neste post do blog da [Curso-R](https://www.curso-r.com/), escrito por [Caio Lente](https://lente.dev/):
+  - [Git e GitHub (Zen do R - Parte 4)](https://www.curso-r.com/blog/2019-07-23-zen-do-r-4/)
+  
+- Outra referência importante: [Happy Git and GitHub for the useR - 
+Jenny Bryan](https://happygitwithr.com/)
+
+
+- Documentação do pacote [usethis](https://usethis.r-lib.org/reference/create_package.html)
+
+---
+class: middle, center
+
+**Referências**
+
+- Palestra (em inglês) da [Jenny Bryan](https://jennybryan.org/):
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ZCeBnQBQ1h8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+
+- Caso encontre algum erro nesta apresentação, **[submeta uma issue neste repositório](https://github.com/beatrizmilz/slidesR/issues/new/choose)** para que o material seja aprimorado.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

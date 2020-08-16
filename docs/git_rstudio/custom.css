@@ -1,0 +1,23 @@
+p{
+ text-align: justify; 
+ font-size: 1.2rem;
+ line-height: 1.3em;
+}
+
+
+li{
+ font-size: 1.2rem;
+ line-height: 1.3em;
+}
+
+
+.destaque{
+  background-color: #ffffff;
+}
+
+.minirodape{
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 60px;
+  padding-right: 4em;
+}
