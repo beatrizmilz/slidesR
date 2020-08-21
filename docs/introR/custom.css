@@ -19,3 +19,11 @@ li{
   bottom: 60px;
   padding-right: 4em;
 }
+
+.inverse .remark-inline-code {
+  color: #ff7df7;
+}
+
+.inverse a {
+  color: #ff7df7;
+}

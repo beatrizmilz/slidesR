@@ -12,6 +12,8 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+glosario:
+   language: 'pt'
 ---
 class: center, middle, hide-logo
 
@@ -64,18 +66,22 @@ library(tidyverse)
 library(glosario)
 ```
 
+<!-- inicio font awesome -->
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+<!-- final font awesome -->
 
 
 .pull-left[
 
 # Introdução a Linguagem R
 
-**Beatriz Milz**
+**[Beatriz Milz](https://beatrizmilz.com)**
 
 __.can-edit[Meetup R-Ladies Curitiba]__
 
 
 __.can-edit[2º semestre/2020]__
+
 
 
 ]
@@ -94,22 +100,50 @@ knitr::include_graphics("img/Horst/community1.jpg")
 
 ---
 
-## Beatriz Milz
+# Beatriz Milz
+
+## Contexto Acadêmico
+
 - Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) 
   - Instituto de Energia e Ambiente - Universidade de São Paulo
 
 - Equipe da Secretaria Executiva  Editorial - [Revista Ambiente & Sociedade](http://scielo.br/asoc)
 
-- Co-organizadora: [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) `r emo::ji("purple_heart")`, [satRday São Paulo](https://twitter.com/satRdaySP)
-
-- Comitê organizador: [LatinR](https://twitter.com/LatinR_Conf) e [useR! 2021](https://user2021.r-project.org/)
-
-- Saiba mais: [Currículo](https://beatrizmilz.github.io/resume/resume.pdf), [Website](https://beatrizmilz.com)
-
 - Anteriormente: 
   - Mestre em Ciências - UNIFESP; 
   - Bacharel em Gestão Ambiental - EACH/USP
   
+---
+
+## Comunidades de R
+<center>
+```{r echo=FALSE, fig.align='default', out.width="18%"}
+knitr::include_graphics(c("img/Hex/1dados-hex.png",
+                          "img/Hex/1hexlogorladies.jpeg",
+                          "img/Hex/2satrdaysp.png",
+                          "img/Hex/4LatinR_hex_violeta-cut.jpg",
+                          "img/Hex/carpentries.png"))
+```
+</center>
+
+- Co-autora do pacote [`{dados}`](https://cienciadedatos.github.io/dados/)
+
+- Co-organizadora:  [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) `r emo::ji("purple_heart")`
+
+
+- Comitê organizador: 
+  - [satRday São Paulo](https://saopaulo2019.satrdays.org/)
+  - [LatinR](https://latin-r.com/pt)
+  - [useR! 2021](https://user2021.r-project.org/)
+  
+- Instrutora [The Carpentries](https://carpentries.org/)
+
+---
+class: middle
+
+<center>
+<iframe src="https://app.sli.do/event/izgrkbp8" height="100%" width="100%" style="min-height: 600px;"></iframe>
+</center>
 
 ---
 
@@ -145,6 +179,13 @@ Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.
 
 ## Pré-requisitos
 
+### Nesta atividade:
+
+- [RStudio Cloud](https://rstudio.cloud/project/1540517)
+
+
+### Para usar no dia-a-dia:
+
 - `R` e `RStudio` instalados no seu computador:
 
 ```{r, echo=FALSE, out.width="40%"}
@@ -160,7 +201,7 @@ knitr::include_graphics("img/rstudio-r.jpg")
 class: middle, center, inverse
 
 # R e RStudio
-
+.center[(Acompanhe no `[Rstudio Cloud](https://rstudio.cloud/project/1540517)`  `r emo::ji("woman_technologist")`)]
 
 ---
 ## O que é o R?
@@ -296,6 +337,8 @@ class: middle, center, inverse
 
 # Começando! 
 
+.center[(Acompanhe no arquivo `1-introducao.R` `r emo::ji("woman_technologist")`)]
+
 ---
 ## Começando
 
@@ -311,7 +354,7 @@ knitr::include_graphics("img/01-rstudio-script.png")
 
 ## `R` como calculadora
 
-- O `R` permite realizar muitas operações aritméticas em seu console!
+- O `R` permite realizar muitas operações matemáticas!
 
 ```{r}
 2 + 5    # adição
@@ -361,12 +404,6 @@ exp(0.5) # e^(1/2)
 ```
 
 Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/index.html)
-
----
-
-## Exercícios
-
-xxxxxxxx
 
 ---
 
@@ -425,9 +462,6 @@ ativo
 
 ---
 
-## COLOCAR UM EXERCÍCIO
-
----
 ## Funções
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -437,6 +471,7 @@ class: middle, center, inverse
 
 # Operadores Relacionais e Lógicos
 
+.center[(Acompanhe no arquivo `2-operadores.R` `r emo::ji("woman_technologist")`)]
 
 ---
 ## Operadores Relacionais
@@ -544,16 +579,14 @@ x <- 5
 (!x < 4)
 ```
 
----
 
-## Exercício
-
-xxxxxxxx
 
 ---
 class: middle, center, inverse
 
 # Tipos básicos de dados
+
+.center[(Acompanhe no arquivo `3-tipos_dados.R` `r emo::ji("woman_technologist")`)]
 
 ---
 
@@ -776,6 +809,7 @@ class: middle, center, inverse
 
 # Tipos de objetos
 
+.center[(Acompanhe no arquivo `4-tipos_objetos.R` `r emo::ji("woman_technologist")`)]
 
 ---
 
@@ -818,11 +852,6 @@ primeiro_semestre[6:4] # seleciona o elemento seis até o
 ```
 
 
----
-
-## Exercício
-
-xxxxxxxx
 
 
 ---
@@ -830,11 +859,6 @@ xxxxxxxx
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
----
-
-## Exercício
-
-xxxxxxxx
 
 ---
 class: middle, center, inverse
@@ -842,6 +866,7 @@ class: middle, center, inverse
 # Pacotes no R
 
 
+.center[(Acompanhe no arquivo `5-pacotes.R` `r emo::ji("woman_technologist")`)]
 
 ---
 ## Pacotes no R
@@ -907,6 +932,23 @@ background-size: cover
 
 .destaque[Ilustração por <a href='https://twitter.com/allison_horst/'> Allison Horst</a>]
 
+---
+class: middle
+
+Ao final, se quiser fazer download dos arquivos que usamos, é só realizar o procedimento abaixo: 
+
+  1) Na aba `Files`, selecionar todos os arquivos do projeto, clicando na caixinha ao lado de <i class="fas fa-cloud"></i> `Cloud`
+
+  2) Clique em  <i class="fas fa-cog"></i> `More`
+
+  3) Selecione a opção `Export...` 
+
+  4) Um arquivo `.zip` será baixado com os arquivos `r emo::ji("smiley")`
+
+```{r echo=FALSE}
+knitr::include_graphics("img/salvar-rstudio-cloud.png")
+```
+
 
 ---
 class: center, middle
@@ -916,3 +958,6 @@ class: center, middle
 Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
 
 Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/).
+
+
+
