@@ -8,11 +8,11 @@ Este repositório tem como objetivo oferecer alguns conteúdos sobre R. Anterior
   - __R-Ladies São Paulo__ - Slide de apresentação da comunidade: [html](https://beatrizmilz.github.io/slidesR/rladies/index.html) e [PDF](https://beatrizmilz.github.io/slidesR/rladies/index.pdf)
   
   
-  - Carpentries - Em breve
+  - The Carpentries - Slide de apresentação da comunidade (em breve)
   
 ## R
   
-  - __Introdução ao R__ - primeira versão __em desenvolvimento__ [aqui](https://beatrizmilz.github.io/slidesR/introR/index.html) - Material Adicional: [RStudio Cloud](https://rstudio.cloud/project/1540517).
+  - __[Introdução ao R](https://beatrizmilz.github.io/slidesR/introR/index.html)__ - Material Adicional: [RStudio Cloud](https://rstudio.cloud/project/1540517).
   
   - __Utilizando o Git e GitHub no RStudio__ - primeira versão __em desenvolvimento__ [aqui](https://beatrizmilz.github.io/slidesR/git_rstudio/index.html).
   
