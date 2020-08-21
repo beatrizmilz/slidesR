@@ -14,6 +14,7 @@ output:
       countIncrementalSlides: false
 glosario:
    language: 'pt'
+knit: pagedown::chrome_print
 ---
 class: center, middle, hide-logo
 
@@ -75,7 +76,9 @@ library(glosario)
 
 # Introdução a Linguagem R
 
-**[Beatriz Milz](https://beatrizmilz.com)**
+**[Beatriz Milz](https://beatrizmilz.com)** <a href='mailto:beatriz.milz@usp.br'><i class="far fa-envelope"></i></a>  <a href='https://twitter.com/BeaMilz'><i class="fab fa-twitter"></i>   <a href='https://github.com/beatrizmilz'><i class="fab fa-github"></i>
+
+
 
 __.can-edit[Meetup R-Ladies Curitiba]__
 
@@ -138,12 +141,12 @@ knitr::include_graphics(c("img/Hex/1dados-hex.png",
   
 - Instrutora [The Carpentries](https://carpentries.org/)
 
----
-class: middle
+<!-- --- -->
+<!-- class: middle -->
 
-<center>
-<iframe src="https://app.sli.do/event/izgrkbp8" height="100%" width="100%" style="min-height: 600px;"></iframe>
-</center>
+<!-- <center> -->
+<!-- <iframe src="https://app.sli.do/event/izgrkbp8" height="100%" width="100%" style="min-height: 600px;"></iframe> -->
+<!-- </center> -->
 
 ---
 
@@ -342,9 +345,12 @@ class: middle, center, inverse
 ---
 ## Começando
 
-- Abrir o `RStudio` no seu computador 
+- Abrir o `RStudio Cloud`.
 
-- Crie um novo `R` script (file -> new file -> `R` script)
+
+- Você pode criar um novo `R` script em: `file -> new file -> R script`
+
+- Utilizaremos o arquivo que está na cloud: `1-introducao.R`. Abra-o na aba `Files`.
 
 ```{r echo=FALSE, out.width="700px"}
 knitr::include_graphics("img/01-rstudio-script.png")
@@ -419,7 +425,8 @@ Fonte: [SW Carpentry](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio
 
 ## Atribuindo valor a um objeto no R
 
-- Para atribuir um valor a um objeto no R, utilizamos o operador `<-` 
+- Para atribuir um valor a um objeto no R, utilizamos o operador:
+.center[**`<-`**]
 
 .center[`nome_do_objeto <- valor`]
 
@@ -462,9 +469,93 @@ ativo
 
 ---
 
+
 ## Funções
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+- Funções permitem __automatizar tarefas__ comuns de forma mais poderosa do que copiar e colar.
+
+- O R possui muitas funções já implementadas.
+
+- Pacotes são coleções de funções, dados e documentação que ampliam as capacidades do R básico. Veremos como instalá-los no final desta atividade!
+
+- Você pode desenvolver suas próprias funções!  `r emo::ji("woman_technologist")`
+
+---
+
+### Exemplo de funções básicas do R 
+```{r}
+# Combinar elementos - Função c() 
+ano_nascimento_irmaos <- c(1993, 1998, 2001, 2012, 2012)
+```
+--
+```{r}
+# Podemos fazer operações com o resultado
+idade_irmaos <- 2020 - ano_nascimento_irmaos
+idade_irmaos
+```
+
+--
+```{r}
+# Calculando a média - Função mean()
+media_idade_irmaos <- mean(idade_irmaos)
+media_idade_irmaos
+```
+
+
+
+
+---
+
+### Estrutura de uma função
+
+- __Nome__ - é como ela fica salva no ambiente, esse nome é importante para usarmos a função.
+
+- __Argumentos__ -  são parâmetros usados internamente pela função. Muitas funções possuem argumentos com valores padrão.
+
+- **Corpo**  - o código que será executado. O resultado dependerá dos argumentos oferecidos. 
+
+```{r eval=FALSE, include=TRUE}
+# para criar uma funcao
+nome_da_funcao <- function(argumentos){
+  corpo da função
+}
+# para usar essa função
+nome_da_funcao(argumentos = ...)
+```
+
+---
+
+
+  
+### Exemplo sobre argumentos
+
+```{r}
+# Arredondar valores - função round()
+# help(round)
+# round(x, digits = 0)
+
+round(media_idade_irmaos)
+
+round(media_idade_irmaos, digits = 1)
+```
+
+---
+
+## Funções importantes do R base
+
+|  Função |  O que retorna? |
+|--:|--:|
+|  `sum()` |  Soma  | 
+|  `mean()` |  Média |
+|  `median()` |  Mediana |
+|  `var()` |  Variância (simples) |
+|  `sd()` |  Desvio Padrão |
+|  `max()` |  Valor máximo  |
+|  `min()` |  Valor mínimo |
+|  `round()` |  Valor arredondado |
+
+
 
 ---
 class: middle, center, inverse
@@ -834,20 +925,29 @@ primeiro_semestre <- c("Janeiro", "Fevereiro", "Março",
 
 ```
 
+```{r}
+# Retorna o comprimento do vetor - quantos elementos ele tem?
+length(primeiro_semestre)
+```
+
 ---
 ## Vetores
 
 - Selecionando elementos por índice: utilizar `[]`
 
 ```{r}
-primeiro_semestre[1] # primeiro elemento do vetor
+# primeiro elemento do vetor
+primeiro_semestre[1] 
 
-primeiro_semestre[1:2] # primeiro elemento até o segundo
+# primeiro elemento até o segundo
+primeiro_semestre[1:2] 
 
-primeiro_semestre[-1] # remove o elemento 1
+# remove o elemento 1
+primeiro_semestre[-1] 
 
-primeiro_semestre[6:4] # seleciona o elemento seis até o
-# quatro (e muda a ordem dos elementos)
+# seleciona o elemento seis até o quatro 
+# (e muda a ordem dos elementos)
+primeiro_semestre[6:4]
 
 ```
 
@@ -857,7 +957,118 @@ primeiro_semestre[6:4] # seleciona o elemento seis até o
 ---
 ## Dataframes
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+- Possuem duas dimensões: linhas e colunas.
+
+- Cada colunas pode ser de classes diferentes.
+
+- Pense em uma tabela, como está acostumada a ver no Excel por exemplo. 
+
+Exemplo: Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.github.io/dados/).
+
+```{r echo=FALSE}
+dados::diamante %>% head() %>%  knitr::kable()
+```
+
+---
+
+### Funções úteis
+
+```{r}
+# Retorna o número de colunas 
+ncol(diamante)
+```
+```{r}
+# Retorna o número de linhas
+nrow(diamante)
+```
+```{r}
+# Retorna o número de colunas e linhas
+dim(diamante)
+```
+
+---
+
+### Funções úteis
+
+```{r}
+# Primeiras 6 linhas de uma tabela
+head(diamante)
+```
+
+---
+
+### Funções úteis
+```{r}
+# Últimas 6 linhas de uma tabela
+tail(diamante)
+```
+
+---
+
+### Selecionando elementos - Colunas
+
+- Para selecionar colunas, utilize o `$`:
+
+Dica: após escrever o `nome_do_dataframe$`, aperte `tab` para que o RStudio faça sugestões de colunas da base.
+
+```{r}
+diamante$preco
+```
+
+---
+
+### Selecionando elementos
+
+- Outra forma de selecionar elementos é utilizando os colchetes:  `data_frame[numero da linha , numero da coluna]`! 
+
+```{r}
+diamante[1, 2] # Seleciona a linha 1 e a coluna 2 
+```
+
+---
+
+### Selecionando elementos
+
+- Caso deixe algum dos espaços dentro do colchete vazio, o R retornará todas (as colunas ou linhas):
+
+```{r}
+diamante[1, ] # Seleciona a linha 1 e TODAS as colunas
+```
+
+```{r}
+diamante[ , 1] # Seleciona TODAS as linhas e apenas a coluna 1
+```
+
+---
+### Dataframes e funções 
+
+- Podemos utilizar as funções que já vimos (e muitas outras) em colunas do dataframe:
+
+```{r}
+# Soma do valor de TODOS os diamantes que estão na tabela
+sum(diamante$preco) 
+# Menor preço encontrado: o diamante mais barato !
+min(diamante$preco)
+# Maior preço encontrado: o diamante mais caro !
+max(diamante$preco)
+```
+
+---
+### Dataframes e funções 
+
+- Podemos utilizar as funções que já vimos (e muitas outras) em colunas do dataframe:
+
+
+```{r}
+# Média dos preço dos diamantes
+mean(diamante$preco)
+# Mediana dos preço dos diamantes
+median(diamante$preco)
+# Variância dos preço dos diamantes
+var(diamante$preco)
+# Desvio padrão dos preço dos diamantes
+sd(diamante$preco)
+```
 
 
 ---
@@ -933,22 +1144,27 @@ background-size: cover
 .destaque[Ilustração por <a href='https://twitter.com/allison_horst/'> Allison Horst</a>]
 
 ---
-class: middle
+# Download do material
 
 Ao final, se quiser fazer download dos arquivos que usamos, é só realizar o procedimento abaixo: 
-
-  1) Na aba `Files`, selecionar todos os arquivos do projeto, clicando na caixinha ao lado de <i class="fas fa-cloud"></i> `Cloud`
-
-  2) Clique em  <i class="fas fa-cog"></i> `More`
-
-  3) Selecione a opção `Export...` 
-
-  4) Um arquivo `.zip` será baixado com os arquivos `r emo::ji("smiley")`
+  1. Na aba `Files`, selecionar todos os arquivos do projeto, clicando na caixinha ao lado de <i class="fas fa-cloud"></i> `Cloud`
+  2. Clique em  <i class="fas fa-cog"></i> `More`
+  3. Selecione a opção `Export...` 
+  4. Um arquivo `.zip` será baixado com os arquivos `r emo::ji("smiley")`
 
 ```{r echo=FALSE}
 knitr::include_graphics("img/salvar-rstudio-cloud.png")
 ```
 
+---
+
+# Aprendendo mais!
+
+## Em Português
+- Material da Curso-R: http://material.curso-r.com/rbase/
+
+## Em Inglês
+- Livro R for Data Science: https://r4ds.had.co.nz/
 
 ---
 class: center, middle
@@ -959,5 +1175,10 @@ Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan).
 
 Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/).
 
+---
+class: middle
 
+<center>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform" height="100%" width="100%" style="min-height: 600px;"></iframe>
+</center>
 

@@ -5,7 +5,7 @@ Este repositório tem como objetivo oferecer alguns conteúdos sobre R. Anterior
 
 ## Comunidades:
 
-  - __R-Ladies__ - Slide de apresentação da comunidade: [html](https://beatrizmilz.github.io/slidesR/rladies/index.html) e [PDF](https://beatrizmilz.github.io/slidesR/rladies/index.pdf)
+  - __R-Ladies São Paulo__ - Slide de apresentação da comunidade: [html](https://beatrizmilz.github.io/slidesR/rladies/index.html) e [PDF](https://beatrizmilz.github.io/slidesR/rladies/index.pdf)
   
   
   - Carpentries - Em breve
