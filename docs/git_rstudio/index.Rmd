@@ -65,13 +65,21 @@ library(tidyverse)
 library(glosario)
 ```
 
+<!-- inicio font awesome -->
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+<!-- final font awesome -->
+
+<!-- inicio github buttons  -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- final github buttons  -->
 
 
 
 
 # Utilizando o Git e GitHub no RStudio
 
-**Beatriz Milz**
+**[Beatriz Milz](https://beatrizmilz.com)** <a href='mailto:beatriz.milz@usp.br'><i class="far fa-envelope"></i></a>  <a href='https://twitter.com/BeaMilz'><i class="fab fa-twitter"></i>   <a href='https://github.com/beatrizmilz'><i class="fab fa-github"></i></a>
+
 
 __.can-edit[Meetup R-Ladies GYN]__
 
@@ -84,21 +92,44 @@ __.can-edit[2º semestre/2020]__
 
 ---
 
-## Beatriz Milz
+# Beatriz Milz
+
+## Contexto Acadêmico
+
 - Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) 
   - Instituto de Energia e Ambiente - Universidade de São Paulo
 
 - Equipe da Secretaria Executiva  Editorial - [Revista Ambiente & Sociedade](http://scielo.br/asoc)
 
-- Co-organizadora: [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) `r emo::ji("purple_heart")`, [satRday São Paulo](https://twitter.com/satRdaySP)
-
-- Comitê organizador: [LatinR](https://twitter.com/LatinR_Conf) e [useR! 2021](https://user2021.r-project.org/)
-
-- Saiba mais: [Currículo](https://beatrizmilz.github.io/resume/resume.pdf), [Website](https://beatrizmilz.com)
-
 - Anteriormente: 
   - Mestre em Ciências - UNIFESP; 
   - Bacharel em Gestão Ambiental - EACH/USP
+  
+---
+
+## Comunidades de R
+<center>
+```{r echo=FALSE, fig.align='default', out.width="18%"}
+knitr::include_graphics(c("img/Hex/1dados-hex.png",
+                          "img/Hex/1hexlogorladies.jpeg",
+                          "img/Hex/2satrdaysp.png",
+                          "img/Hex/4LatinR_hex_violeta-cut.jpg",
+                          "img/Hex/carpentries.png"))
+```
+</center>
+
+- Co-autora do pacote [`{dados}`](https://cienciadedatos.github.io/dados/)
+
+- Co-organizadora:  [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) `r emo::ji("purple_heart")`
+
+
+- Comitê organizador: 
+  - [satRday São Paulo](https://saopaulo2019.satrdays.org/)
+  - [LatinR](https://latin-r.com/pt)
+  - [useR! 2021](https://user2021.r-project.org/)
+  
+- Instrutora [The Carpentries](https://carpentries.org/)
+
   
 ---
 
