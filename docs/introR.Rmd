@@ -1,0 +1,36 @@
+---
+title: "Introdução ao R"
+#description: |
+#  Uma lista de apresentações usando ou sobre R e Comunidades.
+author:
+  - name: Beatriz Milz 
+    url: https://beatrizmilz.com
+    affiliation: R-Ladies São Paulo
+    affiliation_url: https://www.meetup.com/rladies-sao-paulo/
+date: "Atualizado em `r Sys.Date()`"
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### Slides
+
+<center>
+<iframe src="https://beatrizmilz.github.io/slidesR/introR/index.html" height="100%" width="100%" style="min-height: 400px;"></iframe>
+</center>
+
+<p style="text-align:right;">[<i class="fas fa-external-link-alt"></i> Confira a apresentação](https://beatrizmilz.github.io/slidesR/introR/index.html)</p>
+
+### Material Complementar
+
+- Acompanhe a palestra com o material disponível em [<i class="fas fa-cloud"></i> RStudio Cloud](https://rstudio.cloud/project/1540878)
+
+
+
+---
+
+<center>
+[<i class="fas fa-home"></i> Retorne à página inicial](index.html)
+</center>

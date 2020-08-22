@@ -1,0 +1,21 @@
+name: "Beatriz Milz"
+title: "Slides sobre R"
+encoding: "UTF-8"
+#favicon: images/favicon.png
+base_url: https://beatrizmilz.github.io/slidesR/
+# repository_url: https://github.com/beatrizmilz/slidesR
+# creative_commons: CC BY
+output_dir: "."
+navbar:
+#  logo:
+#  image: images/logo.png
+#href: https://www.rstudio.com
+  right:
+    - icon: fas fa-home
+      href: index.html
+    - icon: fab fa-github
+      href: https://github.com/beatrizmilz/slidesR
+output:
+  distill::distill_article:
+  css: styles.css
+toc: true
