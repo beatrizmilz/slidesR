@@ -187,7 +187,7 @@ Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.
 
 ### Nesta atividade:
 
-- [RStudio Cloud](https://rstudio.cloud/project/1540517)
+- [RStudio Cloud](https://rstudio.cloud/project/1540878)
 
 
 ### Para usar no dia-a-dia:
@@ -207,7 +207,7 @@ knitr::include_graphics("img/rstudio-r.jpg")
 class: middle, center, inverse
 
 # R e RStudio
-.center[(Acompanhe no `[Rstudio Cloud](https://rstudio.cloud/project/1540517)`  `r emo::ji("woman_technologist")`)]
+.center[(Acompanhe no `[Rstudio Cloud](https://rstudio.cloud/project/1540878)`  `r emo::ji("woman_technologist")`)]
 
 ---
 ## O que é o R?
@@ -625,7 +625,7 @@ Maior que: **>=**
 
 ## Operadores Lógicos
 
-- E: **&**
+- AND - E: **&**
 
 Será verdadeiro se os dois forem verdadeiros (`TRUE`)
 
@@ -645,7 +645,7 @@ y <- 2
 
 ## Operadores Lógicos
 
-- OU: **|**
+- OR - OU: **|**
 
 Será verdadeiro se um dos dois forem verdadeiros (`TRUE`)
 
@@ -665,10 +665,14 @@ y <- 1
 
 ## Operadores Lógicos
 
-- Negação: **!** 
+- NOT - Negação: **!** 
 
 
 ```{r}
+!TRUE
+
+!FALSE
+
 x <- 5
 (!x < 4)
 ```
