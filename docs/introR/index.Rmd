@@ -14,7 +14,7 @@ output:
       countIncrementalSlides: false
 glosario:
    language: 'pt'
-knit: pagedown::chrome_print
+# knit: pagedown::chrome_print
 ---
 class: center, middle, hide-logo
 
@@ -71,6 +71,9 @@ library(glosario)
 <script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
 <!-- final font awesome -->
 
+<!-- inicio github buttons  -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- final github buttons  -->
 
 .pull-left[
 
@@ -963,11 +966,24 @@ primeiro_semestre[6:4]
 
 - Pense em uma tabela, como está acostumada a ver no Excel por exemplo. 
 
-Exemplo: Base de dados `diamante` disponível no pacote [`dados`](https://cienciadedatos.github.io/dados/).
+Exemplo: Base de dados disponível no [R Community Explorer](https://benubah.github.io/r-community-explorer).
+
+```{r eval=FALSE, include=FALSE}
+url <- "https://benubah.github.io/r-community-explorer/data/rladies.csv"
+download.file(url, "data/rladies.csv", method = "curl")
+```
+
+```{r echo=FALSE, include= FALSE}
+rladies <- readr::read_csv("data/rladies.csv")
+```
 
 ```{r echo=FALSE}
-dados::diamante %>% head() %>%  knitr::kable()
+rladies %>% select(-c(X1, name, fullurl, created, status, last_event, past_events, upcoming_events)) %>% 
+  arrange(-members) %>% 
+  head() %>% 
+  knitr::kable()
 ```
+
 
 ---
 
@@ -975,15 +991,23 @@ dados::diamante %>% head() %>%  knitr::kable()
 
 ```{r}
 # Retorna o número de colunas 
-ncol(diamante)
+ncol(rladies)
 ```
 ```{r}
 # Retorna o número de linhas
-nrow(diamante)
+nrow(rladies)
 ```
 ```{r}
 # Retorna o número de colunas e linhas
-dim(diamante)
+dim(rladies)
+```
+
+---
+
+### Funções úteis
+
+```{r}
+summary(rladies)
 ```
 
 ---
@@ -992,7 +1016,7 @@ dim(diamante)
 
 ```{r}
 # Primeiras 6 linhas de uma tabela
-head(diamante)
+head(rladies)
 ```
 
 ---
@@ -1000,7 +1024,7 @@ head(diamante)
 ### Funções úteis
 ```{r}
 # Últimas 6 linhas de uma tabela
-tail(diamante)
+tail(rladies)
 ```
 
 ---
@@ -1012,7 +1036,7 @@ tail(diamante)
 Dica: após escrever o `nome_do_dataframe$`, aperte `tab` para que o RStudio faça sugestões de colunas da base.
 
 ```{r}
-diamante$preco
+rladies$city
 ```
 
 ---
@@ -1022,7 +1046,7 @@ diamante$preco
 - Outra forma de selecionar elementos é utilizando os colchetes:  `data_frame[numero da linha , numero da coluna]`! 
 
 ```{r}
-diamante[1, 2] # Seleciona a linha 1 e a coluna 2 
+rladies[1, 2] # Seleciona a linha 1 e a coluna 2 
 ```
 
 ---
@@ -1032,25 +1056,11 @@ diamante[1, 2] # Seleciona a linha 1 e a coluna 2
 - Caso deixe algum dos espaços dentro do colchete vazio, o R retornará todas (as colunas ou linhas):
 
 ```{r}
-diamante[1, ] # Seleciona a linha 1 e TODAS as colunas
+rladies[1, ] # Seleciona a linha 1 e TODAS as colunas
 ```
 
 ```{r}
-diamante[ , 1] # Seleciona TODAS as linhas e apenas a coluna 1
-```
-
----
-### Dataframes e funções 
-
-- Podemos utilizar as funções que já vimos (e muitas outras) em colunas do dataframe:
-
-```{r}
-# Soma do valor de TODOS os diamantes que estão na tabela
-sum(diamante$preco) 
-# Menor preço encontrado: o diamante mais barato !
-min(diamante$preco)
-# Maior preço encontrado: o diamante mais caro !
-max(diamante$preco)
+rladies[ , 2] # Seleciona TODAS as linhas e apenas a coluna 2
 ```
 
 ---
@@ -1058,16 +1068,33 @@ max(diamante$preco)
 
 - Podemos utilizar as funções que já vimos (e muitas outras) em colunas do dataframe:
 
+```{r}
+# Qual é a soma de pessoas membras na plataforma do Meetup inscritas
+# nos capítulos da R-Ladies?
+sum(rladies$members) 
+# Menor valor encontrado: o menor número de pessoas membras
+# encontrado na base
+min(rladies$members)
+# Maior valor encontrado: o maior número de pessoas membras 
+# encontrado na base
+max(rladies$members)
+```
+
+---
+### Dataframes e funções 
+
+- Podemos utilizar as funções que já vimos (e muitas outras) em colunas do dataframe:
+
 
 ```{r}
-# Média dos preço dos diamantes
-mean(diamante$preco)
-# Mediana dos preço dos diamantes
-median(diamante$preco)
-# Variância dos preço dos diamantes
-var(diamante$preco)
-# Desvio padrão dos preço dos diamantes
-sd(diamante$preco)
+# Média do número pessoas membras por capítulo
+mean(rladies$members)
+# Mediana do número pessoas membras por capítulo
+median(rladies$members)
+# Variância do número pessoas membras por capítulo
+var(rladies$members)
+# Desvio padrão do número pessoas membras por capítulo
+sd(rladies$members)
 ```
 
 
@@ -1157,14 +1184,64 @@ knitr::include_graphics("img/salvar-rstudio-cloud.png")
 ```
 
 ---
+class:middle
 
 # Aprendendo mais!
 
-## Em Português
-- Material da Curso-R: http://material.curso-r.com/rbase/
+.pull-left[
+#### Em Português
 
-## Em Inglês
-- Livro R for Data Science: https://r4ds.had.co.nz/
+- [Material da Curso-R](http://material.curso-r.com/)
+
+<a href="http://material.curso-r.com/">
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("img/cursor.png")
+```
+</a>
+]
+
+.pull-right[
+
+#### Em Inglês
+
+- [Livro R for Data Science](https://r4ds.had.co.nz/)
+
+<a href="https://r4ds.had.co.nz/">
+```{r echo=FALSE, out.width="60%"}
+knitr::include_graphics("img/r4ds.jpg")
+```
+</a>
+
+]
+
+
+---
+class: middle
+
+### R-Ladies no Brasil
+
+- Quer saber mais sobre próximos eventos das R-Ladies por aqui? Favorite este [repositório no GitHub](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil) `r emo::ji("purple_heart")`:
+
+
+<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star R-Ladies-Sao-Paulo/RLadies-Brasil on GitHub">Capítulos e eventos online da R-Ladies no Brasil</a>
+</center>
+
+
+
+---
+class: middle
+
+### O que achou da apresentação?
+
+- Por favor, responda o [formulário abaixo](https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform), pois me ajuda  **muito** a melhorar os materiais e as apresentações `r emo::ji("purple_heart")`:
+
+
+<center>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform" height="100%" width="100%" style="min-height: 400px;"></iframe>
+</center>
+
 
 ---
 class: center, middle
@@ -1174,11 +1251,3 @@ class: center, middle
 Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
 
 Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/).
-
----
-class: middle
-
-<center>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform" height="100%" width="100%" style="min-height: 600px;"></iframe>
-</center>
-
