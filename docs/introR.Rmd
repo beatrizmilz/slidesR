@@ -26,6 +26,14 @@ knitr::opts_chunk$set(echo = FALSE)
 ### Material Complementar
 
 - Acompanhe a palestra com o material disponível em [<i class="fas fa-cloud"></i> RStudio Cloud](https://rstudio.cloud/project/1540878)
+- Caso queira usar no seu computador, os arquivos disponibilizados na Cloud são os seguintes:
+  - [`1-introducao.R`](https://beatrizmilz.github.io/slidesR/introR/rstudio-cloud/1-introducao.R)
+  - [`2-operadores.R`](https://beatrizmilz.github.io/slidesR/introR/rstudio-cloud/2-operadores.R)
+  - [`3-tipos_dados.R`](https://beatrizmilz.github.io/slidesR/introR/rstudio-cloud/3-tipos_dados.R)
+  - [`4-tipos_objetos.R`](https://beatrizmilz.github.io/slidesR/introR/rstudio-cloud/4-tipos_objetos.R)
+  - [`5-pacotes.R`](https://beatrizmilz.github.io/slidesR/introR/rstudio-cloud/5-pacotes.R)
+  - [`rladies.csv`](https://benubah.github.io/r-community-explorer/data/rladies.csv) - Base de dados usada no arquivo `4-tipos_objetos.R`.
+  
 
 ### Meetups
 
