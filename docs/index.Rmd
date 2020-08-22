@@ -15,10 +15,10 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Comunidades
+<!-- ## Comunidades -->
 
-Em breve!
+<!-- Em breve! -->
 
-## R
+### R
 
 - [Introdução ao R](introR.html)

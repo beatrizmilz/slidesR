@@ -27,7 +27,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - Acompanhe a palestra com o material disponível em [<i class="fas fa-cloud"></i> RStudio Cloud](https://rstudio.cloud/project/1540878)
 
+### Meetups
 
+Este material foi/será utilizado nos seguintes eventos/meetups:
+
+- [R-Ladies Curitiba](https://www.sympla.com.br/r-ladies-curitiba-introducao-a-linguagem-r__939607), 26 de agosto de 2020. 
 
 ---
 

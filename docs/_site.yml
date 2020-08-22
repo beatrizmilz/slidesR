@@ -12,10 +12,10 @@ navbar:
 #href: https://www.rstudio.com
   right:
     - icon: fas fa-home
-      href: index.html
+      href: https://beatrizmilz.github.io/slidesR/index.html
     - icon: fab fa-github
       href: https://github.com/beatrizmilz/slidesR
 output:
   distill::distill_article:
-  css: styles.css
+    css: styles.css
 toc: true
