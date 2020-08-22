@@ -8,7 +8,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x2464e081f094793849605738303efc2","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xdb5afd600414251b5e47d08f140d4fe","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -185,7 +185,7 @@ class: middle, center, inverse
 .center[(Acompanhe no `[RStudio Cloud](https://rstudio.cloud/project/1540878)`  👩‍💻)]
 
 
-<div class="countdown" id="timer_5f40fe5f" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f412e50" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -310,7 +310,7 @@ class: middle, center, inverse
 .center[(Acompanhe no arquivo `1-introducao.R` 👩‍💻)]
 
 
-<div class="countdown" id="timer_5f40fcd0" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f412e40" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -656,7 +656,7 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `2-operadores.R` 👩‍💻)]
 
-<div class="countdown" id="timer_5f40fe2f" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f412fd3" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -853,7 +853,7 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `3-tipos_dados.R` 👩‍💻)]
 
-<div class="countdown" id="timer_5f40fd7b" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f412d00" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -1142,8 +1142,9 @@ NA == NA
 
 
 ```r
-vetor_logico &lt;- c(NA, TRUE, FALSE, FALSE, TRUE, NA)
-is.na(vetor_logico)
+vetor_numerico &lt;- c(NA, 1, 5, 2, 5, NA)
+
+is.na(vetor_numerico)
 ```
 
 ```
@@ -1151,13 +1152,53 @@ is.na(vetor_logico)
 ```
 
 ```r
-!is.na(vetor_logico)
+!is.na(vetor_numerico)
 ```
 
 ```
 ## [1] FALSE  TRUE  TRUE  TRUE  TRUE FALSE
 ```
 
+
+---
+
+## Argumento importante: 
+
+### `na.rm = TRUE`
+
+
+
+```r
+sum(vetor_numerico)
+```
+
+```
+## [1] NA
+```
+
+```r
+sum(vetor_numerico, na.rm = TRUE)
+```
+
+```
+## [1] 13
+```
+
+```r
+mean(vetor_numerico)
+```
+
+```
+## [1] NA
+```
+
+```r
+mean(vetor_numerico, na.rm = TRUE)
+```
+
+```
+## [1] 3.25
+```
 
 ---
 
@@ -1269,7 +1310,7 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `4-tipos_objetos.R` 👩‍💻)]
 
-<div class="countdown" id="timer_5f40ff2d" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f412e5c" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -1279,7 +1320,9 @@ class: middle, center, inverse
 
 - No R, os 4 principais tipos de dados são: `vetor`, `matriz`, `lista`, `data.frame`
 
-- Vamos focar em dois:  `vetor` e `data.frame`
+- Vamos focar em dois:  `vetor` e `data.frame`, pois:
+  - são os que mais usamos nas tarefas comuns de análise de dados,
+  - são conceitos importantes para utilizar o tidyverse.
 
 ---
 ## Vetores
@@ -1351,7 +1394,6 @@ primeiro_semestre[6:4]
 
 
 
-
 ---
 ## Dataframes
 
@@ -1410,6 +1452,47 @@ dim(rladies)
 ## [1] 192  12
 ```
 
+
+---
+
+### Funções úteis
+
+```r
+# Retorna algumas informações sobre a base
+str(rladies)
+```
+
+```
+## tibble [192 x 12] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ X1             : num [1:192] 1 2 3 4 5 6 7 8 9 10 ...
+##  $ name           : chr [1:192] "R-Ladies Barcelona" "R-Ladies Bilbao" "R-Ladies Tucson AZ" "R-Ladies Bariloche" ...
+##  $ city           : chr [1:192] "Barcelona" "Bilbao" "Tucson" "San Carlos de Bariloche" ...
+##  $ country        : chr [1:192] "Spain" "Spain" "USA" "Argentina" ...
+##  $ region         : chr [1:192] "Europe" "Europe" "US/Canada" "Latin America" ...
+##  $ members        : num [1:192] 558 176 280 231 1582 ...
+##  $ fullurl        : chr [1:192] "https://www.meetup.com/rladies-barcelona/" "https://www.meetup.com/rladies-bilbao/" "https://www.meetup.com/rladies-tucson-az/" "https://www.meetup.com/rladies-bariloche/" ...
+##  $ created        : Date[1:192], format: "2016-10-22" "2019-02-27" ...
+##  $ status         : chr [1:192] "Active" "Inactive" "Active" "Active" ...
+##  $ last_event     : Date[1:192], format: "2020-07-01" "2020-01-14" ...
+##  $ past_events    : num [1:192] 18 4 18 12 57 7 7 10 4 12 ...
+##  $ upcoming_events: num [1:192] 0 0 2 0 1 0 0 0 0 0 ...
+##  - attr(*, "spec")=
+##   .. cols(
+##   ..   X1 = col_double(),
+##   ..   name = col_character(),
+##   ..   city = col_character(),
+##   ..   country = col_character(),
+##   ..   region = col_character(),
+##   ..   members = col_double(),
+##   ..   fullurl = col_character(),
+##   ..   created = col_date(format = ""),
+##   ..   status = col_character(),
+##   ..   last_event = col_date(format = ""),
+##   ..   past_events = col_double(),
+##   ..   upcoming_events = col_double()
+##   .. )
+```
+
 ---
 
 ### Funções úteis
@@ -1445,6 +1528,34 @@ summary(rladies)
 ##                     Max.   :2020-08-20   Max.   :77.00   Max.   :5.000  
 ##                     NA's   :21
 ```
+
+---
+### Funções úteis
+
+- Eu gosto da função glimpse, do pacote `tibble`:
+
+
+```r
+tibble::glimpse(rladies)
+```
+
+```
+## Rows: 192
+## Columns: 12
+## $ X1              &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ...
+## $ name            &lt;chr&gt; "R-Ladies Barcelona", "R-Ladies Bilbao", "R-Ladies ...
+## $ city            &lt;chr&gt; "Barcelona", "Bilbao", "Tucson", "San Carlos de Bar...
+## $ country         &lt;chr&gt; "Spain", "Spain", "USA", "Argentina", "Australia", ...
+## $ region          &lt;chr&gt; "Europe", "Europe", "US/Canada", "Latin America", "...
+## $ members         &lt;dbl&gt; 558, 176, 280, 231, 1582, 346, 511, 800, 59, 197, 6...
+## $ fullurl         &lt;chr&gt; "https://www.meetup.com/rladies-barcelona/", "https...
+## $ created         &lt;date&gt; 2016-10-22, 2019-02-27, 2017-11-14, 2018-05-10, 20...
+## $ status          &lt;chr&gt; "Active", "Inactive", "Active", "Active", "Active",...
+## $ last_event      &lt;date&gt; 2020-07-01, 2020-01-14, 2020-08-19, 2020-06-29, 20...
+## $ past_events     &lt;dbl&gt; 18, 4, 18, 12, 57, 7, 7, 10, 4, 12, 23, 37, 9, 0, 3...
+## $ upcoming_events &lt;dbl&gt; 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ...
+```
+
 
 ---
 
@@ -1750,7 +1861,7 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `5-pacotes.R` 👩‍💻)]
 
-<div class="countdown" id="timer_5f40fe70" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f412e02" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 

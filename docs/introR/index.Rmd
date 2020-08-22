@@ -882,11 +882,30 @@ NA == NA
 `is.na()` é a função que testa se um objeto é NA.
 
 ```{r}
-vetor_logico <- c(NA, TRUE, FALSE, FALSE, TRUE, NA)
-is.na(vetor_logico)
-!is.na(vetor_logico)
+vetor_numerico <- c(NA, 1, 5, 2, 5, NA)
+
+is.na(vetor_numerico)
+
+!is.na(vetor_numerico)
+
 ```
 
+
+---
+
+## Argumento importante: 
+
+### `na.rm = TRUE`
+
+
+```{r}
+sum(vetor_numerico)
+sum(vetor_numerico, na.rm = TRUE)
+```
+```{r}
+mean(vetor_numerico)
+mean(vetor_numerico, na.rm = TRUE)
+```
 
 ---
 
@@ -958,7 +977,9 @@ countdown::countdown(
 
 - No R, os 4 principais tipos de dados são: `vetor`, `matriz`, `lista`, `data.frame`
 
-- Vamos focar em dois:  `vetor` e `data.frame`
+- Vamos focar em dois:  `vetor` e `data.frame`, pois:
+  - são os que mais usamos nas tarefas comuns de análise de dados,
+  - são conceitos importantes para utilizar o tidyverse.
 
 ---
 ## Vetores
@@ -1000,7 +1021,6 @@ primeiro_semestre[-1]
 primeiro_semestre[6:4]
 
 ```
-
 
 
 
@@ -1049,6 +1069,15 @@ nrow(rladies)
 dim(rladies)
 ```
 
+
+---
+
+### Funções úteis
+```{r}
+# Retorna algumas informações sobre a base
+str(rladies)
+```
+
 ---
 
 ### Funções úteis
@@ -1056,6 +1085,16 @@ dim(rladies)
 ```{r}
 summary(rladies)
 ```
+
+---
+### Funções úteis
+
+- Eu gosto da função glimpse, do pacote `tibble`:
+
+```{r}
+tibble::glimpse(rladies)
+```
+
 
 ---
 
