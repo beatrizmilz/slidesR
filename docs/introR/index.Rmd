@@ -207,7 +207,17 @@ knitr::include_graphics("img/rstudio-r.jpg")
 class: middle, center, inverse
 
 # R e RStudio
-.center[(Acompanhe no `[Rstudio Cloud](https://rstudio.cloud/project/1540878)`  `r emo::ji("woman_technologist")`)]
+.center[(Acompanhe no `[RStudio Cloud](https://rstudio.cloud/project/1540878)`  `r emo::ji("woman_technologist")`)]
+
+
+```{r echo=FALSE}
+countdown::countdown(
+  minutes = 1,
+  seconds = 0,
+  color_running_background  = "#EDDAFF"
+)
+```
+
 
 ---
 ## O que é o R?
@@ -344,6 +354,15 @@ class: middle, center, inverse
 # Começando! 
 
 .center[(Acompanhe no arquivo `1-introducao.R` `r emo::ji("woman_technologist")`)]
+
+
+```{r echo=FALSE}
+countdown::countdown(
+  minutes = 0,
+  seconds = 30,
+  color_running_background  = "#EDDAFF"
+)
+```
 
 ---
 ## Começando
@@ -567,6 +586,14 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `2-operadores.R` `r emo::ji("woman_technologist")`)]
 
+```{r echo=FALSE}
+countdown::countdown(
+  minutes = 0,
+  seconds = 30,
+  color_running_background  = "#EDDAFF"
+)
+```
+
 ---
 ## Operadores Relacionais
 
@@ -685,6 +712,14 @@ class: middle, center, inverse
 # Tipos básicos de dados
 
 .center[(Acompanhe no arquivo `3-tipos_dados.R` `r emo::ji("woman_technologist")`)]
+
+```{r echo=FALSE}
+countdown::countdown(
+  minutes = 0,
+  seconds = 30,
+  color_running_background  = "#EDDAFF"
+)
+```
 
 ---
 
@@ -909,6 +944,14 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `4-tipos_objetos.R` `r emo::ji("woman_technologist")`)]
 
+```{r echo=FALSE}
+countdown::countdown(
+  minutes = 0,
+  seconds = 30,
+  color_running_background  = "#EDDAFF"
+)
+```
+
 ---
 
 ## Tipos de objetos
@@ -1110,6 +1153,14 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `5-pacotes.R` `r emo::ji("woman_technologist")`)]
 
+```{r echo=FALSE}
+countdown::countdown(
+  minutes = 0,
+  seconds = 30,
+  color_running_background  = "#EDDAFF"
+)
+```
+
 ---
 ## Pacotes no R
 
@@ -1183,7 +1234,7 @@ Ao final, se quiser fazer download dos arquivos que usamos, é só realizar o pr
   3. Selecione a opção `Export...` 
   4. Um arquivo `.zip` será baixado com os arquivos `r emo::ji("smiley")`
 
-```{r echo=FALSE}
+```{r echo=FALSE, out.width="60%"}
 knitr::include_graphics("img/salvar-rstudio-cloud.png")
 ```
 
@@ -1254,4 +1305,4 @@ class: center, middle
 
 Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
 
-Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/).
+Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/) e [**countdown**](https://github.com/gadenbuie/countdown).
