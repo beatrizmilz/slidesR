@@ -12,6 +12,8 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+glosario:
+   language: 'pt'
 ---
 class: center, middle, hide-logo
 
@@ -19,9 +21,10 @@ class: center, middle, hide-logo
 options(htmltools.dir.version = FALSE)
 
 knitr::opts_chunk$set(fig.align = "center",
-                      message = FALSE,
+                     # message = FALSE,
                       warning = FALSE,
-                      echo = FALSE)
+                      echo = FALSE
+                      )
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -149,51 +152,22 @@ knitr::include_graphics(c("img/Hex/1dados-hex.png",
 - A maior parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/RLadies-Git-RStudio-2019/#1), oferecido por mim em um meetup da R-Ladies São Paulo em Setembro/2019.
 
 ---
-class: middle, center, inverse
-
-# Relembrando 
-
----
-
-##  Glossário
-
-- __Sistema de controle de versão:__ Um sistema para gerenciar as mudanças feitas em um software durante o seu desenvolvimento. 
-
-- __Git:__ Uma ferramenta de controle de versão para registrar e gerenciar mudanças em um projeto. 
-
-- __GitHub:__ PR SUBMETIDO
-
-Fonte: [Glossário da The Carpentries, mantido pela comunidade](https://glosario.carpentries.org/pt/)
-
----
-
-##  Glossário
-
-- __Repositório:__ Um local onde um sistema de controle de versão armazena os arquivos que compõem um projeto e os metadados que descrevem sua história. 
-
-- __Commit:__ NÃO ESTÁ NO GLOSSÁRIO
-
-- __Branch:__ PR SUBMETIDO
-
-- __Clone:__ SUBMETER UM PR NO GLOSSÁRIO
-
-- __Fork:__ SUBMETER UM PR NO GLOSSÁRIO
-
-- __Pull Request:__ SUBMETER UM PR NO GLOSSÁRIO
-
-
-
-Fonte: [Glossário da The Carpentries, mantido pela comunidade](https://glosario.carpentries.org/pt/)
-
-
-
----
 
 ## Comentários importantes
 
-- Você pode usar o Git através da [linha de comando](https://git-scm.com/), ou usando interfaces gráficas como  [GitHub Desktop](https://desktop.github.com/), [Sourcetree](https://www.sourcetreeapp.com/), RStudio, etc. Aqui apresento com o RStudio, mas escolha o que é mais confortável para você :)
+- Você pode usar o Git através:
+  -  __Linha de comando__ :
+      - [git](https://git-scm.com/)
+      - terminal do RStudio
+  - __Interfaces gráficas__:
+      - [GitHub Desktop](https://desktop.github.com/)
+      - [Sourcetree](https://www.sourcetreeapp.com/)
+      - Git Pane do RStudio
+      - Entre outros!
+    
+Aqui apresento com o RStudio, mas escolha o que é mais confortável para você :)
 
-- Independente de qual ferramenta você escolher, é importante qual comando do Git equivale a um botão no RStudio (ou outro software, o importante é entender as equivalências!).
+- Independente de qual ferramenta você escolher, é importante qual comando do Git equivale a um "botão" na interface gráfica. É muito importante entender as equivalências!
 
 ---
 class: middle, center, inverse
@@ -256,28 +230,6 @@ knitr::include_graphics("img/prints/install_RStudio.png")
 ---
 class: middle
 
-
-.pull-left[
-## Conta no GitHub
-  - [Neste link](https://github.com/)
-  - Caso já tenha, não é preciso criar uma nova conta.
-  
-  
-  - Se for estudante: 
-    - [GitHub Student Developer Pack](https://education.github.com/pack) - utiliza email institucional da universidade.
-  
-]
-
-.pull-right[
-```{r out.width="100%"}
-knitr::include_graphics("img/github-logo.png")
-```
-]
-
-
----
-class: middle
-
 .pull-left[
 
 ## Git 
@@ -302,6 +254,37 @@ class:middle
 knitr::include_graphics("img/prints/install-git.png")
 ```
 
+---
+class: middle
+
+
+.pull-left[
+## Conta no GitHub
+  - [Neste link](https://github.com/)
+  - Caso já tenha, não é preciso criar uma nova conta.
+  
+  
+
+  
+]
+
+.pull-right[
+```{r out.width="100%"}
+knitr::include_graphics("img/github-logo.png")
+```
+]
+
+  - Se for estudante: 
+    - [GitHub Student Developer Pack](https://education.github.com/pack) - utiliza email institucional da universidade.
+
+---
+
+```{r echo=FALSE}
+knitr::include_graphics("img/github.PNG")
+```
+
+
+
 
 ---
 class: middle
@@ -322,24 +305,50 @@ knitr::include_graphics("https://usethis.r-lib.org/reference/figures/logo.png")
 
 
 ---
-class: middle, center, inverse
+class: middle,  inverse, center
 
-# Configurando o Git
+# Configurando o Git e GitHub no RStudio
+
+`r emo::ji("woman_technologist")` No computador: É necessário fazer apenas uma vez (por usuário)!
+
+<i class="fas fa-cloud"></i> No RStudio Cloud: É necessário fazer a configuração em CADA PROJETO.
+
+<center> <b>Demonstração prática</b>: <i class="fas fa-cloud"></i> <a href="https://rstudio.cloud/projects"> Na RStudio Cloud </a>
+
+---
+class: middle,  inverse, center
+
+## Configurando o Git e GitHub no RStudio
+
+- `r emo::ji("white_large_square")` Ter o pacote `usethis` instalado 
+
+- `r emo::ji("white_large_square")` Se apresentar para o `git` 
+
+- `r emo::ji("white_large_square")` Abrir o arquivo `.Renviron` 
+
+- `r emo::ji("white_large_square")` Criar um GitHub Token 
+
+- `r emo::ji("white_large_square")` Adicionar o GitHub Token no arquivo `.Renviron` 
+
+- `r emo::ji("white_large_square")` Reiniciar o RStudio
+
+<!-- `r emo::ji("heavy_check_mark")` -->
+
+<!--  `r emo::ji("x")` -->
 
 ---
 class: middle
 
 ## Configurando o Git
 
-- É necessário fazer apenas uma vez (por computador)!
-
-- Duas possibilidades: no Git, ou no RStudio.
-
 - Informar para o Git seu nome, e email.
 
 - Utilize o mesmo email associado à sua conta do GitHub.
 
-  - No RStudio:
+- Duas possibilidades: no terminal (linha de comando) ou com uma função do `usethis`.
+
+
+  - Com o `usethis`:
 
 ```{r echo=TRUE, eval=FALSE}
 usethis::use_git_config(# Seu nome
@@ -353,13 +362,12 @@ class: middle
 
 ## Configurando o Git
 
-- No Git:
+- No terminal (Substitua pelo seu nome e email):
 
 ```{git echo=TRUE, eval=FALSE}
-$ git config --global user.name "Beatriz Milz"
+git config --global user.name "Beatriz Milz"
 
-
-$ git config --global user.email beatriz.milz@hotmail.com
+git config --global user.email beatriz.milz@hotmail.com
 ```
 
 
@@ -370,12 +378,18 @@ knitr::include_graphics("img/prints/configurar_git.PNG")
 ```
 
 
-
-
 ---
-class: middle, center, inverse
+class: middle
 
-# Configurando o GitHub no RStudio
+## Configurando o GitHub + RStudio
+
+- Abra o arquivo `.Renviron` usando a seguinte função:
+
+```{r  echo=TRUE, eval=FALSE}
+usethis::edit_r_environ()
+# * Edit 'C:/Users/beatr/Documents/.Renviron'
+# * Restart R for changes to take effect
+```
 
 ---
 class: middle
@@ -447,42 +461,18 @@ knitr::include_graphics("img/prints/git-pane.PNG")
 ```
 
 ---
-class: middle
 
-## Interface Gráfica RStudio
+## Equivalência dos principais comandos
 
-```{r, out.width="95%"}
-knitr::include_graphics("img/prints/cheatsheet.PNG")
-```
+### Linha de comando vs RStudio
 
-Fonte: [RStudio Cheatsheet](https://www.rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf)
+- git status
 
----
-class: middle
+- git add [arquivo]
 
-## Branch
+- git commit -m "[mensagem descritiva]"
 
-```{r}
-knitr::include_graphics("img/prints/git-pane-branch.png")
-```
-
----
-class: middle
-
-## Botão Diff -> Review changes
-
-```{r, out.width="90%"}
-knitr::include_graphics("img/prints/git-pane-diff.PNG")
-```
-
----
-class: middle
-
-## Botão `r emo::ji("clock3")` (history) -> Review changes
-
-```{r, out.width="90%"}
-knitr::include_graphics("img/prints/git-pane-history.PNG")
-```
+- git diff
 
 
 ---
@@ -513,11 +503,53 @@ knitr::include_graphics("img/prints/git_commit.PNG")
 ```
 
 
+---
+class: middle
+
+## Botão Diff -> Review changes
+
+```{r, out.width="90%"}
+knitr::include_graphics("img/prints/git-pane-diff.PNG")
+```
+
+---
+class: middle
+
+## Botão `r emo::ji("clock3")` (history) -> Review changes
+
+```{r, out.width="90%"}
+knitr::include_graphics("img/prints/git-pane-history.PNG")
+```
+
+
+---
+class: middle
+
+## Branch
+
+```{r}
+knitr::include_graphics("img/prints/git-pane-branch.png")
+```
+
+---
+class: middle
+
+## Interface Gráfica RStudio
+
+```{r, out.width="95%"}
+knitr::include_graphics("img/prints/cheatsheet.PNG")
+```
+
+Fonte: [RStudio Cheatsheet](https://www.rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf)
 
 ---
 class: middle, center, inverse
 
 # Trabalhando com projetos no RStudio + GitHub
+
+--
+
+## `r emo::ji("woman_technologist")` No computador
 
 ---
 ## Método 1
@@ -714,7 +746,7 @@ knitr::include_graphics("img/gifs/create-proj2.gif")
 
 ---
 
-## Método 3
+## Método 3 - Trabalho colaborativo
 
 - **A partir de um repositório existente, fazer um fork e clonar diretamente do RStudio**
 
@@ -726,22 +758,21 @@ knitr::include_graphics("img/gifs/create-proj2.gif")
 
 ---
 ### Exemplo do uso da função `create_from_github()`
-- Exemplo: fork e clone do projeto [Data Science in a Box](https://github.com/rstudio-education/datascience-box/):
+- Exemplo: fork e clone do projeto [Lista de meetups R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil):
 
-https://github.com/rstudio-education/datascience-box/
 
 ```{r echo=TRUE, eval=FALSE}
-usethis::create_from_github("rstudio-education/datascience-box",
+usethis::create_from_github("R-Ladies-Sao-Paulo/RLadies-Brasil",
                    destdir = "C:/Users/beatr/Documents/GitHub", 
                    fork = TRUE)
 # ✔ Creating 'C:/Users/beatr/Documents/GitHub/datascience-box/'
-# ✔ Forking 'rstudio-education/datascience-box'
-# ✔ Cloning repo from 'https://github.com/beatrizmilz/datascience-box.git' into 'C:/Users/beatr/Documents/GitHub/datascience-box'
-# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/datascience-box'
-# ✔ Adding 'upstream' remote: 'https://github.com/rstudio-education/datascience-box.git'
+# ✔ Forking 'R-Ladies-Sao-Paulo/RLadies-Brasil'
+# ✔ Cloning repo from 'https://github.com/beatrizmilz/RLadies-Brasil.git' into 'C:/Users/beatr/Documents/GitHub/RLadies-Brasil'
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/RLadies-Brasil'
+# ✔ Adding 'upstream' remote: 'https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil.git'
 # ✔ Pulling changes from GitHub source repo 'upstream/master'
 # ✔ Setting remote tracking branch for local 'master' branch to 'upstream/master'
-# ✔ Opening 'C:/Users/beatr/Documents/GitHub/datascience-box/' in new RStudio session
+# ✔ Opening 'C:/Users/beatr/Documents/GitHub/RLadies-Brasil/' in new RStudio session
 # ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/RLadies-Git-RStudio-2019'
 ```
 
@@ -801,6 +832,12 @@ knitr::include_graphics("img/prints/pr-push3.png")
 
 - Depois dessa etapa, você deve esperar o mantenedor do repositório responder aceitando seu PR, fazendo sujestões para melhorias, etc.
 
+
+---
+ESCREVER AQUI.
+O MAIS COMO É QUE O PR NAO SEJA ACEITO DE PRIMEIRA.
+ENTÃO....... MOSTRAR COMO ARRUMAR!
+
 ---
 class: middle 
 
@@ -823,6 +860,34 @@ pr_finish()
 ```
 
 - Pronto! 
+
+
+---
+class: middle, center, inverse
+
+# Trabalhando com projetos no RStudio + GitHub
+
+--
+
+## <i class="fas fa-cloud"></i> Na RStudio Cloud
+
+---
+
+
+ESCREVER!
+
+## Trabalhando sozinha
+
+- Criar um projeto no github
+
+- criar com NEW PROJECT FROM GIT REPO
+
+- se apresentar, é melhor via terminal
+.
+
+- fazer as mudanças, stage, commit. Push - vai pedir o usuario. depois já funciona
+
+## E colaborando?
 
 ---
 class: center, middle 

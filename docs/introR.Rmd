@@ -1,12 +1,9 @@
 ---
 title: "Introdução ao R"
-#description: |
-#  Uma lista de apresentações usando ou sobre R e Comunidades.
 author:
   - name: Beatriz Milz 
     url: https://beatrizmilz.com
-    affiliation: R-Ladies São Paulo
-    affiliation_url: https://www.meetup.com/rladies-sao-paulo/
+    affiliation: IEE/USP
 date: "Atualizado em `r Sys.Date()`"
 site: distill::distill_website
 ---
@@ -22,6 +19,10 @@ knitr::opts_chunk$set(echo = FALSE)
 </center>
 
 <p style="text-align:right;">[<i class="fas fa-external-link-alt"></i> Confira a apresentação](https://beatrizmilz.github.io/slidesR/introR/index.html)</p>
+
+### Pré-requisitos
+
+- [Conta na RStudio Cloud](https://rstudio.cloud/projects)
 
 ### Material Complementar
 

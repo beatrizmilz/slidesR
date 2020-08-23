@@ -1,13 +1,11 @@
 p{
  text-align: justify; 
  font-size: 1.2rem;
- line-height: 1.3em;
 }
 
 
 li{
  font-size: 1.2rem;
- line-height: 1.3em;
 }
 
 
@@ -20,4 +18,12 @@ li{
   position: absolute;
   bottom: 60px;
   padding-right: 4em;
+}
+
+.inverse .remark-inline-code {
+  color: #ff7df7;
+}
+
+.inverse a {
+  color: #ff7df7;
 }

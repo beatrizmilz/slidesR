@@ -24,8 +24,8 @@
   
   
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2020-08-22"/>
-  <meta property="article:created" itemprop="dateCreated" content="2020-08-22"/>
+  <meta property="article:published" itemprop="datePublished" content="2020-08-23"/>
+  <meta property="article:created" itemprop="dateCreated" content="2020-08-23"/>
   <meta name="article:author" content="Beatriz Milz"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -42,7 +42,7 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","site"]}},"value":[{"type":"character","attributes":{},"value":["Utilizando o Git e GitHub no RStudio"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Beatriz Milz"]},{"type":"character","attributes":{},"value":["https://beatrizmilz.com"]},{"type":"character","attributes":{},"value":["R-Ladies São Paulo"]},{"type":"character","attributes":{},"value":["https://www.meetup.com/rladies-sao-paulo/"]}]}]},{"type":"character","attributes":{},"value":["Atualizado em 2020-08-22"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","site"]}},"value":[{"type":"character","attributes":{},"value":["Utilizando o Git e GitHub no RStudio"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation"]}},"value":[{"type":"character","attributes":{},"value":["Beatriz Milz"]},{"type":"character","attributes":{},"value":["https://beatrizmilz.com"]},{"type":"character","attributes":{},"value":["IEE/USP"]}]}]},{"type":"character","attributes":{},"value":["Atualizado em 2020-08-23"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -1293,7 +1293,7 @@
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Utilizando o Git e GitHub no RStudio","authors":[{"author":"Beatriz Milz","authorURL":"https://beatrizmilz.com","affiliation":"R-Ladies São Paulo","affiliationURL":"https://www.meetup.com/rladies-sao-paulo/"}],"publishedDate":"2020-08-22T00:00:00.000-03:00","citationText":"Milz, 2020"}
+{"title":"Utilizando o Git e GitHub no RStudio","authors":[{"author":"Beatriz Milz","authorURL":"https://beatrizmilz.com","affiliation":"IEE/USP","affiliationURL":"#"}],"publishedDate":"2020-08-23T00:00:00.000-03:00","citationText":"Milz, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1324,9 +1324,9 @@
 </div>
 
 <div class="d-byline">
-  Beatriz Milz <a href="https://beatrizmilz.com" class="uri">https://beatrizmilz.com</a> (R-Ladies São Paulo)<a href="https://www.meetup.com/rladies-sao-paulo/" class="uri">https://www.meetup.com/rladies-sao-paulo/</a>
+  Beatriz Milz <a href="https://beatrizmilz.com" class="uri">https://beatrizmilz.com</a> (IEE/USP)
   
-<br/>Atualizado em 2020-08-22
+<br/>Atualizado em 2020-08-23
 </div>
 
 <div class="d-article">
@@ -1340,11 +1340,19 @@
 </p>
 <h3 id="pré-requisitos">Pré-requisitos</h3>
 <ul>
-<li><p><a href="https://cran.r-project.org/">R</a></p></li>
-<li><p><a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a></p></li>
-<li><p><a href="https://git-scm.com/downloads">Git</a></p></li>
-<li><p><a href="https://github.com/">Conta no GitHub</a></p></li>
-<li><p>Pacote <code>usethis</code>:</p></li>
+<li><p>Para acompanhar a atividade:</p>
+<ul>
+<li><a href="https://github.com/">Conta no GitHub</a></li>
+<li><a href="https://rstudio.cloud/projects">Conta na RStudio Cloud</a></li>
+</ul></li>
+<li><p>Para usar posteriormente:</p>
+<ul>
+<li><a href="https://cran.r-project.org/">R</a></li>
+<li><a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a></li>
+<li><a href="https://git-scm.com/downloads">Git</a></li>
+<li><a href="https://github.com/">Conta no GitHub</a></li>
+<li>Instalação do pacote <code>usethis</code>:</li>
+</ul></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <pre class="r"><code>
@@ -1359,6 +1367,71 @@ install.packages(&quot;usethis&quot;)</code></pre>
 <ul>
 <li><a href="https://www.sympla.com.br/git--rstudio__944832">R-Ladies Goiânia</a>, 27 de agosto de 2020. <a href="https://app.sli.do/event/zlvr87bu">Acompanhe as perguntas no sli.do neste link</a>.</li>
 </ul>
+<h3 id="glossário"><a href="https://glosario.carpentries.org/pt/">Glossário</a></h3>
+<ul>
+<li>Termos em português:</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+sistema de controle de versão: Um sistema para gerenciar as mudanças feitas em um
+  software durante o seu desenvolvimento.</code></pre>
+<pre><code>
+See also: git</code></pre>
+<pre><code>
+</code></pre>
+<pre><code>
+Git: Uma ferramenta de controle de versão para registrar e gerenciar mudanças em
+  um projeto.</code></pre>
+<pre><code>
+</code></pre>
+<pre><code>
+repositório: Um local onde um [sistema de controle de
+  versão](#version_control_system) armazena os arquivos que compõem um projeto e os
+  metadados que descrevem sua história.</code></pre>
+<pre><code>
+See also: git and github</code></pre>
+<pre><code>
+</code></pre>
+</div>
+<ul>
+<li><strong>Termos em Inglês</strong> (a ajuda na tradução do <a href="https://glosario.carpentries.org/pt/">Glossário</a> é bem vinda!):</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code>
+GitHub: A cloud-based platform built around [Git](#git) that allows you to save
+  versions of your project online and collaborate with other Git users.</code></pre>
+<pre><code>
+</code></pre>
+<pre><code>
+Git branch: A snapshot of a version of a Git repository. Multiple branches can
+  capture multiple versions of the same repository.</code></pre>
+<pre><code>
+See also: feature_branch, fork, and master_branch</code></pre>
+<pre><code>
+</code></pre>
+<pre><code>
+Git clone: Copies (and usually downloads) a Git [remote
+  repository](#remote_repository) onto the local computer.</code></pre>
+<pre><code>
+</code></pre>
+<pre><code>
+fork: A copy of one person&#39;s Git repository that lives in another person&#39;s GitHub
+  account. Changes to the content of a fork can be submitted to the [upstream
+  repository](#upstream_repository) via a [pull request](#pull_request).</code></pre>
+<pre><code>
+See also: branch</code></pre>
+<pre><code>
+</code></pre>
+<pre><code>
+pull request: The request to merge a new feature or correction created on a user&#39;s
+  fork of a [Git](#git) repository into the [upstream
+  repository](#upstream_repository). The developer will be notified of the change,
+  review it, make or suggest changes, and potentially merge it.</code></pre>
+<pre><code>
+See also: fork</code></pre>
+<pre><code>
+</code></pre>
+</div>
 <hr />
 <center>
 <a href="index.html"><i class="fas fa-home"></i> Retorne à página inicial</a>

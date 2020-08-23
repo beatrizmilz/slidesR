@@ -1,12 +1,9 @@
 ---
 title: "Utilizando o Git e GitHub no RStudio"
-#description: |
-#  Uma lista de apresentações usando ou sobre R e Comunidades.
 author:
   - name: Beatriz Milz 
     url: https://beatrizmilz.com
-    affiliation: R-Ladies São Paulo
-    affiliation_url: https://www.meetup.com/rladies-sao-paulo/
+    affiliation: IEE/USP
 date: "Atualizado em `r Sys.Date()`"
 site: distill::distill_website
 ---
@@ -25,14 +22,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Pré-requisitos
 
-- [R](https://cran.r-project.org/)
-- [RStudio](https://www.rstudio.com/products/rstudio/download/)
-- [Git](https://git-scm.com/downloads)
+- Para acompanhar a atividade:
+  - [Conta no GitHub](https://github.com/)
+  - [Conta na RStudio Cloud](https://rstudio.cloud/projects)
+  
+- Para usar posteriormente: 
 
-- [Conta no GitHub](https://github.com/)
-
-
-- Pacote `usethis`:
+  - [R](https://cran.r-project.org/)
+  - [RStudio](https://www.rstudio.com/products/rstudio/download/)
+  - [Git](https://git-scm.com/downloads)
+  - [Conta no GitHub](https://github.com/)
+  - Instalação do pacote `usethis`:
 
 ```{r echo=TRUE, eval=FALSE}
 install.packages("usethis")
@@ -42,13 +42,34 @@ install.packages("usethis")
 ### Material Complementar
 
 - [Folha de dicas sobre Git (Cheat Sheet)](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)
-  
+
 
 ### Meetups
 
 Este material foi/será utilizado nos seguintes eventos/meetups:
 
 - [R-Ladies Goiânia](https://www.sympla.com.br/git--rstudio__944832), 27 de agosto de 2020. [Acompanhe as perguntas no sli.do neste link](https://app.sli.do/event/zlvr87bu).
+
+### [Glossário](https://glosario.carpentries.org/pt/)
+
+- Termos em português:
+
+```{r echo=FALSE, message=TRUE}
+glosario::define(c("version_contro_system", "git", "repository"), lang = "pt")
+```
+
+- __Termos em Inglês__ (a ajuda na tradução do [Glossário](https://glosario.carpentries.org/pt/) é bem vinda!):
+
+```{r echo=FALSE, message=TRUE}
+# PR Submetido para Português
+glosario::define(c("github", "git_branch"), lang = "en") 
+
+
+ # SUBMETER PR
+glosario::define(c("git_clone", "fork", "pull_request"), lang = "en")
+```
+
+
 
 ---
 
