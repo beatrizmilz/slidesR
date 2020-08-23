@@ -145,6 +145,15 @@ knitr::include_graphics(c("img/Hex/1dados-hex.png",
 - Partindo do ponto que: 
   - Você já conhece os conceitos básicos de Git
   - Você já sabe porque é interessante usar Git
+  
+--
+
+- Paralelamente irei falar sobre como usar Git:
+  - <i class="fas fa-cloud"></i> No RStudio Cloud
+  - `r emo::ji("woman_technologist")` No RStudio instalado no seu computador
+
+
+
 
 --
 
@@ -173,6 +182,9 @@ Aqui apresento com o RStudio, mas escolha o que é mais confortável para você 
 class: middle, center, inverse
 
 # Pré-requisitos
+
+## `r emo::ji("woman_technologist")` Para usar no Computador
+
 
 ---
 class: middle
@@ -282,10 +294,6 @@ knitr::include_graphics("img/github-logo.png")
 ```{r echo=FALSE}
 knitr::include_graphics("img/github.PNG")
 ```
-
-
-
-
 ---
 class: middle
 
@@ -302,6 +310,18 @@ library(usethis)
 ```{r}
 knitr::include_graphics("https://usethis.r-lib.org/reference/figures/logo.png")
 ```
+
+---
+class: middle, center, inverse
+
+# Pré-requisitos
+
+## <i class="fas fa-cloud"></i> Para usar Git na RStudio Cloud
+
+- [Conta no GitHub](https://github.com/)
+
+- [Conta no RStudio Cloud](https://rstudio.cloud/projects)
+
 
 
 ---
@@ -437,9 +457,11 @@ usethis::edit_r_environ()
 ```
 
 - Crie uma nova linha na forma `GITHUB_PAT=SEU_TOKEN`, adicione o token, pule uma linha e salve o arquivo.
+
 ```{r out.width="60%"}
 knitr::include_graphics("img/prints/githubpath.png")
 ```
+
 - **Reinicie o RStudio**:  CTRL + SHIFT + F10
 
 ---
@@ -823,23 +845,37 @@ knitr::include_graphics("img/prints/pr-push2.png")
 ```
 
 ---
-class: middle 
+
 
 ### Exemplo: PR foi aberto
+
 ```{r out.width="80%"}
 knitr::include_graphics("img/prints/pr-push3.png")
 ```
 
-- Depois dessa etapa, você deve esperar o mantenedor do repositório responder aceitando seu PR, fazendo sujestões para melhorias, etc.
+- Depois dessa etapa, você deve esperar a pessoa que mantém o repositório responder fazendo sujestões para melhorias, aceitando seu PR, etc.
 
 
 ---
-ESCREVER AQUI.
-O MAIS COMO É QUE O PR NAO SEJA ACEITO DE PRIMEIRA.
-ENTÃO....... MOSTRAR COMO ARRUMAR!
+
+### Modificar o PR
+
+- Alguém fez uma sugestão, como alterar o PR enviado? Ex:
+
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("img/prints/sugestoes-git.PNG")
+```
+- No mesmo projeto e na __mesma branch__ que você usou para enviar o PR, faça as alterações.
+
+- Selecione o arquivo modificado para deixá-lo disponível para criar um Commit. Faça o commit.
+
+- Para enviar o novo commit, use o Git Push (aperte a seta verde para cima no painel do Git do RStudio).
+
+
+
+
 
 ---
-class: middle 
 
 ### Depois que o PR é aceito:  Merged
 
@@ -850,7 +886,12 @@ knitr::include_graphics("img/prints/pr-push4.PNG")
 ---
 class: middle 
 
-### Última etapa: voltar para a master, atualizar (pull) o conteúdo e deletar a branch criada
+### Última etapa: __APÓS__ o PR ter sido aceito (merged)
+
+- A função `pr_finish()`:
+  - Retorna para master
+  - Atualiza (usando o pull) o conteúdo 
+  - Deleta a branch criada para enviar o PR
 
 ```{r echo=TRUE, eval=FALSE}
 pr_finish()
@@ -870,6 +911,11 @@ class: middle, center, inverse
 --
 
 ## <i class="fas fa-cloud"></i> Na RStudio Cloud
+
+```{r echo=FALSE}
+knitr::include_graphics("https://media.giphy.com/media/L2UdIWuCRbUL6/giphy.gif")
+```
+
 
 ---
 
@@ -900,26 +946,6 @@ knitr::include_graphics("https://media0.giphy.com/media/dNgK7Ws7y176U/giphy.gif"
 ```
 
 Confira a [cheatsheet do Git](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)!
-
----
-class:  middle 
-
-# Check-list da configuração! 
-
-## Para o tempo restante (ou para `r emo::ji("house")`) 
-
-
-1) Verifique se você tem instalado no seu computador: R, RStudio e Git.
-
-2) Caso não esteja configurado, configure o Git: conte para ele seu nome e seu email `r emo::ji("smiley")`
-
-3) No RStudio, verifique se você tem o pacote `usethis` instalado. Caso não esteja instalado, instale. Utilize a função `library(usethis)` para deixar a função `usethis` disponível para uso.
-
-4) No RStudio, configure o GitHub token.
-
-
-
-
 
 
 ---
@@ -962,4 +988,45 @@ class: middle, center
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZCeBnQBQ1h8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-- Caso encontre algum erro nesta apresentação, **[submeta uma issue neste repositório](https://github.com/beatrizmilz/slidesR/issues/new/choose)** para que o material seja aprimorado. 
+- Caso encontre algum erro nesta apresentação, **[submeta uma issue neste repositório](https://github.com/beatrizmilz/slidesR/issues/new/choose)** para que o material seja aprimorado.
+
+
+
+
+---
+class: middle
+
+### R-Ladies no Brasil
+
+- Quer saber mais sobre próximos eventos das R-Ladies por aqui? Favorite este [repositório no GitHub](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil) `r emo::ji("purple_heart")`:
+
+
+<center>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star R-Ladies-Sao-Paulo/RLadies-Brasil on GitHub">Capítulos e eventos online da R-Ladies no Brasil</a>
+</center>
+
+
+
+---
+class: middle
+
+### O que achou da apresentação?
+
+- Por favor, responda o [formulário abaixo](https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform), pois me ajuda  **muito** a melhorar os materiais e as apresentações `r emo::ji("purple_heart")`:
+
+
+<center>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform" height="100%" width="100%" style="min-height: 400px;"></iframe>
+</center>
+
+
+---
+class: center, middle
+
+# Obrigada!
+
+Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
+
+Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/) e [**countdown**](https://github.com/gadenbuie/countdown).
+

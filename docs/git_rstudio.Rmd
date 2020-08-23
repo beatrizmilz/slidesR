@@ -50,7 +50,7 @@ Este material foi/será utilizado nos seguintes eventos/meetups:
 
 - [R-Ladies Goiânia](https://www.sympla.com.br/git--rstudio__944832), 27 de agosto de 2020. [Acompanhe as perguntas no sli.do neste link](https://app.sli.do/event/zlvr87bu).
 
-### [Glossário](https://glosario.carpentries.org/pt/)
+### `r emo::ji("parrot")` [Glossário](https://glosario.carpentries.org/pt/)
 
 - Termos em português:
 

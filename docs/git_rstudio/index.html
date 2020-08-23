@@ -8,7 +8,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"c10b579dad5643a2b2fb5047693318d5","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa6313f45d51468292339dd9c06ceb58","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -119,6 +119,15 @@ __.can-edit[2º semestre/2020]__
 - Partindo do ponto que: 
   - Você já conhece os conceitos básicos de Git
   - Você já sabe porque é interessante usar Git
+  
+--
+
+- Paralelamente irei falar sobre como usar Git:
+  - &lt;i class="fas fa-cloud"&gt;&lt;/i&gt; No RStudio Cloud
+  - 👩‍💻 No RStudio instalado no seu computador
+
+
+
 
 --
 
@@ -147,6 +156,9 @@ Aqui apresento com o RStudio, mas escolha o que é mais confortável para você 
 class: middle, center, inverse
 
 # Pré-requisitos
+
+## 👩‍💻 Para usar no Computador
+
 
 ---
 class: middle
@@ -240,10 +252,6 @@ class: middle
 ---
 
 &lt;img src="img/github.PNG" width="1655" style="display: block; margin: auto;" /&gt;
-
-
-
-
 ---
 class: middle
 
@@ -259,6 +267,18 @@ library(usethis)
 ```
 
 &lt;img src="https://usethis.r-lib.org/reference/figures/logo.png" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle, center, inverse
+
+# Pré-requisitos
+
+## &lt;i class="fas fa-cloud"&gt;&lt;/i&gt; Para usar Git na RStudio Cloud
+
+- [Conta no GitHub](https://github.com/)
+
+- [Conta no RStudio Cloud](https://rstudio.cloud/projects)
+
 
 
 ---
@@ -393,7 +413,9 @@ usethis::edit_r_environ()
 ```
 
 - Crie uma nova linha na forma `GITHUB_PAT=SEU_TOKEN`, adicione o token, pule uma linha e salve o arquivo.
+
 &lt;img src="img/prints/githubpath.png" width="60%" style="display: block; margin: auto;" /&gt;
+
 - **Reinicie o RStudio**:  CTRL + SHIFT + F10
 
 ---
@@ -747,21 +769,33 @@ class: middle
 &lt;img src="img/prints/pr-push2.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
-class: middle 
+
 
 ### Exemplo: PR foi aberto
+
 &lt;img src="img/prints/pr-push3.png" width="80%" style="display: block; margin: auto;" /&gt;
 
-- Depois dessa etapa, você deve esperar o mantenedor do repositório responder aceitando seu PR, fazendo sujestões para melhorias, etc.
+- Depois dessa etapa, você deve esperar a pessoa que mantém o repositório responder fazendo sujestões para melhorias, aceitando seu PR, etc.
 
 
 ---
-ESCREVER AQUI.
-O MAIS COMO É QUE O PR NAO SEJA ACEITO DE PRIMEIRA.
-ENTÃO....... MOSTRAR COMO ARRUMAR!
+
+### Modificar o PR
+
+- Alguém fez uma sugestão, como alterar o PR enviado? Ex:
+
+&lt;img src="img/prints/sugestoes-git.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+- No mesmo projeto e na __mesma branch__ que você usou para enviar o PR, faça as alterações.
+
+- Selecione o arquivo modificado para deixá-lo disponível para criar um Commit. Faça o commit.
+
+- Para enviar o novo commit, use o Git Push (aperte a seta verde para cima no painel do Git do RStudio).
+
+
+
+
 
 ---
-class: middle 
 
 ### Depois que o PR é aceito:  Merged
 
@@ -770,7 +804,12 @@ class: middle
 ---
 class: middle 
 
-### Última etapa: voltar para a master, atualizar (pull) o conteúdo e deletar a branch criada
+### Última etapa: __APÓS__ o PR ter sido aceito (merged)
+
+- A função `pr_finish()`:
+  - Retorna para master
+  - Atualiza (usando o pull) o conteúdo 
+  - Deleta a branch criada para enviar o PR
 
 
 ```r
@@ -791,6 +830,9 @@ class: middle, center, inverse
 --
 
 ## &lt;i class="fas fa-cloud"&gt;&lt;/i&gt; Na RStudio Cloud
+
+&lt;img src="https://media.giphy.com/media/L2UdIWuCRbUL6/giphy.gif" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -819,26 +861,6 @@ class: center, middle
 &lt;img src="https://media0.giphy.com/media/dNgK7Ws7y176U/giphy.gif" width="50%" style="display: block; margin: auto;" /&gt;
 
 Confira a [cheatsheet do Git](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)!
-
----
-class:  middle 
-
-# Check-list da configuração! 
-
-## Para o tempo restante (ou para 🏠) 
-
-
-1) Verifique se você tem instalado no seu computador: R, RStudio e Git.
-
-2) Caso não esteja configurado, configure o Git: conte para ele seu nome e seu email 😃
-
-3) No RStudio, verifique se você tem o pacote `usethis` instalado. Caso não esteja instalado, instale. Utilize a função `library(usethis)` para deixar a função `usethis` disponível para uso.
-
-4) No RStudio, configure o GitHub token.
-
-
-
-
 
 
 ---
@@ -880,6 +902,46 @@ class: middle, center
 
 
 - Caso encontre algum erro nesta apresentação, **[submeta uma issue neste repositório](https://github.com/beatrizmilz/slidesR/issues/new/choose)** para que o material seja aprimorado.
+
+
+
+
+---
+class: middle
+
+### R-Ladies no Brasil
+
+- Quer saber mais sobre próximos eventos das R-Ladies por aqui? Favorite este [repositório no GitHub](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil) 💜:
+
+
+&lt;center&gt;
+&lt;!-- Place this tag where you want the button to render. --&gt;
+&lt;a class="github-button" href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star R-Ladies-Sao-Paulo/RLadies-Brasil on GitHub"&gt;Capítulos e eventos online da R-Ladies no Brasil&lt;/a&gt;
+&lt;/center&gt;
+
+
+
+---
+class: middle
+
+### O que achou da apresentação?
+
+- Por favor, responda o [formulário abaixo](https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform), pois me ajuda  **muito** a melhorar os materiais e as apresentações 💜:
+
+
+&lt;center&gt;
+&lt;iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform" height="100%" width="100%" style="min-height: 400px;"&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+
+
+---
+class: center, middle
+
+# Obrigada!
+
+Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
+
+Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/) e [**countdown**](https://github.com/gadenbuie/countdown).
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
