@@ -137,12 +137,55 @@ knitr::include_graphics(c("img/Hex/1dados-hex.png",
 
 - **Público-alvo:** pessoas que utilizam o R para análise de dados, tem um conhecimento básico sobre Git e GitHub e querem utilizar essas ferramentas diretamente do RStudio. 
 
+--
+
 - Partindo do ponto que: 
   - Você já conhece os conceitos básicos de Git
   - Você já sabe porque é interessante usar Git
 
+--
+
 
 - A maior parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/RLadies-Git-RStudio-2019/#1), oferecido por mim em um meetup da R-Ladies São Paulo em Setembro/2019.
+
+---
+class: middle, center, inverse
+
+# Relembrando 
+
+---
+
+##  Glossário
+
+- __Sistema de controle de versão:__ Um sistema para gerenciar as mudanças feitas em um software durante o seu desenvolvimento. 
+
+- __Git:__ Uma ferramenta de controle de versão para registrar e gerenciar mudanças em um projeto. 
+
+- __GitHub:__ PR SUBMETIDO
+
+Fonte: [Glossário da The Carpentries, mantido pela comunidade](https://glosario.carpentries.org/pt/)
+
+---
+
+##  Glossário
+
+- __Repositório:__ Um local onde um sistema de controle de versão armazena os arquivos que compõem um projeto e os metadados que descrevem sua história. 
+
+- __Commit:__ NÃO ESTÁ NO GLOSSÁRIO
+
+- __Branch:__ PR SUBMETIDO
+
+- __Clone:__ SUBMETER UM PR NO GLOSSÁRIO
+
+- __Fork:__ SUBMETER UM PR NO GLOSSÁRIO
+
+- __Pull Request:__ SUBMETER UM PR NO GLOSSÁRIO
+
+
+
+Fonte: [Glossário da The Carpentries, mantido pela comunidade](https://glosario.carpentries.org/pt/)
+
+
 
 ---
 
@@ -151,11 +194,6 @@ knitr::include_graphics(c("img/Hex/1dados-hex.png",
 - Você pode usar o Git através da [linha de comando](https://git-scm.com/), ou usando interfaces gráficas como  [GitHub Desktop](https://desktop.github.com/), [Sourcetree](https://www.sourcetreeapp.com/), RStudio, etc. Aqui apresento com o RStudio, mas escolha o que é mais confortável para você :)
 
 - Independente de qual ferramenta você escolher, é importante qual comando do Git equivale a um botão no RStudio (ou outro software, o importante é entender as equivalências!).
-
-- Ideias para melhorar:
-  - Colocar um lembrete dos principais comandos do git
-  - Mostrar o que fazer depois que alguém faz uma revisão do seu PR
-  - Como disponibilizar algo no GitHub
 
 ---
 class: middle, center, inverse

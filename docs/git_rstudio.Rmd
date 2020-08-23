@@ -41,7 +41,7 @@ install.packages("usethis")
 
 ### Material Complementar
 
-- Em breve!
+- [Folha de dicas sobre Git (Cheat Sheet)](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)
   
 
 ### Meetups
