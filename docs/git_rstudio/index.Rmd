@@ -919,6 +919,14 @@ knitr::include_graphics("https://media.giphy.com/media/L2UdIWuCRbUL6/giphy.gif")
 
 ---
 
+# Trabalhando sozinha
+
+<!-- - Essa é a forma que, explorando, achei mais simples. -->
+
+
+
+
+---
 
 ESCREVER!
 

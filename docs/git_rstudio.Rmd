@@ -52,7 +52,7 @@ Este material foi/será utilizado nos seguintes eventos/meetups:
 
 ### `r emo::ji("parrot")` [Glossário](https://glosario.carpentries.org/pt/)
 
-- Termos em português:
+- __Termos em português__:
 
 ```{r echo=FALSE, message=TRUE}
 glosario::define(c("version_contro_system", "git", "repository"), lang = "pt")
