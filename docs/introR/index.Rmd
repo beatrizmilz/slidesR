@@ -159,7 +159,7 @@ knitr::include_graphics(c("img/Hex/1dados-hex.png",
 
 - Parte deste conteúdo é derivado [deste material](https://beatrizmilz.github.io/2020-R-Ladies-SP-Basico/#1) da R-Ladies São Paulo.
 
-```{r echo=FALSE, out.width="700px", fig.align="center"}
+```{r echo=FALSE, out.width="600px", fig.align="center"}
 knitr::include_graphics("img/Horst/data-analysis.jpg")
 
 # Talvez seja interessante procurar em português
@@ -1345,3 +1345,7 @@ class: center, middle
 Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
 
 Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/) e [**countdown**](https://github.com/gadenbuie/countdown).
+
+Várias ilustrações usadas na apresentação foram feitas por  <a href='https://twitter.com/allison_horst/'> Allison Horst</a>. Clique [aqui](https://github.com/allisonhorst/stats-illustrations) para ver várias outras artes feitas por ela!
+
+O maravilhoso logo da R-Ladies usado nesta apresentação é uma obra de [Bea @Chucheria](https://twitter.com/chucheria)! Obrigada!
