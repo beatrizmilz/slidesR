@@ -22,3 +22,5 @@ knitr::opts_chunk$set(echo = FALSE)
 ### R
 
 - [Introdução ao R](introR.html)
+
+- [Utilizando o Git e GitHub no RStudio](git_rstudio.html)
