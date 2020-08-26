@@ -957,7 +957,7 @@ knitr::include_graphics("https://media.giphy.com/media/L2UdIWuCRbUL6/giphy.gif")
 
 ---
 
-## Trabalhando sozinha
+##  Trabalhando na RStudio Cloud <i class="fas fa-cloud"></i>
 
 - Não é a única forma, é a forma que eu achei mais simples.
 
