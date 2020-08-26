@@ -8,7 +8,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"c1bb5311cdad4cd09f13f08892832508","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xd0b051ee7174f5fb08370af7f1d58ed","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -71,7 +71,7 @@ __.can-edit[2º semestre/2020]__
 
 
 
-.minirodape[Atualizado em 23 de agosto de 2020. &lt;br&gt; Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
+.minirodape[Atualizado em 26 de agosto de 2020. &lt;br&gt; Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
 
 ---
 
@@ -92,7 +92,7 @@ __.can-edit[2º semestre/2020]__
 
 ## Comunidades de R
 &lt;center&gt;
-&lt;img src="img/Hex/1dados-hex.png" width="18%" /&gt;&lt;img src="img/Hex/1hexlogorladies.jpeg" width="18%" /&gt;&lt;img src="img/Hex/2satrdaysp.png" width="18%" /&gt;&lt;img src="img/Hex/4LatinR_hex_violeta-cut.jpg" width="18%" /&gt;&lt;img src="img/Hex/carpentries.png" width="18%" /&gt;
+&lt;img src="img/Hex/1dados-hex.png" width="100px" /&gt;&lt;img src="img/Hex/1hexlogorladies.jpeg" width="100px" /&gt;&lt;img src="img/Hex/2satrdaysp.png" width="100px" /&gt;&lt;img src="img/Hex/4LatinR_hex_violeta-cut.jpg" width="100px" /&gt;&lt;img src="img/Hex/carpentries.png" width="100px" /&gt;
 &lt;/center&gt;
 
 - Co-autora do pacote [`{dados}`](https://cienciadedatos.github.io/dados/)
@@ -250,8 +250,9 @@ class: middle
     - [GitHub Student Developer Pack](https://education.github.com/pack) - utiliza email institucional da universidade.
 
 ---
+class: middle, center
 
-&lt;img src="img/github.PNG" width="1655" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/github.PNG" width="70%" style="display: block; margin: auto;" /&gt;
 ---
 class: middle
 
@@ -340,7 +341,7 @@ class: middle
 
 ## Configurando o Git
 
-- No terminal (Substitua pelo seu nome e email):
+- No terminal (Substitua pelo seu nome e email  vinculado à conta do GitHub):
 
 
 ```git
@@ -448,6 +449,12 @@ class: middle
 
 - git diff
 
+- git pull
+
+- git push
+
+- ...
+
 
 ---
 class: middle
@@ -512,11 +519,32 @@ class: middle, center, inverse
 ## 👩‍💻 No computador
 
 ---
-## Método 1
+## Método 1 - **Clonando um repositório do GitHub**
 
-- **Clonando um repositório do GitHub**
+- [Crie um repositório no GitHub](https://github.com/new), ou abra a página de um repositório já existente. 
 
-- Crie um repositório no GitHub, ou abra a página de um repositório já existente.
+.pull-left[
+- Criando um repositório no GitHub:
+
+&lt;img src="img/prints/novo-repo.PNG" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+Se o repositório não for "seu", faça um fork primeiro, e clone o seu fork. 
+
+&lt;img src="img/prints/fork.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+
+
+
+---
+
 
 - No RStudio, crie um novo projeto: File &gt; New Project 
 .pull-left[
@@ -693,11 +721,14 @@ class: middle  bg-main4
 
 ---
 
-## Método 3 - Trabalho colaborativo
+## Método 3
 
 - **A partir de um repositório existente, fazer um fork e clonar diretamente do RStudio**
 
 - Para isso, usaremos a função `usethis::create_from_github()`.
+
+- **Não use** essa função no RStudio Cloud.
+
 - Argumentos importantes:
   - `repo_spec = ` repositório que quer trabalhar. Deve estar no formato: "usuario_github/repositorio". Veja o exemplo abaixo.
   - `destdir =` diretório onde quer que os arquivos sejam salvos
@@ -705,6 +736,7 @@ class: middle  bg-main4
 
 ---
 ### Exemplo do uso da função `create_from_github()`
+
 - Exemplo: fork e clone do projeto [Lista de meetups R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil):
 
 
@@ -740,6 +772,9 @@ usethis::pr_init(branch = "teste")
 # ✔ Switching to branch 'teste'
 # ● Use `pr_push()` to create PR
 ```
+
+---
+### Faça alterações e commits
 
 - Faça suas contribuições, e sempre faça commits com mensagens que deixem claro as mudanças.
 
@@ -833,24 +868,76 @@ class: middle, center, inverse
 
 &lt;img src="https://media.giphy.com/media/L2UdIWuCRbUL6/giphy.gif" style="display: block; margin: auto;" /&gt;
 
-
 ---
-
-
-ESCREVER!
 
 ## Trabalhando sozinha
 
-- Criar um projeto no github
+- Não é a única forma, é a forma que eu achei mais simples.
 
-- criar com NEW PROJECT FROM GIT REPO
+&lt;!-- - Fiz alguns testes com o pacote `usethis` no RStudio Cloud, porém não gostei muito da experiência. --&gt;
 
-- se apresentar, é melhor via terminal
-.
+### **Etapa 1:** 
 
-- fazer as mudanças, stage, commit. Push - vai pedir o usuario. depois já funciona
+- Escolha um repositório **seu** para clonar. Pode ser um novo repositório, ou um já existente.
 
-## E colaborando?
+---
+
+- Lembrando, caso queira criar um repositório no GitHub:
+
+&lt;img src="img/prints/novo-repo.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+### Etapa 2: 
+
+- No RStudio Cloud,  Clique na seta ao lado de 'New Project' e escolha a opção "New Project from Git Repo"
+
+&lt;img src="img/prints/rstudio-cloud-new-project-from-repo.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+### Etapa 2: continuação
+
+- Indique a URL do repositório (o link) e clique "OK". O RStudio Cloud criará um projeto onde esse repositório será clonado.
+
+&lt;img src="img/prints/rstudio-cloud-new-project-from-repo-url.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+### Etapa 3: 
+
+- Se apresente ao Git! O melhor, neste caso, é via terminal.
+
+&lt;img src="img/prints/rstudio-cloud-terminal.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Etapa 3: continuação
+
+- Se apresente ao Git!
+
+- No terminal (Substitua pelo seu nome e email vinculado à conta do GitHub):
+
+
+```git
+git config --global user.name "Beatriz Milz"
+
+git config --global user.email beatriz.milz@hotmail.com
+```
+
+
+---
+
+### Etapa 4
+
+- Faça as mudanças no código!
+
+- Quando quiser, faça o commit das mudanças.
+
+- Para enviar as mudanças locais para o repositório remoto, faça o Push. Na primeira vez que for fazer isso, vai abrir uma janela e pedir seu usuário e senha do GitHub (para autenticação).
+
+- Após o push, confira no GitHub se as alterações que você fez estão lá :)
 
 ---
 class: center, middle 
@@ -942,6 +1029,10 @@ class: center, middle
 Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
 
 Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/) e [**countdown**](https://github.com/gadenbuie/countdown).
+
+Várias ilustrações usadas na apresentação foram feitas por  &lt;a href='https://twitter.com/allison_horst/'&gt; Allison Horst&lt;/a&gt;. Clique [aqui](https://github.com/allisonhorst/stats-illustrations) para ver várias outras artes feitas por ela!
+
+O maravilhoso logo da R-Ladies usado nesta apresentação é uma obra de [Bea @Chucheria](https://twitter.com/chucheria)! Obrigada!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>

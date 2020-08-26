@@ -22,11 +22,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Pré-requisitos
 
-- Para acompanhar a atividade:
+A atividade será expositiva. Porém, para praticar posteriormente, esses são os pré-requisitos:
+
+- Usando no RStudio Cloud:
   - [Conta no GitHub](https://github.com/)
   - [Conta na RStudio Cloud](https://rstudio.cloud/projects)
   
-- Para usar posteriormente: 
+- Usando no seu computador (recomendado): 
 
   - [R](https://cran.r-project.org/)
   - [RStudio](https://www.rstudio.com/products/rstudio/download/)

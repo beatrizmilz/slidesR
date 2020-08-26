@@ -1342,6 +1342,8 @@ class: center, middle
 
 # Obrigada!
 
+R-Ladies São Paulo por [este material](https://beatrizmilz.github.io/2020-R-Ladies-SP-Basico/#1).
+
 Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
 
 Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/) e [**countdown**](https://github.com/gadenbuie/countdown).
