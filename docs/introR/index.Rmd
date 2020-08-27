@@ -226,7 +226,7 @@ class: middle, center, inverse
 
 ```{r echo=FALSE}
 countdown::countdown(
-  minutes = 1,
+  minutes = 2,
   seconds = 0,
   color_running_background  = "#EDDAFF"
 )
@@ -600,13 +600,6 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `2-operadores.R` `r emo::ji("woman_technologist")`)]
 
-```{r echo=FALSE}
-countdown::countdown(
-  minutes = 0,
-  seconds = 30,
-  color_running_background  = "#EDDAFF"
-)
-```
 
 ---
 ## Operadores Relacionais
@@ -727,13 +720,7 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `3-tipos_dados.R` `r emo::ji("woman_technologist")`)]
 
-```{r echo=FALSE}
-countdown::countdown(
-  minutes = 0,
-  seconds = 30,
-  color_running_background  = "#EDDAFF"
-)
-```
+
 
 ---
 
@@ -977,13 +964,7 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `4-tipos_objetos.R` `r emo::ji("woman_technologist")`)]
 
-```{r echo=FALSE}
-countdown::countdown(
-  minutes = 0,
-  seconds = 30,
-  color_running_background  = "#EDDAFF"
-)
-```
+
 
 ---
 
@@ -1206,13 +1187,7 @@ class: middle, center, inverse
 
 .center[(Acompanhe no arquivo `5-pacotes.R` `r emo::ji("woman_technologist")`)]
 
-```{r echo=FALSE}
-countdown::countdown(
-  minutes = 0,
-  seconds = 30,
-  color_running_background  = "#EDDAFF"
-)
-```
+
 
 ---
 ## Pacotes no R

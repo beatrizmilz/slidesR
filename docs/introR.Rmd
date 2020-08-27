@@ -36,11 +36,27 @@ knitr::opts_chunk$set(echo = FALSE)
   - [`rladies.csv`](https://benubah.github.io/r-community-explorer/data/rladies.csv) - Base de dados usada no arquivo `4-tipos_objetos.R`.
   
 
+
 ### Meetups
 
 Este material foi/será utilizado nos seguintes eventos/meetups:
 
 - [R-Ladies Curitiba](https://www.sympla.com.br/r-ladies-curitiba-introducao-a-linguagem-r__939607), 26 de agosto de 2020. [Apresentação em PDF](https://beatrizmilz.github.io/slidesR/introR/pdf/RLadies_Curitiba_26-08-2020.pdf).
+
+### Comunidades
+- [Eventos e redes sociais das R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil)
+- [Telegram R-Brasil](https://t.me/rbrasiloficial)
+
+
+### Para aprender mais
+
+- Livro R para Ciência de Dados: Gratuito em [Inglês](https://www.curso-r.com/cursos/) e em [Espanhol](https://es.r4ds.hadley.nz/). 
+
+- [Curso-R](https://curso-r.com): [Material de estudo](http://material.curso-r.com/), [Blog](https://www.curso-r.com/blog/), [Livro - em desenvolvimento](https://livro.curso-r.com/index.html), [Lives e videos no Youtube](https://www.youtube.com/c/CursoR6), [Cursos](https://www.curso-r.com/cursos/).
+
+
+
+
 
 ---
 
