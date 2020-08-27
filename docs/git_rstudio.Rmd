@@ -54,6 +54,8 @@ Este material foi/será utilizado nos seguintes eventos/meetups:
 
 ### Para aprender mais
 
+- [Livro Happy Git with R](https://happygitwithr.com/)
+
 - [Hacktoberfest](https://hacktoberfest.digitalocean.com/faq/)
 
 ### `r emo::ji("parrot")` [Glossário](https://glosario.carpentries.org/pt/)
