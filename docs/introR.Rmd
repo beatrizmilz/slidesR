@@ -40,7 +40,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Este material foi/será utilizado nos seguintes eventos/meetups:
 
-- [R-Ladies Curitiba](https://www.sympla.com.br/r-ladies-curitiba-introducao-a-linguagem-r__939607), 26 de agosto de 2020. [Acompanhe as perguntas no sli.do neste link](https://app.sli.do/event/izgrkbp8).
+- [R-Ladies Curitiba](https://www.sympla.com.br/r-ladies-curitiba-introducao-a-linguagem-r__939607), 26 de agosto de 2020. [Apresentação em PDF](https://beatrizmilz.github.io/slidesR/introR/pdf/RLadies_Curitiba_26-08-2020.pdf).
 
 ---
 

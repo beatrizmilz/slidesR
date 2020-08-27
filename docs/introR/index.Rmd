@@ -15,6 +15,7 @@ output:
 glosario:
    language: 'pt'
 # knit: pagedown::chrome_print
+# pagedown::chrome_print("docs/introR/index.html", timeout = 120)
 ---
 class: center, middle, hide-logo
 
@@ -103,6 +104,19 @@ knitr::include_graphics("img/Horst/community1.jpg")
 ]
 
 .minirodape[Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`. <br> Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
+
+```{r eval=FALSE, include=FALSE}
+# ---
+# 
+# 
+# ## R-Ladies Curitiba - 26/08/2020
+# 
+# ```{r echo=FALSE, fig.align='center', out.width="90%"}
+# knitr::include_graphics("img/slido/26-08-2020-Curitiba.png")
+#```
+```
+
+
 
 ---
 
@@ -1329,12 +1343,12 @@ class: middle
 
 ### O que achou da apresentação?
 
-- Por favor, responda o [formulário abaixo](https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform), pois me ajuda  **muito** a melhorar os materiais e as apresentações `r emo::ji("purple_heart")`:
+- Por favor, responda [este formulário](https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform), pois me ajuda  **muito** a melhorar os materiais e as apresentações `r emo::ji("purple_heart")`.
 
 
-<center>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform" height="100%" width="100%" style="min-height: 400px;"></iframe>
-</center>
+<!-- <center> -->
+<!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGDGM80RJloUQXvX5N6kl2bFJSn60cpPcM_JR4AnNe9-tvgQ/viewform" height="100%" width="100%" style="min-height: 400px;"></iframe> -->
+<!-- </center> -->
 
 
 ---
