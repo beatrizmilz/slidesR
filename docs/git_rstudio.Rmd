@@ -47,7 +47,7 @@ A atividade será expositiva. Porém, para praticar posteriormente, esses são o
 install.packages("usethis")
 ```
 
-### Material complementr
+### Material complementar
 
 - [Script em R usado no RStudio Cloud durante a apresentação  para configurar o Git e GitHub](https://beatrizmilz.github.io/slidesR/git_rstudio/rstudio-cloud/script_config_git.R)
 
