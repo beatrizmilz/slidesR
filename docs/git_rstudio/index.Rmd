@@ -14,6 +14,8 @@ output:
       countIncrementalSlides: false
 glosario:
    language: 'pt'
+
+# pagedown::chrome_print("docs/git_rstudio/index.html", output = "docs/git_rstudio/pdf/rladies-gyn-27-08-2020.pdf")
 ---
 class: center, middle, hide-logo
 
@@ -440,6 +442,10 @@ class: middle
 knitr::include_graphics("img/gifs/browse-github-token2.gif")
 ```
 
+
+
+.minirodape[Caso você esteja vendo a versão em PDF, o video acima não irá funcionar. Veja clicando [neste link](https://beatrizmilz.github.io/slidesR/git_rstudio/img/gifs/browse-github-token2.gif).]
+
 ---
 
 - Copie o token gerado:
@@ -796,7 +802,7 @@ class: middle  bg-main4
 knitr::include_graphics("img/gifs/create-proj2.gif")
 ```
 
-
+.minirodape[Caso você esteja vendo a versão em PDF, o video acima não irá funcionar. Veja clicando [neste link](https://beatrizmilz.github.io/slidesR/git_rstudio/img/gifs/create-proj2.gif).]
 
 ---
 
@@ -1079,14 +1085,13 @@ Jenny Bryan](https://happygitwithr.com/)
 ---
 class: middle, center
 
-**Referências**
+# Referências
 
-- Palestra (em inglês) da [Jenny Bryan](https://jennybryan.org/):
+##  [Palestra](https://youtu.be/ZCeBnQBQ1h8) (em inglês) da [Jenny Bryan](https://jennybryan.org/):
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZCeBnQBQ1h8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-- Caso encontre algum erro nesta apresentação, **[submeta uma issue neste repositório](https://github.com/beatrizmilz/slidesR/issues/new/choose)** para que o material seja aprimorado.
 
 
 
@@ -1131,3 +1136,5 @@ Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xa
 Várias ilustrações usadas na apresentação foram feitas por  <a href='https://twitter.com/allison_horst/'> Allison Horst</a>. Clique [aqui](https://github.com/allisonhorst/stats-illustrations) para ver várias outras artes feitas por ela!
 
 O maravilhoso logo da R-Ladies usado nesta apresentação é uma obra de [Bea @Chucheria](https://twitter.com/chucheria)! Obrigada!
+
+- Caso encontre algum erro nesta apresentação, **[escreva uma issue neste repositório](https://github.com/beatrizmilz/slidesR/issues/new/choose)** para que o material seja aprimorado.

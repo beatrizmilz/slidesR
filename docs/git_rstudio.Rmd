@@ -43,20 +43,35 @@ install.packages("usethis")
 
 ### Material Complementar
 
-- [Folha de dicas sobre Git (Cheat Sheet)](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)
 
 
 ### Meetups
 
 Este material foi/será utilizado nos seguintes eventos/meetups:
 
-- [R-Ladies Goiânia](https://www.sympla.com.br/git--rstudio__944832), 27 de agosto de 2020. 
+- [R-Ladies Goiânia](https://www.sympla.com.br/git--rstudio__944832), 27 de agosto de 2020. [Apresentação em PDF](https://beatrizmilz.github.io/slidesR/git_rstudio/pdf/rladies-gyn-27-08-2020.pdf).
 
 ### Para aprender mais
 
-- [Livro Happy Git with R](https://happygitwithr.com/)
+- [Evento Hacktoberfest](https://hacktoberfest.digitalocean.com/faq/)
 
-- [Hacktoberfest](https://hacktoberfest.digitalocean.com/faq/)
+- [Post sobre o assunto no Blog da Curso-R](https://www.curso-r.com/blog/2019-07-23-zen-do-r-4/), por [Caio Lente](https://lente.dev/)
+
+- [Livro Happy Git with R, em Inglês](https://happygitwithr.com/)
+
+- [Folha de dicas sobre Git _(Cheat Sheet)_, em Português](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)
+
+- [Folhas de dicas da RStudio _(Cheat Sheets)_ , em Inglês](https://rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf)
+
+
+### Comunidades e locais amigáveis para fazer perguntas :)
+
+- [Eventos e redes sociais das R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil)
+
+- [Fórum Curso-R](https://discourse.curso-r.com/)
+
+- [Telegram R-Brasil](https://t.me/rbrasiloficial)
+
 
 ### `r emo::ji("parrot")` [Glossário](https://glosario.carpentries.org/pt/)
 
