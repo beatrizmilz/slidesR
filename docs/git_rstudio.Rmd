@@ -1,5 +1,5 @@
 ---
-title: "Utilizando o Git e GitHub no RStudio"
+title: "Git e GitHub no RStudio"
 author:
   - name: Beatriz Milz 
     url: https://beatrizmilz.com
@@ -11,6 +11,13 @@ site: distill::distill_website
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+Boas vindas!
+
+O público-alvo desta apresentação são pessoas que utilizam o R para análise de dados, tem um conhecimento básico sobre Git e GitHub e querem utilizar essas ferramentas diretamente do RStudio. 
+
+É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
+
 
 ### Slides
 
@@ -41,15 +48,14 @@ install.packages("usethis")
 ```
 
 
-### Material Complementar
+### Eventos
+
+Eventos passados e futuros com uso deste material:
+
+- [R-Ladies Goiânia](https://www.sympla.com.br/git--rstudio__944832), 27 de agosto de 2020. [Apresentação utilizada disponível em PDF](https://beatrizmilz.github.io/slidesR/git_rstudio/pdf/rladies-gyn-27-08-2020.pdf).
 
 
-
-### Meetups
-
-Este material foi/será utilizado nos seguintes eventos/meetups:
-
-- [R-Ladies Goiânia](https://www.sympla.com.br/git--rstudio__944832), 27 de agosto de 2020. [Apresentação em PDF](https://beatrizmilz.github.io/slidesR/git_rstudio/pdf/rladies-gyn-27-08-2020.pdf).
+- [R-Ladies São Paulo](https://www.meetup.com/rladies-sao-paulo/events/264535075/), 12 de setembro de 2019. [Apresentação utilizada disponível aqui](https://beatrizmilz.github.io/RLadies-Git-RStudio-2019/#1).
 
 ### Para aprender mais
 

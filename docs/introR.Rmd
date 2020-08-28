@@ -12,6 +12,12 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+Boas vindas!
+
+O público-alvo desta apresentação são pessoas om interesse em começar a utilizar R para análise de dados. 
+
+É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
+
 ### Slides
 
 <center>
@@ -37,9 +43,9 @@ knitr::opts_chunk$set(echo = FALSE)
   
 
 
-### Meetups
+### Eventos
 
-Este material foi/será utilizado nos seguintes eventos/meetups:
+Eventos passados e futuros com uso deste material:
 
 - [R-Ladies Curitiba](https://www.sympla.com.br/r-ladies-curitiba-introducao-a-linguagem-r__939607), 26 de agosto de 2020. [Apresentação em PDF](https://beatrizmilz.github.io/slidesR/introR/pdf/RLadies_Curitiba_26-08-2020.pdf).
 
