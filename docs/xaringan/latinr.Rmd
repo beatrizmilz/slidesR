@@ -1,0 +1,590 @@
+---
+title: "Comunicando seus resultados em R: "
+subtitle: "Aprenda a criar apresentações reprodutíveis <br><br><img src='img/Manual_Corporativo_LatinR_2020 LOGOS-23.png'>"  
+author: 
+  - "[Beatriz Milz](https://beatrizmilz.com) e Haydee Svab"
+date: '__.can-edit[2º semestre/2020]__'
+encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    css: [xaringan-themer.css, custom.css]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+
+knitr::opts_chunk$set(fig.align = "center",
+                      message = FALSE,
+                      warning = FALSE,
+                      echo = FALSE
+                      )
+```
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#5542FF",
+  secondary_color = "#ECECEC",
+  inverse_header_color = "#FFFFFF",
+  header_font_google = google_font("Roboto"),
+  text_font_google   = google_font("Roboto"),
+  code_font_google   = google_font("Roboto Mono")
+ )
+```
+
+
+```{r xaringanExtra, echo=FALSE}
+#devtools::install_github("gadenbuie/xaringanExtra")
+xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
+
+xaringanExtra::use_editable(expires = 1)
+
+xaringanExtra::use_logo(
+  image_url = "img/Manual_Corporativo_LatinR_2020 LOGOS-22.png",
+  link_url = "https://latin-r.com/pt"
+)
+
+xaringanExtra::use_clipboard()
+
+xaringanExtra::use_fit_screen()
+
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         #<<
+  mute_unhighlighted_code = FALSE  #<<
+)
+```
+
+# Olá!
+
+.pull-left[
+## Beatriz Milz
+]
+
+.pull-right[
+## Haydee Svab
+]
+
+---
+
+class: 
+
+# Pré-requisitos
+
+## No seu computador
+- R, faça o download da versão mais recente [neste link](https://cran.r-project.org/).
+
+- RStudio, faça o download da versão mais recente [neste link](https://www.rstudio.com/products/rstudio/download/).
+
+## Para este workshop
+
+- [RStudio Cloud](https://rstudio.cloud/).
+
+
+---
+class: inverse, center, middle
+
+# Relatórios Reprodutíveis em R
+
+
+
+---
+class: 
+
+## O ciclo da ciência de dados
+
+```{r, out.width="90%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> - Adaptado de WICKHAM & GROLEMUND, 2017</b></center>"}
+knitr::include_graphics("../img/Horst/data-analysis.jpg")
+```
+
+
+---
+class: 
+
+## Pacote R Markdown
+
+
+.pull-left[
+
+- Mantido pela [RStudio](https://rstudio.com/)
+
+- Arquivos com extensão `.Rmd`
+
+- Possibilita a utilização de códigos:
+  - `R`
+  - `Markdown`
+  - `HTML`
+  - e outros.
+]
+
+.pull-right[
+```{r, out.width="75%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
+knitr::include_graphics("../img/rlogos/hex-rmarkdown.png")
+```
+]
+
+
+---
+class:  
+
+## R Markdown
+
+```{r, out.width="45%", fig.cap="<center><b>Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
+knitr::include_graphics("../img/rmarkdown/markdown.png")
+```
+
+---
+class: inverse, center, middle
+
+## R Markdown
+
+.center[(Acompanhe no RStudio Cloud o arquivo `....Rmd`)]
+
+---
+class: inverse, center, middle
+
+# Apresentações com R Markdown
+
+
+---
+class: 
+
+## Pacote xaringan
+
+.pull-left[
+
+- Possibilita criar apresentações **ninja** com `R Markdown`
+
+- Utiliza a biblioteca `remark.js`
+
+- Resultado em HTML 
+
+- HTML pode ser convertido para PDF (estático)
+]
+
+.pull-right[
+
+```{r, out.width="75%", fig.cap="<center><b>Logo: <a href='https://github.com/yihui/xaringan'>Pacote xaringan</a></b></center>"}
+knitr::include_graphics("../img/rlogos/hex-xaringan.png")
+```
+
+]
+
+
+
+
+
+---
+class: 
+
+## Instalação do pacote xaringan
+
+- Instalar o pacote:
+
+```{r echo=TRUE, eval=FALSE}
+install.packages("xaringan")
+```
+
+- Carregue o pacote:
+
+```{r echo=TRUE, eval=FALSE}
+library(xaringan)
+```
+
+
+---
+class:  
+
+## Recomendações
+
+- Desenvolva a apresentação em um projeto no RStudio. Facilita muito para organizar os arquivos, posteriormente sincronizar com o GitHub, entre outros.
+
+  - `File > New Project > New Directory > New Project`
+  
+  - Dê um nome para seu projeto (será o nome da pasta), escolha a pasta no seu computador, e clique em `Create Project`.
+
+---
+class:  
+
+## Recomendações
+
+- Organize o seu diretório. Por exemplo:
+
+  - `img/` - imagens, figuras, etc.
+  
+  - `libs/` - bibliotecas. 
+  
+  - `css/` - opcional. Arquivos `.css`.
+  
+- Compile (knite) o arquivo com frequência!  
+
+---
+class: 
+
+## Criar um arquivo rmarkdown
+
+### Com template Ninja Presentation
+
+  - File > New File > R Markdown...
+  
+  - New R Markdown > From Template > Ninja presentation
+  
+  - Apagar todo o conteúdo após o código `yaml`
+  
+```{r, out.width="50%"}
+knitr::include_graphics("../img/xaringan/criar-xaringan.JPG")
+```
+
+---
+class:  
+
+## Estrutura arquivo rmarkdown
+
+```{r, out.width="90%"}
+knitr::include_graphics("../img/xaringan/rmd-estrutura-xaringan.png")
+```
+
+---
+class: 
+
+## Estrutura da apresentação
+
+- No `xaringan`, utilizamos o arquivo `.Rmd` para escrever o código da apresentação, e é compilado para um arquivo `.html`.
+
+- Esse arquivo `.html` é interpretado pelo navegador (ex. Chrome), utilizando também os arquivos `.css` e `.js`.
+
+
+
+```{r echo=FALSE, out.width="50%", eval = TRUE}
+knitr::include_graphics("../img/xaringan/html-css-javascript.jpg")
+```
+
+
+
+---
+class: 
+
+## Estrutura da apresentação
+
+```{r echo=FALSE, out.width="50%", eval = TRUE}
+knitr::include_graphics("../img/xaringan/html-css-javascript.jpg")
+```
+
+  - **HTML** (HyperText Markup Language - Linguagem de Marcação de Hipertexto) - é uma linguagem de marcação, é usado para estruturar a página.
+
+  - **CSS** (Cascading Style Sheets - Folha de Estilo em Cascata) - é usado para estilizar os elementos escritos no HTML.
+
+  - **Javascript** - é uma linguagem de programação, permite que as páginas sejam dinâmicas.
+
+---
+class: 
+
+## O que precisa saber? 
+
+- **HTML**: É gerado automaticamente. ao compilar o .Rmd 
+- **CSS**: Temas! Usado para personalizar a parte visual da apresentação. Sobre temas, consulte: [xaringan wiki](https://github.com/yihui/xaringan/wiki/Themes)
+- **JS**: utiliza o Remark.JS, mas aceita outros códigos caso seja necessário.
+
+```{r, out.width="40%"}
+knitr::include_graphics("https://media1.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy-downsized.gif")
+```
+
+
+
+---
+class:  
+
+## Alterar yaml
+
+- O `yaml` possui informações importantes para a apresentação, como o título, subtítulo, autor, instituição, data, etc.
+
+- __output:__ formato (Ex: html_document, pdf_document, etc). No caso do  `xaringan` , o output é `xaringan::moon_reader`
+
+- __libs_dir:__ pasta onde colocará bibliotecas necessárias (ex. remark-latest.min.js)
+
+- Cuidado com a identação!
+
+```{r}
+knitr::include_graphics("https://media0.giphy.com/media/xT9IgIc0lryrxvqVGM/giphy-downsized.gif")
+``` 
+
+
+---
+class: 
+
+## Exemplo do código yaml:
+
+```{r echo=TRUE, eval=FALSE}
+---
+{{title: "Título da apresentação"}}
+{{subtitle: "Subtítulo da apresentação"}}
+{{author: "Autor"}}
+{{institute: "Instituição"}}
+{{date: "07/09/2019"}}
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```
+
+- Aperte H ou ? para conferir a lista de atalhos do  `xaringan` 
+
+
+
+
+
+---
+class: 
+
+## Encoding
+
+- Adicionar no yaml:
+
+```{r echo=TRUE, eval=FALSE}
+encoding: "UTF-8"
+```
+
+
+---
+class: 
+
+## Biblioteca `remark.js`
+
+- É opcional. Essa etapa possibilita que sua apresentação seja visualizada offline!
+
+
+- Fazer download da biblioteca `remark.js`. Duas opções:
+  - A função `xaringan::summon_remark()` faz o download da versão mais atual do `remark.js` e salva na pasta `/libs`. 
+  
+```{r echo=TRUE, eval=FALSE}
+xaringan::summon_remark()
+
+# Ou:
+
+download.file("https://remarkjs.com/downloads/remark-latest.min.js",
+              destfile = "libs/remark-latest.min.js")
+```
+--
+- Adicionar no yaml:
+
+```{r echo=TRUE, eval=FALSE}
+output:
+  xaringan::moon_reader:
+{{    chakra: libs/remark-latest.min.js  }}
+    lib_dir: libs
+```
+
+
+
+
+---
+class: 
+
+### Tema
+
+- Depende da versão do `xaringan` que está usando.
+
+- Para consultar os temas disponíveis:
+  
+```{r echo=TRUE}
+names(xaringan:::list_css())
+```
+
+
+---
+class: 
+
+### Tema
+
+
+- Usar em dupla: `nomedotema` e `nomedotema-fonts`
+
+- Adicionar no yaml:
+
+```{r echo=TRUE, eval=FALSE}
+output:
+  xaringan::moon_reader:
+{{    css: ["rladies", "rladies-fonts"]}}
+```
+
+
+
+---
+class: 
+
+## Exemplo do código yaml:
+
+```{r echo=TRUE, eval=FALSE}
+---
+title: "Título da apresentação"
+subtitle: "Subtítulo da apresentação"
+author: "Autor"
+institute: "Instituição"
+date: "07/09/2019"
+{{encoding: "UTF-8"}}
+output:
+  xaringan::moon_reader:
+{{   chakra: libs/remark-latest.min.js  }}
+{{   css: ["rladies", "rladies-fonts"]}}
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```
+
+
+---
+class: 
+
+## Adicionando conteúdo na apresentação
+
+- Atualiza a apresentação enquanto é editada:
+
+```{r echo=TRUE, eval=FALSE}
+xaringan::inf_mr()
+```
+
+
+---
+class: 
+
+## Como delimitar slides?
+
+- No xaringan, os slides são delimitados por `---` no início da linha.
+
+- Para fazer slides que aparecem aos poucos ( _incremental slides_ ), utilize `--` no início da linha. Ex:
+
+--
+
+O conteúdo 
+--
+
+aparece 
+--
+
+aos poucos!
+
+
+
+---
+class: 
+
+## Dicas - RStudio
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("../img/xaringan/rmd-dicas.png")
+```
+
+---
+class: inverse, center, middle
+
+# Compartilhando a apresentação
+
+---
+Class: 
+
+## PDF
+
+- Para compartilhar em PDF, é possível converter o HTML em PDF com a função `pagedown::chrome_print()`:
+
+```{r echo=TRUE, eval=FALSE}
+remotes::install_github('rstudio/pagedown')
+pagedown::chrome_print("index.html")
+```
+
+## Página web
+
+- HTML - Pode disponibilizar online :)
+
+  - Em seu site;
+
+  - [GitHub Pages](https://pages.github.com/) 
+  - [Netlify](https://www.netlify.com/) 
+
+- Dica: crie um [bit.ly](https://bitly.com)
+
+
+---
+
+# Outros pacotes
+
+## Aumentando as possibilidades!
+
+- [pagedown](https://github.com/rstudio/pagedown) - `r emo::ji("heavy_check_mark")` CRAN, `r emo::ji("heavy_check_mark")` GitHub
+
+- [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer/) - `r emo::ji("heavy_check_mark")` CRAN, `r emo::ji("heavy_check_mark")` GitHub
+
+- [giphyr](https://github.com/haozhu233/giphyr) - `r emo::ji("heavy_check_mark")` CRAN, `r emo::ji("heavy_check_mark")` GitHub
+
+- [xaringanExtra](https://pkg.garrickadenbuie.com/xaringanExtra/) - `r emo::ji("x")` CRAN, `r emo::ji("heavy_check_mark")` GitHub
+ 
+- [countdown](https://pkg.garrickadenbuie.com/countdown/#1) - `r emo::ji("x")` CRAN, `r emo::ji("heavy_check_mark")` GitHub
+ 
+- [emo](https://github.com/hadley/emo) + [ermoji](https://www.garrickadenbuie.com/project/ermoji/)  - `r emo::ji("x")` CRAN, `r emo::ji("heavy_check_mark")` GitHub
+
+---
+
+Pessoas para seguir:
+
+- [Alison Presmanes Hill](https://twitter.com/apreshill)
+
+- [Yihui Xie](https://twitter.com/xieyihui)
+
+- [Garrick Aden‑Buie](https://twitter.com/grrrck)
+
+
+
+
+---
+class: middle, center
+
+```{r, out.width="50%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
+knitr::include_graphics("../img/Horst/community1.jpg")
+```
+
+---
+class: 
+
+# Referências
+
+## **R Markdown**:
+  - [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+  
+  - [R Markdown from RStudio](https://rmarkdown.rstudio.com/lesson-1.html)
+  
+  - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+  
+  - [R for Data Science - Cap 27: R Markdown](https://r4ds.had.co.nz/r-markdown.html)
+  
+  - [Software Carpentry - Producing Reports With knitr ](https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/)
+
+  - [Advanced R Markdown](https://slides.yihui.name/2017-rstudio-conf-rmarkdown-Yihui-Xie.html)
+
+
+---
+class: 
+
+# Referências
+
+## **xaringan**:
+
+  - [Apresentação da documentação](http://slides.yihui.name/xaringan/) 
+
+  - [xaringan Wiki](https://github.com/yihui/xaringan/wiki)
+  
+  - [Livro R Markdown (Capítulo 7)](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+
+  - [Remark.js Wiki](https://github.com/gnab/remark/wiki)
+ 

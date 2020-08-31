@@ -1,0 +1,36 @@
+/* Slide inicial */
+
+.title-slide, .title-slide h1, .title-slide h2, .title-slide h3  {
+  background-color: #ECECEC;
+  color: #000000;
+}
+
+ .title-slide h2  {
+  font-size: 25px ;
+
+}
+
+ .title-slide h3  {
+  font-size: 25px ;
+
+}
+
+
+
+.title-slide img {
+    max-width: 60%;
+}
+
+.inverse h1 {
+   color: #000000;
+}
+
+p{
+ text-align: justify; 
+ font-size: 1.2rem;
+}
+
+
+li{
+ font-size: 1.2rem;
+}

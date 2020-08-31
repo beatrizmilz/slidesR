@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Comunicando seus resultados em R:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Beatriz Milz e Haydee Svab" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"f904b81bb39b4833851a08bf2203e73b","expires":1}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
+    <script src="libs/xaringanExtra-logo/logo.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Comunicando seus resultados em R:
+## Aprenda a criar apresentações reprodutíveis <br><br><img src='img/Manual_Corporativo_LatinR_2020%20LOGOS-23.png'>
+### <a href="https://beatrizmilz.com">Beatriz Milz</a> e Haydee Svab
+### <strong>.can-edit[2º semestre/2020]</strong>
+
+---
+
+
+
+
+
+
+
+
+<style type="text/css">
+.xaringan-extra-logo {
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+  background-image: url('img/Manual_Corporativo_LatinR_2020 LOGOS-22.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top:1em;right:1em;
+}
+</style>
+
+# Olá!
+
+.pull-left[
+## Beatriz Milz
+]
+
+.pull-right[
+## Haydee Svab
+]
+
+---
+
+class: 
+
+# Pré-requisitos
+
+## No seu computador
+- R, faça o download da versão mais recente [neste link](https://cran.r-project.org/).
+
+- RStudio, faça o download da versão mais recente [neste link](https://www.rstudio.com/products/rstudio/download/).
+
+## Para este workshop
+
+- [RStudio Cloud](https://rstudio.cloud/).
+
+
+---
+class: inverse, center, middle
+
+# Relatórios Reprodutíveis em R
+
+
+
+---
+class: 
+
+## O ciclo da ciência de dados
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../img/Horst/data-analysis.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; - Adaptado de WICKHAM &amp;amp; GROLEMUND, 2017&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="90%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; - Adaptado de WICKHAM &amp; GROLEMUND, 2017&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+class: 
+
+## Pacote R Markdown
+
+
+.pull-left[
+
+- Mantido pela [RStudio](https://rstudio.com/)
+
+- Arquivos com extensão `.Rmd`
+
+- Possibilita a utilização de códigos:
+  - `R`
+  - `Markdown`
+  - `HTML`
+  - e outros.
+]
+
+.pull-right[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../img/rlogos/hex-rmarkdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Logo: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="75%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Logo: &lt;a href='https://rmarkdown.rstudio.com'&gt;Pacote `rmarkdown`&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+]
+
+
+---
+class:  
+
+## R Markdown
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../img/rmarkdown/markdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Fonte: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="45%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Fonte: &lt;a href='https://rmarkdown.rstudio.com'&gt;Pacote `rmarkdown`&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+---
+class: inverse, center, middle
+
+## R Markdown
+
+.center[(Acompanhe no RStudio Cloud o arquivo `....Rmd`)]
+
+---
+class: inverse, center, middle
+
+# Apresentações com R Markdown
+
+
+---
+class: 
+
+## Pacote xaringan
+
+.pull-left[
+
+- Possibilita criar apresentações **ninja** com `R Markdown`
+
+- Utiliza a biblioteca `remark.js`
+
+- Resultado em HTML 
+
+- HTML pode ser convertido para PDF (estático)
+]
+
+.pull-right[
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../img/rlogos/hex-xaringan.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Logo: &amp;lt;a href='https://github.com/yihui/xaringan'&amp;gt;Pacote xaringan&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="75%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Logo: &lt;a href='https://github.com/yihui/xaringan'&gt;Pacote xaringan&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+
+
+
+
+---
+class: 
+
+## Instalação do pacote xaringan
+
+- Instalar o pacote:
+
+
+```r
+install.packages("xaringan")
+```
+
+- Carregue o pacote:
+
+
+```r
+library(xaringan)
+```
+
+
+---
+class:  
+
+## Recomendações
+
+- Desenvolva a apresentação em um projeto no RStudio. Facilita muito para organizar os arquivos, posteriormente sincronizar com o GitHub, entre outros.
+
+  - `File &gt; New Project &gt; New Directory &gt; New Project`
+  
+  - Dê um nome para seu projeto (será o nome da pasta), escolha a pasta no seu computador, e clique em `Create Project`.
+
+---
+class:  
+
+## Recomendações
+
+- Organize o seu diretório. Por exemplo:
+
+  - `img/` - imagens, figuras, etc.
+  
+  - `libs/` - bibliotecas. 
+  
+  - `css/` - opcional. Arquivos `.css`.
+  
+- Compile (knite) o arquivo com frequência!  
+
+---
+class: 
+
+## Criar um arquivo rmarkdown
+
+### Com template Ninja Presentation
+
+  - File &gt; New File &gt; R Markdown...
+  
+  - New R Markdown &gt; From Template &gt; Ninja presentation
+  
+  - Apagar todo o conteúdo após o código `yaml`
+  
+&lt;img src="../img/xaringan/criar-xaringan.JPG" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+class:  
+
+## Estrutura arquivo rmarkdown
+
+&lt;img src="../img/xaringan/rmd-estrutura-xaringan.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: 
+
+## Estrutura da apresentação
+
+- No `xaringan`, utilizamos o arquivo `.Rmd` para escrever o código da apresentação, e é compilado para um arquivo `.html`.
+
+- Esse arquivo `.html` é interpretado pelo navegador (ex. Chrome), utilizando também os arquivos `.css` e `.js`.
+
+
+
+&lt;img src="../img/xaringan/html-css-javascript.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+class: 
+
+## Estrutura da apresentação
+
+&lt;img src="../img/xaringan/html-css-javascript.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+  - **HTML** (HyperText Markup Language - Linguagem de Marcação de Hipertexto) - é uma linguagem de marcação, é usado para estruturar a página.
+
+  - **CSS** (Cascading Style Sheets - Folha de Estilo em Cascata) - é usado para estilizar os elementos escritos no HTML.
+
+  - **Javascript** - é uma linguagem de programação, permite que as páginas sejam dinâmicas.
+
+---
+class: 
+
+## O que precisa saber? 
+
+- **HTML**: É gerado automaticamente. ao compilar o .Rmd 
+- **CSS**: Temas! Usado para personalizar a parte visual da apresentação. Sobre temas, consulte: [xaringan wiki](https://github.com/yihui/xaringan/wiki/Themes)
+- **JS**: utiliza o Remark.JS, mas aceita outros códigos caso seja necessário.
+
+&lt;img src="https://media1.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy-downsized.gif" width="40%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+class:  
+
+## Alterar yaml
+
+- O `yaml` possui informações importantes para a apresentação, como o título, subtítulo, autor, instituição, data, etc.
+
+- __output:__ formato (Ex: html_document, pdf_document, etc). No caso do  `xaringan` , o output é `xaringan::moon_reader`
+
+- __libs_dir:__ pasta onde colocará bibliotecas necessárias (ex. remark-latest.min.js)
+
+- Cuidado com a identação!
+
+&lt;img src="https://media0.giphy.com/media/xT9IgIc0lryrxvqVGM/giphy-downsized.gif" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: 
+
+## Exemplo do código yaml:
+
+
+```r
+---
+*title: "Título da apresentação"
+*subtitle: "Subtítulo da apresentação"
+*author: "Autor"
+*institute: "Instituição"
+*date: "07/09/2019"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```
+
+- Aperte H ou ? para conferir a lista de atalhos do  `xaringan` 
+
+
+
+
+
+---
+class: 
+
+## Encoding
+
+- Adicionar no yaml:
+
+
+```r
+encoding: "UTF-8"
+```
+
+
+---
+class: 
+
+## Biblioteca `remark.js`
+
+- É opcional. Essa etapa possibilita que sua apresentação seja visualizada offline!
+
+
+- Fazer download da biblioteca `remark.js`. Duas opções:
+  - A função `xaringan::summon_remark()` faz o download da versão mais atual do `remark.js` e salva na pasta `/libs`. 
+  
+
+```r
+xaringan::summon_remark()
+
+# Ou:
+
+download.file("https://remarkjs.com/downloads/remark-latest.min.js",
+              destfile = "libs/remark-latest.min.js")
+```
+--
+- Adicionar no yaml:
+
+
+```r
+output:
+  xaringan::moon_reader:
+*    chakra: libs/remark-latest.min.js  
+    lib_dir: libs
+```
+
+
+
+
+---
+class: 
+
+### Tema
+
+- Depende da versão do `xaringan` que está usando.
+
+- Para consultar os temas disponíveis:
+  
+
+```r
+names(xaringan:::list_css())
+```
+
+```
+##  [1] "chocolate-fonts"  "chocolate"        "default-fonts"    "default"         
+##  [5] "duke-blue"        "fc-fonts"         "fc"               "hygge-duke"      
+##  [9] "hygge"            "ki-fonts"         "ki"               "kunoichi"        
+## [13] "lucy-fonts"       "lucy"             "metropolis-fonts" "metropolis"      
+## [17] "middlebury-fonts" "middlebury"       "ninjutsu"         "rladies-fonts"   
+## [21] "rladies"          "robot-fonts"      "robot"            "rutgers-fonts"   
+## [25] "rutgers"          "shinobi"          "tamu-fonts"       "tamu"            
+## [29] "uo-fonts"         "uo"               "uol-fonts"        "uol"
+```
+
+
+---
+class: 
+
+### Tema
+
+
+- Usar em dupla: `nomedotema` e `nomedotema-fonts`
+
+- Adicionar no yaml:
+
+
+```r
+output:
+  xaringan::moon_reader:
+*    css: ["rladies", "rladies-fonts"]
+```
+
+
+
+---
+class: 
+
+## Exemplo do código yaml:
+
+
+```r
+---
+title: "Título da apresentação"
+subtitle: "Subtítulo da apresentação"
+author: "Autor"
+institute: "Instituição"
+date: "07/09/2019"
+*encoding: "UTF-8"
+output:
+  xaringan::moon_reader:
+*   chakra: libs/remark-latest.min.js  
+*   css: ["rladies", "rladies-fonts"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```
+
+
+---
+class: 
+
+## Adicionando conteúdo na apresentação
+
+- Atualiza a apresentação enquanto é editada:
+
+
+```r
+xaringan::inf_mr()
+```
+
+
+---
+class: 
+
+## Como delimitar slides?
+
+- No xaringan, os slides são delimitados por `---` no início da linha.
+
+- Para fazer slides que aparecem aos poucos ( _incremental slides_ ), utilize `--` no início da linha. Ex:
+
+--
+
+O conteúdo 
+--
+
+aparece 
+--
+
+aos poucos!
+
+
+
+---
+class: 
+
+## Dicas - RStudio
+
+&lt;img src="../img/xaringan/rmd-dicas.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# Compartilhando a apresentação
+
+---
+Class: 
+
+## PDF
+
+- Para compartilhar em PDF, é possível converter o HTML em PDF com a função `pagedown::chrome_print()`:
+
+
+```r
+remotes::install_github('rstudio/pagedown')
+pagedown::chrome_print("index.html")
+```
+
+## Página web
+
+- HTML - Pode disponibilizar online :)
+
+  - Em seu site;
+
+  - [GitHub Pages](https://pages.github.com/) 
+  - [Netlify](https://www.netlify.com/) 
+
+- Dica: crie um [bit.ly](https://bitly.com)
+
+
+---
+
+# Outros pacotes
+
+## Aumentando as possibilidades!
+
+- [pagedown](https://github.com/rstudio/pagedown) - ✔️ CRAN, ✔️ GitHub
+
+- [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer/) - ✔️ CRAN, ✔️ GitHub
+
+- [giphyr](https://github.com/haozhu233/giphyr) - ✔️ CRAN, ✔️ GitHub
+
+- [xaringanExtra](https://pkg.garrickadenbuie.com/xaringanExtra/) - ❌ CRAN, ✔️ GitHub
+ 
+- [countdown](https://pkg.garrickadenbuie.com/countdown/#1) - ❌ CRAN, ✔️ GitHub
+ 
+- [emo](https://github.com/hadley/emo) + [ermoji](https://www.garrickadenbuie.com/project/ermoji/)  - ❌ CRAN, ✔️ GitHub
+
+---
+
+Pessoas para seguir:
+
+- [Alison Presmanes Hill](https://twitter.com/apreshill)
+
+- [Yihui Xie](https://twitter.com/xieyihui)
+
+- [Garrick Aden‑Buie](https://twitter.com/grrrck)
+
+
+
+
+---
+class: middle, center
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../img/Horst/community1.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; &amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="50%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; &lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+---
+class: 
+
+# Referências
+
+## **R Markdown**:
+  - [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+  
+  - [R Markdown from RStudio](https://rmarkdown.rstudio.com/lesson-1.html)
+  
+  - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+  
+  - [R for Data Science - Cap 27: R Markdown](https://r4ds.had.co.nz/r-markdown.html)
+  
+  - [Software Carpentry - Producing Reports With knitr ](https://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/)
+
+  - [Advanced R Markdown](https://slides.yihui.name/2017-rstudio-conf-rmarkdown-Yihui-Xie.html)
+
+
+---
+class: 
+
+# Referências
+
+## **xaringan**:
+
+  - [Apresentação da documentação](http://slides.yihui.name/xaringan/) 
+
+  - [xaringan Wiki](https://github.com/yihui/xaringan/wiki)
+  
+  - [Livro R Markdown (Capítulo 7)](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+
+  - [Remark.js Wiki](https://github.com/gnab/remark/wiki)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
