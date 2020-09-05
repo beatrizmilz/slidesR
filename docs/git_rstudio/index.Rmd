@@ -79,7 +79,7 @@ meta() %>%
     image = "https://beatrizmilz.github.io/slidesR/git_rstudio/img/share-card.png",
     image_alt = paste(
       "Primeiro slide da apresentação sobre os primeiros",
-      "passos sobre como utilizar o Git e Git Hub",
+      "passos sobre como utilizar o Git e GitHub",
       "diretamente do RStudio", 
       "Apresentado por Beatriz Milz"
     ),

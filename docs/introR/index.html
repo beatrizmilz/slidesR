@@ -8,18 +8,38 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x233e1e74d8c4381befc7d6fe464eb74","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"a4270579d91b4961bcd53e1bf801177a","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
     <script src="libs/editable/editable.js"></script>
-    <script src="libs/xaringanExtra-logo/logo.js"></script>
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
     <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
     <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <meta name="github-repo" content="beatrizmilz/slidesR"/>
+    <meta name="twitter:title" content="Introdução a Linguagem R"/>
+    <meta name="twitter:description" content="Apresentação sobre Introdução a linguagem R e a IDE RStudio"/>
+    <meta name="twitter:url" content="https://beatrizmilz.github.io/slidesR/introR/index.html"/>
+    <meta name="twitter:image:src" content="https://beatrizmilz.github.io/slidesR/introR/img/share-card.png"/>
+    <meta name="twitter:image:alt" content="Primeiro slide da apresentação sobre  Introdução ao R. Apresentado por Beatriz Milz."/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@beamilz"/>
+    <meta name="twitter:site" content="@beamilz"/>
+    <meta name="og:title" content="Introdução a Linguagem R"/>
+    <meta name="og:description" content="Apresentação sobre Introdução a linguagem R e a IDE RStudio"/>
+    <meta name="og:url" content="https://beatrizmilz.github.io/slidesR/introR/index.html"/>
+    <meta name="og:image" content="https://beatrizmilz.github.io/slidesR/introR/img/share-card.png"/>
+    <meta name="og:image:alt" content="Primeiro slide da apresentação sobre  Introdução ao R. Apresentado por Beatriz Milz."/>
+    <meta name="og:type" content="website"/>
+    <meta name="og:locale" content="en_US"/>
+    <meta name="article:author" content="Beatriz Milz"/>
     <link href="libs/countdown/countdown.css" rel="stylesheet" />
     <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -34,18 +54,37 @@ class: center, middle, hide-logo
 
 
 
-<style type="text/css">
-.xaringan-extra-logo {
-  width: 110px;
-  height: 128px;
-  z-index: 0;
-  background-image: url('img/rainbow-inclusive.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  top:1em;right:1em;
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(img/rainbow-inclusive.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
 }
 </style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(el => { el.innerHTML += '<a href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" class="xaringan-extra-logo"></a>' })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
 
 
 
@@ -83,7 +122,7 @@ __.can-edit[2º semestre/2020]__
 
 ]
 
-.minirodape[Atualizado em 27 de agosto de 2020. &lt;br&gt; Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
+.minirodape[Atualizado em 05 de setembro de 2020. &lt;br&gt; Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
 
 
 
@@ -189,7 +228,7 @@ class: middle, center, inverse
 .center[(Acompanhe no `[RStudio Cloud](https://rstudio.cloud/project/1540878)`  👩‍💻)]
 
 
-<div class="countdown" id="timer_5f4797b7" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f53b0c8" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -314,7 +353,7 @@ class: middle, center, inverse
 .center[(Acompanhe no arquivo `1-introducao.R` 👩‍💻)]
 
 
-<div class="countdown" id="timer_5f4796fb" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_5f53adea" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
