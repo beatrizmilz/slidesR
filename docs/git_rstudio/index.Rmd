@@ -12,6 +12,7 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+#      ratio: 191:100
 glosario:
    language: 'pt'
 
@@ -58,9 +59,36 @@ xaringanExtra::use_extra_styles(
   mute_unhighlighted_code = FALSE  #<<
 )
 
-
+```
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
 ```
 
+
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "Utilizando o Git e GitHub no RStudio",
+    description = paste(
+      "Apresentação sobre os primeiros passos sobre como",
+      "utilizar o Git e Git Hub, diretamente do RStudio"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/git_rstudio/index.html",
+    image = "https://beatrizmilz.github.io/slidesR/git_rstudio/img/share-card.png",
+    image_alt = paste(
+      "Primeiro slide da apresentação sobre os primeiros",
+      "passos sobre como utilizar o Git e Git Hub",
+      "diretamente do RStudio", 
+      "Apresentado por Beatriz Milz"
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
 
 ```{r include=FALSE}
 # remotes::install_github("cienciadedatos/dados")

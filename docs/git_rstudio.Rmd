@@ -21,9 +21,13 @@ O público-alvo desta apresentação são pessoas que utilizam o R para análise
 
 ### Slides
 
-<center>
-<iframe src="https://beatrizmilz.github.io/slidesR/git_rstudio/index.html" height="100%" width="100%" style="min-height: 400px;"></iframe>
-</center>
+```{r}
+xaringanExtra::embed_xaringan(
+  url = "https://beatrizmilz.github.io/slidesR/git_rstudio/index.html",
+  ratio = "16:9"
+)
+```
+
 
 <p style="text-align:right;">[<i class="fas fa-external-link-alt"></i> Confira a apresentação](https://beatrizmilz.github.io/slidesR/git_rstudio/index.html)</p>
 
