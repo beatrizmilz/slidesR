@@ -15,6 +15,30 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "Slides sobre R",
+    description = paste(
+      "Alguns materiais e slides sobre R"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/",
+    image = "https://beatrizmilz.github.io/slidesR/git_rstudio/img/share-card.png",
+    image_alt = paste(
+      "Primeiro slide da apresentação sobre os primeiros",
+      "passos sobre como utilizar o Git e GitHub",
+      "diretamente do RStudio", 
+      "Apresentado por Beatriz Milz"
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
+
 Boas vindas!
 
 Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozinha ou com outras pessoas) sobre R.

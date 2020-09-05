@@ -11,6 +11,29 @@ site: distill::distill_website
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "Introdução a Linguagem R",
+    description = paste(
+      "Apresentação sobre Introdução a linguagem R",
+      "e a IDE RStudio"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/introR.html",
+    image = "https://beatrizmilz.github.io/slidesR/introR/img/share-card.png",
+    image_alt = paste(
+      "Primeiro slide da apresentação sobre ",
+      "Introdução ao R.",
+      "Apresentado por Beatriz Milz."
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
 
 Boas vindas!
 

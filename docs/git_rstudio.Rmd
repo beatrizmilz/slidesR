@@ -12,6 +12,31 @@ site: distill::distill_website
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "Utilizando o Git e GitHub no RStudio",
+    description = paste(
+      "Apresentação sobre os primeiros passos sobre como",
+      "utilizar o Git e Git Hub, diretamente do RStudio"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/git_rstudio.html",
+    image = "https://beatrizmilz.github.io/slidesR/git_rstudio/img/share-card.png",
+    image_alt = paste(
+      "Primeiro slide da apresentação sobre os primeiros",
+      "passos sobre como utilizar o Git e GitHub",
+      "diretamente do RStudio", 
+      "Apresentado por Beatriz Milz"
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
+
 Boas vindas!
 
 O público-alvo desta apresentação são pessoas que utilizam o R para análise de dados, tem um conhecimento básico sobre Git e GitHub e querem utilizar essas ferramentas diretamente do RStudio. 
