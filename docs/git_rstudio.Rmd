@@ -102,6 +102,10 @@ Eventos passados e futuros com uso deste material:
 
 - [Folhas de dicas da RStudio _(Cheat Sheets)_ , em Inglês](https://rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf)
 
+- [Live Stream Curso-R #7 - Colaborando com a Comunidade](https://www.curso-r.com/):
+
+<iframe width="560" height="415" src="https://www.youtube.com/embed/hyLxvGApBJY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ### Comunidades e locais amigáveis para fazer perguntas :)
 
