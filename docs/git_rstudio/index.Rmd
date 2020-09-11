@@ -926,7 +926,7 @@ knitr::include_graphics("img/prints/pr-push2.png")
 knitr::include_graphics("img/prints/pr-push3.png")
 ```
 
-- Depois dessa etapa, você deve esperar a pessoa que mantém o repositório responder fazendo sujestões para melhorias, aceitando seu PR, etc.
+- Depois dessa etapa, você deve esperar a pessoa que mantém o repositório responder fazendo sugestões para melhorias, aceitando seu PR, etc.
 
 
 ---
