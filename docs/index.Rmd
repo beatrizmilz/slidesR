@@ -1,5 +1,5 @@
 ---
-title: "Materiais sobre R e comunidades"
+title: "Materiais sobre R "
 #description: |
 #  Uma lista de apresentações usando ou sobre R e Comunidades.
 author:
@@ -41,7 +41,7 @@ meta() %>%
 
 Boas vindas!
 
-Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozinha ou com outras pessoas) sobre R.
+Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozinha ou com outras pessoas) sobre R e comunidades.
 
 É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
 

@@ -1285,10 +1285,6 @@
   <meta name="og:type" content="website"/>
   <meta name="og:locale" content="en_US"/>
   <meta name="article:author" content="Beatriz Milz"/>
-  <script src="site_libs/clipboard-2.0.6/clipboard.min.js"></script>
-  <link href="site_libs/xaringanExtra-clipboard-0.2.3/xaringanExtra-clipboard.css" rel="stylesheet" />
-  <script src="site_libs/xaringanExtra-clipboard-0.2.3/xaringanExtra-clipboard.js"></script>
-  <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
   <script src="site_libs/fitvids-2.1.1/fitvids.min.js"></script>
   <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
@@ -1355,9 +1351,6 @@
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<div class="layout-chunk" data-layout="l-body">
-
-</div>
 <p>Boas vindas!</p>
 <p>Essa breve apresentação é sobre a comunidade R-Ladies São Paulo.</p>
 <p>É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes. Por favor, leia o <a href="https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese">Código de Conduta da R-Ladies</a>.</p>
@@ -1375,13 +1368,21 @@
 <p>Caso você faça parte de outro capítulo da R-Ladies, sinta-se à vontade para alterar e utilizar essa apresentação - <a href="https://beatrizmilz.github.io/slidesR/rladies/index.Rmd">baixar arquivo .Rmd</a>.</p>
 <p>Será necessário instalar os seguintes pacotes:</p>
 <ul>
-<li><p>tidyverse</p></li>
-<li><p>xaringan</p></li>
-<li><p>metathis</p></li>
-<li><p>xaringanExtra</p></li>
+<li><p><a href="https://www.tidyverse.org/">tidyverse</a></p></li>
+<li><p><a href="https://github.com/yihui/xaringan">xaringan</a></p></li>
+<li><p><a href="https://github.com/gadenbuie/metathis">metathis</a></p></li>
+<li><p><a href="https://github.com/gadenbuie/xaringanExtra">xaringanExtra</a></p></li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
+<pre class="r"><code>
+# Instalar pacotes do CRAN
 
+install.packages(c(&quot;tidyverse&quot;, &quot;xaringan&quot;, &quot;metathis&quot;))
+
+
+# Instalar pacotes do GitHub
+
+devtools::install_github(&quot;gadenbuie/xaringanExtra&quot;)</code></pre>
 </div>
 <hr />
 <center>

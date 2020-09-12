@@ -36,9 +36,6 @@ meta() %>%
   )
 ```
 
-```{r echo=FALSE}
-xaringanExtra::use_clipboard()
-```
 
 Boas vindas!
 
@@ -63,24 +60,27 @@ xaringanExtra::embed_xaringan(
 Caso você faça parte de outro capítulo da R-Ladies, sinta-se à vontade para 
 alterar e utilizar essa apresentação - [baixar arquivo .Rmd](https://beatrizmilz.github.io/slidesR/rladies/index.Rmd).
 
+
+
 Será necessário instalar os seguintes pacotes:
 
-- tidyverse
+- [tidyverse](https://www.tidyverse.org/)
 
-- xaringan
+- [xaringan](https://github.com/yihui/xaringan)
 
-- metathis
+- [metathis](https://github.com/gadenbuie/metathis)
 
-- xaringanExtra
+- [xaringanExtra](https://github.com/gadenbuie/xaringanExtra)
 
 
-```{r eval=FALSE, include=TRUE}
+```{r, eval=F, echo=T}
 # Instalar pacotes do CRAN
 
 install.packages(c("tidyverse", "xaringan", "metathis"))
 
 
 # Instalar pacotes do GitHub
+
 devtools::install_github("gadenbuie/xaringanExtra")
 ```
 
