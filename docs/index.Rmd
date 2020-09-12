@@ -22,15 +22,13 @@ meta() %>%
   meta_social(
     title = "Slides sobre R",
     description = paste(
-      "Alguns materiais e slides sobre R"
+      "Alguns materiais e slides sobre R e comunidades.",
+      "Por Beatriz Milz"
     ),
     url = "https://beatrizmilz.github.io/slidesR/",
-    image = "https://beatrizmilz.github.io/slidesR/git_rstudio/img/share-card.png",
+    image = "https://beatrizmilz.github.io/slidesR/img/share-card.png",
     image_alt = paste(
-      "Primeiro slide da apresentação sobre os primeiros",
-      "passos sobre como utilizar o Git e GitHub",
-      "diretamente do RStudio", 
-      "Apresentado por Beatriz Milz"
+      "Início do site sobre materiais sobre R e comunidades"
     ),
     og_type = "website",
     og_author = "Beatriz Milz",
