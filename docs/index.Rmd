@@ -60,4 +60,4 @@ Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozi
 
 ## Outros
 
-- [Como este site foi criado?](ferramentas.html)
+- [Como este site foi feito?](ferramentas.html)
