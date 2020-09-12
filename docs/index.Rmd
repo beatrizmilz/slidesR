@@ -56,3 +56,8 @@ Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozi
 ## Comunidades
 
 - [R-Ladies São Paulo](rladies.html)
+
+
+## Outros
+
+- [Como este site foi criado?](ferramentas.html)

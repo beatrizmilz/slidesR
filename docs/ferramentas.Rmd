@@ -1,0 +1,72 @@
+---
+title: "Como esse site foi feito?"
+author:
+  - name: Beatriz Milz 
+    url: https://beatrizmilz.com
+    affiliation: IEE/USP
+date: "Atualizado em `r Sys.Date()`"
+site: distill::distill_website
+bibliography: [ferramentas_packages.bib]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.align = "center")
+```
+
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "Slides sobre R",
+    description = paste(
+      "Alguns materiais e slides sobre R e comunidades.",
+      "Por Beatriz Milz"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/",
+    image = "https://beatrizmilz.github.io/slidesR/img/share-card.png",
+    image_alt = paste(
+      "Início do site sobre materiais sobre R e comunidades"
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
+
+
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Nesta página estão descritas os softwares, pacotes e ferramentas que utilizei para a criação deste site.
+
+- Linguagem de programação `R` @R-base.
+
+- Ambiente de desenvolvimento (IDE) [`RStudio`](https://rstudio.com/).
+
+- Pacotes [`R Markdown`](https://rmarkdown.rstudio.com/) [@R-rmarkdown; @rmarkdown2018] e [`knitr`](https://yihui.org/knitr/) [@knitr2014; @knitr2015; @R-knitr]. 
+
+- O pacote [`distill`](https://rstudio.github.io/distill/) @R-distill foi utilizado para criar a estrutura do site.
+
+- As apresentações foram criadas com os pacotes: [`xaringan`](https://github.com/yihui/xaringan) @R-xaringan,
+[`xaringanthemer`](https://pkg.garrickadenbuie.com/xaringanthemer/) @R-xaringanthemer, [`xaringanExtra`](https://pkg.garrickadenbuie.com/xaringanExtra/) @R-xaringanExtra e [`countdown`](https://github.com/gadenbuie/countdown) @R-countdown.
+
+
+- O pacote [`metathis`](https://pkg.garrickadenbuie.com/metathis/) @R-metathis foi utilizado para criação das tags `<meta>` (de `HTML`).
+
+-  `r emo::ji("clap")` Botão de aplauso feito com o pacote [`applause`](https://pkg.garrickadenbuie.com/applause/) @R-applause.
+
+- Os ícones são dos sites [Font Awesome](https://fontawesome.com/icons?d=gallery) e [Academicons](https://jpswalsh.github.io/academicons/). 
+
+- O versionamento do código e o deploy do site é realizado através deste [repositório no GitHub](https://github.com/beatrizmilz/slidesR).
+
+- `r emo::ji("parrot")` Termos do [Glossário](https://carpentries.github.io/glosario/pt/) foram adicionados através do pacote [`glosario`](https://github.com/carpentries/glosario-r) @R-glosario.
+
+- Emojis adicionados com os pacotes [`emo`](https://github.com/hadley/emo) @R-emo e [`ermoji`](https://www.garrickadenbuie.com/project/ermoji/) @R-ermoji.
+
+-  `r emo::ji("woman_technologist")` + `r emo::ji("purple_heart")`+ `r emo::ji("hot_beverage")`!
+
+
+
+```{r echo=FALSE, message=FALSE}
+knitr::write_bib(c(.packages(), 'knitr', 'rmarkdown', 'xaringan', 'pagedown', 'xaringanthemer', 'xaringanExtra', 'countdown', 'applause', 'distill', 'glosario', 'emo', 'ermoji'), 'ferramentas_packages.bib')
+```
+

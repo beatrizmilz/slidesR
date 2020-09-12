@@ -1,5 +1,5 @@
 name: "Beatriz Milz"
-title: "Beatriz Milz - Materiais sobre R"
+title: "Materiais sobre R"
 encoding: "UTF-8"
 #favicon: images/favicon.png
 base_url: https://beatrizmilz.github.io/slidesR/
@@ -10,9 +10,16 @@ navbar:
 #  logo:
 #  image: images/logo.png
 #href: https://www.rstudio.com
+  left:
+    - icon: fas fa-graduation-cap
+      href: https://beatrizmilz.com 
+    - icon: fas fa-tools
+      text: "Como"
+      href: https://beatrizmilz.github.io/slidesR/ferramentas.html  
   right:
     - icon: fas fa-home
-      href: https://beatrizmilz.github.io/slidesR/index.html
+      href: https://beatrizmilz.github.io/slidesR/index.html      
+
     - icon: fab fa-github
       href: https://github.com/beatrizmilz/slidesR
 output:
