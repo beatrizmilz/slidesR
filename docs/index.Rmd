@@ -1,5 +1,5 @@
 ---
-title: "Apresentações"
+title: "Materiais sobre R e comunidades"
 #description: |
 #  Uma lista de apresentações usando ou sobre R e Comunidades.
 author:
@@ -54,3 +54,7 @@ Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozi
 - [Introdução ao R](introR.html)
 
 - [Utilizando o Git e GitHub no RStudio](git_rstudio.html)
+
+### Comunidades
+
+- [R-Ladies São Paulo](rladies.html)
