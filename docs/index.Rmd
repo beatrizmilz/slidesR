@@ -38,9 +38,7 @@ meta() %>%
 ```
 
 
-```{r echo=FALSE}
 
-```
 
 `r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Boas vindas!
 Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozinha ou com outras pessoas) sobre R e comunidades.
@@ -61,3 +59,6 @@ Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozi
 ## Outros
 
 - [Como este site foi feito?](ferramentas.html)
+
+- [Links com apresentações antigas/desatualizadas](apresentacoes_antigas.html)
+

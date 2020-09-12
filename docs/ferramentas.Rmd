@@ -62,7 +62,7 @@ meta() %>%
 
 - Emojis adicionados com os pacotes [`emo`](https://github.com/hadley/emo) @R-emo e [`ermoji`](https://www.garrickadenbuie.com/project/ermoji/) @R-ermoji.
 
--  `r emo::ji("woman_technologist")` + `r emo::ji("purple_heart")`+ `r emo::ji("hot_beverage")`!
+-  `r emo::ji("woman_technologist")` + `r emo::ji("purple_heart")`+ `r emo::ji("hot_beverage")`+ `r emo::ji("headphones")` & `r emo::ji("musical_note")`  !
 
 
 

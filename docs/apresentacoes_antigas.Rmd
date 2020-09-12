@@ -1,0 +1,70 @@
+---
+title: "Apresentações desatualizadas"
+author:
+  - name: Beatriz Milz 
+    url: https://beatrizmilz.com
+    affiliation: IEE/USP
+date: "Atualizado em `r Sys.Date()`"
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "Slides sobre R",
+    description = paste(
+      "Alguns materiais e slides sobre R e comunidades.",
+      "Por Beatriz Milz"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/",
+    image = "https://beatrizmilz.github.io/slidesR/img/share-card.png",
+    image_alt = paste(
+      "Início do site sobre materiais sobre R e comunidades"
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
+
+
+
+
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Olá! Abaixo segue uma lista de links de apresentações que fiz antes de agosto/2020, e estão desatualizadas. 
+
+Assim que eu atualizar o material, o mesmo ficará na página principal (e retirado desta lista).
+
+   
+## Português
+
+
+- <i class="fas fa-chalkboard-teacher"></i> [Workshop - Apresentações no `R` ⚔ com `xaringan`](https://beatrizmilz.github.io/aMostra-IME-2019-Xaringan/)
+
+- <i class="fas fa-chalkboard-teacher"></i> [Introdução ao pacote `xaringan` - Criando apresentações com `R`](https://beatrizmilz.github.io/IME-27-08-2019/)
+
+- <i class="fab fa-meetup"></i> [Comunicando seus resultados: Criando apresentações com `R`](https://beatrizmilz.github.io/IV-SER-RLadies/)
+
+
+
+- <i class="fab fa-meetup"></i> [Dashboards, gráficos, mapas: Possibilidades de visualização de dados com `R`](https://beatrizmilz.github.io/NerdzaoWeek/)
+
+- <i class="fas fa-chalkboard-teacher"></i> [Oficina de Introdução ao R](https://beatrizmilz.github.io/Oficina_intro_R_UFABC_2018)
+
+
+- <i class="fas fa-chalkboard-teacher"></i> [`R` e Desafios no Projeto Temático MacroAmb](https://beatrizmilz.github.io/apresentacao_R_MMP_17-10-2018)
+
+## Español
+
+- <i class="fas fa-chalkboard-teacher"></i> [Funciones - R para Ciencia de Datos](https://beatrizmilz.github.io/2020-R4DS-Functions/)
+
+
+## English
+
+-  <i class="fas fa-chalkboard-teacher"></i> [Producing Reports with `knitr` and `R`](https://beatrizmilz.github.io/CODATASP18_knitr)
