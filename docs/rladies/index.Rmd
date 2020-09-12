@@ -1,51 +1,86 @@
 ---
-subtitle: "<center><img src= 'img/allisonhorst/community1.jpg' width = '45%' alt='Author: Allison Horst'></br><p>Ilustração por <a href='https://twitter.com/allison_horst' target=_blank>@allison_horst</a></p></center> "
+subtitle: "<center><img src= 'https://beatrizmilz.github.io/slidesR/rladies/img/allisonhorst/community1.jpg' width = '40%' alt='Author: Allison Horst'></br><p>Ilustração por <a href='https://twitter.com/allison_horst' target=_blank>@allison_horst</a></p></center>"
 title: "R-Ladies São Paulo"
-author: "2º Semestre/2020 - Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`"
+author: "Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: [default, "css/metropolis.css", "css/metropolis-fonts.css", "css/footer.css"]
-    includes:
-      after_body: insert-logo.html
-# Para exportar em PDF: pagedown::chrome_print("docs/index.html")
-knit: pagedown::chrome_print
+    css: [default, metropolis, metropolis-fonts, "https://beatrizmilz.github.io/slidesR/rladies/custom.css"]
+#knit: pagedown::chrome_print
 ---
 layout: true
   
-<div class="my-footer"><span>
-
-<a href="https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo">Meetup</a> |
-<a href="https://twitter.com/RLadiesSaoPaulo">Twitter</a> | 
-<a href="http://instagram.com/RLadiesSaoPaulo">Instagram</a> |
-<a href="http://facebook.com/RLadiesSaoPaulo">Facebook</a> |
-<a href="https://github.com/rladies/meetup-presentations_sao-paulo">GitHub</a>  |
-<a href="https://www.youtube.com/channel/UCU3ePTnZQurDkYgPK61DAOw">Youtube</a> 
-
-</span></div> 
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
-knitr::opts_chunk$set(echo = FALSE, fig.align = "center", message=FALSE, warning=FALSE)
-
-library(tidyverse)
-
+knitr::opts_chunk$set(
+  echo = FALSE,
+  fig.align = "center",
+  message = FALSE,
+  warning = FALSE
+)
 ```
 
-```{r eval=FALSE, include=FALSE}
+```{r include=FALSE}
+# Base de dados
+library(tidyverse)
 url <- "https://benubah.github.io/r-community-explorer/data/rladies.csv"
 download.file(url, "data/rladies.csv", method = "curl")
-```
 
-```{r echo=FALSE, }
 rladies <- readr::read_csv("data/rladies.csv")
 ```
+
+
+```{r xaringanExtra, echo=FALSE}
+
+#devtools::install_github("gadenbuie/xaringanExtra")
+
+xaringanExtra::use_logo(image_url = "https://beatrizmilz.github.io/slidesR/introR/img/rainbow-inclusive.png",
+                        link_url = "https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil")
+
+
+```
+
+```{r xaringanExtra-share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "R-Ladies São Paulo",
+    description = paste(
+      "Apresentação sobre a R-Ladies São Paulo"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/rladies/index.html",
+    image = "https://beatrizmilz.github.io/slidesR/rladies/img/share-card.png",
+    image_alt = paste(
+      "Primeiro slide da apresentação sobre",
+      "a R-Ladies São Paulo",
+      "Apresentado por Beatriz Milz"
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
+
+<!-- inicio font awesome -->
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+<!-- final font awesome -->
+
+<!-- inicio github buttons  -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- final github buttons  -->
 
 ---
 class:  
 
-# O que é o R-Ladies?
+# O que é a R-Ladies?
+<br>
 
 R-Ladies é uma organização mundial cuja missão é promover a diversidade de gênero na comunidade da linguagem R.
 
@@ -74,7 +109,7 @@ Como uma iniciativa de diversidade, a missão das R-Ladies é alcançar uma repr
 
 ## Código de conduta
 
-O R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todas as pessoas partcicipantes, desta forma, não é tolerada nenhuma forma de assédio. [Código de conduta - R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese)
+A R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todas as pessoas partcicipantes, desta forma, não é tolerada nenhuma forma de assédio. [Código de conduta - R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese)
 
 
 
@@ -93,11 +128,8 @@ rladies %>%
   summarise(n_capitulos = n(), 
             total_participantes = sum(members, na.rm = TRUE)) %>% 
   dplyr::arrange(desc(n_capitulos)) %>%
-    DT::datatable(autoHideNavigation = TRUE
-                  ,
-                options = list(pageLength = 7),
-                  colnames = c("Região", "Número de Capítulos", "Total de participantes")
-                )
+  knitr::kable(col.names =  c("Região", "Número de Capítulos", "Total de participantes"))
+  
 ```
 
 ---
@@ -110,7 +142,7 @@ class:
 Atualizado em: `r  format(Sys.time(), '%B de %Y')`. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
 
 ```{r echo=FALSE}
-rladies %>%
+rladies_br <- rladies %>%
   dplyr::arrange(desc(members)) %>%
   filter(country == "Brazil") %>%
   mutate(name = paste0("<a href='", fullurl, "' target='_blank'>", name, "</a>")) %>%
@@ -125,12 +157,35 @@ rladies %>%
     -last_event,
     -past_events,
     -status
-  ) %>%
-  
-  DT::datatable(autoHideNavigation = TRUE                ,
-                options = list(pageLength = 7),
-                  colnames = c("Capítulo", "Pessoas participantes"))
+  )
+
 ```
+
+.pull-left[
+```{r}
+rladies_br %>%
+  slice(1:8) %>%  
+  knitr::kable(col.names = c("Capítulo", "Participantes"))
+
+```
+
+]
+
+.pull-right[
+```{r}
+rladies_br %>% 
+    slice(9:n()) %>%  
+  knitr::kable(col.names = c("Capítulo", "Participantes"))
+
+```
+]
+
+<br>
+<center>
+
+<a class="github-button" href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star R-Ladies-Sao-Paulo/RLadies-Brasil on GitHub">Capítulos e eventos online da R-Ladies no Brasil</a>
+</center>
+
 
 ```{r include=FALSE}
 pessoas_sp <- rladies %>% filter(city == "São Paulo") %>% select(members) %>% pull()
@@ -142,7 +197,7 @@ class:
 # R-Ladies em São Paulo
 
 ```{r out.width="65%"}
-knitr::include_graphics("img/1meetupsp.jpeg")
+knitr::include_graphics("https://beatrizmilz.github.io/slidesR/rladies/img/1meetupsp.jpeg")
 ```
 
 
@@ -157,25 +212,33 @@ class:
 # Saiba mais sobre a R-Ladies
 .pull-left[
 
-- [Website RLadies Global](https://rladies.org/)
-- Twitter: [@RLadiesGlobal](https://twitter.com/rladiesglobal), [@RLadiesSaoPaulo](https://twitter.com/RLadiesSaoPaulo)
-- [Instagram](http://instagram.com/RLadiesSaoPaulo)
-- [Facebook](http://facebook.com/RLadiesSaoPaulo)
-- [Meetup](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo)
-- [GitHub](https://github.com/rladies/meetup-presentations_sao-paulo)
-- [Youtube](https://www.youtube.com/channel/UCU3ePTnZQurDkYgPK61DAOw)
+- R-Ladies Global: [Website](https://rladies.org/), [<i class="fab fa-twitter"></i> Twitter](https://twitter.com/rladiesglobal)
+
+
+- R-Ladies São Paulo: 
+  - [<i class="fab fa-twitter"></i> Twitter](https://twitter.com/RLadiesSaoPaulo)
+  - [<i class="fab fa-instagram"></i> Instagram](https://instagram.com/RLadiesSaoPaulo)
+  - [<i class="fab fa-facebook"></i> Facebook](https://facebook.com/RLadiesSaoPaulo)
+  - [<i class="fab fa-meetup"></i> Meetup](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo)
+  - [<i class="fab fa-github"></i> GitHub](https://github.com/rladies/meetup-presentations_sao-paulo)
+  - [<i class="fab fa-youtube"></i> Youtube](https://www.youtube.com/channel/UCU3ePTnZQurDkYgPK61DAOw)
+
+
 - [Capítulos da R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil) - Não tem capítulo na sua cidade e quer iniciar um?  Saiba como em [R-Ladies - How do get involved](https://rladies.org/about-us/help/)! 
 
 
-.footnote[Apresentação feita por [Beatriz Milz](https://beatrizmilz.com) com o pacote [xaringan](https://github.com/yihui/xaringan), com o tema `metropolis` modificado.]
-
+<center>
+<a class="github-button" href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star R-Ladies-Sao-Paulo/RLadies-Brasil on GitHub">Capítulos e eventos online da R-Ladies no Brasil</a>
+</center>
 
 ]
 
 
 
 .pull-right[
-```{r fig.cap="Ilustração por <a href='https://twitter.com/allison_horst' target=_blank>@allison_horst</a> "}
-knitr::include_graphics("img/allisonhorst/principio_agora_pt.png")
+```{r fig.cap="Ilustração por <a href='https://twitter.com/allison_horst' target=_blank>@allison_horst</a>" , out.width="70%"}
+knitr::include_graphics("https://beatrizmilz.github.io/slidesR/rladies/img/allisonhorst/principio_agora_pt.png")
 ```
+
+- Apresentação feita por [Beatriz Milz](https://beatrizmilz.com) com o pacote [xaringan](https://github.com/yihui/xaringan), com o tema `metropolis` modificado.
 ]

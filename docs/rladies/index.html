@@ -3,20 +3,33 @@
   <head>
     <title>R-Ladies São Paulo</title>
     <meta charset="utf-8" />
-    <meta name="author" content="2º Semestre/2020 - Atualizado em 11 de agosto de 2020" />
+    <meta name="author" content="Atualizado em 12 de setembro de 2020" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
-    <script src="libs/jquery/jquery.min.js"></script>
-    <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
-    <script src="libs/datatables-binding/datatables.js"></script>
-    <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
-    <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
-    <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
-    <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-    <script src="libs/crosstalk/js/crosstalk.min.js"></script>
-    <link rel="stylesheet" href="css\metropolis.css" type="text/css" />
-    <link rel="stylesheet" href="css\metropolis-fonts.css" type="text/css" />
-    <link rel="stylesheet" href="css\footer.css" type="text/css" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <meta name="github-repo" content="beatrizmilz/slidesR"/>
+    <meta name="twitter:title" content="R-Ladies São Paulo"/>
+    <meta name="twitter:description" content="Apresentação sobre a R-Ladies São Paulo"/>
+    <meta name="twitter:url" content="https://beatrizmilz.github.io/slidesR/rladies/index.html"/>
+    <meta name="twitter:image:src" content="https://beatrizmilz.github.io/slidesR/rladies/img/share-card.png"/>
+    <meta name="twitter:image:alt" content="Primeiro slide da apresentação sobre a R-Ladies São Paulo Apresentado por Beatriz Milz"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@beamilz"/>
+    <meta name="twitter:site" content="@beamilz"/>
+    <meta name="og:title" content="R-Ladies São Paulo"/>
+    <meta name="og:description" content="Apresentação sobre a R-Ladies São Paulo"/>
+    <meta name="og:url" content="https://beatrizmilz.github.io/slidesR/rladies/index.html"/>
+    <meta name="og:image" content="https://beatrizmilz.github.io/slidesR/rladies/img/share-card.png"/>
+    <meta name="og:image:alt" content="Primeiro slide da apresentação sobre a R-Ladies São Paulo Apresentado por Beatriz Milz"/>
+    <meta name="og:type" content="website"/>
+    <meta name="og:locale" content="en_US"/>
+    <meta name="article:author" content="Beatriz Milz"/>
+    <link rel="stylesheet" href="https:\\beatrizmilz.github.io\slidesR\rladies\custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -24,38 +37,68 @@ class: center, middle, inverse, title-slide
 
 # R-Ladies São Paulo
 ## <center>
-<img src= 'img/allisonhorst/community1.jpg' width = '45%' alt='Author: Allison Horst'></br>
+<img src= 'https://beatrizmilz.github.io/slidesR/rladies/img/allisonhorst/community1.jpg' width = '40%' alt='Author: Allison Horst'></br>
 <p>
 Ilustração por <a href='https://twitter.com/allison_horst' target=_blank><span class="citation">@allison_horst</span></a>
 </p>
 </center>
-### 2º Semestre/2020 - Atualizado em 11 de agosto de 2020
+### Atualizado em 12 de setembro de 2020
 
 ---
 
 layout: true
   
-&lt;div class="my-footer"&gt;&lt;span&gt;
-
-&lt;a href="https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo"&gt;Meetup&lt;/a&gt; |
-&lt;a href="https://twitter.com/RLadiesSaoPaulo"&gt;Twitter&lt;/a&gt; | 
-&lt;a href="http://instagram.com/RLadiesSaoPaulo"&gt;Instagram&lt;/a&gt; |
-&lt;a href="http://facebook.com/RLadiesSaoPaulo"&gt;Facebook&lt;/a&gt; |
-&lt;a href="https://github.com/rladies/meetup-presentations_sao-paulo"&gt;GitHub&lt;/a&gt;  |
-&lt;a href="https://www.youtube.com/channel/UCU3ePTnZQurDkYgPK61DAOw"&gt;Youtube&lt;/a&gt; 
-
-&lt;/span&gt;&lt;/div&gt; 
 
 
 
 
 
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 110px;
+height: 128px;
+z-index: 0;
+background-image: url(https://beatrizmilz.github.io/slidesR/introR/img/rainbow-inclusive.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(el => { el.innerHTML += '<a href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" class="xaringan-extra-logo"></a>' })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
 
+
+
+
+
+&lt;!-- inicio font awesome --&gt;
+&lt;script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;!-- final font awesome --&gt;
+
+&lt;!-- inicio github buttons  --&gt;
+&lt;script async defer src="https://buttons.github.io/buttons.js"&gt;&lt;/script&gt;
+&lt;!-- final github buttons  --&gt;
 
 ---
 class:  
 
-# O que é o R-Ladies?
+# O que é a R-Ladies?
+&lt;br&gt;
 
 R-Ladies é uma organização mundial cuja missão é promover a diversidade de gênero na comunidade da linguagem R.
 
@@ -84,7 +127,7 @@ Como uma iniciativa de diversidade, a missão das R-Ladies é alcançar uma repr
 
 ## Código de conduta
 
-O R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todas as pessoas partcicipantes, desta forma, não é tolerada nenhuma forma de assédio. [Código de conduta - R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese)
+A R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todas as pessoas partcicipantes, desta forma, não é tolerada nenhuma forma de assédio. [Código de conduta - R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese)
 
 
 
@@ -95,10 +138,18 @@ class:
 
 # R-Ladies - Capítulos no mundo
 
-Atualizado em: agosto de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
+Atualizado em: setembro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
 
-<div id="htmlwidget-1216f47d9bc13470e0cb" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1216f47d9bc13470e0cb">{"x":{"filter":"none","autoHideNavigation":true,"data":[["1","2","3","4","5","6","7"],["US/Canada","Europe","Latin America","Asia","Australia","Africa","Pacific/Galapagos"],[56,47,39,13,9,8,1],[23523,20075,16019,3646,4194,2213,159]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Região<\/th>\n      <th>Número de Capítulos<\/th>\n      <th>Total de participantes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":7,"columnDefs":[{"className":"dt-right","targets":[2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[7,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+
+|Região            | Número de Capítulos| Total de participantes|
+|:-----------------|-------------------:|----------------------:|
+|US/Canada         |                  58|                  24068|
+|Latin America     |                  51|                  17453|
+|Europe            |                  48|                  20335|
+|Asia              |                  15|                   3857|
+|Africa            |                  11|                   2666|
+|Australia         |                   9|                   4361|
+|Pacific/Galapagos |                   1|                    166|
 
 ---
 class:    
@@ -107,10 +158,45 @@ class:
 
 
 
-Atualizado em: agosto de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
+Atualizado em: setembro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
 
-<div id="htmlwidget-cd04d9be31da5b348319" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cd04d9be31da5b348319">{"x":{"filter":"none","autoHideNavigation":true,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13"],["&lt;a href='https://www.meetup.com/rladies-sao-paulo/' target='_blank'&gt;R-Ladies São Paulo&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-belo-horizonte/' target='_blank'&gt;R-Ladies Belo Horizonte&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-rio/' target='_blank'&gt;R-Ladies Rio de Janeiro&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-niteroi/' target='_blank'&gt;R-Ladies Niterói&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-florianopolis/' target='_blank'&gt;R-Ladies Floripa&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-porto-alegre/' target='_blank'&gt;R-Ladies Porto Alegre&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-salvador/' target='_blank'&gt;R-Ladies Salvador&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-recife/' target='_blank'&gt;R-Ladies Recife&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-vitoria/' target='_blank'&gt;R-Ladies Vitória&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-goiania/' target='_blank'&gt;R-Ladies Goiânia&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-lavras/' target='_blank'&gt;R-Ladies Lavras&lt;/a&gt;","&lt;a href='https://www.meetup.com/rladies-ribeirao-preto/' target='_blank'&gt;R-Ladies Ribeirão Preto&lt;/a&gt;","&lt;a href='https://www.meetup.com/R-Ladies-Manaus/' target='_blank'&gt;R-Ladies Manaus&lt;/a&gt;"],[959,795,579,574,439,344,181,146,129,122,39,30,28]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Capítulo<\/th>\n      <th>Pessoas participantes<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":7,"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[7,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+
+
+.pull-left[
+
+|Capítulo                                                                                             | Participantes|
+|:----------------------------------------------------------------------------------------------------|-------------:|
+|&lt;a href='https://www.meetup.com/rladies-sao-paulo/' target='_blank'&gt;R-Ladies São Paulo&lt;/a&gt;           |          1003|
+|&lt;a href='https://www.meetup.com/rladies-belo-horizonte/' target='_blank'&gt;R-Ladies Belo Horizonte&lt;/a&gt; |           799|
+|&lt;a href='https://www.meetup.com/rladies-niteroi/' target='_blank'&gt;R-Ladies Niterói&lt;/a&gt;               |           579|
+|&lt;a href='https://www.meetup.com/rladies-rio/' target='_blank'&gt;R-Ladies Rio de Janeiro&lt;/a&gt;            |           579|
+|&lt;a href='https://www.meetup.com/rladies-florianopolis/' target='_blank'&gt;R-Ladies Floripa&lt;/a&gt;         |           441|
+|&lt;a href='https://www.meetup.com/rladies-porto-alegre/' target='_blank'&gt;R-Ladies Porto Alegre&lt;/a&gt;     |           346|
+|&lt;a href='https://www.meetup.com/rladies-natal/' target='_blank'&gt;R-Ladies Natal&lt;/a&gt;                   |           193|
+|&lt;a href='https://www.meetup.com/rladies-salvador/' target='_blank'&gt;R-Ladies Salvador&lt;/a&gt;             |           191|
+
+]
+
+.pull-right[
+
+|Capítulo                                                                                             | Participantes|
+|:----------------------------------------------------------------------------------------------------|-------------:|
+|&lt;a href='https://www.meetup.com/rladies-recife/' target='_blank'&gt;R-Ladies Recife&lt;/a&gt;                 |           147|
+|&lt;a href='https://www.meetup.com/rladies-goiania/' target='_blank'&gt;R-Ladies Goiânia&lt;/a&gt;               |           142|
+|&lt;a href='https://www.meetup.com/rladies-vitoria/' target='_blank'&gt;R-Ladies Vitória&lt;/a&gt;               |           132|
+|&lt;a href='https://www.meetup.com/rladies-fortaleza/' target='_blank'&gt;R-Ladies Fortaleza&lt;/a&gt;           |            69|
+|&lt;a href='https://www.meetup.com/rladies-lavras/' target='_blank'&gt;R-Ladies Lavras&lt;/a&gt;                 |            41|
+|&lt;a href='https://www.meetup.com/rladies-curitiba/' target='_blank'&gt;R-Ladies Curitiba&lt;/a&gt;             |            36|
+|&lt;a href='https://www.meetup.com/rladies-ribeirao-preto/' target='_blank'&gt;R-Ladies Ribeirão Preto&lt;/a&gt; |            32|
+|&lt;a href='https://www.meetup.com/R-Ladies-Manaus/' target='_blank'&gt;R-Ladies Manaus&lt;/a&gt;                |            29|
+]
+
+&lt;br&gt;
+&lt;center&gt;
+
+&lt;a class="github-button" href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star R-Ladies-Sao-Paulo/RLadies-Brasil on GitHub"&gt;Capítulos e eventos online da R-Ladies no Brasil&lt;/a&gt;
+&lt;/center&gt;
+
 
 
 
@@ -119,12 +205,12 @@ class:
 
 # R-Ladies em São Paulo
 
-&lt;img src="img/1meetupsp.jpeg" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="https://beatrizmilz.github.io/slidesR/rladies/img/1meetupsp.jpeg" width="65%" style="display: block; margin: auto;" /&gt;
 
 
 - **Primeiro encontro da R-Ladies São Paulo ** - Agosto/2018
 
-- **+ 959 pessoas participantes** - agosto de 2020
+- **+ 1003 pessoas participantes** - setembro de 2020
 
 
 ---
@@ -133,18 +219,24 @@ class:
 # Saiba mais sobre a R-Ladies
 .pull-left[
 
-- [Website RLadies Global](https://rladies.org/)
-- Twitter: [@RLadiesGlobal](https://twitter.com/rladiesglobal), [@RLadiesSaoPaulo](https://twitter.com/RLadiesSaoPaulo)
-- [Instagram](http://instagram.com/RLadiesSaoPaulo)
-- [Facebook](http://facebook.com/RLadiesSaoPaulo)
-- [Meetup](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo)
-- [GitHub](https://github.com/rladies/meetup-presentations_sao-paulo)
-- [Youtube](https://www.youtube.com/channel/UCU3ePTnZQurDkYgPK61DAOw)
+- R-Ladies Global: [Website](https://rladies.org/), [&lt;i class="fab fa-twitter"&gt;&lt;/i&gt; Twitter](https://twitter.com/rladiesglobal)
+
+
+- R-Ladies São Paulo: 
+  - [&lt;i class="fab fa-twitter"&gt;&lt;/i&gt; Twitter](https://twitter.com/RLadiesSaoPaulo)
+  - [&lt;i class="fab fa-instagram"&gt;&lt;/i&gt; Instagram](https://instagram.com/RLadiesSaoPaulo)
+  - [&lt;i class="fab fa-facebook"&gt;&lt;/i&gt; Facebook](https://facebook.com/RLadiesSaoPaulo)
+  - [&lt;i class="fab fa-meetup"&gt;&lt;/i&gt; Meetup](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo)
+  - [&lt;i class="fab fa-github"&gt;&lt;/i&gt; GitHub](https://github.com/rladies/meetup-presentations_sao-paulo)
+  - [&lt;i class="fab fa-youtube"&gt;&lt;/i&gt; Youtube](https://www.youtube.com/channel/UCU3ePTnZQurDkYgPK61DAOw)
+
+
 - [Capítulos da R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil) - Não tem capítulo na sua cidade e quer iniciar um?  Saiba como em [R-Ladies - How do get involved](https://rladies.org/about-us/help/)! 
 
 
-.footnote[Apresentação feita por [Beatriz Milz](https://beatrizmilz.com) com o pacote [xaringan](https://github.com/yihui/xaringan), com o tema `metropolis` modificado.]
-
+&lt;center&gt;
+&lt;a class="github-button" href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star R-Ladies-Sao-Paulo/RLadies-Brasil on GitHub"&gt;Capítulos e eventos online da R-Ladies no Brasil&lt;/a&gt;
+&lt;/center&gt;
 
 ]
 
@@ -152,9 +244,11 @@ class:
 
 .pull-right[
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/allisonhorst/principio_agora_pt.png" alt="Ilustração por &amp;lt;a href='https://twitter.com/allison_horst' target=_blank&amp;gt;@allison_horst&amp;lt;/a&amp;gt; " width="3139" /&gt;
-&lt;p class="caption"&gt;Ilustração por &lt;a href='https://twitter.com/allison_horst' target=_blank&gt;@allison_horst&lt;/a&gt; &lt;/p&gt;
+&lt;img src="https://beatrizmilz.github.io/slidesR/rladies/img/allisonhorst/principio_agora_pt.png" alt="Ilustração por &amp;lt;a href='https://twitter.com/allison_horst' target=_blank&amp;gt;@allison_horst&amp;lt;/a&amp;gt;" width="70%" /&gt;
+&lt;p class="caption"&gt;Ilustração por &lt;a href='https://twitter.com/allison_horst' target=_blank&gt;@allison_horst&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
+
+- Apresentação feita por [Beatriz Milz](https://beatrizmilz.com) com o pacote [xaringan](https://github.com/yihui/xaringan), com o tema `metropolis` modificado.
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -225,34 +319,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
   }
 })();</script>
-
-<style>
-  .logo {
-    background-image: url(img/rainbow.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-    width: 100px;
-    height: 128px;
-    z-index: 0;
-  }
-</style>
-  
-  <script>
-  document
-.querySelectorAll(
-  '.remark-slide-content' +
-    ':not(.title-slide)' +
-    // add additional classes to exclude here, e.g.
-  // ':not(.inverse)' +
-    ':not(.hide-logo)'
-)
-.forEach(el => {
-  el.innerHTML += '<div class="logo"></div>';
-});
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {
