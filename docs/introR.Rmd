@@ -35,8 +35,7 @@ meta() %>%
   )
 ```
 
-Boas vindas!
-
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Boas vindas!
 O público-alvo desta apresentação são pessoas om interesse em começar a utilizar R para análise de dados. 
 
 É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
@@ -88,14 +87,11 @@ Eventos passados e futuros com uso deste material:
 
 - Livro R para Ciência de Dados: Gratuito em [Inglês](https://www.curso-r.com/cursos/) e em [Espanhol](https://es.r4ds.hadley.nz/). 
 
-- [Curso-R](https://curso-r.com): [Material de estudo](http://material.curso-r.com/), [Blog](https://www.curso-r.com/blog/), [Livro - em desenvolvimento](https://livro.curso-r.com/index.html), [Lives e videos no Youtube](https://www.youtube.com/c/CursoR6), [Cursos](https://www.curso-r.com/cursos/).
+- [Curso-R](https://curso-r.com): 
+  - [Material de estudo](http://material.curso-r.com/)
+  - [Blog](https://www.curso-r.com/blog/)
+  - [Livro - em desenvolvimento](https://livro.curso-r.com/index.html)
+  - [Lives e vídeos no Youtube](https://www.youtube.com/c/CursoR6)
+  - [Cursos](https://www.curso-r.com/cursos/)
+  - [Fórum](https://discourse.curso-r.com/)
 
-
-
-
-
----
-
-<center>
-[<i class="fas fa-home"></i> Retorne à página inicial](index.html)
-</center>

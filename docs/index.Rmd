@@ -39,22 +39,22 @@ meta() %>%
   )
 ```
 
-Boas vindas!
 
+```{r echo=FALSE}
+
+```
+
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Boas vindas!
 Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozinha ou com outras pessoas) sobre R e comunidades.
 
 É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
 
-<!-- ## Comunidades -->
-
-<!-- Em breve! -->
-
-### R
+## R
 
 - [Introdução ao R](introR.html)
 
 - [Utilizando o Git e GitHub no RStudio](git_rstudio.html)
 
-### Comunidades
+## Comunidades
 
 - [R-Ladies São Paulo](rladies.html)

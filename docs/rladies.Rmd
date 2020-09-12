@@ -37,8 +37,7 @@ meta() %>%
 ```
 
 
-Boas vindas!
-
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Boas vindas!
 Essa breve apresentação é sobre a comunidade R-Ladies São Paulo. 
 
 É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
@@ -58,7 +57,7 @@ xaringanExtra::embed_xaringan(
 ### Utilizando a apresentação
 
 Caso você faça parte de outro capítulo da R-Ladies, sinta-se à vontade para 
-alterar e utilizar essa apresentação - [baixar arquivo .Rmd](https://beatrizmilz.github.io/slidesR/rladies/index.Rmd).
+alterar e utilizar essa apresentação - [use o código .Rmd](https://raw.githubusercontent.com/beatrizmilz/slidesR/master/docs/rladies/index.Rmd).
 
 
 
@@ -83,10 +82,3 @@ install.packages(c("tidyverse", "xaringan", "metathis"))
 
 devtools::install_github("gadenbuie/xaringanExtra")
 ```
-
-
----
-
-<center>
-[<i class="fas fa-home"></i> Retorne à página inicial](index.html)
-</center>

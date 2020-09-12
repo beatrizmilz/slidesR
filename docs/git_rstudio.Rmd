@@ -37,8 +37,7 @@ meta() %>%
   )
 ```
 
-Boas vindas!
-
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Boas vindas!
 O público-alvo desta apresentação são pessoas que utilizam o R para análise de dados, tem um conhecimento básico sobre Git e GitHub e querem utilizar essas ferramentas diretamente do RStudio. 
 
 É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
@@ -135,10 +134,3 @@ glosario::define(c("github", "git_branch"), lang = "en")
 glosario::define(c("git_clone", "fork", "pull_request"), lang = "en")
 ```
 
-
-
----
-
-<center>
-[<i class="fas fa-home"></i> Retorne à página inicial](index.html)
-</center>
