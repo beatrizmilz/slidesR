@@ -8,14 +8,12 @@ Abaixo seguem algumas apresentações que estão em desenvolvimento, ou ainda n�
 
 ## Comunidades:
 
-  - __R-Ladies São Paulo__ - Slide de apresentação da comunidade: [html](https://beatrizmilz.github.io/slidesR/rladies/index.html) e [PDF](https://beatrizmilz.github.io/slidesR/rladies/index.pdf)
-  
+ 
   - The Carpentries - Slide de apresentação da comunidade (em breve)
   
 ## R
   
-  - __Utilizando o Git e GitHub no RStudio__ - primeira versão __em desenvolvimento__ [aqui](https://beatrizmilz.github.io/slidesR/git_rstudio/index.html).
-  
+ 
   - __Rmarkdown__
 
     - Rmarkdown - parte 1: primeira versão __em desenvolvimento__ [aqui](https://beatrizmilz.github.io/slidesR/rmarkdown/index.html).
