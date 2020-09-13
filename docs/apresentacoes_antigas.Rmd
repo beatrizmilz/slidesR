@@ -37,7 +37,7 @@ meta() %>%
 
 
 
-`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Olá! Abaixo segue uma lista de links de apresentações que fiz antes de agosto/2020, e estão desatualizadas. 
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE, url = 'https://beatrizmilz.github.io/slidesR/', width = '70px')` Olá! Abaixo segue uma lista de links de apresentações que fiz antes de agosto/2020, e estão desatualizadas. 
 
 Assim que eu atualizar o material, o mesmo ficará na página principal (e retirado desta lista).
 

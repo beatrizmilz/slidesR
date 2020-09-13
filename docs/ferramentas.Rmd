@@ -36,7 +36,7 @@ meta() %>%
 ```
 
 
-`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Nesta página estão descritas os softwares, pacotes e ferramentas que utilizei para a criação deste site.
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE, url = 'https://beatrizmilz.github.io/slidesR/', width = '70px')` Nesta página estão descritas os softwares, pacotes e ferramentas que utilizei para a criação deste site.
 
 - Linguagem de programação `R` @R-base.
 

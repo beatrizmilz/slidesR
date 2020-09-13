@@ -40,7 +40,7 @@ meta() %>%
 
 
 
-`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE)` Boas vindas!
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE, url = 'https://beatrizmilz.github.io/slidesR/', width = '70px')` Boas vindas!
 Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozinha ou com outras pessoas) sobre R e comunidades.
 
 É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
