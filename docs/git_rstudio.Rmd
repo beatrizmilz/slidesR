@@ -120,14 +120,14 @@ Eventos passados e futuros com uso deste material:
 - __Termos em português__:
 
 ```{r echo=FALSE, message=TRUE}
-glosario::define(c("version_contro_system", "git", "repository"), lang = "pt")
+glosario::define(c("version_contro_system", "git", "github", "repository","git_branch"), lang = "pt")
 ```
 
 - __Termos em Inglês__ (a ajuda na tradução do [Glossário](https://glosario.carpentries.org/pt/) é bem vinda!):
 
 ```{r echo=FALSE, message=TRUE}
 # PR Submetido para Português
-glosario::define(c("github", "git_branch"), lang = "en") 
+# glosario::define(c(... ), lang = "en") 
 
 
  # SUBMETER PR
