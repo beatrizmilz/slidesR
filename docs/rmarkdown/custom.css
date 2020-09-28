@@ -1,0 +1,29 @@
+p{
+ text-align: justify; 
+ font-size: 1.2rem;
+}
+
+
+li{
+ font-size: 1.2rem;
+}
+
+
+.destaque{
+  background-color: #ffffff;
+}
+
+.minirodape{
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 60px;
+  padding-right: 4em;
+}
+
+.inverse .remark-inline-code {
+  color: #ff7df7;
+}
+
+.inverse a {
+  color: #ff7df7;
+}
