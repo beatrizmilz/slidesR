@@ -57,13 +57,12 @@ xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 xaringanExtra::use_editable(expires = 1)
 
 xaringanExtra::use_logo(
-  image_url = "img/rainbow-inclusive.png",
+  image_url = "https://beatrizmilz.github.io/slidesR/introR/img/rainbow-inclusive.png",
   link_url = "https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil"
 )
 
 xaringanExtra::use_clipboard()
 
-xaringanExtra::use_fit_screen()
 
 xaringanExtra::use_extra_styles(
   hover_code_line = TRUE,         #<<
@@ -72,7 +71,29 @@ xaringanExtra::use_extra_styles(
 
 ```
 
-
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "R Markdown - Usando R para gerar diferentes tipos de relatórios",
+    description = paste(
+      "Apresentação sobre",
+      "R Markdown e pacotes utuilizados para gerar diferentes tipos de relatórios,"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/rmarkdown/rmarkdown_packages.html",
+    image = "https://beatrizmilz.github.io/slidesR/rmarkdown/img/share-card-packages.png",
+    image_alt = paste(
+      "Primeiro slide da apresentação sobre ",
+      "R Markdown e pacotes utuilizados para gerar diferentes tipos de relatórios.",
+      "Apresentado por Beatriz Milz."
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
 
 .pull-left[
 # R Markdown
@@ -102,7 +123,7 @@ Ilustração por [@Allison Horst](https://github.com/allisonhorst/stats-illustra
 
 ]
 
-.minirodape[Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`. <br> Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
+.minirodape[Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`.]
 
 ---
 class:  middle
@@ -223,7 +244,7 @@ knitr::include_graphics("https://user-images.githubusercontent.com/163582/519427
 
 - [Mantido pela RStudio](https://github.com/rstudio/pagedown)
 
-- [Exemplos aqui](https://github.com/rstudio/pagedown)
+- [Galeria](https://github.com/rstudio/pagedown)
 
 - Vários templates. Quais uso mais? Resume e Thesis.
 
@@ -250,6 +271,29 @@ knitr::include_graphics("https://camo.githubusercontent.com/0cab37d0a0a1237bc1fd
 
 ## `r emo::ji("package")` distill
 
+- [Mantido pela RStudio](https://rstudio.github.io/distill/)
+
+
+- Exemplos:
+  - [Minha página com apresentações](https://beatrizmilz.github.io/slidesR/)
+  - [Minha página com os materiais da certificação da RStudio](https://beatrizmilz.github.io/RStudio_Certification/)
+  - [RStudio AI Blog](https://blogs.rstudio.com/ai/)
+  
+  
+- Coisas legais:
+  - Referências: [Citações no distill](https://rstudio.github.io/distill/citations.html); Compare [distill](https://beatrizmilz.github.io/slidesR/ferramentas.html) e [blogdown](https://beatrizmilz.com/post/2020-07-27-coleta-e-tratamento-de-esgoto/)
+  -  [metadados do distill](https://rstudio.github.io/distill/metadata.html)
+
+--
+
+- Tags meta:
+
+  - `r emo::ji("package")` [metathis](https://pkg.garrickadenbuie.com/metathis/)
+
+  - [Metatags com blogdown - leitura futura (para mim)](https://xvrdm.github.io/2017/10/23/socialize-your-blogdown/)
+  
+  - [Twitter card validator](https://cards-dev.twitter.com/validator)
+  
 ---
 
 ## `r emo::ji("package")` bookdown
@@ -273,6 +317,16 @@ knitr::include_graphics("https://ih0.redbubble.net/image.543322307.1137/flat,100
 
 - [Galeria de exemplos](https://rstudio.github.io/learnr/examples.html)
 
+- Exemplos:
+  -  [Exploring missing values in naniar](https://allisonhorst.shinyapps.io/missingexplorer/)
+  - [Minha página com os materiais da certificação da RStudio](https://beatrizmilz.github.io/RStudio_Certification/)
+
+
+Materiais interessantes:
+- [Teach R with learnr: a powerful tool for remote teaching](https://education.rstudio.com/blog/2020/05/learnr-for-remote/)
+
+- [How to deliver learnr tutorials in a package](https://education.rstudio.com/blog/2020/09/delivering-learnr-tutorials-in-a-package/)
+
 ---
 ## LatinR 
 
@@ -287,6 +341,8 @@ knitr::include_graphics("https://ih0.redbubble.net/image.543322307.1137/flat,100
   - [Escrevendo manuscritos acadêmicos usando RMarkdown](https://www.meetup.com/es/rladies-natal/events/273508552/)
   
   - [Comunicando seus resultados com R: aprenda a criar apresentações reprodutíveis](https://www.meetup.com/pt-BR/rladies-goiania/events/273531145/)
+  
+  - [Generando tutoriales interactivos con el paquete learnr](https://www.meetup.com/es-ES/rladies-santa-rosa/events/273513242/) - Em Espanhol 
   
 ---
 class: middle
@@ -305,3 +361,17 @@ knitr::include_graphics("https://i.imgur.com/0W5Iumw.png")
 knitr::include_graphics("https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/presenting_monster.png")
 ```
 
+---
+class: center, middle
+
+# Obrigada!
+
+
+
+Slides criados com o pacote [**xaringan**](https://github.com/yihui/xaringan). 
+
+Tema criado com o pacote [**xaringanthemer**](https://pkg.garrickadenbuie.com/xaringanthemer/) e funções extras com [**xaringanExtra**](https://pkg.garrickadenbuie.com/xaringanExtra/).
+
+Várias ilustrações usadas na apresentação foram feitas por  <a href='https://twitter.com/allison_horst/'> Allison Horst</a>. Clique [aqui](https://github.com/allisonhorst/stats-illustrations) para ver várias outras artes feitas por ela!
+
+O maravilhoso logo da R-Ladies usado nesta apresentação é uma obra de [Bea @Chucheria](https://twitter.com/chucheria)! Obrigada!
