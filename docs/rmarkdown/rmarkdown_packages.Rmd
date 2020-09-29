@@ -106,11 +106,7 @@ meta() %>%
 
 **[Beatriz Milz](https://beatrizmilz.com)** <a href='mailto:beatriz.milz@usp.br'><i class="far fa-envelope"></i></a>  <a href='https://twitter.com/BeaMilz'><i class="fab fa-twitter"></i>   <a href='https://github.com/beatrizmilz'><i class="fab fa-github"></i></a> <a href='https://discourse.curso-r.com/u/beatrizmilz/summary' target="_blank"><i class="fab fa-discourse"></i></a>
 
-
-__.can-edit[We R Live]__
-
-
-__.can-edit[2º semestre/2020]__
+[R-Ladies São Paulo](https://beatrizmilz.github.io/slidesR/rladies.html)
 
 ]
 
@@ -122,6 +118,8 @@ knitr::include_graphics("img/rmarkdown_wizards.png")
 Ilustração por [@Allison Horst](https://github.com/allisonhorst/stats-illustrations).
 
 ]
+
+__.can-edit[We R Live - Canal [GeoCast Brasil](https://www.youtube.com/c/geocastbrasil/about)]__
 
 .minirodape[Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`.]
 
