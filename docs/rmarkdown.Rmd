@@ -1,0 +1,59 @@
+---
+title: "RMarkdown"
+author:
+  - name: Beatriz Milz 
+    url: https://beatrizmilz.com
+    affiliation: IEE/USP
+date: "Atualizado em `r Sys.Date()`"
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "R Markdown - Usando R para gerar diferentes tipos de relatórios",
+    description = paste(
+      "Materiais sobre",
+      "R Markdown e pacotes utuilizados para gerar diferentes tipos de relatórios,"
+    ),
+    url = "https://beatrizmilz.github.io/slidesR/rmarkdown.html",
+    image = "https://beatrizmilz.github.io/slidesR/rmarkdown/img/share-card-packages.png",
+    image_alt = paste(
+      "Primeiro slide da apresentação sobre ",
+      "R Markdown e pacotes utuilizados para gerar diferentes tipos de relatórios.",
+      "Apresentado por Beatriz Milz."
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
+
+
+`r applause::button(color="#1aa6b4", style="float:right;", multiclap = FALSE, url = 'https://beatrizmilz.github.io/slidesR/', width = '70px')` Boas vindas!
+O público-alvo deste material são pessoas que utilizam o R para análise de dados, e gostariam de gerar relatórios dinâmicos com diferentes tipos de outputs.
+
+É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
+
+
+> Observação: Futuramente ficará disponível mais conteúdos sobre como usar R Markdown. Por enquanto, os slides abaixo são sobre pacotes utilizados para gerar diferentes tipos de produtos com R Markdown.
+
+### Slides
+
+```{r}
+xaringanExtra::embed_xaringan(
+  url = "https://beatrizmilz.github.io/slidesR/rmarkdown/rmarkdown_packages.html",
+  ratio = "16:9"
+)
+```
+
+
+<p style="text-align:right;">[<i class="fas fa-external-link-alt"></i> Confira a apresentação](https://beatrizmilz.github.io/slidesR/rmarkdown/rmarkdown_packages.html)</p>
+

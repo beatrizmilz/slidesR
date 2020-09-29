@@ -51,6 +51,8 @@ Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozi
 
 - [Utilizando o Git e GitHub no RStudio](git_rstudio.html)
 
+- [R Markdown](rmarkdown.html) _(preliminar)_
+
 ## Comunidades
 
 - [R-Ladies São Paulo](rladies.html)
