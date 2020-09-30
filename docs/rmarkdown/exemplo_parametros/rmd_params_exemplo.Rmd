@@ -6,7 +6,6 @@ params:
   ano: 2020
   mes: set
   sistema: Cantareira
-knit: pagedown::chrome_print
 ---
 
 ```{r setup, include=FALSE}

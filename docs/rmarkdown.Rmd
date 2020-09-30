@@ -57,3 +57,15 @@ xaringanExtra::embed_xaringan(
 
 <p style="text-align:right;">[<i class="fas fa-external-link-alt"></i> Confira a apresentação](https://beatrizmilz.github.io/slidesR/rmarkdown/rmarkdown_packages.html)</p>
 
+
+- Arquivos de exemplo mostrados na live: 
+
+  - Exemplo de R Markdown com parâmetros: [`.Rmd`](https://beatrizmilz.github.io/slidesR/rmarkdown/exemplo_parametros/rmd_params_exemplo.Rmd) e [`.html`](https://beatrizmilz.github.io/slidesR/rmarkdown/exemplo_parametros/rmd_params_exemplo.html)     
+  - Exemplo de código para gerar vários relatórios com parâmetros: [.R](https://beatrizmilz.github.io/slidesR/rmarkdown/exemplo_parametros/render.R)
+  - Arquivos gerados no exemplo: Sistema [Cantareira](https://beatrizmilz.github.io/slidesR/rmarkdown/exemplo_parametros/Cantareira.html), [Guarapiranga](https://beatrizmilz.github.io/slidesR/rmarkdown/exemplo_parametros/Guarapiranga.html)  e [Rio Grande](https://beatrizmilz.github.io/slidesR/rmarkdown/exemplo_parametros/Rio Grande.html)
+
+
+
+- [Live Stream: We R Live 16: R Markdown: usando o R para comunicar seus resultados](https://youtu.be/6oPZ5sGt6LA):
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6oPZ5sGt6LA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
