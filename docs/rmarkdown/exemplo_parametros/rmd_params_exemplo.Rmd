@@ -31,36 +31,41 @@ library(tidyverse)
 
 ```{r}
 dados <- mananciais %>%
-   mutate(ano = lubridate::year(data),
-          mes = lubridate::month(data, label = TRUE)) %>% 
+  mutate(ano = lubridate::year(data),
+         mes = lubridate::month(data, label = TRUE)) %>%
   filter(sistema == params$sistema,
          ano == params$ano,
-         mes == params$mes
-         )
-
+         mes == params$mes)
 ```
 
 
 ```{r}
-menor_volume <- dados %>% arrange(volume_porcentagem) %>% slice(1) #%>% pull(volume_porcentagem)
+menor_volume <- dados %>% arrange(volume_porcentagem) %>% slice(1)
+
+menor_volume_data <- format(menor_volume %>%  pull(data), format='%d de %B de %Y')
+
+menor_volume_porcentagem <- menor_volume %>% pull(volume_porcentagem)
 ```
-O dia com o menor volume armazenado foi `r format(menor_volume %>%  pull(data), format='%d de %B de %Y')`, com `r menor_volume %>% pull(volume_porcentagem)` %.
+
+O dia com o menor volume armazenado foi `r menor_volume_data`, com `r menor_volume_porcentagem` %.
 
 ## Gráfico
 
 ```{r volume}
-dados %>% 
-  ggplot() + 
+dados %>%
+  ggplot() +
   geom_line(aes(x = data, y = volume_porcentagem)) +
   theme_bw() +
   labs(x = "Data", y = "Volume armazenado (%)")
 ```
 
 ```{r precip}
-dados %>% 
-  ggplot() + 
+dados %>%
+  ggplot() +
   geom_line(aes(x = data, y = pluviometria_mensal), color = "blue") +
-  geom_hline(aes(yintercept = pluviometria_hist), color = "red", linetype = "dashed" )+
+  geom_hline(aes(yintercept = pluviometria_hist),
+             color = "red",
+             linetype = "dashed") +
   theme_bw() +
   labs(x = "Data", y = "Pluviometria mensal acumulada (mm)")
 ```

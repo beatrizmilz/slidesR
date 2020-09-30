@@ -1,14 +1,25 @@
-# Como gerar para os outros sistemas
+# Como gerar para os outros sistemas?
 
-# Gerar um relatório
+# Gerar um relatório, definindo os parâmetros
 rmarkdown::render(
-  "docs/rmarkdown/exemplo_parametros/rmd_params_exemplo.Rmd",
+  # o primeiro argumento é o caminho até o arquivo .Rmd
+  # Corrija para o caminho no seu projeto.
+  input =  here::here(
+    "docs",
+    "rmarkdown",
+    "exemplo_parametros",
+    "rmd_params_exemplo.Rmd"
+  ),
+  # o segundo argumento é a lista de parâmetros
   params = list(mes = "ago", ano = 2020, sistema = "Rio Grande"),
-  output_file = glue::glue("relatorio.html")
+  # O terceiro argumento é o arquivo .html que você deseja gerar
+  output_file = "relatorio.html"
 )
 
+here::here()
 
-# Gerar vários
+# Criando um vetor com mais sistemas
+# (esse vetor será usado para informar os parâmetros)
 sistemas <-
   c("Cantareira",
     "Guarapiranga",
@@ -16,15 +27,25 @@ sistemas <-
 
 
 
-# Render to HTML the template for each param
+# Gerar um HTML para cada uma das opções de parâmetros
 purrr::map(
+  # Quais são os parâmetros? argumento .x
   .x = sistemas,
-  # vector of param values
+  # Argumento .f é a função usada
   .f = ~ rmarkdown::render(
-    input = "docs/rmarkdown/exemplo_parametros/rmd_params_exemplo.Rmd",
-    # RMarkdown filepath
+    # o  argumento input é o caminho até o arquivo .Rmd 
+    # Corrija para o caminho no seu projeto.
+    input = here::here(
+      "docs",
+      "rmarkdown",
+      "exemplo_parametros",
+      "rmd_params_exemplo.Rmd"
+    ),
+    # Os parâmetros que definimos em .x (no caso, sistemas), serão usados
+    # para preencher os parametros em cada relatório gerado.
     params = list(sistema = .x),
-    # iterated parameter value
-    output_file = paste0(.x, ".html")  # iterated output path
+    # O caminho e nome de arquivo gerado. Neste caso, .x significa que
+    # será usado o sistema no nome do arquivo gerado.
+    output_file = paste0(.x, ".html")
   )
 )
