@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Montserrat&display=swap');
+
+.topicsList .topic.current {
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: #88398a;
+    color: #ffffff;
+    border: 0px;
+}
+
+.topicsList  {
+    font-family: 'Lexend Deca', sans-serif;
+    border: 0px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+
+h1, h2, h3{
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+body{
+     font-family: 'Montserrat', sans-serif;
+     font-size: 14;
+}
+
+
+a {
+	color: #095a95;
+
+}
+
+a:hover {
+	text-decoration: underline dotted;
+	
+
+}
+
+
+.btn-primary{
+  background-color: #88398a;
+}
+
+.btn-primary:hover{
+  background-color:  #095a95;
+}
+
+
+blockquote{
+  border-left: 5px solid #88398a;
+  background-color: #f1ecf5;
+}
