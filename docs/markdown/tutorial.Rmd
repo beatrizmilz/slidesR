@@ -35,7 +35,7 @@ include_graphics("https://raw.githubusercontent.com/allisonhorst/stats-illustrat
 
 Se você é uma pessoa que utiliza R, conheceu as possibilidades de utilizar R Markdown (e os pacotes que expandem mais ainda as possibilidades), e gostaria de começar a utilizá-lo, a minha dica é:
 
-> Aprenda Markdown  `r fontawesome::fa("markdown")`
+> Conheça Markdown  `r fontawesome::fa("markdown")`
 
 Porque? O R Markdown utiliza a linguagem de marcação Markdown.  O Markdown também é usado em outros lugares, como:
 
@@ -129,21 +129,93 @@ Os títulos funcionam como uma hierarquia, e para criar um título é necessári
 
 Essa imagem ilustra a hierarquia dos títulos:
 
-![](https://i.imgur.com/nOjuCHL.png)
+
+```{r, fig.align='center'}
+include_graphics("https://beatrizmilz.github.io/slidesR/markdown/img/titulos.png")
+```
+
 
 ## Listas
 
 ### Listas ordenadas
 
-> Em breve :)
+Você pode fazer uma lista ordenada usando somente números. Você pode repetir o número quantas vezes quiser: 
+
+> `r input` 
+>
+> `1. Maçã`
+> 
+> `1. Banana`
+> 
+> `1. Uva`
+
+
+O resultado será:
+
+> `r output`
+> 1. Maçã
+> 1. Banana
+> 1. Uva
+
 
 ### Listas não ordenadas
 
-> Em breve
+Você pode fazer uma lista não ordenada escrevendo com hifens ou asteriscos, como a seguir:
 
-## Links e imagens
 
-> Em breve
+> `r input` 
+>
+> `* Maçã`
+> 
+> `* Banana`
+> 
+> `* Uva`
+
+
+> `r input` 
+>
+> `- Maçã`
+> 
+> `- Banana`
+> 
+> `- Uva`
+
+O resultado será:
+
+> `r output`
+> - Maçã
+> - Banana
+> - Uva
+
+Você também pode adicionar sub-itens na lista:
+
+> `r output`
+> - Frutas
+>   - Maçã
+>   - Banana
+>   - Uva
+
+
+
+## Links
+
+- Você pode criar um link utilizando essa estrutura: `[texto](http://url-da-pagina.com)`.
+
+Por exemplo:
+
+
+> `r input` `Você pode consultar mais [materiais sobre R nesta página](https://beatrizmilz.github.io/slidesR/).`
+
+> `r output` Você pode consultar mais [materiais sobre R nesta página](https://beatrizmilz.github.io/slidesR/).
+
+## Imagens
+
+- Você pode incluir arquivo de imagem utilizando essa estrutura: `![descricao da imagem](http://url-da-imagem.com)`. A descrição da imagem é importante para 
+acessibilidade do conteúdo através de leitores de tela.
+
+> `r input` `![Logo da R-Ladies](https://beatrizmilz.github.io/slidesR/introR/img/rainbow-inclusive.png)`
+
+> `r output` ![Logo da R-Ladies](https://beatrizmilz.github.io/slidesR/introR/img/rainbow-inclusive.png)
 
 ## Código
 
@@ -174,12 +246,12 @@ include_graphics("https://raw.githubusercontent.com/ThinkR-open/remedy/master/re
 include_graphics("https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif")
 ```
 
-## Fontes de estudo
+## Referências
 
 
 Chegamos ao final deste breve tutorial! 
 
-Caso queira consultar outros materiais, segue abaixo algns links:
+Caso queira consultar outros materiais, segue abaixo alguns links:
 
 - [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
