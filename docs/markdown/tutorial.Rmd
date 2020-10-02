@@ -5,10 +5,12 @@ output:
     css: css/custom.css
 runtime: shiny_prerendered
 ---
+<!-- <script language="JavaScript" src="js/custom.js"></script> -->
 
 ```{r setup, include=FALSE}
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
+tutorial_options(exercise.cap = "Código")
 ```
 
 ```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
@@ -18,7 +20,7 @@ library(knitr)
 ```
 
 **Tutorial de Markdown para pessoas programadoras em R**. <br>
-**[Beatriz Milz](https://beatrizmilz.com)** - Atualizado em `r Sys.Date()`
+**[Beatriz Milz](https://beatrizmilz.com)**   <a href='mailto:beatriz.milz@usp.br'><i class="far fa-envelope"></i></a>   <a href='https://twitter.com/BeaMilz'  target="_blank"><i class="fab fa-twitter"></i></a>   <a href='https://github.com/beatrizmilz' target="_blank"><i class="fab fa-github"></i></a>   <a href='https://orcid.org/0000-0002-3064-4486' target="_blank"><i class="fab fa-orcid"></i></a>   <a href='http://lattes.cnpq.br/5150665880581477' target="_blank"><i class="ai ai-lattes"></i></a>   <a href='https://beatrizmilz.github.io/resume/index.html' target="_blank"><i class="ai ai-cv"></i></a>   <a href='https://discourse.curso-r.com/u/beatrizmilz/summary' target="_blank"><i class="fab fa-discourse"></i></a> - Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`.
 
 
 ## Introdução
@@ -47,7 +49,10 @@ Porque? O R Markdown utiliza a linguagem de marcação Markdown.  O Markdown tam
 
 - entre muitos outros!
 
-Se você tem interesse em aprender Markdown, esse tutorial **prático** é para você!
+Se você tem interesse em aprender Markdown, esse tutorial **introdutório** é para você!
+
+
+
 
 ### Marcações com Markdown
 
@@ -61,6 +66,12 @@ A seguir, estarão diversos exemplos de código em Markdown e também o  o resul
 > `r input` Os códigos em Markdown
 
 > `r output` Como os códigos aparecerão quando for gerado o output (ex. `HTML`)
+
+Em algumas seções, também será abordado alternativas utilizando códigos em R, portanto existem alguns campos para executar códigos em R. Abaixo segue uma imagem demonstrativa:
+
+```{r, fig.align='center', out.width="95%"}
+include_graphics("https://beatrizmilz.github.io/slidesR/markdown/images/botoes.png")
+```
 
 ## Ênfase
 
@@ -131,7 +142,7 @@ Essa imagem ilustra a hierarquia dos títulos:
 
 
 ```{r, fig.align='center'}
-include_graphics("https://beatrizmilz.github.io/slidesR/markdown/img/titulos.png")
+include_graphics("https://beatrizmilz.github.io/slidesR/markdown/images/titulos.png")
 ```
 
 
@@ -208,43 +219,218 @@ Por exemplo:
 
 > `r output` Você pode consultar mais [materiais sobre R nesta página](https://beatrizmilz.github.io/slidesR/).
 
+
+
+## Equações
+
+Você pode adicionar equações utilizando LaTeX. Você pode saber mais na [página do Overleaf sobre expressões matemáticas](https://www.overleaf.com/learn/latex/mathematical_expressions). Além disso, existem [geradores de equações](https://www.codecogs.com/latex/eqneditor.php?latex=D). 
+
+É possível adicionar a equação centralizada envolvendo o código com `$$`. Veja o exemplo abaixo:
+
+
+
+> `r input` `$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$`
+
+> `r output` $$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
+
+
+Também é possível adicionar a equação na mesma linha que o texto, envolvendo o código com `$`. Veja o exemplo abaixo:
+
+
+> `r input` `Ou também na linha $y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$ , junto ao texto!`
+
+> `r output` Ou também na linha $y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$ , junto ao texto!
+
+
+## Código
+
+É possível __marcar textos para que fique formatado como códigos__, usando a crase: `.
+
+
+
+
+>  `r input` 
+>```
+> `mean(pinguins$massa_corporal, na.rm = TRUE)`
+> ```
+
+
+
+> `r output`  `mean(pinguins$massa_corporal, na.rm = TRUE)` 
+
+
+Também é possível delimitar um trecho maior de código, utilizando três crases. 
+
+__Exemplo:__
+
+
+```{r, fig.align='default'}
+include_graphics("https://beatrizmilz.github.io/slidesR/markdown/images/markdowncode.PNG")
+```
+
+__Resultado:__
+
+
+```
+library(dados)
+mean(pinguins$massa_corporal, na.rm = TRUE)
+```
+
+
+### Adicionar códigos usando R (em arquivos .Rmd)
+
+Na sessão anterior, é apresentado como marcar o texto como código. Porém ele não é executado!
+
+Caso você queira que o código seja executado como código R, existem duas possibilidades: o que chamamos de 'inline code', que é quando o resultado aparece junto ao texto, e também com campos de código (chunks). 
+
+Segue abaixo os exemplos:
+
+#### Inline code (em arquivos .Rmd)
+
+__Exemplo:__
+
+```{r, fig.align='default', out.width="100%"}
+include_graphics("https://raw.githubusercontent.com/beatrizmilz/slidesR/master/docs/markdown/images/r_inline_code2.PNG")
+```
+
+__Resultado:__
+
+> `r output` A média da massa corporal dos pinguins é `r round(mean(dados::pinguins$massa_corporal, na.rm = TRUE)/ 1000, 1)` kg.
+
+
+#### Campos de código (chunks) (em arquivos .Rmd)
+
+É possível adicionar campos de código utilizando a seguinte sintaxe:
+
+
+```{r, fig.align='default'}
+include_graphics("https://raw.githubusercontent.com/beatrizmilz/slidesR/master/docs/markdown/images/campo-de-codigo.PNG")
+```
+
+Um exemplo de campo de código é o campo abaixo, onde é possível executar o código e visualizar o resultado **(você pode testar escrevendo códigos diferentes também!)**:
+
+```{r exemplo-chunk, exercise = TRUE}
+1 + 1
+```
+
+
+
 ## Imagens
 
 - Você pode incluir arquivo de imagem utilizando essa estrutura: `![descricao da imagem](http://url-da-imagem.com)`. A descrição da imagem é importante para 
 acessibilidade do conteúdo através de leitores de tela.
 
-> `r input` `![Logo da R-Ladies](https://beatrizmilz.github.io/slidesR/introR/img/rainbow-inclusive.png)`
+> `r input` `![Logo da The Carpentries](https://beatrizmilz.github.io/slidesR/introR/img/Hex/carpentries.png)`
 
-> `r output` ![Logo da R-Ladies](https://beatrizmilz.github.io/slidesR/introR/img/rainbow-inclusive.png)
+> `r output` ![Logo da The Carpentries](https://beatrizmilz.github.io/slidesR/introR/img/Hex/carpentries.png)
 
-## Código
+Fonte da imagem: [Hex Logo da The Carpentries](https://carpentries.org/)
 
-> Em breve!
+### Adicionar imagens usando R (em arquivos .Rmd)
+
+Neste tutorial foi apresentado como adicionar uma imagem utilizando Markdown. Porém quando utilizamos arquivos R Markdown também é possível adicionar imagens 
+usando código em R, com a função `include_graphics` do pacote `knitr`. É a forma que eu uso, pois permite personalizar de forma mais intuitiva como a imagem aparecerá no arquivo final. Você pode adicionar uma imagem utilizando como primeiro argumento a url da imagem ou o caminho onde ela está no projeto.
+
+Veja o exemplo abaixo: (você pode clicar em `Run Code` para executar o código abaixo e ver o resultado)  
+
+```{r exemplo-knitr, exercise=TRUE, out.width='50%'}
+knitr::include_graphics("https://beatrizmilz.github.io/slidesR/introR/img/Hex/1dados-hex.png")
+```
 
 ## Tabelas
 
-> Em breve!
+As tabelas em Markdown tem uma estrutura definida, como mostra o exemplo abaixo. É possível usar [ferramentas online para gerar tabelas em Markdown](https://www.tablesgenerator.com/markdown_tables).
 
-## Equações
+__Em Markdown:__
+```{}
+|  a|  b|  c|
+|--:|--:|--:|
+|  1|  2|  3|
+|  2|  3|  4|
 
-> Em breve!
+```
+
+
+__Resultado:__
+
+> `r output` 
+> 
+> |  a|  b|  c|
+> |--:|--:|--:|
+> |  1|  2|  3|
+> |  2|  3|  4|
+
+
+### Adicionar tabelas usando R (em arquivos .Rmd)
+
+Neste tutorial foi apresentado como adicionar uma tabela utilizando Markdown. Porém quando utilizamos arquivos R Markdown também é possível adicionar tabelas 
+usando código em R. Existem algumas funções diferentes para fazer isso, e é a forma que eu prefiro também!
+
+Veja os exemplos abaixo: (você pode clicar em `Executar o código` para executar o código abaixo e ver o resultado)  
+
+Primeiro, carregue os pacotes necessários:
+
+```{r pacotes, echo=TRUE, exercise=TRUE}
+# install.packages("remotes")
+# remotes::install_github("cienciadedatos/dados")
+library(dados)  # Pacote com bases de dados em Português
+library(magrittr)  # Pacote para utilizar o Pipe %>% 
+```
+
+
+- Adicione uma tabelaUtilizando o pacote `knitr`: função `kable()`
+
+```{r exemplo-kable, exercise=TRUE}
+pinguins %>%
+  head() %>%
+  knitr::kable()
+```
+
+
+- Utilizando o pacote `DT`: função `datatable()`
+
+```{r exemplo-DT, exercise=TRUE}
+pinguins %>%
+  head() %>%
+  DT::datatable()
+```
+
+- Dependendo da forma que você gerar o arquivo R Markdown, bastará utilizar o nome da base para que ela seja apresentada de uma forma agradável:
+
+```{r exemplo-rmd, exercise=TRUE}
+dados::pinguins
+```
+
+
+Obs: Existem outros pacotes que permitem adicionar tabelas bonitas nos arquivos R Markdown!
+
+
+
 
 ## Dicas para o RStudio
 
-> Escrever algo aqui para contextualizar :)
+Existem algumas formas de facilitar o uso do Markdown na IDE RStudio. Um exemplo é o [Pacote {remedy}](https://github.com/ThinkR-open/remedy), que oferece um Addin do RStudio com atalhos para formatar o texto com Markdown. Veja abaixo a animação
+disponível na documentação do pacote:
 
-- [Pacote {remedy}](https://github.com/ThinkR-open/remedy) - oferece um Addin do RStudio com atalhos para formatar o texto com Markdown.
 
-```{r, out.width="80%"}
+```{r, out.width="80%", fig.cap="Demonstração do pacote {remedy}"}
 include_graphics("https://raw.githubusercontent.com/ThinkR-open/remedy/master/reference/figures/table_remedy.gif")
 ```
 
-- [RStudio versão 1.4 - Visual Markdown Editing](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/)
+Uma ótima notícia é que a versão mais recente do RStudio possui uma ferramenta de edição de Markdown visual, que disponibiliza botões para editar o texto com Markdown. Veja mais neste post: [RStudio versão 1.4 - Visual Markdown Editing](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/), e na animação disponível no post:
 
 
-```{r, out.width="80%"}
+```{r, out.width="80%", fig.cap="Demonstração do RStudio versão 1.4"}
 include_graphics("https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif")
 ```
+
+
+<!-- ## Exercícios -->
+
+<!-- > Exercícios sobre markdown - múltipla escolha -->
+
+<!-- > Exercícios com código em R - usar os chunks :) -->
+
 
 ## Referências
 
@@ -258,3 +444,6 @@ Caso queira consultar outros materiais, segue abaixo alguns links:
 - [`rmarkdown` Cheatsheet 2.0](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 
 - [`rmarkdown` Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
+
+- [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html)
+
