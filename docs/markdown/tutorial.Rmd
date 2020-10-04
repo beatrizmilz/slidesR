@@ -419,7 +419,7 @@ Existem algumas formas de facilitar o uso do Markdown na IDE RStudio. Um exemplo
 
 
 ```{r, out.width="80%", fig.cap="Demonstração do pacote {remedy}"}
-include_graphics("https://raw.githubusercontent.com/ThinkR-open/remedy/master/reference/figures/table_remedy.gif")
+include_graphics("https://raw.githubusercontent.com/ThinkR-open/remedy/master/reference/figures/url.gif")
 ```
 
 Uma ótima notícia é que a versão mais recente do RStudio possui uma ferramenta de edição de Markdown visual, que disponibiliza botões para editar o texto com Markdown. <br>

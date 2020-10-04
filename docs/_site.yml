@@ -2,6 +2,7 @@ name: "Beatriz Milz"
 title: "Materiais sobre R"
 encoding: "UTF-8"
 #favicon: images/favicon.png
+creative_commons: CC BY
 base_url: https://beatrizmilz.github.io/slidesR/
 # repository_url: https://github.com/beatrizmilz/slidesR
 # creative_commons: CC BY
@@ -13,13 +14,15 @@ navbar:
   left:
     - icon: fas fa-graduation-cap
       href: https://beatrizmilz.com 
-    - icon: fas fa-tools
-      text: "Como"
-      href: https://beatrizmilz.github.io/slidesR/ferramentas.html  
+    - text: "Blog"
+      href: https://beamilz.netlify.app/
+    - text: "Materiais sobre R"
+      href: https://beatrizmilz.github.io/slidesR
+    - text: "CV"
+      href: https://beatrizmilz.github.io/resume/index.html
   right:
     - icon: fas fa-home
       href: https://beatrizmilz.github.io/slidesR/index.html      
-
     - icon: fab fa-github
       href: https://github.com/beatrizmilz/slidesR
 output:

@@ -5,8 +5,8 @@ account: beatriz-milz
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2922080
-bundleId: 3693444
+bundleId: 3697081
 url: https://beatriz-milz.shinyapps.io/tutorial_markdown/
-when: 1601596568.55807
+when: 1601681011.76686
 asMultiple: FALSE
 asStatic: FALSE
