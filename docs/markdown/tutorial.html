@@ -104,7 +104,7 @@ $(document).ready(function () {
 <!-- end tabsets -->
 
 
-<link rel="stylesheet" href="css\custom.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
 
 </head>
 
@@ -118,46 +118,48 @@ $(document).ready(function () {
 <div class="topics">
 
 <!-- <script language="JavaScript" src="js/custom.js"></script> -->
-<p><strong>Tutorial de Markdown para pessoas programadoras em R</strong>. <br> <strong><a href="https://beatrizmilz.com">Beatriz Milz</a></strong> <a href='mailto:beatriz.milz@usp.br'><i class="far fa-envelope"></i></a> <a href='https://twitter.com/BeaMilz'  target="_blank"><i class="fab fa-twitter"></i></a> <a href='https://github.com/beatrizmilz' target="_blank"><i class="fab fa-github"></i></a> <a href='https://orcid.org/0000-0002-3064-4486' target="_blank"><i class="fab fa-orcid"></i></a> <a href='http://lattes.cnpq.br/5150665880581477' target="_blank"><i class="ai ai-lattes"></i></a> <a href='https://beatrizmilz.github.io/resume/index.html' target="_blank"><i class="ai ai-cv"></i></a> <a href='https://discourse.curso-r.com/u/beatrizmilz/summary' target="_blank"><i class="fab fa-discourse"></i></a> - Atualizado em 02 de outubro de 2020.</p>
+<p><strong>Tutorial de Markdown para pessoas programadoras em R</strong>. <br> <strong><a href="https://beatrizmilz.com">Beatriz Milz</a></strong> <a href='mailto:beatriz.milz@usp.br'><i class="far fa-envelope"></i></a> <a href='https://twitter.com/BeaMilz'  target="_blank"><i class="fab fa-twitter"></i></a> <a href='https://github.com/beatrizmilz' target="_blank"><i class="fab fa-github"></i></a> <a href='https://orcid.org/0000-0002-3064-4486' target="_blank"><i class="fab fa-orcid"></i></a> <a href='http://lattes.cnpq.br/5150665880581477' target="_blank"><i class="ai ai-lattes"></i></a> <a href='https://beatrizmilz.github.io/resume/index.html' target="_blank"><i class="ai ai-cv"></i></a> <a href='https://discourse.curso-r.com/u/beatrizmilz/summary' target="_blank"><i class="fab fa-discourse"></i></a> - Atualizado em 04 de outubro de 2020. <br> <strong><a href="https://www.linkedin.com/in/hsvab/">Haydée Svab</a></strong> <a href='mailto:hsvab@hsvab.eng.br'><i class="far fa-envelope"></i></a> <a href='https://twitter.com/hsvab'  target="_blank"><i class="fab fa-twitter"></i></a> <a href='https://www.instagram.com/haydeesvab/' target="_blank"><i class="fab fa-instagram"></i></a> <a href='https://github.com/hsvab' target="_blank"><i class="fab fa-github"></i></a> <a href='http://lattes.cnpq.br/9186914175329359' target="_blank"><i class="ai ai-lattes"></i></a> - Atualizado em 04 de outubro de 2020.</p>
 <div id="section-introdução" class="section level2">
 <h2>Introdução</h2>
 <p>Boas vindas!</p>
 <p>É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes. Por favor, leia o <a href="https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese">Código de Conduta da R-Ladies</a>.</p>
-<p>O R Markdown é um pacote no R que possibilita criar relatórios reprodutíveis. Com este tipo de arquivo (<code>.Rmd</code>), é possível adicionar textos, códigos, os resultados dos códigos, e muito mais!</p>
+<p>O R Markdown é um pacote no R que possibilita criar documentos (relatórios, apresentações, etc.) reprodutíveis. Com este tipo de arquivo (<code>.Rmd</code>), é possível adicionar textos, códigos, os resultados dos códigos, e muito mais!</p>
 <div class="figure" style="text-align: center">
 <img src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/rmarkdown_wizards.png" alt="Ilustração por &lt;a href='https://github.com/allisonhorst/stats-illustrations'&gt;Allison Horst&lt;/a&gt;." width="50%" />
 <p class="caption">
 Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>Allison Horst</a>.
 </p>
 </div>
-<p>Se você é uma pessoa que utiliza R, conheceu as possibilidades de utilizar R Markdown (e os pacotes que expandem mais ainda as possibilidades), e gostaria de começar a utilizá-lo, a minha dica é:</p>
+<p>Se você é uma pessoa que utiliza R, sabe das possibilidades de utilizar R Markdown (e os pacotes que expandem mais ainda as possibilidades) e gostaria de começar a utilizá-lo, nossas dicas são:</p>
 <blockquote>
 <p>Conheça Markdown <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 640 512"><path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/></svg></p>
 </blockquote>
-<p>Porque? O R Markdown utiliza a linguagem de marcação Markdown. O Markdown também é usado em outros lugares, como:</p>
+<p>Por quê? O R Markdown utiliza a linguagem de <a href="https://pt.wikipedia.org/wiki/Linguagem_de_marcação">marcação</a> <a href="https://www.markdownguide.org/">Markdown</a> que, além de reprodutibilidade, proporciona também, portabilidade, ou seja, os arquivos markdown podem ser abertos por qualquer software que suporte este formato aberto. Além disso, independente da plataforma de trabalho, pode-se migrar um arquivo de texto sem perder a formatação.</p>
+<p>O Markdown também é usado em outros lugares, como:</p>
 <ul>
+<li><p>sites como <a href="https://github.com/">GitHub</a>, <a href="https://bitbucket.org/">Bitbucket</a>, <a href="https://www.reddit.com/">Reddit</a>, <a href="https://diasporafoundation.org/">Diaspora</a>, <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, and <a href="https://sourceforge.net/">SourceForge</a> usam variações de Markdown para facilitar a interação e discussão entre usuários(as).</p></li>
 <li><p>arquivos <code>README.md</code> no <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> GitHub <a href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil/blob/master/README.md">(exemplo aqui!)</a></p></li>
 <li><p>no site <a href="https://hackmd.io/">Hackmd.io</a> (muito útil para escrever colaborativamente)</p></li>
 <li><p>em fóruns (como o <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 448 512"><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9C448 134.3 348.6 32 225.9 32zM224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128z"/></svg> <a href="https://discourse.curso-r.com">Discourse da Curso-R</a>) onde você pode marcar o texto da sua postagem</p></li>
 <li><p>entre muitos outros!</p></li>
 </ul>
-<p>Se você tem interesse em aprender Markdown, esse tutorial <strong>introdutório</strong> é para você!</p>
+<p>Se você tem interesse em aprender Markdown, este tutorial <strong>introdutório</strong> é para você!</p>
 <div id="section-marcações-com-markdown" class="section level3">
 <h3>Marcações com Markdown</h3>
-<p>A seguir, estarão diversos exemplos de código em Markdown e também o o resultado do mesmo. Exemplo:</p>
+<p>A seguir, estarão diversos exemplos de código em Markdown e também o resultado gerado a partir desse código:</p>
 <blockquote>
 <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 640 512">
 <path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/>
 </svg>
-<p>Os códigos em Markdown</p>
+<p>Este símbolo indicará os códigos em Markdown</p>
 </blockquote>
 <blockquote>
 <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512">
 <path d="M16 288c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h112v-64zm489-183L407.1 7c-4.5-4.5-10.6-7-17-7H384v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H152c-13.3 0-24 10.7-24 24v264h128v-65.2c0-14.3 17.3-21.4 27.4-11.3L379 308c6.6 6.7 6.6 17.4 0 24l-95.7 96.4c-10.1 10.1-27.4 3-27.4-11.3V352H128v136c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H376c-13.2 0-24-10.8-24-24z"/>
 </svg>
-<p>Como os códigos aparecerão quando for gerado o output (ex. <code>HTML</code>)</p>
+<p>Este simbolo indicará como os códigos aparecerão quando for gerado o output (ex. <code>HTML</code>)</p>
 </blockquote>
-<p>Em algumas seções, também será abordado alternativas utilizando códigos em R, portanto existem alguns campos para executar códigos em R. Abaixo segue uma imagem demonstrativa:</p>
+<p>Em algumas seções, também serão abordadas alternativas utilizando códigos em R, portanto existem alguns campos para executar códigos em R. Abaixo segue uma imagem demonstrativa:</p>
 <p><img src="https://beatrizmilz.github.io/slidesR/markdown/images/botoes.png" width="95%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -211,22 +213,22 @@ Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>A
 <p>Esse é um texto com uma palavra destacada em <em>itálico</em>.</p>
 </blockquote>
 </div>
-<div id="section-riscado" class="section level3">
-<h3>Riscado</h3>
-<p>Para riscar um texto, coloque <code>~~</code> ao redor do texto.</p>
+<div id="section-riscado-ou-tachado" class="section level3">
+<h3>Riscado (ou tachado)</h3>
+<p>Para riscar/tachar um texto, coloque <code>~~</code> ao redor do texto.</p>
 <p>Por exemplo:</p>
-<p>Esse é um texto com uma palavra <del>riscada</del>.</p>
+<p>Esse é um texto com uma palavra <del>riscada/tachada</del>.</p>
 <blockquote>
 <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 640 512">
 <path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/>
 </svg>
-<p><code>Esse é um texto com uma palavra ~~riscada~~.</code></p>
+<p><code>Esse é um texto com uma palavra ~~riscada/tachada~~.</code></p>
 </blockquote>
 <blockquote>
 <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512">
 <path d="M16 288c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h112v-64zm489-183L407.1 7c-4.5-4.5-10.6-7-17-7H384v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H152c-13.3 0-24 10.7-24 24v264h128v-65.2c0-14.3 17.3-21.4 27.4-11.3L379 308c6.6 6.7 6.6 17.4 0 24l-95.7 96.4c-10.1 10.1-27.4 3-27.4-11.3V352H128v136c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H376c-13.2 0-24-10.8-24-24z"/>
 </svg>
-<p>Esse é um texto com uma palavra <del>riscada</del>.</p>
+<p>Esse é um texto com uma palavra <del>riscada/tachada</del>.</p>
 </blockquote>
 </div>
 </div>
@@ -299,7 +301,7 @@ Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>A
 </div>
 <div id="section-listas-não-ordenadas" class="section level3">
 <h3>Listas não ordenadas</h3>
-<p>Você pode fazer uma lista não ordenada escrevendo com hifens ou asteriscos, como a seguir:</p>
+<p>Você pode fazer uma lista não ordenada escrevendo com hífens ou asteriscos, como a seguir:</p>
 <blockquote>
 <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 640 512">
 <path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/>
@@ -327,7 +329,7 @@ Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>A
 <li>Uva</li>
 </ul>
 </blockquote>
-<p>Você também pode adicionar sub-itens na lista:</p>
+<p>Você também pode adicionar sub-itens na lista indicando a hierarquia através da identação no Markdown:</p>
 <blockquote>
 <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 512 512">
 <path d="M16 288c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h112v-64zm489-183L407.1 7c-4.5-4.5-10.6-7-17-7H384v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H152c-13.3 0-24 10.7-24 24v264h128v-65.2c0-14.3 17.3-21.4 27.4-11.3L379 308c6.6 6.7 6.6 17.4 0 24l-95.7 96.4c-10.1 10.1-27.4 3-27.4-11.3V352H128v136c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H376c-13.2 0-24-10.8-24-24z"/>
@@ -346,7 +348,7 @@ Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>A
 <div id="section-links" class="section level2">
 <h2>Links</h2>
 <ul>
-<li>Você pode criar um link utilizando essa estrutura: <code>[texto](http://url-da-pagina.com)</code>.</li>
+<li>Você pode criar um link utilizando esta estrutura: <code>[texto](http://url-da-pagina.com)</code>.</li>
 </ul>
 <p>Por exemplo:</p>
 <blockquote>
@@ -364,8 +366,8 @@ Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>A
 </div>
 <div id="section-equações" class="section level2">
 <h2>Equações</h2>
-<p>Você pode adicionar equações utilizando LaTeX. Você pode saber mais na <a href="https://www.overleaf.com/learn/latex/mathematical_expressions">página do Overleaf sobre expressões matemáticas</a>. Além disso, existem <a href="https://www.codecogs.com/latex/eqneditor.php?latex=D">geradores de equações</a>.</p>
-<p>É possível adicionar a equação centralizada envolvendo o código com <code>$$</code>. Veja o exemplo abaixo:</p>
+<p>Você pode adicionar equações utilizando <a href="https://pt.wikipedia.org/wiki/LaTeX">LaTeX</a>. Você pode saber mais na <a href="https://www.overleaf.com/learn/latex/mathematical_expressions">página do Overleaf sobre expressões matemáticas</a>. Além disso, existem <a href="https://www.codecogs.com/latex/eqneditor.php?latex=D">geradores de equações online</a> que ajudam a escrevâ-las em LaTeX, HTML, entre outras linguagens de marcação.</p>
+<p>É possível centralizar a equação envolvendo o código com <code>$$</code>. Veja o exemplo abaixo:</p>
 <blockquote>
 <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 640 512">
 <path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/>
@@ -394,7 +396,7 @@ Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>A
 </div>
 <div id="section-código" class="section level2">
 <h2>Código</h2>
-<p>É possível <strong>marcar textos para que fique formatado como códigos</strong>, usando a crase: `.</p>
+<p>É possível <strong>marcar textos para que fiquem formatados como códigos</strong>, usando a crase: `</p>
 <blockquote>
 <p><svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 640 512"><path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/></svg></p>
 <pre><code>`mean(pinguins$massa_corporal, na.rm = TRUE)`</code></pre>
@@ -413,9 +415,13 @@ Ilustração por <a href='https://github.com/allisonhorst/stats-illustrations'>A
 mean(pinguins$massa_corporal, na.rm = TRUE)</code></pre>
 <div id="section-adicionar-códigos-usando-r-em-arquivos-.rmd" class="section level3">
 <h3>Adicionar códigos usando R (em arquivos .Rmd)</h3>
-<p>Na sessão anterior, é apresentado como marcar o texto como código. Porém ele não é executado!</p>
-<p>Caso você queira que o código seja executado como código R, existem duas possibilidades: o que chamamos de ‘inline code’, que é quando o resultado aparece junto ao texto, e também com campos de código (chunks).</p>
-<p>Segue abaixo os exemplos:</p>
+<p>Na sessão anterior, apresentamos como marcar o texto como código. Mas atenção: ele não é executado!</p>
+<p><strong>Caso você queira que o código seja executado como código R</strong>, existem duas possibilidades:</p>
+<ul>
+<li><p>‘inline code’, quando o resultado aparece junto ao texto, e</p></li>
+<li><p>‘chunks de código’ ou campos de código (chunks), quando o código fica destacado do corpo do texto.</p></li>
+</ul>
+<p><br></p>
 <div id="section-inline-code-em-arquivos-.rmd" class="section level4">
 <h4>Inline code (em arquivos .Rmd)</h4>
 <p><strong>Exemplo:</strong></p>
@@ -432,18 +438,19 @@ mean(pinguins$massa_corporal, na.rm = TRUE)</code></pre>
 <h4>Campos de código (chunks) (em arquivos .Rmd)</h4>
 <p>É possível adicionar campos de código utilizando a seguinte sintaxe:</p>
 <p><img src="https://raw.githubusercontent.com/beatrizmilz/slidesR/master/docs/markdown/images/campo-de-codigo.PNG" /><!-- --></p>
-<p>Um exemplo de campo de código é o campo abaixo, onde é possível executar o código e visualizar o resultado <strong>(você pode testar escrevendo códigos diferentes também!)</strong>:</p>
+<p>Um exemplo de campo de código é o campo abaixo, onde é possível executar o código e visualizar o resultado.</p>
 <div class="tutorial-exercise" data-label="exemplo-chunk" data-caption="Código" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>1 + 1</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
+<p><strong>Teste escrevendo códigos diferentes também!</strong></p>
 </div>
 </div>
 </div>
 <div id="section-imagens" class="section level2">
 <h2>Imagens</h2>
 <ul>
-<li>Você pode incluir arquivo de imagem utilizando essa estrutura: <code>![descricao da imagem](http://url-da-imagem.com)</code>. A descrição da imagem é importante para acessibilidade do conteúdo através de leitores de tela.</li>
+<li>Você pode incluir um arquivo de imagem utilizando esta estrutura: <code>![descricao da imagem](http://url-da-imagem.com)</code>. Não se esqueça: a descrição da imagem é importante para acessibilidade do conteúdo através de leitores de tela!</li>
 </ul>
 <blockquote>
 <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 640 512">
@@ -456,15 +463,15 @@ mean(pinguins$massa_corporal, na.rm = TRUE)</code></pre>
 <path d="M16 288c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h112v-64zm489-183L407.1 7c-4.5-4.5-10.6-7-17-7H384v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H152c-13.3 0-24 10.7-24 24v264h128v-65.2c0-14.3 17.3-21.4 27.4-11.3L379 308c6.6 6.7 6.6 17.4 0 24l-95.7 96.4c-10.1 10.1-27.4 3-27.4-11.3V352H128v136c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H376c-13.2 0-24-10.8-24-24z"/>
 </svg>
 <div class="figure">
-<img src="https://beatrizmilz.github.io/slidesR/introR/img/Hex/carpentries.png" alt="" />
+<img src="https://beatrizmilz.github.io/slidesR/introR/img/Hex/carpentries.png" alt="Logo da The Carpentries" />
 <p class="caption">Logo da The Carpentries</p>
 </div>
 </blockquote>
 <p>Fonte da imagem: <a href="https://carpentries.org/">Hex Logo da The Carpentries</a></p>
 <div id="section-adicionar-imagens-usando-r-em-arquivos-.rmd" class="section level3">
 <h3>Adicionar imagens usando R (em arquivos .Rmd)</h3>
-<p>Neste tutorial foi apresentado como adicionar uma imagem utilizando Markdown. Porém quando utilizamos arquivos R Markdown também é possível adicionar imagens usando código em R, com a função <code>include_graphics</code> do pacote <code>knitr</code>. É a forma que eu uso, pois permite personalizar de forma mais intuitiva como a imagem aparecerá no arquivo final. Você pode adicionar uma imagem utilizando como primeiro argumento a url da imagem ou o caminho onde ela está no projeto.</p>
-<p>Veja o exemplo abaixo: (você pode clicar em <code>Run Code</code> para executar o código abaixo e ver o resultado)</p>
+<p>Neste tutorial foi apresentado como adicionar uma imagem utilizando Markdown. Porém, quando utilizamos arquivos RMarkdown também é possível adicionar imagens usando código em R, com a função <code>include_graphics</code> do pacote <code>knitr</code>. Usando o <code>knitr</code> é possível personalizar de forma mais intuitiva como a imagem aparecerá no arquivo final: você pode adicionar uma imagem utilizando como primeiro argumento a url da imagem ou o caminho onde ela está no projeto.</p>
+<p>Veja o exemplo abaixo (clique em <code>Run Code</code> para executar o código e ver o resultado):</p>
 <div class="tutorial-exercise" data-label="exemplo-knitr" data-caption="Código" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>knitr::include_graphics(&quot;https://beatrizmilz.github.io/slidesR/introR/img/Hex/1dados-hex.png&quot;)</code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":"50%","warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
@@ -473,7 +480,7 @@ mean(pinguins$massa_corporal, na.rm = TRUE)</code></pre>
 </div>
 <div id="section-tabelas" class="section level2">
 <h2>Tabelas</h2>
-<p>As tabelas em Markdown tem uma estrutura definida, como mostra o exemplo abaixo. É possível usar <a href="https://www.tablesgenerator.com/markdown_tables">ferramentas online para gerar tabelas em Markdown</a>.</p>
+<p>As tabelas em Markdown têm uma estrutura definida, como mostra o exemplo abaixo. É possível usar <a href="https://www.tablesgenerator.com/markdown_tables">ferramentas online para gerar tabelas em Markdown</a>.</p>
 <p><strong>Em Markdown:</strong></p>
 <pre><code>|  a|  b|  c|
 |--:|--:|--:|
@@ -509,8 +516,7 @@ mean(pinguins$massa_corporal, na.rm = TRUE)</code></pre>
 </blockquote>
 <div id="section-adicionar-tabelas-usando-r-em-arquivos-.rmd" class="section level3">
 <h3>Adicionar tabelas usando R (em arquivos .Rmd)</h3>
-<p>Neste tutorial foi apresentado como adicionar uma tabela utilizando Markdown. Porém quando utilizamos arquivos R Markdown também é possível adicionar tabelas usando código em R. Existem algumas funções diferentes para fazer isso, e é a forma que eu prefiro também!</p>
-<p>Veja os exemplos abaixo: (você pode clicar em <code>Executar o código</code> para executar o código abaixo e ver o resultado)</p>
+<p>Neste tutorial foi apresentado como adicionar uma tabela utilizando Markdown. Porém quando utilizamos arquivos R Markdown também é possível adicionar tabelas usando código em R. Existem algumas funções diferentes para fazer isso, veja os exemplos abaixo (clique em <code>Run Code</code> para executar o código e ver o resultado):</p>
 <p>Primeiro, carregue os pacotes necessários:</p>
 <div class="tutorial-exercise" data-label="pacotes" data-caption="Código" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code># install.packages(&quot;remotes&quot;)
@@ -520,7 +526,7 @@ library(magrittr)  # Pacote para utilizar o Pipe %&gt;% </code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
 <ul>
-<li>Adicione uma tabelaUtilizando o pacote <code>knitr</code>: função <code>kable()</code></li>
+<li>Adicione uma tabela utilizando o pacote <code>knitr</code>: função <code>kable()</code></li>
 </ul>
 <div class="tutorial-exercise" data-label="exemplo-kable" data-caption="Código" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>pinguins %&gt;%
@@ -529,7 +535,7 @@ library(magrittr)  # Pacote para utilizar o Pipe %&gt;% </code></pre>
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"center","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
 </div>
 <ul>
-<li>Utilizando o pacote <code>DT</code>: função <code>datatable()</code></li>
+<li>Adicione uma tabela utilizando o pacote <code>DT</code>: função <code>datatable()</code></li>
 </ul>
 <div class="tutorial-exercise" data-label="exemplo-DT" data-caption="Código" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>pinguins %&gt;%
@@ -549,14 +555,15 @@ library(magrittr)  # Pacote para utilizar o Pipe %&gt;% </code></pre>
 </div>
 <div id="section-dicas-para-o-rstudio" class="section level2">
 <h2>Dicas para o RStudio</h2>
-<p>Existem algumas formas de facilitar o uso do Markdown na IDE RStudio. Um exemplo é o <a href="https://github.com/ThinkR-open/remedy">Pacote {remedy}</a>, que oferece um Addin do RStudio com atalhos para formatar o texto com Markdown. Veja abaixo a animação disponível na documentação do pacote:</p>
+<p>Existem algumas formas de facilitar o uso do Markdown na IDE RStudio. Um exemplo é o <a href="https://github.com/ThinkR-open/remedy">Pacote {remedy}</a>, que oferece um <a href="https://pt.wikipedia.org/wiki/Plug-in">Addin</a> do RStudio com atalhos para formatar o texto com Markdown. Veja abaixo a animação disponível na documentação do pacote:</p>
 <div class="figure" style="text-align: center">
 <img src="https://raw.githubusercontent.com/ThinkR-open/remedy/master/reference/figures/url.gif" alt="Demonstração do pacote {remedy}" width="80%" />
 <p class="caption">
 Demonstração do pacote {remedy}
 </p>
 </div>
-<p>Uma ótima notícia é que a versão mais recente do RStudio possui uma ferramenta de edição de Markdown visual, que disponibiliza botões para editar o texto com Markdown. Veja mais neste post: <a href="https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/">RStudio versão 1.4 - Visual Markdown Editing</a>, e na animação disponível no post:</p>
+<p>Uma ótima notícia é que a versão mais recente do RStudio possui uma ferramenta de edição de Markdown visual, que disponibiliza botões para editar o texto com Markdown. <br></p>
+<p>Veja mais neste post: <a href="https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/">RStudio versão 1.4 - Visual Markdown Editing</a>, e na animação disponível no post:</p>
 <div class="figure" style="text-align: center">
 <img src="https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif" alt="Demonstração do RStudio versão 1.4" width="80%" />
 <p class="caption">
@@ -579,6 +586,7 @@ Demonstração do RStudio versão 1.4
 </ul>
 
 <script type="application/shiny-prerendered" data-context="server-start">
+# install.packages("learnr")
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 tutorial_options(exercise.cap = "Código")
