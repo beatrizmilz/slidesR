@@ -414,7 +414,7 @@ disponível na documentação do pacote:
 
 
 ```{r, out.width="80%", fig.cap="Demonstração do pacote {remedy}"}
-include_graphics("https://raw.githubusercontent.com/ThinkR-open/remedy/master/reference/figures/table_remedy.gif")
+include_graphics("https://raw.githubusercontent.com/ThinkR-open/remedy/master/reference/figures/url.gif")
 ```
 
 Uma ótima notícia é que a versão mais recente do RStudio possui uma ferramenta de edição de Markdown visual, que disponibiliza botões para editar o texto com Markdown. Veja mais neste post: [RStudio versão 1.4 - Visual Markdown Editing](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/), e na animação disponível no post:
