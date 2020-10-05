@@ -21,8 +21,11 @@ library(knitr)
 ```
 
 **Tutorial de Markdown para pessoas programadoras em R**. <br>
-**[Beatriz Milz](https://beatrizmilz.com)**   <a href='mailto:beatriz.milz@usp.br'><i class="far fa-envelope"></i></a>   <a href='https://twitter.com/BeaMilz'  target="_blank"><i class="fab fa-twitter"></i></a>   <a href='https://github.com/beatrizmilz' target="_blank"><i class="fab fa-github"></i></a>   <a href='https://orcid.org/0000-0002-3064-4486' target="_blank"><i class="fab fa-orcid"></i></a>   <a href='http://lattes.cnpq.br/5150665880581477' target="_blank"><i class="ai ai-lattes"></i></a>   <a href='https://beatrizmilz.github.io/resume/index.html' target="_blank"><i class="ai ai-cv"></i></a>   <a href='https://discourse.curso-r.com/u/beatrizmilz/summary' target="_blank"><i class="fab fa-discourse"></i></a> - Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`.  <br>
-**[Haydée Svab](https://www.linkedin.com/in/hsvab/)**   <a href='mailto:hsvab@hsvab.eng.br'><i class="far fa-envelope"></i></a>   <a href='https://twitter.com/hsvab'  target="_blank"><i class="fab fa-twitter"></i></a>   <a href='https://www.instagram.com/haydeesvab/' target="_blank"><i class="fab fa-instagram"></i></a>  <a href='https://github.com/hsvab' target="_blank"><i class="fab fa-github"></i></a>   <a href='http://lattes.cnpq.br/9186914175329359' target="_blank"><i class="ai ai-lattes"></i></a> - Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`.
+**[Beatriz Milz](https://beatrizmilz.com)**   <a href='mailto:beatriz.milz@usp.br'><i class="far fa-envelope"></i></a>   <a href='https://twitter.com/BeaMilz'  target="_blank"><i class="fab fa-twitter"></i></a>   <a href='https://github.com/beatrizmilz' target="_blank"><i class="fab fa-github"></i></a>   <a href='https://orcid.org/0000-0002-3064-4486' target="_blank"><i class="fab fa-orcid"></i></a>   <a href='http://lattes.cnpq.br/5150665880581477' target="_blank"><i class="ai ai-lattes"></i></a>   <a href='https://beatrizmilz.github.io/resume/index.html' target="_blank"><i class="ai ai-cv"></i></a>   <a href='https://discourse.curso-r.com/u/beatrizmilz/summary' target="_blank"><i class="fab fa-discourse"></i></a> 
+<br>
+**[Haydée Svab](https://www.linkedin.com/in/hsvab/)**   <a href='mailto:hsvab@hsvab.eng.br'><i class="far fa-envelope"></i></a>   <a href='https://twitter.com/hsvab'  target="_blank"><i class="fab fa-twitter"></i></a>   <a href='https://www.instagram.com/haydeesvab/' target="_blank"><i class="fab fa-instagram"></i></a>  <a href='https://github.com/hsvab' target="_blank"><i class="fab fa-github"></i></a>   <a href='http://lattes.cnpq.br/9186914175329359' target="_blank"><i class="ai ai-lattes"></i></a>
+
+Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`.
 
 
 ## Introdução
@@ -409,7 +412,7 @@ dados::pinguins
 ```
 
 
-Obs: Existem outros pacotes que permitem adicionar tabelas bonitas nos arquivos R Markdown!
+Obs: Existem outros pacotes que permitem adicionar tabelas bonitas nos arquivos R Markdown, como por exemplo: [reactable](https://glin.github.io/reactable/index.html), [flextable](https://davidgohel.github.io/flextable/articles/overview.html) e [kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html) !
 
 
 
