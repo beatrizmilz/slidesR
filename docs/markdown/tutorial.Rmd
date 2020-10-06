@@ -12,6 +12,8 @@ runtime: shiny_prerendered
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE, fig.align = "center")
 tutorial_options(exercise.cap = "Código")
+library(magrittr)
+library(dados)
 ```
 
 ```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
