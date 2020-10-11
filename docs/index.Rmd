@@ -45,6 +45,8 @@ Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozi
 
 É muito importante proporcionar uma experiência livre de assédio para todas as pessoas participantes.  Por favor, leia o [Código de Conduta da R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese).
 
+Caso queira sugerir um tema, [escreva aqui!](https://github.com/beatrizmilz/slidesR/issues/5)
+
 ## R
 
 - [Introdução ao R](introR.html)
@@ -67,4 +69,7 @@ Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozi
 - [Como este site foi feito?](ferramentas.html)
 
 - [Links com apresentações antigas/desatualizadas](apresentacoes_antigas.html)
+
+
+
 
