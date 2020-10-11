@@ -53,7 +53,9 @@ Nesta página, disponibilizo algumas apresentações mais recentes que fiz (sozi
 
 - [R Markdown](rmarkdown.html) _(preliminar)_
 
-  - [Markdown](https://beatriz-milz.shinyapps.io/tutorial_markdown/) 
+  - Marcação com [Markdown](https://beatriz-milz.shinyapps.io/tutorial_markdown/) 
+  
+  - [Apresentações reprodutíveis com xaringan](https://r-ladies-sao-paulo.github.io/xaringan/)
 
 ## Comunidades
 
