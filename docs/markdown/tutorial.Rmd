@@ -16,6 +16,47 @@ library(magrittr)
 library(dados)
 ```
 
+```{r metathis, echo=FALSE}
+# library(metathis)
+# meta() %>%
+#   meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+#   meta_social(
+#     title = "Tutorial sobre Markdown",
+#     description = paste(
+#       "Tutorial sobre Markdown para usuáries de RMarkdown. "
+#     ),
+#     url = "https://beatriz-milz.shinyapps.io/tutorial_markdown/",
+#     image = "https://beatrizmilz.github.io/slidesR/markdown/images/share-card.png",
+#     image_alt = paste(
+#       "Imagem da página do tutorial sobre ",
+#       "Markdown para usuáries de RMarkdown.",
+#       "Elaborado por Beatriz Milz e Haydee Svab."
+#     ),
+#     og_type = "website",
+#     og_author = c("Beatriz Milz", "Haydee Svab"),
+#     twitter_card_type = "summary_large_image",
+#     twitter_creator = c("@beamilz", "@hsvab")
+#   )
+```
+<meta name="github-repo" content="beatrizmilz/slidesR"/>
+<meta name="twitter:title" content="Tutorial sobre Markdown"/>
+<meta name="twitter:description" content="Tutorial sobre Markdown para usuáries de RMarkdown. "/>
+<meta name="twitter:url" content="https://beatriz-milz.shinyapps.io/tutorial_markdown/"/>
+<meta name="twitter:image:src" content="https://beatrizmilz.github.io/slidesR/markdown/images/share-card.png"/>
+<meta name="twitter:image:alt" content="Imagem da página do tutorial sobre  Markdown para usuáries de RMarkdown. Elaborado por Beatriz Milz e Haydee Svab."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:creator" content="@beamilz @hsvab"/>
+<meta name="twitter:site" content="@beamilz @hsvab"/>
+<meta property="og:title" content="Tutorial sobre Markdown"/>
+<meta property="og:description" content="Tutorial sobre Markdown para usuáries de RMarkdown. "/>
+<meta property="og:url" content="https://beatriz-milz.shinyapps.io/tutorial_markdown/"/>
+<meta property="og:image" content="https://beatrizmilz.github.io/slidesR/markdown/images/share-card.png"/>
+<meta property="og:image:alt" content="Imagem da página do tutorial sobre  Markdown para usuáries de RMarkdown. Elaborado por Beatriz Milz e Haydee Svab."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="article:author" content="Beatriz Milz"/>
+<meta property="article:author" content="Haydee Svab"/>
+
 ```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
 # devtools::install_github("rstudio/fontawesome")
 library(fontawesome)
