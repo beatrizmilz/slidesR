@@ -3,7 +3,7 @@
   <head>
     <title>R-Ladies São Paulo</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Atualizado em 29 de setembro de 2020" />
+    <meta name="author" content="Atualizado em 22 de novembro de 2020" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="Beatriz Milz"/>
-    <link rel="stylesheet" href="https:\\beatrizmilz.github.io\slidesR\rladies\custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://beatrizmilz.github.io/slidesR/rladies/custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -42,7 +42,7 @@ class: center, middle, inverse, title-slide
 Ilustração por <a href='https://twitter.com/allison_horst' target=_blank><span class="citation">@allison_horst</span></a>
 </p>
 </center>
-### Atualizado em 29 de setembro de 2020
+### Atualizado em 22 de novembro de 2020
 
 ---
 
@@ -75,7 +75,12 @@ top:1em;right:1em;
       }
     } else {
       document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
-        .forEach(el => { el.innerHTML += '<a href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" class="xaringan-extra-logo"></a>' })
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil'
+          slide.appendChild(logo)
+        })
     }
   }
   document.addEventListener('DOMContentLoaded', addLogo)
@@ -138,18 +143,18 @@ class:
 
 # R-Ladies - Capítulos no mundo
 
-Atualizado em: setembro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
+Atualizado em: novembro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
 
 
 |Região            | Número de Capítulos| Total de participantes|
 |:-----------------|-------------------:|----------------------:|
-|US/Canada         |                  58|                  24307|
-|Latin America     |                  51|                  18558|
-|Europe            |                  48|                  20541|
-|Asia              |                  15|                   3923|
-|Africa            |                  11|                   2741|
-|Australia         |                   9|                   4421|
-|Pacific/Galapagos |                   1|                    224|
+|US/Canada         |                  58|                  25245|
+|Latin America     |                  52|                  19812|
+|Europe            |                  49|                  21303|
+|Asia              |                  16|                   4033|
+|Africa            |                  11|                   3217|
+|Australia         |                   9|                   4563|
+|Pacific/Galapagos |                   1|                    238|
 
 ---
 class:    
@@ -158,7 +163,7 @@ class:
 
 
 
-Atualizado em: setembro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
+Atualizado em: novembro de 2020. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
 
 
 
@@ -166,14 +171,14 @@ Atualizado em: setembro de 2020. Fonte: [R Community Explorer](https://benubah.g
 
 |Capítulo                                                                                             | Participantes|
 |:----------------------------------------------------------------------------------------------------|-------------:|
-|&lt;a href='https://www.meetup.com/rladies-sao-paulo/' target='_blank'&gt;R-Ladies São Paulo&lt;/a&gt;           |          1004|
-|&lt;a href='https://www.meetup.com/rladies-belo-horizonte/' target='_blank'&gt;R-Ladies Belo Horizonte&lt;/a&gt; |           804|
-|&lt;a href='https://www.meetup.com/rladies-niteroi/' target='_blank'&gt;R-Ladies Niterói&lt;/a&gt;               |           609|
-|&lt;a href='https://www.meetup.com/rladies-rio/' target='_blank'&gt;R-Ladies Rio de Janeiro&lt;/a&gt;            |           593|
-|&lt;a href='https://www.meetup.com/rladies-florianopolis/' target='_blank'&gt;R-Ladies Floripa&lt;/a&gt;         |           442|
-|&lt;a href='https://www.meetup.com/rladies-porto-alegre/' target='_blank'&gt;R-Ladies Porto Alegre&lt;/a&gt;     |           346|
-|&lt;a href='https://www.meetup.com/rladies-natal/' target='_blank'&gt;R-Ladies Natal&lt;/a&gt;                   |           307|
-|&lt;a href='https://www.meetup.com/rladies-salvador/' target='_blank'&gt;R-Ladies Salvador&lt;/a&gt;             |           196|
+|&lt;a href='https://www.meetup.com/rladies-sao-paulo/' target='_blank'&gt;R-Ladies São Paulo&lt;/a&gt;           |          1085|
+|&lt;a href='https://www.meetup.com/rladies-belo-horizonte/' target='_blank'&gt;R-Ladies Belo Horizonte&lt;/a&gt; |           816|
+|&lt;a href='https://www.meetup.com/rladies-niteroi/' target='_blank'&gt;R-Ladies Niterói&lt;/a&gt;               |           744|
+|&lt;a href='https://www.meetup.com/rladies-rio/' target='_blank'&gt;R-Ladies Rio de Janeiro&lt;/a&gt;            |           598|
+|&lt;a href='https://www.meetup.com/rladies-florianopolis/' target='_blank'&gt;R-Ladies Floripa&lt;/a&gt;         |           440|
+|&lt;a href='https://www.meetup.com/rladies-porto-alegre/' target='_blank'&gt;R-Ladies Porto Alegre&lt;/a&gt;     |           353|
+|&lt;a href='https://www.meetup.com/rladies-natal/' target='_blank'&gt;R-Ladies Natal&lt;/a&gt;                   |           346|
+|&lt;a href='https://www.meetup.com/rladies-goiania/' target='_blank'&gt;R-Ladies Goiânia&lt;/a&gt;               |           322|
 
 ]
 
@@ -181,13 +186,13 @@ Atualizado em: setembro de 2020. Fonte: [R Community Explorer](https://benubah.g
 
 |Capítulo                                                                                             | Participantes|
 |:----------------------------------------------------------------------------------------------------|-------------:|
-|&lt;a href='https://www.meetup.com/rladies-goiania/' target='_blank'&gt;R-Ladies Goiânia&lt;/a&gt;               |           179|
+|&lt;a href='https://www.meetup.com/rladies-salvador/' target='_blank'&gt;R-Ladies Salvador&lt;/a&gt;             |           210|
 |&lt;a href='https://www.meetup.com/rladies-recife/' target='_blank'&gt;R-Ladies Recife&lt;/a&gt;                 |           146|
-|&lt;a href='https://www.meetup.com/rladies-vitoria/' target='_blank'&gt;R-Ladies Vitória&lt;/a&gt;               |           133|
-|&lt;a href='https://www.meetup.com/rladies-fortaleza/' target='_blank'&gt;R-Ladies Fortaleza&lt;/a&gt;           |            69|
+|&lt;a href='https://www.meetup.com/rladies-vitoria/' target='_blank'&gt;R-Ladies Vitória&lt;/a&gt;               |           145|
+|&lt;a href='https://www.meetup.com/rladies-ribeirao-preto/' target='_blank'&gt;R-Ladies Ribeirão Preto&lt;/a&gt; |            93|
+|&lt;a href='https://www.meetup.com/rladies-fortaleza/' target='_blank'&gt;R-Ladies Fortaleza&lt;/a&gt;           |            72|
 |&lt;a href='https://www.meetup.com/rladies-lavras/' target='_blank'&gt;R-Ladies Lavras&lt;/a&gt;                 |            41|
-|&lt;a href='https://www.meetup.com/rladies-curitiba/' target='_blank'&gt;R-Ladies Curitiba&lt;/a&gt;             |            36|
-|&lt;a href='https://www.meetup.com/rladies-ribeirao-preto/' target='_blank'&gt;R-Ladies Ribeirão Preto&lt;/a&gt; |            32|
+|&lt;a href='https://www.meetup.com/rladies-curitiba/' target='_blank'&gt;R-Ladies Curitiba&lt;/a&gt;             |            41|
 |&lt;a href='https://www.meetup.com/R-Ladies-Manaus/' target='_blank'&gt;R-Ladies Manaus&lt;/a&gt;                |            30|
 ]
 
@@ -210,7 +215,7 @@ class:
 
 - **Primeiro encontro da R-Ladies São Paulo ** - Agosto/2018
 
-- **+ 1004 pessoas participantes** - setembro de 2020
+- **+ 1085 pessoas participantes** - novembro de 2020
 
 
 ---
