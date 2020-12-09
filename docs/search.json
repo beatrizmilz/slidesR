@@ -1,0 +1,96 @@
+{
+  "articles": [
+    {
+      "path": "apresentacoes_antigas.html",
+      "title": "Apresentações desatualizadas",
+      "author": [
+        {
+          "name": "Beatriz Milz",
+          "url": "https://beatrizmilz.com"
+        }
+      ],
+      "date": "Atualizado em `r Sys.Date()`",
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-12-09T10:59:20-03:00"
+    },
+    {
+      "path": "ferramentas.html",
+      "title": "Como esse site foi feito?",
+      "author": [
+        {
+          "name": "Beatriz Milz",
+          "url": "https://beatrizmilz.com"
+        }
+      ],
+      "date": "Atualizado em `r Sys.Date()`",
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-12-09T11:00:06-03:00"
+    },
+    {
+      "path": "git_rstudio.html",
+      "title": "Git e GitHub no RStudio",
+      "author": [
+        {
+          "name": "Beatriz Milz",
+          "url": "https://beatrizmilz.com"
+        }
+      ],
+      "date": "Atualizado em `r Sys.Date()`",
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-12-09T11:00:31-03:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Materiais sobre R ",
+      "author": [
+        {
+          "name": "Beatriz Milz",
+          "url": "https://beatrizmilz.com"
+        }
+      ],
+      "date": "Atualizado em `r Sys.Date()`",
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-12-09T11:01:20-03:00"
+    },
+    {
+      "path": "introR.html",
+      "title": "Introdução ao R",
+      "author": [
+        {
+          "name": "Beatriz Milz",
+          "url": "https://beatrizmilz.com"
+        }
+      ],
+      "date": "Atualizado em `r Sys.Date()`",
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-12-09T11:02:25-03:00"
+    },
+    {
+      "path": "rladies.html",
+      "title": "R-Ladies São Paulo",
+      "author": [
+        {
+          "name": "Beatriz Milz",
+          "url": "https://beatrizmilz.com"
+        }
+      ],
+      "date": "Atualizado em `r Sys.Date()`",
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-12-09T11:02:36-03:00"
+    },
+    {
+      "path": "rmarkdown.html",
+      "title": "RMarkdown",
+      "author": [
+        {
+          "name": "Beatriz Milz",
+          "url": "https://beatrizmilz.com"
+        }
+      ],
+      "date": "Atualizado em `r Sys.Date()`",
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2020-12-09T11:03:02-03:00"
+    }
+  ],
+  "collections": []
+}
