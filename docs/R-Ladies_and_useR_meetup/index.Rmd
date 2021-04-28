@@ -13,6 +13,7 @@ output:
       highlightStyle: github
       highlightLines: true
       ratio: 16:9
+      #ratio: 191:100   
       countIncrementalSlides: true
 ---
 class: middle, center
@@ -34,6 +35,29 @@ knitr::include_graphics("img/horst-starwars-hands.png")
 
 Art created by [Allison Horst](https://twitter.com/allison_horst) for the Keynote by [Julia Stewart Lowndes](https://jules32.github.io/useR-2019-keynote/#7)
 ]
+
+```{r metathis, echo=FALSE}
+library(magrittr)
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "beatrizmilz/slidesR") %>% 
+  meta_social(
+    title = "Minha experiência na useR! 2019",
+    description = paste(
+      "Apresentação sobre minha experiência na useR! 2019"),
+    url = "https://beatrizmilz.github.io/slidesR/R-Ladies_and_useR_meetup/",
+    image = "https://beatrizmilz.github.io/slidesR/R-Ladies_and_useR_meetup/img/share-card.png",
+    image_alt = paste(
+      "Primeiro slide da apresentação sobre ",
+      "minha experiência na useR! 2019.",
+      "Apresentado por Beatriz Milz."
+    ),
+    og_type = "website",
+    og_author = "Beatriz Milz",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
 
 ---
 class: center, middle
@@ -89,6 +113,10 @@ style_duo_accent(
 ## Learn...
 
 
+
+<i class="fab fa-twitter"></i> [Angélica Custódio](https://twitter.com/angcustodio)
+
+
 ]
 
 ---
@@ -127,6 +155,22 @@ class: middle
 ## Hacer amigues..
 
 ## Make friends..
+
+
+<i class="fab fa-twitter"></i> [Laurie Baker](https://twitter.com/llbaker1707)
+
+
+
+<i class="fab fa-twitter"></i> [Angélica Custódio](https://twitter.com/angcustodio)
+
+<i class="fab fa-twitter"></i> [Julio Trecenti](https://twitter.com/jtrecenti)
+
+<i class="fab fa-twitter"></i> [Daniel Falbel](https://twitter.com/dfalbel)
+
+<i class="fab fa-twitter"></i> [William Amorim](https://twitter.com/wamorim_)
+
+
+
 
 ]
 
@@ -260,7 +304,7 @@ knitr::include_graphics("img/satrdaysp-org2.png")
 ```
 ]
 
-
+https://saopaulo2019.satrdays.org/
 
 
 ---
