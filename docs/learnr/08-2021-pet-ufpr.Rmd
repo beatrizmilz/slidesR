@@ -1,0 +1,277 @@
+---
+title: "Criando tutoriais interativos com R"
+subtitle: "Conhecendo o pacote learnr"  
+author: 
+  - "Beatriz Milz"
+date: '13 de agosto de 2021'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+class: middle
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE,
+  fig.align = "center"
+)
+```
+
+```{r eval=FALSE, include=FALSE}
+# devtools::install_github("hadley/emo")
+# devtools::install_github("gadenbuie/xaringanExtra")
+# devtools::install_github("gadenbuie/ermoji")
+```
+
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#138583",
+  title_slide_background_color = "#51B8B6",
+  title_slide_text_color = "#FFFFFF",
+  inverse_text_color = "#138583",
+  inverse_header_color = "#138583",
+  secondary_color = "#EDBBC8",
+  
+  header_font_google = google_font("Josefin Slab", "600"),
+  text_font_google   = google_font("Work Sans", "300", "300i"),
+  code_font_google   = google_font("Fira Code"),
+  base_font_size = "25px"
+)
+```
+
+
+
+.pull-left[
+
+## Beatriz Milz
+
+- 2019 - * - Doutoranda em Ciência Ambiental - PROCAM/IEE/USP
+
+- 2016-2018 - Mestrado em Ciências - Programa de Pós-Graduação em Análise Ambiental Integrada - UNIFESP
+
+- 2012-2015 - Bacharelado em Gestão Ambiental - EACH/USP 
+]
+
+.pull-right[
+<center>
+<img src="https://pbs.twimg.com/profile_images/1410337089170853892/R0-FKHvW_400x400.jpg" alt="Avatar" style="border-radius: 50%;"></center>
+
+]
+
+
+---
+
+### R: Comunidades, eventos, pacotes, livros..
+<center>
+
+<a href='https://education.rstudio.com/trainers/'>  <img src='img/Hex/CertifiedRstudioTrainer.png' width="150px"></a>
+
+
+<a href='https://rladies.org/'>  <img src='img/Hex/1hexlogorladies.jpeg' width="150px"></a>
+
+<a href='https://curso-r.com/'>  <img src="img/Hex/curso-r-azul.jpg" width="150px"></a>
+
+<a href='https://livro.curso-r.com/'>  <img src='https://curso-r.com/images/produtos/hex-livro.png' width="150px"></a>
+
+
+
+<a href='https://saopaulo2019.satrdays.org/'>  <img src='img/Hex/2satrdaysp.png' width="150px"></a>
+<a href='https://latin-r.com/'>  <img src='img/Hex/4LatinR_hex_violeta-cut.jpg' width="150px"></a>
+<a href='https://carpentries.org/'>  <img src='img/Hex/carpentries.png' width="150px"> </a>
+<a href='https://user2021.r-project.org/'>  <img src='https://user2021.r-project.org/img/artwork/user-logo-color.png' width="150px"> </a>
+
+<a href='https://cienciadedatos.github.io/dados/'>  <img src='https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png' width="150px"></a>
+<a href='https://beatrizmilz.github.io/mananciais/'>  <img src='https://beatrizmilz.github.io/mananciais/reference/figures/hexlogo.png' width="150px"></a>
+</center>
+
+
+---
+
+## Temas de hoje
+
+
+- O que é o pacote learnr
+
+- Exemplos de tutoriais feitos com learnr
+
+- Como usar, criar e compartilhar os tutoriais feitos com learnr?
+
+- learnr-verse
+
+- learnr em português?
+
+- learnr multilingue?
+
+- Links para saber mais, e referências
+
+
+---
+class: middle
+
+## Pacote learnr  📦
+
+- É muito interessante para quem quer aprender ou quem quer ensinar!
+
+- [Documentação](https://rstudio.github.io/learnr/) do pacote e repositório no [GitHub](https://github.com/rstudio/learnr)
+
+- Mantido pela [RStudio](https://www.rstudio.com/), que é muito além de uma IDE!
+
+- Começou a ser desenvolvido em outubro de 2016, pelo [
+J.J. Allaire](https://github.com/jjallaire) - fundador e CEO da RStudio
+
+- Pessoas mais ativas na manutenção e desenvolvimento do pacote: [Barret Schloerke](https://github.com/schloerke) e [Garrick Aden-Buie](https://github.com/gadenbuie) 
+
+
+---
+class: middle
+
+
+## Pacote learnr 📦
+
+- Escrevemos um arquivo `.Rmd` e geramos um aplicativo Shiny.
+
+- Podemos adicionar os conteúdos que já são possíveis de serem adicionados em um `.Rmd`, como: textos, imagens, vídeos, equações, códigos, tabelas, etc. 
+
+- Além disso, também podemos colocar: 
+  - Exercícios (exercises)
+  - Perguntas de múltipla escola (questions)
+
+---
+class: middle
+
+## Exemplos de learnr
+
+- [Exploring missing values in naniar](https://allisonhorst.shinyapps.io/missingexplorer/)
+
+- Alguns dos [RStudio Primers](https://rstudio.cloud/learn/primers)
+
+
+---
+
+
+```{r embed-xaringan, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "https://beatriz-milz.shinyapps.io/formative_assessment/")
+```
+
+
+---
+
+## Como usar um tutorial learnr? 👩‍🎓
+
+.pull-left[
+- Tutoriais disponíveis na internet: interagir através do link
+
+- Tutoriais disponíveis em pacotes:
+
+```r
+# Instalar via CRAN
+install.packages("learnr")
+# Instalar via GitHub
+install.packages("remotes")
+remotes::install_github("rstudio/learnr")
+```
+]
+
+.pull-right[
+
+```{r echo=FALSE}
+knitr::include_graphics("img/rstudio-tutorial.png")
+```
+
+]
+
+---
+
+## Como criar um tutorial learnr? 👩‍🏫
+
+
+Inicie com o template disponibilizado pelo pacote! No RStudio: **File -> New File -> RMarkdown -> From template**, e escolha o template  **Interactive Tutorial**:
+
+```{r echo=FALSE, out.width="40%"}
+knitr::include_graphics("img/rmarkdown-template.png")
+```
+
+
+---
+
+## Como criar um tutorial learnr? 👩‍🏫
+
+
+```{r echo=FALSE, out.width="80%"}
+knitr::include_graphics("img/learnr-template.png")
+```
+
+
+---
+## Como compartilhar um tutorial learnr? 👩‍🏫
+
+
+|Forma|Exemplo|Vantagens| Desvantagens|
+|---------|---------|---------|-------------|
+|Fazendo o deploy do Shiny App|[shinyapps.io](https://www.shinyapps.io/)| 👩‍🎓1. Muito mais fácil para quem está aprendendo:  A pessoa aluna não precisa ter o R e o RStudio instalado para conseguir usar o tutorial <br> 👩‍🏫 2. Estudantes felizes, professoras felizes | 👩‍🎓 1. Precisa de acesso à internet <br> 👩‍🏫 2. A ferramenta gratuita tem limitação, dependendo da quantidade de pessoas alunas, será necessário pagar para que o serviço seja oferecido sem travamentos. |
+|Adicionando em um pacote em R|[CursoRTarefas](https://github.com/curso-r/CursoRTarefas) | 👩‍🎓1. Não precisa de acesso à internet <br> 👩‍🏫 2. Totalmente gratuito | 👩‍🎓1. Precisa ter o R e o RStudio instalados <br> 👩‍🏫 2. Precisa saber sobre Git, GitHub, Pacotes em R...|
+
+---
+## learnr-verse
+
+- Pacote [gradethis](https://github.com/rstudio/gradethis), mantido pela RStudio - [Documentação](https://pkgs.rstudio.com/gradethis/)
+
+
+---
+## learnr em português?
+
+
+---
+## learnr com outras linguagens de programação?
+
+
+---
+
+## Links interessantes e referências
+
+### Em Inglês:
+
+- [Documentação](https://rstudio.github.io/learnr/) do pacote e repositório no [GitHub](https://github.com/rstudio/learnr)
+
+
+- [Teach R with learnr: a powerful tool for remote teaching](https://education.rstudio.com/blog/2020/05/learnr-for-remote/)
+
+- [Livro Teach Tech Together](https://teachtogether.tech/) - Greg Wilson
+
+### Em Espanhol:
+
+- [Aprendiendo {learnr}](https://learning-learnr.netlify.app/) - Yanina Bellini Saibene
+- RSTUDIO::GLOBAL 2021:  [On programming, teaching, and building interactive tutorials with learnr](https://resources.rstudio.com/resources/rstudioglobal-2021/on-programming-teaching-and-building-interactive-tutorials-with-learnr/) - Yanina Bellini Saibene
+
+---
+class: center, middle
+
+# Muito obrigada!
+
+Slides criados usando os pacotes em R  📦 :
+
+[**xaringan**](https://github.com/yihui/xaringan)<br>
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+O chakra vem da biblioteca javascript [remark.js](https://remarkjs.com), e os pacotes  [**knitr**](http://yihui.name/knitr), e [R Markdown](https://rmarkdown.rstudio.com).
