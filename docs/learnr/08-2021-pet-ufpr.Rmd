@@ -121,8 +121,6 @@ style_duo_accent(
 
 - learnr em português?
 
-- learnr multilingue?
-
 - Links para saber mais, e referências
 
 
@@ -131,7 +129,7 @@ class: middle
 
 ## Pacote learnr  📦
 
-- É muito interessante para quem quer aprender ou quem quer ensinar!
+- É muito interessante para quem quer aprender 👩‍🎓 ou quem quer ensinar! 👩‍🏫
 
 - [Documentação](https://rstudio.github.io/learnr/) do pacote e repositório no [GitHub](https://github.com/rstudio/learnr)
 
@@ -160,7 +158,7 @@ class: middle
 ---
 class: middle
 
-## Exemplos de learnr
+## Exemplos de learnr 🌟
 
 - [Exploring missing values in naniar](https://allisonhorst.shinyapps.io/missingexplorer/)
 
@@ -230,23 +228,121 @@ knitr::include_graphics("img/learnr-template.png")
 |Forma|Exemplo|Vantagens| Desvantagens|
 |---------|---------|---------|-------------|
 |Fazendo o deploy do Shiny App|[shinyapps.io](https://www.shinyapps.io/)| 👩‍🎓1. Muito mais fácil para quem está aprendendo:  A pessoa aluna não precisa ter o R e o RStudio instalado para conseguir usar o tutorial <br> 👩‍🏫 2. Estudantes felizes, professoras felizes | 👩‍🎓 1. Precisa de acesso à internet <br> 👩‍🏫 2. A ferramenta gratuita tem limitação, dependendo da quantidade de pessoas alunas, será necessário pagar para que o serviço seja oferecido sem travamentos. |
-|Adicionando em um pacote em R|[CursoRTarefas](https://github.com/curso-r/CursoRTarefas) | 👩‍🎓1. Não precisa de acesso à internet <br> 👩‍🏫 2. Totalmente gratuito | 👩‍🎓1. Precisa ter o R e o RStudio instalados <br> 👩‍🏫 2. Precisa saber sobre Git, GitHub, Pacotes em R...|
+|Adicionando em um pacote em R 📦|[CursoRTarefas](https://github.com/curso-r/CursoRTarefas) | 👩‍🎓1. Não precisa de acesso à internet <br> 👩‍🏫 2. Totalmente gratuito | 👩‍🎓1. Precisa ter o R e o RStudio instalados <br> 👩‍🏫 2. Precisa saber sobre Git, GitHub, Pacotes em R... <br> 3. **Possíveis problemas de encoding!** |
 
 ---
-## learnr-verse
+
+## Compartilhando o tutorial em um pacote 📦
+
+- Tenha o pacote usethis e o pacote learnr instalados:
+
+```{r eval=FALSE, include=TRUE}
+install.packages("learnr")
+install.packages("usethis")
+```
+
+
+- Crie um pacote para armazenar os tutoriais:
+
+```{r eval=FALSE, include=TRUE}
+usethis::create_package("nomeDoPacote")
+```
+
+-  Para cada novo tutorial, crie um arquivo usando a seguinte função:
+
+```{r eval=FALSE, include=TRUE}
+usethis::use_tutorial(name = "nome-do-arquivo", title = "Nome do tutorial")
+```
+
+---
+
+## Disponibilize seu pacote  📦 no GitHub 
+
+- Faça os passos abaixo uma vez por pacote, considerando que o Git e o GitHub estão configurados corretamente .footnote[Caso queira saber mais sobre essa configuração, acesse [o capítulo do livro Zen do R que trata sobre Git e GitHub](https://curso-r.github.io/zen-do-r/git-github.html)]:
+
+- Inicie o versionamento com o Git:
+
+```{r eval=FALSE, include=TRUE}
+usethis::use_git()
+```
+
+- Crie um repositório no GitHub e sincronize para manter o seu pacote lá:
+
+```{r eval=FALSE, include=TRUE}
+usethis::use_github()
+```
+
+
+
+---
+
+## Compartilhe o pacote com outras pessoas
+
+- Depois de já estar disponível, indique para as pessoas como instalar seu pacote. Por exemplo:
+
+```r
+# Instalar via GitHub
+install.packages("remotes")
+remotes::install_github("nome-de-usuario/nome-do-repositorio")
+```
+
+---
+background-image: url(img/quasaroutflow.png) 
+background-size: cover
+background-position: right
+class:  middle, inverse
+
+
+## learnrverse
+
+.footnote[Fonte da imagem: [NASA](https://www.nasa.gov/feature/goddard/2021/nasa-s-webb-will-use-quasars-to-unlock-the-secrets-of-the-early-universe)]
+---
+## learnrverse
+
+- Nenhum dos pacotes está no CRAN por enquanto!
+
 
 - Pacote [gradethis](https://github.com/rstudio/gradethis), mantido pela RStudio - [Documentação](https://pkgs.rstudio.com/gradethis/)
+
+- Pacote [learnrhash](https://github.com/rundel/learnrhash), por Colin Rundel [![](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
+--
+
+### Fluxo com learnrverse:
+
+- Criar um tutorial com `learnr`
+- `gradethis` ajuda com a avaliação dos exercícios
+- `learnrhash` ajuda comprimindo as respostas em um texto hash
+- Google formulários para coletar as respostas
+- `googlesheets4` para importar as respostas para o R 
+- Relatório final em RMarkdown: ajuda a identificar quais temas precisam ser revisados.
 
 
 ---
 ## learnr em português?
 
+- Botões e mensagens básicas do learnr ✅-  [Contribuição](https://github.com/rstudio/learnr/pull/488)
+
+
+
+- Mensagens de encoragamento e elogios 🍪 ✅  - [Sugestão](https://github.com/rstudio/learnr/issues/534) e  [contribuição](https://github.com/rstudio/learnr/pull/551)
+
+
+### Próximos passos:
+
+- Gradethis e learnrhash - ainda estão 100% em inglês
+
+### Solução temporária:
+
+Gradethis em Português: https://github.com/curso-r/gradethis (por [Fernando Corrêa](https://github.com/azeloc))
+
+
+
+
 
 ---
-## learnr com outras linguagens de programação?
+class: middle
 
-
----
 
 ## Links interessantes e referências
 
@@ -257,17 +353,39 @@ knitr::include_graphics("img/learnr-template.png")
 
 - [Teach R with learnr: a powerful tool for remote teaching](https://education.rstudio.com/blog/2020/05/learnr-for-remote/)
 
+- [Learning learnr](https://education.rstudio.com/blog/2020/07/learning-learnr/)
+
+- Livro [RMarkdown: The definitive guide](https://bookdown.org/yihui/rmarkdown/learnr.html)
+
 - [Livro Teach Tech Together](https://teachtogether.tech/) - Greg Wilson
+
+- [RStudio Community - learnr com python](https://community.rstudio.com/t/learnr-with-python-and-chained-code-chunks/83372/2)
+
+
+---
+class: middle
+
+## Links interessantes e referências
+
 
 ### Em Espanhol:
 
 - [Aprendiendo {learnr}](https://learning-learnr.netlify.app/) - Yanina Bellini Saibene
+
 - RSTUDIO::GLOBAL 2021:  [On programming, teaching, and building interactive tutorials with learnr](https://resources.rstudio.com/resources/rstudioglobal-2021/on-programming-teaching-and-building-interactive-tutorials-with-learnr/) - Yanina Bellini Saibene
 
----
-class: center, middle
 
-# Muito obrigada!
+---
+class: center
+
+## Muito obrigada!
+
+.pull-left[
+
+```{r echo=FALSE, fig.align='center', out.width="50%"}
+knitr::include_graphics("https://media.giphy.com/media/M9NbzZjAcxq9jS9LZJ/giphy.gif")
+```
+
 
 Slides criados usando os pacotes em R  📦 :
 
@@ -275,3 +393,28 @@ Slides criados usando os pacotes em R  📦 :
 [gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
 
 O chakra vem da biblioteca javascript [remark.js](https://remarkjs.com), e os pacotes  [**knitr**](http://yihui.name/knitr), e [R Markdown](https://rmarkdown.rstudio.com).
+]
+
+.pull-right[
+
+<center>
+<img src="https://pbs.twimg.com/profile_images/1410337089170853892/R0-FKHvW_400x400.jpg" alt="Avatar" style="border-radius: 50%; max-width: 50%; "></center>
+
+<i class="fas fa-home"></i> [beatrizmilz.com](https://beatrizmilz.com)
+
+<i class="fab fa-twitter"></i> [@BeaMilz](https://twitter.com/BeaMilz)
+
+<i class="far fa-envelope"></i> [milz.bea@gmail.com](mailto:milz.bea@gmail.com)
+]
+
+
+
+<!-- inicio academic icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- final academic icons -->
+
+ 
+<!-- inicio font awesome -->
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+
+<!-- final font awesome -->
