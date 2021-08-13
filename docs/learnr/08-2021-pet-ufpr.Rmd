@@ -256,9 +256,26 @@ usethis::use_tutorial(name = "nome-do-arquivo", title = "Nome do tutorial")
 
 ---
 
+## Documente as dependências do pacote 📦
+
+- Pacotes instalados via CRAN:
+
+```{r eval=FALSE, include=TRUE}
+usethis::use_package("dplyr")
+```
+
+
+- Pacotes instalados via GitHub: (ele precisa estar instalado no seu computador)
+
+```{r eval=FALSE, include=TRUE}
+usethis::use_dev_package("learnrhash")
+```
+
+---
+
 ## Disponibilize seu pacote  📦 no GitHub 
 
-- Faça os passos abaixo uma vez por pacote, considerando que o Git e o GitHub estão configurados corretamente .footnote[Caso queira saber mais sobre essa configuração, acesse [o capítulo do livro Zen do R que trata sobre Git e GitHub](https://curso-r.github.io/zen-do-r/git-github.html)]:
+- Faça os passos abaixo uma vez por pacote, considerando que o Git e o GitHub estão configurados corretamente .footnote[Caso queira saber mais sobre essa configuração, acesse [o capítulo do livro Zen do R que trata sobre Git e GitHub](https://curso-r.github.io/zen-do-r/git-github.html), e também [essa apresentação da R-Ladies São Paulo](https://r-ladies-sao-paulo.github.io/2020-hacktoberfest/slides/git_rstudio/setup_Git_GitHub_RStudio.html#1)]:
 
 - Inicie o versionamento com o Git:
 
@@ -341,7 +358,6 @@ Gradethis em Português: https://github.com/curso-r/gradethis (por [Fernando Cor
 
 
 ---
-class: middle
 
 
 ## Links interessantes e referências
@@ -350,8 +366,9 @@ class: middle
 
 - [Documentação](https://rstudio.github.io/learnr/) do pacote e repositório no [GitHub](https://github.com/rstudio/learnr)
 
-- [Polyglot](https://learnr-examples.shinyapps.io/polyglot/) - learnr usando código Python - [Código disponível aqui](https://github.com/rstudio/learnr/blob/master/inst/tutorials/polyglot/polyglot.Rmd).
+- [building interactive tutorials in R](https://mine-cetinkaya-rundel.github.io/teach-r-online/02-tutorial/02-tutorial.html#1) - dr. Mine Çetinkaya-Rundel &  dr. Colin Rundel
 
+- [Feedback at scale](https://youtu.be/cgiKP7pZWKo) - Mine Çetinkaya-Rundel
 
 - [Teach R with learnr: a powerful tool for remote teaching](https://education.rstudio.com/blog/2020/05/learnr-for-remote/)
 
@@ -361,11 +378,22 @@ class: middle
 
 - [Livro Teach Tech Together](https://teachtogether.tech/) - Greg Wilson
 
+---
+
+
+## Links interessantes e referências
+
+### Em Inglês:
+
+- [Polyglot](https://learnr-examples.shinyapps.io/polyglot/) - learnr usando código Python - [Código disponível aqui](https://github.com/rstudio/learnr/blob/master/inst/tutorials/polyglot/polyglot.Rmd).
+
 - [RStudio Community - learnr com python](https://community.rstudio.com/t/learnr-with-python-and-chained-code-chunks/83372/2)
 
 
+
+
 ---
-class: middle
+
 
 ## Links interessantes e referências
 
@@ -376,6 +404,21 @@ class: middle
 
 - RSTUDIO::GLOBAL 2021:  [On programming, teaching, and building interactive tutorials with learnr](https://resources.rstudio.com/resources/rstudioglobal-2021/on-programming-teaching-and-building-interactive-tutorials-with-learnr/) - Yanina Bellini Saibene
 
+
+
+---
+
+## Links relacionados com as dúvidas:
+
+- [O que é a Hacktoberfest?](https://r-ladies-sao-paulo.github.io/2020-hacktoberfest/slides/hacktoberfest/)
+
+- [Certificação da RStudio](https://beatrizmilz.com/blog/2021-03-02-certificacao-rstudio/)
+
+## Eventos comentados
+
+- [3º R Day](http://rday.leg.ufpr.br/)
+
+- [Semana Acadêmica de Estatística - PET Estatística UFPR](https://pet.leg.ufpr.br/semana/)
 
 ---
 class: center
