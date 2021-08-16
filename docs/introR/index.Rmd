@@ -13,8 +13,6 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 #      ratio: 191:100      
-glosario:
-   language: 'pt'
 # knit: pagedown::chrome_print
 # pagedown::chrome_print("docs/introR/index.html", timeout = 120)
 ---
@@ -41,12 +39,12 @@ style_duo_accent(
 #devtools::install_github("gadenbuie/xaringanExtra")
 xaringanExtra::use_xaringan_extra(c("tile_view", "animate_css", "tachyons"))
 
-xaringanExtra::use_editable(expires = 1)
-
-xaringanExtra::use_logo(
-  image_url = "img/rainbow-inclusive.png",
-  link_url = "https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil"
-)
+# xaringanExtra::use_editable(expires = 1)
+# 
+# xaringanExtra::use_logo(
+#   image_url = "img/rainbow-inclusive.png",
+#   link_url = "https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil"
+# )
 
 xaringanExtra::use_clipboard()
 
@@ -89,11 +87,11 @@ meta() %>%
 ```
 
 ```{r include=FALSE}
+# devtools::install_github("gadenbuie/countdown")
 # remotes::install_github("cienciadedatos/dados")
 # remotes::install_github("carpentries/glosario-r")
 library(dados)
 library(tidyverse)
-library(glosario)
 ```
 
 <!-- inicio font awesome -->
@@ -213,7 +211,7 @@ Ilustração por <a href='https://twitter.com/allison_horst/'> Allison Horst</a>
 ---
 class: middle
 
-- Conteúdo: principais conceitos necessários antes de começar a aprender o `r glosario::gdef('tidyverse', 'tidyverse')`
+- Conteúdo: principais conceitos necessários antes de começar a aprender o tidyverse
 
 - Dados tabulares:
 
@@ -1068,7 +1066,7 @@ rladies <- readr::read_csv("data/rladies.csv")
 ```
 
 ```{r echo=FALSE}
-rladies %>% select(-c(X1, name, fullurl, created, status, last_event, past_events, upcoming_events)) %>% 
+rladies %>% select(-c(`...1`, name, fullurl, created, status, last_event, past_events, upcoming_events)) %>% 
   arrange(-members) %>% 
   head() %>% 
   knitr::kable()

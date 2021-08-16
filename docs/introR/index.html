@@ -4,15 +4,11 @@
     <title>Introdução ao R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Beatriz Milz" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"a4270579d91b4961bcd53e1bf801177a","expires":1}</script>
-    <script src="libs/himalaya/himalaya.js"></script>
-    <script src="libs/js-cookie/js.cookie.js"></script>
-    <link href="libs/editable/editable.css" rel="stylesheet" />
-    <script src="libs/editable/editable.js"></script>
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
@@ -27,19 +23,19 @@
     <meta name="twitter:title" content="Introdução a Linguagem R"/>
     <meta name="twitter:description" content="Apresentação sobre Introdução a linguagem R e a IDE RStudio"/>
     <meta name="twitter:url" content="https://beatrizmilz.github.io/slidesR/introR/index.html"/>
-    <meta name="twitter:image:src" content="https://beatrizmilz.github.io/slidesR/introR/img/share-card.png"/>
+    <meta name="twitter:image" content="https://beatrizmilz.github.io/slidesR/introR/img/share-card.png"/>
     <meta name="twitter:image:alt" content="Primeiro slide da apresentação sobre  Introdução ao R. Apresentado por Beatriz Milz."/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@beamilz"/>
     <meta name="twitter:site" content="@beamilz"/>
-    <meta name="og:title" content="Introdução a Linguagem R"/>
-    <meta name="og:description" content="Apresentação sobre Introdução a linguagem R e a IDE RStudio"/>
-    <meta name="og:url" content="https://beatrizmilz.github.io/slidesR/introR/index.html"/>
-    <meta name="og:image" content="https://beatrizmilz.github.io/slidesR/introR/img/share-card.png"/>
-    <meta name="og:image:alt" content="Primeiro slide da apresentação sobre  Introdução ao R. Apresentado por Beatriz Milz."/>
-    <meta name="og:type" content="website"/>
-    <meta name="og:locale" content="en_US"/>
-    <meta name="article:author" content="Beatriz Milz"/>
+    <meta property="og:title" content="Introdução a Linguagem R"/>
+    <meta property="og:description" content="Apresentação sobre Introdução a linguagem R e a IDE RStudio"/>
+    <meta property="og:url" content="https://beatrizmilz.github.io/slidesR/introR/index.html"/>
+    <meta property="og:image" content="https://beatrizmilz.github.io/slidesR/introR/img/share-card.png"/>
+    <meta property="og:image:alt" content="Primeiro slide da apresentação sobre  Introdução ao R. Apresentado por Beatriz Milz."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Beatriz Milz"/>
     <link href="libs/countdown/countdown.css" rel="stylesheet" />
     <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
@@ -54,34 +50,7 @@ class: center, middle, hide-logo
 
 
 
-<div>
-<style type="text/css">.xaringan-extra-logo {
-width: 110px;
-height: 128px;
-z-index: 0;
-background-image: url(img/rainbow-inclusive.png);
-background-size: contain;
-background-repeat: no-repeat;
-position: absolute;
-top:1em;right:1em;
-}
-</style>
-<script>(function () {
-  let tries = 0
-  function addLogo () {
-    if (typeof slideshow === 'undefined') {
-      tries += 1
-      if (tries < 10) {
-        setTimeout(addLogo, 100)
-      }
-    } else {
-      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
-        .forEach(el => { el.innerHTML += '<a href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" class="xaringan-extra-logo"></a>' })
-    }
-  }
-  document.addEventListener('DOMContentLoaded', addLogo)
-})()</script>
-</div>
+
 
 
 
@@ -122,7 +91,7 @@ __.can-edit[2º semestre/2020]__
 
 ]
 
-.minirodape[Atualizado em 05 de setembro de 2020. &lt;br&gt; Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
+.minirodape[Atualizado em 16 de August de 2021. &lt;br&gt; Para ativar o modo tela cheia, pressione `ALT + F`, e depois `F`]
 
 
 
@@ -185,7 +154,7 @@ Ilustração por &lt;a href='https://twitter.com/allison_horst/'&gt; Allison Hor
 ---
 class: middle
 
-- Conteúdo: principais conceitos necessários antes de começar a aprender o &lt;span class="glosario_def"&gt;[tidyverse](https://carpentries.github.io/glosario/pt/#tidyverse)&lt;/span&gt;
+- Conteúdo: principais conceitos necessários antes de começar a aprender o tidyverse
 
 - Dados tabulares:
 
@@ -228,7 +197,7 @@ class: middle, center, inverse
 .center[(Acompanhe no `[RStudio Cloud](https://rstudio.cloud/project/1540878)`  👩‍💻)]
 
 
-<div class="countdown" id="timer_5f53b0c8" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_611aa25d" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 
@@ -353,7 +322,7 @@ class: middle, center, inverse
 .center[(Acompanhe no arquivo `1-introducao.R` 👩‍💻)]
 
 
-<div class="countdown" id="timer_5f53adea" style="right:0;bottom:0;" data-warnwhen="0">
+<div class="countdown" id="timer_611aa436" style="right:0;bottom:0;" data-warnwhen="0">
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 
@@ -1499,8 +1468,8 @@ str(rladies)
 ```
 
 ```
-## tibble [192 x 12] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
-##  $ X1             : num [1:192] 1 2 3 4 5 6 7 8 9 10 ...
+## spec_tbl_df [192 × 12] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ ...1           : num [1:192] 1 2 3 4 5 6 7 8 9 10 ...
 ##  $ name           : chr [1:192] "R-Ladies Barcelona" "R-Ladies Bilbao" "R-Ladies Tucson AZ" "R-Ladies Bariloche" ...
 ##  $ city           : chr [1:192] "Barcelona" "Bilbao" "Tucson" "San Carlos de Bariloche" ...
 ##  $ country        : chr [1:192] "Spain" "Spain" "USA" "Argentina" ...
@@ -1514,7 +1483,7 @@ str(rladies)
 ##  $ upcoming_events: num [1:192] 0 0 2 0 1 0 0 0 0 0 ...
 ##  - attr(*, "spec")=
 ##   .. cols(
-##   ..   X1 = col_double(),
+##   ..   ...1 = col_double(),
 ##   ..   name = col_character(),
 ##   ..   city = col_character(),
 ##   ..   country = col_character(),
@@ -1527,6 +1496,7 @@ str(rladies)
 ##   ..   past_events = col_double(),
 ##   ..   upcoming_events = col_double()
 ##   .. )
+##  - attr(*, "problems")=&lt;externalptr&gt;
 ```
 
 ---
@@ -1539,7 +1509,7 @@ summary(rladies)
 ```
 
 ```
-##        X1             name               city             country         
+##       ...1            name               city             country         
 ##  Min.   :  1.00   Length:192         Length:192         Length:192        
 ##  1st Qu.: 48.75   Class :character   Class :character   Class :character  
 ##  Median : 96.50   Mode  :character   Mode  :character   Mode  :character  
@@ -1578,18 +1548,18 @@ tibble::glimpse(rladies)
 ```
 ## Rows: 192
 ## Columns: 12
-## $ X1              &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ...
-## $ name            &lt;chr&gt; "R-Ladies Barcelona", "R-Ladies Bilbao", "R-Ladies ...
-## $ city            &lt;chr&gt; "Barcelona", "Bilbao", "Tucson", "San Carlos de Bar...
-## $ country         &lt;chr&gt; "Spain", "Spain", "USA", "Argentina", "Australia", ...
-## $ region          &lt;chr&gt; "Europe", "Europe", "US/Canada", "Latin America", "...
-## $ members         &lt;dbl&gt; 558, 176, 280, 231, 1582, 346, 511, 800, 59, 197, 6...
-## $ fullurl         &lt;chr&gt; "https://www.meetup.com/rladies-barcelona/", "https...
-## $ created         &lt;date&gt; 2016-10-22, 2019-02-27, 2017-11-14, 2018-05-10, 20...
-## $ status          &lt;chr&gt; "Active", "Inactive", "Active", "Active", "Active",...
-## $ last_event      &lt;date&gt; 2020-07-01, 2020-01-14, 2020-08-19, 2020-06-29, 20...
-## $ past_events     &lt;dbl&gt; 18, 4, 18, 12, 57, 7, 7, 10, 4, 12, 23, 37, 9, 0, 3...
-## $ upcoming_events &lt;dbl&gt; 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ...
+## $ ...1            &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,…
+## $ name            &lt;chr&gt; "R-Ladies Barcelona", "R-Ladies Bilbao", "R-Ladies Tuc…
+## $ city            &lt;chr&gt; "Barcelona", "Bilbao", "Tucson", "San Carlos de Barilo…
+## $ country         &lt;chr&gt; "Spain", "Spain", "USA", "Argentina", "Australia", "Br…
+## $ region          &lt;chr&gt; "Europe", "Europe", "US/Canada", "Latin America", "Aus…
+## $ members         &lt;dbl&gt; 558, 176, 280, 231, 1582, 346, 511, 800, 59, 197, 610,…
+## $ fullurl         &lt;chr&gt; "https://www.meetup.com/rladies-barcelona/", "https://…
+## $ created         &lt;date&gt; 2016-10-22, 2019-02-27, 2017-11-14, 2018-05-10, 2016-…
+## $ status          &lt;chr&gt; "Active", "Inactive", "Active", "Active", "Active", "A…
+## $ last_event      &lt;date&gt; 2020-07-01, 2020-01-14, 2020-08-19, 2020-06-29, 2020-…
+## $ past_events     &lt;dbl&gt; 18, 4, 18, 12, 57, 7, 7, 10, 4, 12, 23, 37, 9, 0, 3, 1…
+## $ upcoming_events &lt;dbl&gt; 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, …
 ```
 
 
@@ -1604,16 +1574,16 @@ head(rladies)
 ```
 
 ```
-## # A tibble: 6 x 12
-##      X1 name  city  country region members fullurl created    status last_event
-##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;date&gt;     &lt;chr&gt;  &lt;date&gt;    
-## 1     1 R-La~ Barc~ Spain   Europe     558 https:~ 2016-10-22 Active 2020-07-01
-## 2     2 R-La~ Bilb~ Spain   Europe     176 https:~ 2019-02-27 Inact~ 2020-01-14
-## 3     3 R-La~ Tucs~ USA     US/Ca~     280 https:~ 2017-11-14 Active 2020-08-19
-## 4     4 R-La~ San ~ Argent~ Latin~     231 https:~ 2018-05-10 Active 2020-06-29
-## 5     5 R-La~ Melb~ Austra~ Austr~    1582 https:~ 2016-09-02 Active 2020-07-29
-## 6     6 R-La~ Port~ Brazil  Latin~     346 https:~ 2017-10-30 Active 2020-07-30
-## # ... with 2 more variables: past_events &lt;dbl&gt;, upcoming_events &lt;dbl&gt;
+## # A tibble: 6 × 12
+##    ...1 name   city  country region members fullurl created    status last_event
+##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;date&gt;     &lt;chr&gt;  &lt;date&gt;    
+## 1     1 R-Lad… Barc… Spain   Europe     558 https:… 2016-10-22 Active 2020-07-01
+## 2     2 R-Lad… Bilb… Spain   Europe     176 https:… 2019-02-27 Inact… 2020-01-14
+## 3     3 R-Lad… Tucs… USA     US/Ca…     280 https:… 2017-11-14 Active 2020-08-19
+## 4     4 R-Lad… San … Argent… Latin…     231 https:… 2018-05-10 Active 2020-06-29
+## 5     5 R-Lad… Melb… Austra… Austr…    1582 https:… 2016-09-02 Active 2020-07-29
+## 6     6 R-Lad… Port… Brazil  Latin…     346 https:… 2017-10-30 Active 2020-07-30
+## # … with 2 more variables: past_events &lt;dbl&gt;, upcoming_events &lt;dbl&gt;
 ```
 
 ---
@@ -1626,16 +1596,16 @@ tail(rladies)
 ```
 
 ```
-## # A tibble: 6 x 12
-##      X1 name  city  country region members fullurl created    status last_event
-##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;date&gt;     &lt;chr&gt;  &lt;date&gt;    
-## 1   187 R-La~ Walt~ USA     US/Ca~      15 https:~ 2020-07-03 Unbeg~ NA        
-## 2   188 R-La~ Conc~ Chile   Latin~     357 https:~ 2019-04-16 Active 2020-08-01
-## 3   189 R-La~ Talca Chile   Latin~      52 https:~ 2020-05-14 Active 2020-08-19
-## 4   190 R-La~ Adel~ Austra~ Austr~     307 https:~ 2017-02-02 Inact~ 2019-10-02
-## 5   191 R-La~ Bogo~ Colomb~ Latin~     276 https:~ 2017-09-22 Inact~ 2019-03-07
-## 6   192 Dead~ Bend  USA     US/Ca~      95 https:~ 2019-08-11 Active 2020-08-18
-## # ... with 2 more variables: past_events &lt;dbl&gt;, upcoming_events &lt;dbl&gt;
+## # A tibble: 6 × 12
+##    ...1 name   city  country region members fullurl created    status last_event
+##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;date&gt;     &lt;chr&gt;  &lt;date&gt;    
+## 1   187 R-Lad… Walt… USA     US/Ca…      15 https:… 2020-07-03 Unbeg… NA        
+## 2   188 R-Lad… Conc… Chile   Latin…     357 https:… 2019-04-16 Active 2020-08-01
+## 3   189 R-Lad… Talca Chile   Latin…      52 https:… 2020-05-14 Active 2020-08-19
+## 4   190 R-Lad… Adel… Austra… Austr…     307 https:… 2017-02-02 Inact… 2019-10-02
+## 5   191 R-Lad… Bogo… Colomb… Latin…     276 https:… 2017-09-22 Inact… 2019-03-07
+## 6   192 Deadl… Bend  USA     US/Ca…      95 https:… 2019-08-11 Active 2020-08-18
+## # … with 2 more variables: past_events &lt;dbl&gt;, upcoming_events &lt;dbl&gt;
 ```
 
 ---
@@ -1762,7 +1732,7 @@ rladies[1, 2] # Seleciona a linha 1 e a coluna 2
 ```
 
 ```
-## # A tibble: 1 x 1
+## # A tibble: 1 × 1
 ##   name              
 ##   &lt;chr&gt;             
 ## 1 R-Ladies Barcelona
@@ -1780,11 +1750,11 @@ rladies[1, ] # Seleciona a linha 1 e TODAS as colunas
 ```
 
 ```
-## # A tibble: 1 x 12
-##      X1 name  city  country region members fullurl created    status last_event
-##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;date&gt;     &lt;chr&gt;  &lt;date&gt;    
-## 1     1 R-La~ Barc~ Spain   Europe     558 https:~ 2016-10-22 Active 2020-07-01
-## # ... with 2 more variables: past_events &lt;dbl&gt;, upcoming_events &lt;dbl&gt;
+## # A tibble: 1 × 12
+##    ...1 name   city  country region members fullurl created    status last_event
+##   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;   &lt;date&gt;     &lt;chr&gt;  &lt;date&gt;    
+## 1     1 R-Lad… Barc… Spain   Europe     558 https:… 2016-10-22 Active 2020-07-01
+## # … with 2 more variables: past_events &lt;dbl&gt;, upcoming_events &lt;dbl&gt;
 ```
 
 
@@ -1793,7 +1763,7 @@ rladies[ , 2] # Seleciona TODAS as linhas e apenas a coluna 2
 ```
 
 ```
-## # A tibble: 192 x 1
+## # A tibble: 192 × 1
 ##    name                 
 ##    &lt;chr&gt;                
 ##  1 R-Ladies Barcelona   
@@ -1806,7 +1776,7 @@ rladies[ , 2] # Seleciona TODAS as linhas e apenas a coluna 2
 ##  8 R-Ladies Quito       
 ##  9 R-Ladies Kansas City 
 ## 10 R-Ladies Canberra    
-## # ... with 182 more rows
+## # … with 182 more rows
 ```
 
 ---
