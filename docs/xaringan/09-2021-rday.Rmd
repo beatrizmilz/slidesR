@@ -198,8 +198,9 @@ class:
 ```{r echo=TRUE, eval=FALSE}
 install.packages("rmarkdown")
 install.packages("xaringan")
-install.packages("xaringanthemer")
+install.packages("xaringanthemer", dependencies = TRUE)
 install.packages("pagedown")
+install.packages("showtext")
 ```
 
 
