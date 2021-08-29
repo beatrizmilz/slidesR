@@ -171,6 +171,18 @@ knitr::include_graphics("https://media.giphy.com/media/4ExWdLKTCaz16/giphy.gif?c
 
 - Pré-requisitos
 
+- O que é o pacote xaringan?
+
+- Recomendações de uso
+
+- Como criar um arquivo
+
+- Como alterar metadados
+
+- Como alterar estilo
+
+- Como compartilhar a apresentação
+
 ---
 
 class: 
@@ -834,9 +846,7 @@ Class:
   - Arrastando para enviar:
       - [Netlify Drop](https://app.netlify.com/drop)
 
-```{r echo=FALSE, out.width="50%"}
-knitr::include_graphics("img/rmd-html.png")
-```
+
 
 - Dica: você pode encurtar o link com o [bit.ly](https://bitly.com)
 
