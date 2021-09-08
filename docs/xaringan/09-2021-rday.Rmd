@@ -142,7 +142,6 @@ class: middle
 
 - Espaço acolhedor e amigável `r emo::ji("hugs")`
 
-- O evento será gravado. Caso não queira aparecer na gravação, pedimos que desligue sua câmera.
 
 - Escreva suas dúvidas no chat.
 
@@ -200,9 +199,47 @@ install.packages("rmarkdown")
 install.packages("xaringan")
 install.packages("xaringanthemer", dependencies = TRUE)
 install.packages("pagedown")
-install.packages("showtext")
 ```
 
+
+---
+class: 
+
+# O ciclo da ciência de dados
+
+```{r, out.width="60%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> - Adaptado de WICKHAM & GROLEMUND, 2017</b></center>", echo = FALSE}
+knitr::include_graphics("../img/Horst/data-analysis.jpg")
+```
+
+
+---
+class: 
+
+# Pacote rmarkdown
+
+.pull-left[
+
+```{r, out.width="50%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>", echo = FALSE}
+knitr::include_graphics("../img/rlogos/hex-rmarkdown.png")
+```
+]
+
+.pull-right[
+- Mantido pela [RStudio](https://rstudio.com/)
+
+- extensão `.Rmd`
+
+- Possibilita a utilização de códigos `R`, `Markdown`, `HTML` e outros.
+]
+
+---
+class:  
+
+# Pacote rmarkdown
+
+```{r, out.width="30%", fig.cap="<center><b>Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>", echo = FALSE}
+knitr::include_graphics("../img/rmarkdown/markdown.png")
+```
 
 
 ---
@@ -325,7 +362,7 @@ Por exemplo:
   
   - `css/` - para arquivos `.css` (opcional)
   
-- `r emo::ji("bell")` **Importante**: Compile (knit) o arquivo com frequência!  
+ 
 
 ---
 class: 
@@ -350,6 +387,11 @@ knitr::include_graphics("img/criar-ninja-themed.png")
 
 ---
 class: 
+
+
+## Gerar o arquivo `.html`
+
+- `r emo::ji("bell")` **Importante**: Compile (knit) o arquivo com frequência! 
 
 ## Demonstração do resultado
 

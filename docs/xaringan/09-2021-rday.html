@@ -116,7 +116,6 @@ class: middle
 
 - Espaço acolhedor e amigável 🤗
 
-- O evento será gravado. Caso não queira aparecer na gravação, pedimos que desligue sua câmera.
 
 - Escreva suas dúvidas no chat.
 
@@ -171,9 +170,50 @@ install.packages("rmarkdown")
 install.packages("xaringan")
 install.packages("xaringanthemer", dependencies = TRUE)
 install.packages("pagedown")
-install.packages("showtext")
 ```
 
+
+---
+class: 
+
+# O ciclo da ciência de dados
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../img/Horst/data-analysis.jpg" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Ilustração por Allison Horst - Twitter: &amp;lt;a href='https://twitter.com/allison_horst/'&amp;gt; @allison_horst&amp;lt;/a&amp;gt; - Adaptado de WICKHAM &amp;amp; GROLEMUND, 2017&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="60%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Ilustração por Allison Horst - Twitter: &lt;a href='https://twitter.com/allison_horst/'&gt; @allison_horst&lt;/a&gt; - Adaptado de WICKHAM &amp; GROLEMUND, 2017&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+class: 
+
+# Pacote rmarkdown
+
+.pull-left[
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../img/rlogos/hex-rmarkdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Logo: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="50%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Logo: &lt;a href='https://rmarkdown.rstudio.com'&gt;Pacote `rmarkdown`&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+- Mantido pela [RStudio](https://rstudio.com/)
+
+- extensão `.Rmd`
+
+- Possibilita a utilização de códigos `R`, `Markdown`, `HTML` e outros.
+]
+
+---
+class:  
+
+# Pacote rmarkdown
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="../img/rmarkdown/markdown.png" alt="&amp;lt;center&amp;gt;&amp;lt;b&amp;gt;Fonte: &amp;lt;a href='https://rmarkdown.rstudio.com'&amp;gt;Pacote `rmarkdown`&amp;lt;/a&amp;gt;&amp;lt;/b&amp;gt;&amp;lt;/center&amp;gt;" width="30%" /&gt;
+&lt;p class="caption"&gt;&lt;center&gt;&lt;b&gt;Fonte: &lt;a href='https://rmarkdown.rstudio.com'&gt;Pacote `rmarkdown`&lt;/a&gt;&lt;/b&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/div&gt;
 
 
 ---
@@ -291,7 +331,7 @@ Por exemplo:
   
   - `css/` - para arquivos `.css` (opcional)
   
-- 🔔 **Importante**: Compile (knit) o arquivo com frequência!  
+ 
 
 ---
 class: 
@@ -314,6 +354,11 @@ class:
 
 ---
 class: 
+
+
+## Gerar o arquivo `.html`
+
+- 🔔 **Importante**: Compile (knit) o arquivo com frequência! 
 
 ## Demonstração do resultado
 
