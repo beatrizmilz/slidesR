@@ -2,7 +2,7 @@
 title: "Introdução ao Git e GitHub "
 subtitle: 'no RStudio'
 author: 
-  - "Beatriz Milz"
+  - "Beatriz Milz "
 date: 'R-Ladies GYN - 11 de setembro de 2021'
 output:
   xaringan::moon_reader:
@@ -34,6 +34,7 @@ knitr::opts_chunk$set(
 # devtools::install_github("hadley/emo")
 # devtools::install_github("gadenbuie/xaringanExtra")
 # devtools::install_github("gadenbuie/ermoji")
+# remotes::install_github("mitchelloharawild/icons")
 ```
 
 
@@ -60,11 +61,34 @@ style_duo_accent(outfile = "xaringan-themer2021.css",
 )
 ```
 
+```{css echo=FALSE}
+blockquote {
+    background-color: lavender; !important
+}
+
+a, a > code {
+    color: #88398a;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.remark-inline-code{
+    color: #3bc6c7;
+}
+```
 
 
 .pull-left[
 
-## Beatriz Milz
+## Beatriz Milz      
+[`r icons::icon_style(icons::fontawesome(name = "question", style = "solid"), fill = "#88398a", scale = 1.7)`](https://discourse.curso-r.com/u/beatrizmilz/summary) 
+[`r icons::icon_style(icons::fontawesome(name = "home", style = "solid"), fill = "#88398a", scale = 1.7)`](https://beatrizmilz.com/)
+[`r icons::icon_style(icons::fontawesome("twitter"), fill = "#88398a", scale = 2)`](https://twitter.com/BeaMilz)
+[`r icons::icon_style(icons::fontawesome(name = "github"), fill = "#88398a", scale = 2)`](https://github.com/beatrizmilz)
+[`r icons::icon_style(icons::academicons("orcid"), fill = "#88398a", scale = 2)`](https://orcid.org/0000-0002-3064-4486)
+[`r icons::icon_style(icons::academicons("lattes"), fill = "#88398a", scale = 2)`](http://lattes.cnpq.br/5150665880581477)
+
+
 
 - 2019 - * - Doutoranda em Ciência Ambiental - PROCAM/IEE/USP
 
@@ -87,33 +111,38 @@ style_duo_accent(outfile = "xaringan-themer2021.css",
 ### R: Comunidades, eventos, pacotes, livros..
 <center>
 
+
+<a href='https://curso-r.com/'>  <img src="img/Hex/curso-r-azul.jpg" width="150px"></a>
+
 <a href='https://education.rstudio.com/trainers/'>  <img src='img/Hex/CertifiedRstudioTrainer.png' width="150px"></a>
 
 
 <a href='https://rladies.org/'>  <img src='img/Hex/1hexlogorladies.jpeg' width="150px"></a>
 
-<a href='https://curso-r.com/'>  <img src="img/Hex/curso-r-azul.jpg" width="150px"></a>
 
 <a href='https://livro.curso-r.com/'>  <img src='https://curso-r.com/images/produtos/hex-livro.png' width="150px"></a>
 
 
 
 <a href='https://saopaulo2019.satrdays.org/'>  <img src='img/Hex/2satrdaysp.png' width="150px"></a>
-<a href='https://latin-r.com/'>  <img src='img/Hex/4LatinR_hex_violeta-cut.jpg' width="150px"></a>
-<a href='https://carpentries.org/'>  <img src='img/Hex/carpentries.png' width="150px"> </a>
-<a href='https://user2021.r-project.org/'>  <img src='https://user2021.r-project.org/img/artwork/user-logo-color.png' width="150px"> </a>
-
-<a href='https://cienciadedatos.github.io/dados/'>  <img src='https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png' width="150px"></a>
+<a href='https://latin-r.com/'>  <img src='img/Hex/4LatinR_hex_violeta-cut.jpg' width="150px"></a><a href='https://carpentries.org/'><img src='img/Hex/carpentries.png' width="150px"></a>
+<a href='https://user2021.r-project.org/'><img src='https://user2021.r-project.org/img/artwork/user-logo-color.png' width="150px"></a><a href='https://cienciadedatos.github.io/dados/'><img src='https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png' width="150px"></a>
 <a href='https://beatrizmilz.github.io/mananciais/'>  <img src='https://beatrizmilz.github.io/mananciais/reference/figures/hexlogo.png' width="150px"></a>
 </center>
 
+---
 
+## Conteúdo
 
+- [Pré-requisitos](#prerequisitos)
+
+- [Conceitos básicos importantes](#conceitosimportantes)
 
 ---
 class: middle, center, inverse
+name: prerequisitos
 
-# Pré-requisitos
+## Pré-requisitos
 
 
 
@@ -122,7 +151,7 @@ class: middle, center, inverse
 class: middle
 
 .pull-left[
-## R 
+### R 
   - [Download neste link](https://cran.r-project.org/)
   - Use a versão mais recente `r emo::ji("wink")`
 
@@ -150,7 +179,7 @@ class: middle
 
 
 .pull-left[
-## RStudio
+### RStudio
   - [Download neste link](https://www.rstudio.com/products/rstudio/download/)
   - Use a versão mais recente `r emo::ji("wink")`
   
@@ -176,7 +205,7 @@ class: middle
 
 .pull-left[
 
-## Git 
+### Git 
   - [Download neste link](https://git-scm.com/downloads)
 
   
@@ -203,7 +232,7 @@ class: middle
 
 
 .pull-left[
-## Conta no GitHub
+### Conta no GitHub
   - [Neste link](https://github.com/)
   - Caso já tenha, não é preciso criar uma nova conta.
   
@@ -221,34 +250,95 @@ knitr::include_graphics("img/github-logo.png")
   - Se for estudante: 
     - [GitHub Student Developer Pack](https://education.github.com/pack) - utiliza email institucional da universidade.
 
----
-class: middle, center
-
-```{r echo=FALSE, out.width="70%"}
-knitr::include_graphics("img/github.PNG")
-```
 
 ---
 class: middle
 
 
-## Instalação de pacotes
+### Instalação de pacotes
 
+.pull-left[
 - Instalar o Pacote [`usethis`](https://usethis.r-lib.org/)
 
 ```{r echo=TRUE, eval=FALSE}
 install.packages("usethis")
 library(usethis)
 ```
+]
 
-```{r}
+.pull-right[
+```{r, out.width="50%"}
 knitr::include_graphics("https://usethis.r-lib.org/reference/figures/logo.png")
 ```
+]
+
+---
+class: middle, center, inverse
+name: conceitosimportantes
+
+## Conceitos básicos importantes
+
 
 
 ---
 
-## Comentários importantes
+### O que é Git?
+
+- Git é um **sistema de versionamento**, criado por Linus Torvalds, autor do Linux.
+
+- É capaz de guardar o histórico de alterações de todos os arquivos dentro de uma pasta, que chamamos de repositório.
+
+- Funciona como o "*Track changes*" do word, mas muito melhor.
+
+- Torna-se importante à medida que seu trabalho é __colaborativo__.
+
+- Git é um software que você instala no computador.
+
+  
+
+```{r out.width="30%"}
+knitr::include_graphics("https://git-scm.com/images/logo@2x.png")
+```
+
+> <i class="far fa-flag"></i> [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
+---
+
+### O que é GitHub?
+
+
+- GitHub é um site onde você coloca e compartilha repositórios Git.
+
+- Utilizado por milhões de pessoas em projetos de código aberto ou fechado.
+
+- Útil para colaborar com outros programadores em projetos de ciência de dados.
+
+- Existem alternativas, como [GitLab](https://about.gitlab.com/) e [BitBucket](https://bitbucket.org/product).
+
+- GitHub é um site que você acessa na internet.
+
+```{r out.width="30%"}
+knitr::include_graphics("img/github-logo.png")
+```
+
+<br>
+
+> <i class="far fa-flag"></i> [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
+---
+class: middle, center
+
+<a href='https://github.com/beatrizmilz' target="_blank">
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("img/github2021.png")
+```
+</a>
+
+---
+
+### Comentários importantes
 
 - Você pode usar o Git através:
   -  __Linha de comando__ :
@@ -267,16 +357,16 @@ Aqui apresento com o RStudio, mas escolha o que é mais confortável para você 
 ---
 class: middle,  inverse, center
 
-# Configurando o Git e GitHub no RStudio
+## Configurando o Git e GitHub no RStudio
 
-`r emo::ji("woman_technologist")` É necessário fazer apenas uma vez (por usuário)!
+`r emo::ji("woman_technologist")` É necessário fazer apenas uma vez (por usuário do computador)!
 
 
 
 ---
-class: middle,  inverse, center
+class: middle,  inverse
 
-## Configurando o Git e GitHub no RStudio
+### Configurando o Git e GitHub no RStudio
 
 - `r emo::ji("white_large_square")` Ter o pacote `usethis` instalado 
 
@@ -297,13 +387,11 @@ class: middle,  inverse, center
 ---
 class: middle
 
-## Configurando o Git
+### Configurando o Git
 
 - Informar para o Git seu nome, e email.
 
 - Utilize o mesmo email associado à sua conta do GitHub.
-
-- Duas possibilidades: no terminal (linha de comando) ou com uma função do `usethis`.
 
 
   - Com o `usethis`:
@@ -315,160 +403,135 @@ usethis::use_git_config(# Seu nome
                         user.email = "beatriz.milz@hotmail.com") 
 ```
 
----
-class: middle
-
-## Configurando o Git
-
-- No terminal (Substitua pelo seu nome e email  vinculado à conta do GitHub):
-
-```{git echo=TRUE, eval=FALSE}
-git config --global user.name "Beatriz Milz"
-
-git config --global user.email beatriz.milz@hotmail.com
-```
-
-
-
-
-```{r out.width="80%"}
-knitr::include_graphics("img/prints/configurar_git.PNG")
-```
-
 
 ---
-class: middle
 
-## Configurando o GitHub + RStudio
+### Configure o Personal Access Token
 
-- Abra o arquivo `.Renviron` usando a seguinte função:
+- Ao conectar com o GitHub, você será instruída(o) a criar um *Personal Access Token* (PAT).
 
-```{r  echo=TRUE, eval=FALSE}
-usethis::edit_r_environ()
-# * Edit 'C:/Users/beatr/Documents/.Renviron'
-# * Restart R for changes to take effect
-```
+- O PAT serve para autenticar ao GitHub, podendo ser utilizado como senha de acesso ou internamente para automatizar tarefas (como criar um repositório).
 
----
-class: middle
-
-## Configurando o GitHub + RStudio
-
-- Criar um novo token no GitHub:
+- Para criar um novo PAT, use a função `usethis::create_github_token()`. Uma janela do navegador será aberta, e você deve autenticar no GitHub (se necessário), criar o novo token, e copiá-lo. 
 
 ```{r echo=TRUE, eval=FALSE}
-usethis::browse_github_token()
-# ✔ Opening URL 'https://github.com/settings/tokens/new?scopes=repo,gist&description=R:GITHUB_PAT'
-# ● Call `usethis::edit_r_environ()` to open '.Renviron'.
-# ● Store your PAT with a line like:
-{{#   GITHUB_PAT=xxxyyyzzz}}
-#   [Copied to clipboard]
-# ● Make sure '.Renviron' ends with a newline!
-```
-
-- Uma página do GitHub irá abrir, com as configurações necessárias. Você pode alterar o nome do token, para saber em qual computador está vinculando. Crie o novo token.
-
----
-class: middle  
-
-- Exemplo:
-
-```{r out.width="100%"}
-knitr::include_graphics("img/gifs/browse-github-token2.gif")
+usethis::create_github_token()
 ```
 
 
+> <i class="far fa-flag"></i> [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
 
-.minirodape[Caso você esteja vendo a versão em PDF, o video acima não irá funcionar. Veja clicando [neste link](https://beatrizmilz.github.io/slidesR/git_rstudio/img/gifs/browse-github-token2.gif).]
-
----
-
-- Copie o token gerado:
-
-```{r out.width="100%"}
-knitr::include_graphics("img/prints/copy-token.png")
-```
 
 ---
 
-- Abra o arquivo `.Renviron`:
+- Use a função `usethis::edit_r_environ()` para abrir o arquivo `.Renviron` para salvar seu token. 
+
 ```{r echo=TRUE, eval=FALSE}
 usethis::edit_r_environ()
 # ● Modify 'C:/Users/beatr/Documents/.Renviron'
 # ● Restart R for changes to take effect
 ```
 
-- Crie uma nova linha na forma `GITHUB_PAT=SEU_TOKEN`, adicione o token, pule uma linha e salve o arquivo.
+- Crie uma nova linha na forma `GITHUB_PAT=SEU_TOKEN`, adicione o token, **pule uma linha** e salve o arquivo. Se certifique que o arquivo termina com uma linha vazia!
 
-```{r out.width="60%"}
-knitr::include_graphics("img/prints/githubpath.png")
+
+Use essa estrutura, substituindo os 0 pelo código copiado na etapa anterior:
+
+```
+GITHUB_PAT="0000000000000000000000000000000000000000"
 ```
 
+- Lembre-se de reiniciar sua sessão do R!
+
+
+
 - **Reinicie o RStudio**:  CTRL + SHIFT + F10
+
+> <i class="far fa-flag"></i> [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
+---
+
+
+### Checando se a configuração deu certo
+
+Utilize a função `usethis::git_sitrep()` e leia o resultado que aparece no console. A mensagem abaixo foi cortada para mostrar os trechos de interesse!
+
+
+```{r echo=TRUE, eval=FALSE}
+usethis::git_sitrep()
+#> Git config (global)
+#> ● Name: 'SEU NOME DEVE APARECER AQUI'
+#> ● Email: 'SEU EMAIL DEVE APARECER AQUI'
+
+#> GitHub
+#> ● Default GitHub host: 'https://github.com'
+#> ● Personal access token for 'https://github.com': '<discovered>'
+#> ● GitHub user: 'SEU NOME DE USUÁRIO(A) DEVE APARECER AQUI'
+#> ● Token scopes: 'gist, repo, user, workflow'
+#> ● Email(s): 'SEU EMAIL DEVE APARECER AQUI'
+```
+
+> <i class="far fa-flag"></i> [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+---
+class: middle, center
+
+### Momento mão na massa!
+
+Tente configurar o Git e GitHub no RStudio.
+
+Caso não funcione, não esqueça de informar o resultado da função `usethis::git_sitrep()`.
+
+```{r echo=FALSE, out.width="30%"}
+knitr::include_graphics("https://i.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.webp")
+```
+
+
 
 ---
 class: middle, center, inverse
 
-# Interface gráfica do RStudio
+## Interface gráfica do RStudio
 
 ---
 class: middle
 
-## Interface Gráfica RStudio
+### Interface Gráfica RStudio
 
 - O RStudio oferece um cliente Git **simples**, na aba "Git" (em inglês, é chamado de Git Pane).
 
 - Esse painel somente aparecerá em projetos que estejam versionados com Git.
 
-```{r, out.width="95%"}
+```{r, out.width="60%"}
 knitr::include_graphics("img/prints/git-pane.PNG")
 ```
-
----
-
-## Equivalência dos principais comandos
-
-### Linha de comando vs RStudio
-
-- git status
-
-- git add [arquivo]
-
-- git commit -m "[mensagem descritiva]"
-
-- git diff
-
-- git pull
-
-- git push
-
-- ...
 
 
 ---
 class: middle
 
-## Git pane - Staged  `r emo::ji("white_check_mark")`
+### Git pane - Staged  `r emo::ji("white_check_mark")`
 
-```{r}
+```{r, out.width="70%"}
 knitr::include_graphics("img/prints/git-pane-stage.png")
 ```
 
 ---
 class: middle
 
-## Git pane - Commit
+### Git pane - Commit
 
-```{r, out.width="100%"}
+```{r, out.width="70%"}
 knitr::include_graphics("img/prints/git-pane-commit.PNG")
 ```
 
 ---
 class: middle
 
-## Git pane - Commit
+### Git pane - Commit
 
-```{r, out.width="100%"}
+```{r, out.width="70%"}
 knitr::include_graphics("img/prints/git_commit.PNG")
 ```
 
@@ -476,50 +539,28 @@ knitr::include_graphics("img/prints/git_commit.PNG")
 ---
 class: middle
 
-## Botão Diff -> Review changes
+### Botão Diff -> Review changes
 
-```{r, out.width="90%"}
+```{r, out.width="70%"}
 knitr::include_graphics("img/prints/git-pane-diff.PNG")
 ```
 
 ---
 class: middle
 
-## Botão `r emo::ji("clock3")` (history) -> Review changes
+### Botão `r emo::ji("clock3")` (history) -> Review changes
 
-```{r, out.width="90%"}
+```{r, out.width="70%"}
 knitr::include_graphics("img/prints/git-pane-history.PNG")
 ```
 
 
----
-class: middle
-
-## Branch
-
-```{r}
-knitr::include_graphics("img/prints/git-pane-branch.png")
-```
-
----
-class: middle
-
-## Interface Gráfica RStudio
-
-```{r, out.width="95%"}
-knitr::include_graphics("img/prints/cheatsheet.PNG")
-```
-
-Fonte: [RStudio Cheatsheet](https://www.rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf)
 
 ---
 class: middle, center, inverse
 
 # Trabalhando com projetos no RStudio + GitHub
 
---
-
-## `r emo::ji("woman_technologist")` No computador
 
 ---
 ## Método 1 - **Clonando um repositório do GitHub**
@@ -717,6 +758,7 @@ knitr::include_graphics("img/prints/criou-repositorio-github.PNG")
 ---
 
 ### Função para criar um arquivo `README.md`
+
 ```{r, echo=TRUE, eval=FALSE}
 usethis::use_readme_md()
 
@@ -729,7 +771,7 @@ knitr::include_graphics("https://media2.giphy.com/media/1iu8uG2cjYFZS6wTxv/giphy
 
 
 ---
-class: middle  bg-main4
+class: middle
 
 ### Exemplo:
 
@@ -771,6 +813,20 @@ usethis::create_from_github("R-Ladies-Sao-Paulo/RLadies-Brasil",
 # ✔ Setting remote tracking branch for local 'master' branch to 'upstream/master'
 # ✔ Opening 'C:/Users/beatr/Documents/GitHub/RLadies-Brasil/' in new RStudio session
 # ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/RLadies-Git-RStudio-2019'
+```
+
+---
+class: middle, center, inverse
+
+## Trabalhando colaborativamente
+
+---
+class: middle
+
+## Branch
+
+```{r, out.width="70%"}
+knitr::include_graphics("img/prints/git-pane-branch.png")
 ```
 
 
@@ -927,7 +983,16 @@ class: middle, center
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZCeBnQBQ1h8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+---
+class: middle
 
+## Interface Gráfica RStudio
+
+```{r, out.width="70%"}
+knitr::include_graphics("img/prints/cheatsheet.PNG")
+```
+
+Fonte: [RStudio Cheatsheet](https://www.rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf)
 
 ---
 class: center
