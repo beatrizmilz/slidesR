@@ -138,6 +138,10 @@ a, a > code {
 
 - [Conceitos básicos importantes](#conceitosimportantes)
 
+- [Configurando o Git e GitHub no RStudio](#configurando)
+
+- [Primeiros passos com o Git e GitHub no RStudio](#primeirospassos)
+
 ---
 class: middle, center, inverse
 name: prerequisitos
@@ -356,6 +360,7 @@ Aqui apresento com o RStudio, mas escolha o que é mais confortável para você 
 
 ---
 class: middle,  inverse, center
+name: configurando
 
 ## Configurando o Git e GitHub no RStudio
 
@@ -374,9 +379,9 @@ class: middle,  inverse
 
 - `r emo::ji("white_large_square")` Abrir o arquivo `.Renviron` 
 
-- `r emo::ji("white_large_square")` Criar um GitHub Token 
+- `r emo::ji("white_large_square")` Criar um GitHub Token/PAT
 
-- `r emo::ji("white_large_square")` Adicionar o GitHub Token no arquivo `.Renviron` 
+- `r emo::ji("white_large_square")` Adicionar o GitHub Token/PAT no arquivo `.Renviron` 
 
 - `r emo::ji("white_large_square")` Reiniciar o RStudio
 
@@ -491,8 +496,28 @@ knitr::include_graphics("https://i.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.webp
 
 ---
 class: middle, center, inverse
+name: primeirospassos
 
-## Interface gráfica do RStudio
+## Primeiros passos com o Git e GitHub no RStudio
+
+
+Dica: comece praticando nos seus projetos. Quando estiver confortável, pode começar a contribuir com projetos de outras pessoas! :)
+
+---
+
+### Fluxo de trabalho
+
+O diagrama abaixo exemplifica o fluxo de trabalho de um projeto com versionamento.
+
+
+```{r echo=FALSE, fig.align='center', out.width="60%"}
+knitr::include_graphics("img/fluxo_github_rstudio.png")
+```
+
+
+> <i class="far fa-flag"></i> [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
 
 ---
 class: middle
@@ -631,7 +656,7 @@ knitr::include_graphics("img/prints/proj-version-control-3.png")
 
 - **Criando um repositório novo, diretamente do RStudio**
 
-- Vamos usar a função `create_project()` 
+- Vamos usar a função `usethis::create_project()` 
   - Cria um projeto `.Rproj`
   - Argumento importante: `path = ` 	É o "caminho" para o diretório (pasta). Se o diretório já existe, é utilizado. Se não existe, é criado. 
   - Cuidado com o nome do projeto, pois será o mesmo nome que será utilizado no repositório. Você não deve usar o nome de algum repositório já existente no seu GitHub.
@@ -642,7 +667,7 @@ knitr::include_graphics("img/prints/proj-version-control-3.png")
 - No meu caso, tenho o hábito de deixar todos os repositórios do GitHub, na pasta `GitHub/`. No exemplo abaixo, dentro da pasta GitHub, criei o projeto chamado Teste-MeetupR. Esse será o nome da pasta criada e posteriormente do repositório no GitHub.
 
 ```{r echo=TRUE, eval=FALSE}
-usethis::create_project("GitHub/Teste-MeetupR") 
+usethis::create_project("~/GitHub/Teste-MeetupR") 
 # ✔ Creating 'GitHub/Teste-MeetupR/'
 # ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/Teste-MeetupR'
 # ✔ Creating 'R/'
@@ -662,7 +687,7 @@ usethis::create_project("GitHub/Teste-MeetupR")
 
 - GitHub `r emo::ji("x")`
 
-```{r out.width="70%"}
+```{r out.width="60%"}
 knitr::include_graphics("img/prints/novo_projeto.png")
 ```
 
@@ -706,7 +731,7 @@ usethis::use_git()
 
 - GitHub `r emo::ji("x")`
 
-```{r out.width="70%"}
+```{r out.width="60%"}
 knitr::include_graphics("img/prints/novo_projeto_com_git.png")
 ```
 
@@ -751,7 +776,7 @@ usethis::use_github()
 
 - GitHub `r emo::ji("heavy_check_mark")`
 
-```{r out.width="70%"}
+```{r out.width="60%"}
 knitr::include_graphics("img/prints/criou-repositorio-github.PNG")
 ```
 
@@ -765,7 +790,7 @@ usethis::use_readme_md()
 ```
 - O arquivo será criado e aberto, para ser editado e salvo.
 
-```{r, out.width="30%"}
+```{r, out.width="20%"}
 knitr::include_graphics("https://media2.giphy.com/media/1iu8uG2cjYFZS6wTxv/giphy-downsized.gif")
 ```
 
@@ -853,7 +878,7 @@ usethis::pr_init(branch = "teste")
 - Quando terminar as contribuições necessárias, utilizar a função `pr_push()`:
 
 ```{r echo=TRUE, eval=FALSE}
-pr_push()
+usethis::pr_push()
 # ✔ Pushing local 'teste' branch to 'origin:teste'
 # ✔ Setting upstream tracking branch for 'teste' to 'origin/teste'
 # ✔ Create PR at link given below
@@ -866,7 +891,7 @@ pr_push()
 class: middle 
 
 ### Crie um Pull Request: 
-```{r out.width="80%"}
+```{r out.width="60%"}
 knitr::include_graphics("img/prints/pr-push.PNG")
 ```
 
@@ -874,7 +899,7 @@ knitr::include_graphics("img/prints/pr-push.PNG")
 class: middle 
 
 ### Open a Pull Request: 
-```{r out.width="80%"}
+```{r out.width="60%"}
 knitr::include_graphics("img/prints/pr-push2.png")
 ```
 
@@ -883,7 +908,7 @@ knitr::include_graphics("img/prints/pr-push2.png")
 
 ### Exemplo: PR foi aberto
 
-```{r out.width="80%"}
+```{r out.width="60%"}
 knitr::include_graphics("img/prints/pr-push3.png")
 ```
 
@@ -896,7 +921,7 @@ knitr::include_graphics("img/prints/pr-push3.png")
 
 - Alguém fez uma sugestão, como alterar o PR enviado? Ex:
 
-```{r echo=FALSE, out.width="70%"}
+```{r echo=FALSE, out.width="30%"}
 knitr::include_graphics("img/prints/sugestoes-git.PNG")
 ```
 - No mesmo projeto e na __mesma branch__ que você usou para enviar o PR, faça as alterações.
@@ -913,7 +938,7 @@ knitr::include_graphics("img/prints/sugestoes-git.PNG")
 
 ### Depois que o PR é aceito:  Merged
 
-```{r out.width="80%"}
+```{r out.width="60%"}
 knitr::include_graphics("img/prints/pr-push4.PNG")
 ```
 
@@ -922,13 +947,13 @@ class: middle
 
 ### Última etapa: __APÓS__ o PR ter sido aceito (merged)
 
-- A função `pr_finish()`:
+- A função `usethis::pr_finish()`:
   - Retorna para master
   - Atualiza (usando o pull) o conteúdo 
   - Deleta a branch criada para enviar o PR
 
 ```{r echo=TRUE, eval=FALSE}
-pr_finish()
+usethis::pr_finish()
 # ✔ Switching back to 'master' branch
 # ✔ Pulling changes from GitHub source repo 'origin/master'
 # ✔ Deleting local 'teste' branch
@@ -943,7 +968,7 @@ class: center, middle
 ## Linha de comando ou interface gráfica?
 ## Use o que for melhor para **você**!
 
-```{r out.width="50%"}
+```{r out.width="30%"}
 knitr::include_graphics("https://media0.giphy.com/media/dNgK7Ws7y176U/giphy.gif")
 ```
 
@@ -958,7 +983,7 @@ class:  middle
 
 https://hacktoberfest.digitalocean.com/
 
-
+- Evento da R-Ladies SP de 2020: https://r-ladies-sao-paulo.github.io/2020-hacktoberfest/
 
 ---
 class: middle 
