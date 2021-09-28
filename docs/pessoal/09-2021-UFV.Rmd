@@ -39,6 +39,21 @@ knitr::opts_chunk$set(
 # devtools::install_github("gadenbuie/ermoji")
 ```
 
+```{css}
+/* custom.css */
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
+```
+
 
 ```{r xaringanExtra-clipboard, echo=FALSE}
 xaringanExtra::use_clipboard()
@@ -126,7 +141,7 @@ Prefeitura Municipal de São Paulo (PMSP)
 
 - Participei do projeto sobre Serviço de Resgate de Animais Silvestres Vitimados
 
-- Compartilhei conhecimentos sobre QGIS internamente :)
+- Com o passar do tempo, compartilhei conhecimentos sobre QGIS internamente :)
 
 ---
 ## Ferramentas
@@ -181,16 +196,19 @@ Fonte: [Acesse aqui](http://www.anggulo.com.br/p+l/2017/palestras/Coronel%20Jose
 
 ## Resultados
 
+[Portaria Intersecretarial SMSU e SVMA - 26/06/2014](http://legislacao.prefeitura.sp.gov.br/leis/portaria-intersecretarial-secretaria-municipal-de-seguranca-urbana-1-de-27-de-junho-de-2014/consolidado) - Estrutura e organiza o Serviço de Resgate de Animais Silvestres vitimados na Cidade de São Paulo.
+
 .pull-left[
-```{r}
+```{r, out.width="90%"}
 knitr::include_graphics("img/equipe-resgate.png")
 ```
 
 
 ]
 .pull-right[
+<br>
 ```{r}
-knitr::include_graphics("img/viatura.jpeg")
+knitr::include_graphics("img/viatura.png")
 ```
 ]
 
@@ -342,6 +360,172 @@ knitr::include_graphics("https://beatrizmilz.github.io/slidesR/rladies/img/1meet
 
 
 ---
+## R-Ladies 
+
+.pull-left[
+- R-Ladies é uma organização mundial cuja missão é promover a diversidade de gênero na comunidade da linguagem R.
+
+- A R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todas as pessoas partcicipantes, desta forma, não é tolerada nenhuma forma de assédio. Para assegurar isso, temos um [código de conduta](https://github.com/rladies/.github/blob/master/CODE_OF_CONDUCT.md#portuguese).
+]
+
+.pull-right[
+```{r, out.width="80%", fig.cap="Ilustração por <a href='https://twitter.com/allison_horst'>Allison Horst</a>"}
+knitr::include_graphics("img/community1.jpg")
+```
+
+]
+
+---
+## R-Ladies 
+
+- Existem capítulos em diversas cidades no mundo! [Veja esse dashboard](https://benubah.github.io/r-community-explorer/rladies.html), e também [a lista de capítulos no Brasil](https://r-ladies-sao-paulo.github.io/RLadiesTheme/#5).
+
+```{r, out.width="60%"}
+knitr::include_graphics("img/rladies-set-2021.png")
+```
+
+
+---
+## Aprendendo mais R...
+
+.pull-left[
+- Através da R-Ladies, recebi uma bolsa de diversidade de gênero para participar de um curso sobre [introdução ao R](https://curso-r.com/cursos/r4ds-1/), da Curso-R.
+
+- Foi muito bom! Aprendi muita coisa em muito tempo.
+
+- Maior dica: pratique com algum exemplo que seja interessante para você.
+
+```{r, out.width="60%"}
+knitr::include_graphics("img/cursor.png")
+```
+]
+
+.pull-right[
+- [Curso-R](https://curso-r.com/) - materiais em português e gratuitos:
+
+  - [Materiais dos cursos](https://curso-r.com/material/) 
+  
+  - [Livro](https://livro.curso-r.com/)
+  
+  - [Blog](https://blog.curso-r.com/posts/2021-03-29-desvendando-erros/)
+  
+  - [Fórum para tirar dúvidas](https://discourse.curso-r.com/)
+  
+  - [Youtube - Lives nas quartas-feiras às 20h](https://www.youtube.com/c/CursoR6)
+  
+  
+
+]
+
+---
+
+## Minha reação nas aulas...
+
+
+```{r, out.width="60%"}
+knitr::include_graphics("https://i.giphy.com/media/w3J7mstYCISqs/giphy.webp")
+```
+
+---
+
+## Deste ponto em diante...
+
+
+```{r, out.width="60%"}
+knitr::include_graphics("https://i.giphy.com/media/aNqEFrYVnsS52/giphy.webp")
+```
+
+
+---
+class: inverse, middle, center
+
+# Doutorado (em andamento) <BR> 2019 - atualmente
+
+
+---
+
+
+
+.pull-left[
+
+## Ferramentas
+
+```{r, out.width="60%"}
+knitr::include_graphics(c("img/rstats.jpeg", "img/rstudio.png"))
+```
+]
+
+.pull-right[
+```{r, out.width="55%"}
+knitr::include_graphics(c( "img/tidyverse.png", "img/sf.gif"))
+```
+]
+
+---
+
+## Reprodutibilidade
+
+```{r, out.width="55%", fig.cap="Ilustração por <a href='https://twitter.com/allison_horst'>Allison Horst</a>"}
+knitr::include_graphics("https://github.com/allisonhorst/stats-illustrations/raw/master/rstats-artwork/reproducibility_court.png")
+```
+
+---
+## Exemplo: pacote Mananciais
+
+https://beatrizmilz.github.io/mananciais/
+
+---
+
+
+
+```{r echo=TRUE}
+# Carregar pacotes
+library(ggplot2) # pacote para criar gráficos
+library(dplyr) # pacote para manipulação de dados
+library(magrittr, include.only = "%>%") # carregar o pipe
+
+# Buscar a base de dados
+mananciais <- mananciais::dados_mananciais() 
+
+tabela <- mananciais %>%
+  head(7) %>% 
+  # select(data:volume_porcentagem) %>% 
+  gt::gt()
+```
+
+---
+class: middle, center
+
+```{r echo=FALSE}
+tabela
+```
+
+---
+
+```{r plot-label-fc, echo=TRUE,  fig.show="hide", fig.width=9, fig.height=5}
+mananciais %>%
+  filter(sistema == "Cantareira") %>%
+  ggplot() +
+  geom_line(aes(x = data, y = volume_porcentagem)) +
+  scale_y_continuous(breaks = c(-25, 0, 25, 50, 75, 100)) +
+  facet_wrap(~ sistema, ncol = 2) +
+  theme_bw() +
+  labs(x = "Ano", y = "Volume operacional (%)") +
+  ylim(-25, 100)
+```
+
+
+---
+
+
+
+![](`r knitr::fig_chunk("plot-label-fc", "png")`)
+
+
+
+
+---
+
 
 ### R: Comunidades, eventos, pacotes, livros..
 <center>
