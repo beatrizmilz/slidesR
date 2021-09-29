@@ -95,6 +95,13 @@ knitr::include_graphics("img/ufv.jpeg")
 
 ]
 
+
+
+---
+class: inverse, middle, center
+
+# Parte 1: Trajetória até aprender R...
+
 ---
 class: inverse, middle, center
 
@@ -439,6 +446,12 @@ knitr::include_graphics("https://i.giphy.com/media/aNqEFrYVnsS52/giphy.webp")
 ---
 class: inverse, middle, center
 
+# Parte 2: Como aprender R tem sido importante?
+
+
+---
+class: inverse, middle, center
+
 # Doutorado (em andamento) <BR> 2019 - atualmente
 
 
@@ -472,7 +485,20 @@ knitr::include_graphics("https://github.com/allisonhorst/stats-illustrations/raw
 ---
 ## Exemplo: pacote Mananciais
 
-https://beatrizmilz.github.io/mananciais/
+
+- Preciso dos dados do Portal de Mananciais da SABESP"https://mananciais.sabesp.com.br/Situacao
+
+
+- Desenvolvi o pacote mananciais para facilitar o acesso à esses dados: https://beatrizmilz.github.io/mananciais/
+
+- Existe uma apresentação específica nesse tema: https://beatrizmilz.com/talk/2021-ser-uff/
+
+---
+
+```{r, out.width="80%"}
+xaringanExtra::embed_xaringan("https://beatrizmilz.github.io/mananciais/", max_width = "100%")
+```
+
 
 ---
 
@@ -520,6 +546,197 @@ mananciais %>%
 
 
 ![](`r knitr::fig_chunk("plot-label-fc", "png")`)
+
+
+
+---
+class: inverse, middle, center
+
+# Outras coisas muito legais!
+
+
+
+---
+class: center, middle
+background-image: url(img/brasileiros.png)
+background-position: right
+background-size: contain
+class: middle
+
+
+.pull-left[
+## Eventos:
+
+- useR 2019 
+
+- Toulouse, França
+
+<i class="fab fa-twitter"></i> [Laurie Baker](https://twitter.com/llbaker1707)
+
+
+
+<i class="fab fa-twitter"></i> [Angélica Custódio](https://twitter.com/angcustodio)
+
+<i class="fab fa-twitter"></i> [Julio Trecenti](https://twitter.com/jtrecenti)
+
+<i class="fab fa-twitter"></i> [Daniel Falbel](https://twitter.com/dfalbel)
+
+<i class="fab fa-twitter"></i> [William Amorim](https://twitter.com/wamorim_)
+
+
+
+
+]
+
+
+
+
+
+---
+
+## Eventos - Tidy dev day
+
+```{r echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics("img/tidydevday.jpeg")
+```
+
+https://blog.curso-r.com/posts/2019-08-12-tidydevday/
+
+
+
+
+
+---
+
+## Eventos - Tidy dev day
+
+```{r echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics("https://i.imgur.com/Oz6x6GY.jpg")
+```
+
+https://blog.curso-r.com/posts/2019-08-12-tidydevday/
+
+
+
+---
+
+## Eventos - Tidy dev day
+
+```{r echo=FALSE, out.width="60%", fig.align="center"}
+knitr::include_graphics("img/pr-dplyr.png")
+```
+
+https://blog.curso-r.com/posts/2019-08-12-tidydevday/
+
+---
+
+## Tidy dev day
+
+```{r echo=FALSE, out.width="80%", fig.align="center"}
+knitr::include_graphics("img/pr-dplyr-rundel.png")
+```
+
+
+https://github.com/tidyverse/dplyr/pull/4476
+
+
+
+
+---
+
+
+
+
+## Compartilhar...
+
+```{r echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics("img/bea.jpeg")
+```
+
+---
+
+## Conectar com a comunidade de R na América Latina
+
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RMR0vye6Kms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<BR>
+
+
+</center>
+
+https://www.youtube.com/watch?v=RMR0vye6Kms
+
+
+
+
+---
+
+
+
+
+## Estudar Espanhol!
+
+
+
+## LatinR
+
+https://latin-r.com/
+
+```{r echo=FALSE, out.width="30%", fig.align="center"}
+knitr::include_graphics("https://pbs.twimg.com/profile_images/946491642084773888/1bxpJg-v_400x400.jpg")
+
+```
+
+---
+
+.pull-left[
+## Pacote Dados
+
+```{r echo=FALSE, out.width="50%", fig.align="center"}
+knitr::include_graphics("https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png")
+
+```
+
+https://cienciadedatos.github.io/dados/
+
+]
+
+.pull-right[
+```{r echo=FALSE, out.width="50%"}
+knitr::include_graphics("img/autoras-dados.png")
+```
+
+]
+
+---
+## satRday São Paulo
+
+```{r echo=FALSE, out.width="70%", fig.align='center'}
+knitr::include_graphics("img/satrdaysp.png")
+```
+
+https://saopaulo2019.satrdays.org/
+
+---
+## satRday São Paulo
+
+.pull-left[
+```{r echo=FALSE, out.width="100%", fig.align='center'}
+knitr::include_graphics("img/satrdaysp-org1.png")
+```
+]
+
+.pull-right[
+```{r echo=FALSE, out.width="100%", fig.align='center'}
+knitr::include_graphics("img/satrdaysp-org2.png")
+```
+]
+
+https://saopaulo2019.satrdays.org/
+
+
 
 
 
