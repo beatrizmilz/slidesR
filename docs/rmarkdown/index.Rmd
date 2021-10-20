@@ -1,33 +1,23 @@
 ---
-title: "Pacote `rmarkdown` - Parte I"
-subtitle: "<center><img src= 'img/rmarkdown_wizards.png' width = '60%' alt=''></br></center> <center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"
+title: "Comunicando os resultados de projetos em Ciência de Dados: Conhecendo o R Markdown"
+subtitle: "<center><img src= 'img/rmarkdown_wizards.png' style='float:left;height:300px;'></br></center> <center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"
 author: "Beatriz Milz"
-date: "2º semestre/2020 - Atualizado em `r format(Sys.Date(), format='%d de %B de %Y')`"
+date: "2º semestre/2021 <br> Atualizado em `r format(Sys.Date(), format='%d/%m/%Y')`"
 encoding: "UTF-8"
 output:
   xaringan::moon_reader:
     lib_dir: libs
     chakra: libs/remark-latest.min.js
-    css: [default, "css/metropolis.css", "css/metropolis-fonts.css", "css/footer.css"]
-    includes:
-      #after_body: html/insert-logo.html
+    css: xaringan-themer.css
     nature:
+      slideNumberFormat: "<a href='#sumario'>Temas de hoje</a> - <a href='https://beatrizmilz.com/talk/'><i class='fas fa-external-link-alt'></i> Outras apresentações</a> - %current%/%total%"      
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      ratio: 16:9
       beforeInit: "https://platform.twitter.com/widgets.js"
 # Para exportar em PDF: pagedown::chrome_print("index.html", timeout = 600)
 # knit: pagedown::chrome_print
----
-layout: true
-  
-<div class="my-footer"><span>
-
-
-<a href="https://beatrizmilz.com">Beatriz Milz</a> - Email: <a href="mailto:beatriz.milz@usp.br">beatriz.milz@usp.br</a>
-
-
-</span></div> 
 ---
 class:
 
@@ -39,134 +29,387 @@ class:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-
-knitr::opts_chunk$set(fig.align = "center",
-                      message = FALSE,
-                      echo=FALSE,
-                      warning = FALSE)
+knitr::opts_chunk$set(
+  fig.width = 9,
+  fig.height = 3.5,
+  fig.retina = 3,
+  out.width = "100%",
+  cache = TRUE,
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  hiline = TRUE,
+  fig.align = "center"
+)
 
 library(tidyverse)
 
 ```
 
-# Beatriz Milz
-- Doutoranda no Programa de Pós-Graduação em Ciência Ambiental (PROCAM) - Instituto de Energia e Ambiente - Universidade de São Paulo
+```{css}
+/* custom.css */
+.left-code {
+  color: #777;
+  width: 38%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 60%;
+  float: right;
+  padding-left: 1%;
+}
 
-  - Bolsista FAPESP - Processo nº 2018/23771-6 
+a, a > code {
+    text-decoration: underline;
+}
+
+
+```
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#6469ab",
+  title_slide_background_color = "#ffffff",
+  title_slide_text_color = "#33456e",
+  inverse_text_color = "#826b37",
+  inverse_header_color = "#33456e",
+  inverse_background_color = "#FFFFFF",
+  secondary_color = "#EDBBC8",
+  background_color = "#f7f7f7",
+  code_inline_background_color = "#faf0f4",
+ 
   
-  - Projeto Temático FAPESP Macroamb - Processo nº 2015/03804-9 
+  header_font_google = google_font("Josefin Slab", "600"),
+  text_font_google   = google_font("Work Sans", "300", "300i"),
+  code_font_google   = google_font("Fira Code"),
+  base_font_size = "25px",
+  extra_css = list(".remark-code-line" = list("background-color" = "#faf0f4"))
+)
+# Cores AI
+#9d8cf0, #6469ab, #33456e
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "img/logo_ai.jpeg", 
+    link_url = "https://linktr.ee/ai_inclusive",
+  exclude_class = c("hide-logo", "title-slide", "inverse")
+)
+```
+
+
+.pull-left[
+
+## Beatriz Milz
+
+- 2019 - * - Doutoranda em Ciência Ambiental - PROCAM/IEE/USP
+
+- 2016-2018 - Mestrado em Ciências - Programa de Pós-Graduação em Análise Ambiental Integrada - UNIFESP
+
+- 2012-2015 - Bacharelado em Gestão Ambiental - EACH/USP 
+]
+
+.pull-right[
+<BR>
+<center>
+<img src="https://avatars.githubusercontent.com/u/42153618?v=4" alt="Avatar" style="border-radius: 100%; max-width: 100%; "></center>
+
+]
+
+
+---
+class: inverse
+
+## R: Comunidades, eventos, pacotes, livros..
+<center>
+
+<a href='https://education.rstudio.com/trainers/'>  <img src='https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/Hex/CertifiedRstudioTrainer.png' width="150px"></a>
+
+
+<a href='https://rladies.org/'>  <img src='https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/Hex/1hexlogorladies.jpeg' width="150px"></a>
+
+<a href='https://curso-r.com/'>  <img src="https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/Hex/curso-r-azul.jpg" width="150px"></a>
+
+<a href='https://livro.curso-r.com/'>  <img src='https://curso-r.com/images/produtos/hex-livro.png' width="150px"></a>
+
+
+
+<a href='https://saopaulo2019.satrdays.org/'>  <img src='https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/Hex/2satrdaysp.png' width="150px"></a>
+<a href='https://latin-r.com/'>  <img src='https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/Hex/4LatinR_hex_violeta-cut.jpg' width="150px"></a>
+<a href='https://carpentries.org/'>  <img src='https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/Hex/carpentries.png' width="150px"></a>
+<a href='https://user2021.r-project.org/'>  <img src='https://user2021.r-project.org/img/artwork/user-logo-color.png' width="150px"></a>
+
+<a href='https://cienciadedatos.github.io/dados/'>  <img src='https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png' width="150px"></a>
+<a href='https://beatrizmilz.github.io/mananciais/'>  <img src='https://beatrizmilz.github.io/mananciais/reference/figures/hexlogo.png' width="150px"></a>
+</center>
+
+
+---
+name: sumario
+## Temas de hoje...
+
+
+- [O ciclo de ciência de dados](#ciclo_ds)
+
+- [Pacote R Markdown](#pacote_rmarkdown)
+
+- [Exemplos de produtos feitos com R Markdown](#outros_pacotes_rmd)
+
+- [Criando um arquivo R Markdown](#criando_rmd)
+
+- [Relembrando o Markdown](#markdown)
+
+- [Adicionando conteúdo no arquivo .Rmd](#adicionando_conteudo_rmd)
+
+- [Coisas legais com R Markdown](#coisaslegais) (com live coding!)
+
   
-```{r echo=FALSE, out.width="60%"}
-knitr::include_graphics("../img/logos_bia.png")
-```
+---
+name: ciclo_ds
+class: middle, center, inverse
 
-- Equipe da Secretaria Executiva  Editorial - [Revista Ambiente & Sociedade](http://scielo.br/asoc)
-
-- Co-organizadora - [R-Ladies São Paulo](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) `r emo::ji("purple_heart")`
-
-- [Currículo disponível neste link](https://beatrizmilz.github.io/resume/index.pdf)
-
-- Anteriormente: Mestre em Ciências - UNIFESP; Bacharel em Gestão Ambiental - EACH/USP
+# O ciclo de Ciência de Dados
 
 ---
 
-class: 
+## Ciclo da ciência de dados
 
-# Pré-requisitos
 
-## R
-- Download em: https://cran.r-project.org/
-
-## RStudio
-- Download em: https://www.rstudio.com/products/rstudio/download/
-
-- Também existe a opção de utilizar o RStudio Cloud: https://rstudio.cloud/
-
----
-class: 
-
-# O ciclo da ciência de dados
-
-```{r, out.width="90%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> - Adaptado de WICKHAM & GROLEMUND, 2017</b></center>"}
-knitr::include_graphics("../img/Horst/data-analysis.jpg")
+```{r, out.width="65%"}
+knitr::include_graphics("https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/environmental-data-science-r4ds-general.png")
 ```
 
 
+Fonte: Conceito do ciclo de ciência de dados apresentado por [Hadley Wickham no livro R for Data Science](https://r4ds.had.co.nz/introduction.html), ilustração por [Allison Horst](https://github.com/allisonhorst).
+
+
 ---
-class: 
 
-# Pacote rmarkdown
+## Ciclo da ciência de dados
 
-```{r, out.width="25%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
-knitr::include_graphics("../img/rlogos/hex-rmarkdown.png")
+
+```{r, out.width="60%"}
+knitr::include_graphics("https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/ciclo-ciencia-de-dados.png")
 ```
 
-- Mantido pela [RStudio](https://rstudio.com/)
 
-- extensão `.Rmd`
+Fonte: Conceito do ciclo de ciência de dados apresentado por [Hadley Wickham no livro R for Data Science](https://r4ds.had.co.nz/introduction.html), figura elaborada pela equipe da [Curso-R](https://curso-r.com/).
 
-- Possibilita a utilização de códigos `R`, `Markdown`, `HTML` e outros.
+
 
 ---
-class:  
 
-# Pacote rmarkdown
+## Tidyverse
 
-```{r, out.width="50%", fig.cap="<center><b>Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
-knitr::include_graphics("../img/rmarkdown/markdown.png")
+
+.pull-left[
+
+
+```{r, out.width="70%"}
+knitr::include_graphics("https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/tidyverse-logo.png")
+```
+
+
+Fonte: logo do pacote [Tidyverse](https://www.tidyverse.org/).
+
+]
+
+.pull-right[
+
+
+```{r, out.width="80%"}
+knitr::include_graphics("https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/tidyverse_celestial.png")
+```
+
+
+Fonte: Ilustração por [Allison Horst](https://github.com/allisonhorst).
+
+]
+
+
+
+
+
+---
+
+## Ciclo da ciência de dados com R
+
+
+```{r, out.width="60%"}
+knitr::include_graphics("https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/ciclo-ciencia-de-dados-pacotes.png")
+```
+
+
+Fonte: Conceito do ciclo de ciência de dados apresentado por [Hadley Wickham no livro R for Data Science](https://r4ds.had.co.nz/introduction.html), figura elaborada pela equipe da [Curso-R](https://curso-r.com/).
+
+---
+name: pacote_rmarkdown
+class: inverse, middle, center
+
+# Pacote R Markdown
+
+---
+
+
+## Pacote R Markdown
+
+.pull-left[
+- Criado e mantido pela [RStudio](https://rstudio.com/)
+
+- Princípio: arquivos onde escrevemos textos e marcamos com `markdown`, mas também podemos adicionar códigos que são executados.
+
+- Extensão `.Rmd`
+
+- Possibilita a utilização de códigos `R`, `Python`, `Markdown`, `HTML`, `CSS`, `SQL`, e outros em um único arquivo.
+
+- Ideia similar ao Jupiter Notebook.
+
+]
+
+.pull-right[
+```{r, out.width="70%", fig.cap="<center><b>Logo: <a href='https://rmarkdown.rstudio.com'>Pacote rmarkdown</a></b></center>"}
+knitr::include_graphics("https://beatrizmilz.github.io/python-brasil-2021-reticulate/img/hex-rmarkdown.png")
+```
+]
+
+---
+class:  middle
+
+```{r out.width="60%", fig.cap="Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a>"}
+knitr::include_graphics("https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/rmarkdown_rockstar.png")
 ```
 
 ---
-class: 
+name: outros_pacotes_rmd
+class: middle, center, inverse
 
-# RMarkdown Cheatsheet
+# Exemplos de produtos feitos com R Markdown
 
-- **Online**: [https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+---
 
-- **No RStudio**: No RStudio > Help > Cheatsheets > RMarkdown CheatCheet
 
-- Outras Cheatsheets: [RStudio Resources](https://www.rstudio.com/resources/cheatsheets/)
+## Pacote R Markdown
+
+.pull-left[
+- A reprodutibilidade é algo importante para o R Markdown.
+
+-  A comunidade de R, e a equipe da RStudio, desenvolveram outros pacotes que integram bem com R Markdown para  gerar diversos produtos de análise de dados diferentes, com arquivos .Rmd. 
+
+
+## Alguns exemplos:
+
+(apenas alguns mesmo pois tem muita coisa além disso!)
+]
+
+.pull-right[
+```{r, out.width="80%", fig.cap="<center><b>Fonte: <a href='https://rmarkdown.rstudio.com'>Pacote `rmarkdown`</a></b></center>"}
+knitr::include_graphics("https://beatrizmilz.github.io/slidesR/img/rmarkdown/markdown.png")
+```
+]
 
 
 ---
-class: 
 
+### Apresentações com o pacote [xaringan](https://slides.yihui.org/xaringan/)
 
-# O que podemos adicionar no documento? 
+- Exemplo: Essa apresentação! [E muitas outras que fiz](https://beatrizmilz.com/talk/), como a [abaixo](https://beatrizmilz.github.io/slidesR/xaringan/09-2021-rday.html#1): 
 
-- Texto
+```{r}
+xaringanExtra::embed_xaringan("https://beatrizmilz.github.io/slidesR/xaringan/09-2021-rday.html#1", max_width = "70%")
+```
 
-- Markdown
+---
 
-- Links
+### Livros com o pacote [bookdown](https://bookdown.org/home/)
 
-- Código R
+- Exemplo: [Livro Ciência de Dados em R](https://livro.curso-r.com/) da [Curso-R](https://curso-r.com/)
 
-- Tabelas
+```{r}
+xaringanExtra::embed_xaringan("https://livro.curso-r.com/", max_width = "70%")
+```
 
-- Gráficos
+---
 
-- Fórmulas
+### Blogs com o pacote [blogdown](https://pkgs.rstudio.com/blogdown/)
 
-- Imagens e Gifs
+- Exemplo: [meu blog](https://beatrizmilz.com/blog/2021-python-serie/semana-1-parte-1/)
 
-- Tweets
-
-- Emojis `r emo::ji("smile")`
-
-- Videos do youtube `r emo::ji("movie_camera")`
-
-
-- Qualquer resultado de código de R :) Visualizações, gráficos, tabelas, etc.
-
+```{r}
+xaringanExtra::embed_xaringan("https://beatrizmilz.com/blog/2021-python-serie/semana-1-parte-1/", max_width = "70%")
+```
 
 
 ---
-class:  
 
-# Criando a estrutura
+### Blogs com o pacote [blogdown](https://pkgs.rstudio.com/blogdown/)
 
-- Criar um projeto no RStudio. Facilita muito para organizar os arquivos, posteriormente sincronizar com o GitHub, entre outros.Neste post da [Curso-R](https://www.curso-r.com), tem mais informações sobre [RProj e diretórios](https://www.curso-r.com/blog/2019-07-16-zen-do-r-3/).
+- Exemplo: [blog da Curso-R](https://blog.curso-r.com/posts/2021-06-23-dnd/)
+
+```{r}
+xaringanExtra::embed_xaringan("https://blog.curso-r.com/posts/2021-06-23-dnd/", max_width = "70%")
+```
+
+---
+
+## Produtos em PDF com o pacote [pagedown](https://github.com/rstudio/pagedown)
+
+
+
+Exemplo: o [relatório](https://abjur.github.io/obsRJRJ/relatorio/obs_rjrj_abj.pdf) do [Observatório da insolvência: Rio de Janeiro](https://abj.org.br/cases/obsrjrj/), feito pela [ABJ](https://abj.org.br/) .footnote[ABJ: Associação Brasileira de Jurimetria]
+
+
+```{r}
+xaringanExtra::embed_xaringan("https://abjur.github.io/obsRJRJ/relatorio/obs_rjrj_abj.pdf", max_width = "70%")
+```
+
+
+---
+name: criando_rmd
+class: middle, center, inverse
+
+# Criando um arquivo R Markdown
+
+---
+
+
+.pull-left[
+## O que utilizaremos?
+
+- **R** - [Download aqui](https://cran.r-project.org/)
+
+- **RStudio** - [Download aqui](https://www.rstudio.com/products/rstudio/download/)
+
+
+- Também existe a opção de utilizar o **RStudio Cloud**: https://rstudio.cloud/
+]
+
+.pull-right[
+### Pacotes
+
+```r
+install.packages("knitr")
+install.packages("rmarkdown")
+```
+
+### Pacotes usados nos exemplos
+
+```r
+install.packages("xaringan")
+install.packages("pagedown")
+install.packages("reticulate")
+install.packages("tidyverse")
+```
+]
+
+---
+
+
+## Criando a estrutura
+
+- Criar um projeto no RStudio. Facilita muito para organizar os arquivos, posteriormente sincronizar com o GitHub, entre outros. Neste capítulo do livro Zen do R, da [Curso-R](https://www.curso-r.com), tem mais informações sobre [RProj e diretórios](https://curso-r.github.io/zen-do-r/rproj-dir.html).
 
   - File > New Project > New Directory > New Project
   
@@ -175,80 +418,69 @@ class:
   
 
 ---
-class:  
- 
-# Criar um arquivo rmarkdown
 
-  - File > New File > R Markdown... ok :)
+ 
+## Criar um arquivo rmarkdown
+
+- `File > New File > R Markdown`... ok :)
   
   
-- __Atualizar imagem__
+-  Pacotes também oferecem templates (`File > New File > R Markdown > From template`).
+
   
 ---
-class:  
-
-# Estrutura do arquivo rmarkdown
 
 
-- yaml - Metadados do documento
+## Estrutura do arquivo rmarkdown
 
-- Code chunk - códigos R (porém pode receber outros tipos, como SQL e Python)
 
-```{r, out.width="90%"}
-knitr::include_graphics("../img/rmarkdown/rmd-estrutura.png")
+
+
+```{r, out.width="70%"}
+knitr::include_graphics("https://beatrizmilz.github.io/slidesR/img/rmarkdown/rmd-estrutura.png")
 ```
 
+- Code chunks - Campos de códigos R (porém pode receber outros tipos, como SQL e Python)
 
 ---
-class:  
 
-# Compilar o arquivo
+
+## Compilar o arquivo
 
 - Botão Knit, ou usando o atalho: `Ctrl + Shift + K`
 
+- Boa prática: compilar com frequência. 
+
 ```{r, out.width="90%"}
-knitr::include_graphics("../img/rmarkdown/knit-button.png")
+knitr::include_graphics("https://beatrizmilz.github.io/slidesR/img/rmarkdown/knit-button.png")
 ```
 
 ---
-class:
 
 
-# Alterar yaml
+## Alterar YAML
 
-- O `yaml` possui informações importantes para a apresentação, como o título, subtítulo, autor, instituição, data, etc.
+- O `YAML` possui informações importantes para a apresentação, como o título, subtítulo, autor, instituição, data, etc.
 
 - __output:__ formato (Ex: html_document, pdf_document, etc). 
 - Cuidado com a identação!
 
-```{r}
+```{r, out.width="40%"}
 knitr::include_graphics("https://media0.giphy.com/media/xT9IgIc0lryrxvqVGM/giphy-downsized.gif")
 ``` 
 
 
+
+---
+name: markdown
+
+class: middle, center, inverse
+
+# Relembrando o Markdown
 ---
 class:
 
-# ERRO NO KNITR!
-
-- Boa prática: compilar com frequência. 
-
-- É bem comum dar erro ao compilar o arquivo pois **qualquer** código errado causa isso. Algumas coisas pra se observar:
-
-- **yaml header** - se algo estiver errado, vai dar erro ao compilar. 
-Muito cuidado com a identação!
-
-- **Código nos chunks** - teste o _Run All Chunks_ e veja se aparece erro em algum chunk específico.
-Se descobrir, tente verificar o que há de errado no código (pode ser a falta de um parênteses, vírgula, entre outros).
-
-```{r echo=FALSE, out.width="20%"}
-knitr::include_graphics("https://media.giphy.com/media/j9GASQ5ocrIRicnmyq/giphy.gif")
-```
-
----
-class:
-
-# Markdown
+## Markdown
 
 - O RMarkdown possibilita a utilização da linguagem de marcação simples Markdown. Essa linguagem de marcação foi elaborada para ser fácil de ler e  fácil de escrever.
 
@@ -258,7 +490,7 @@ class:
 ---
 class:
 
-# Elementos básicos 
+## Elementos básicos 
 
 `**negrito**` - **negrito**
 
@@ -269,7 +501,7 @@ class:
 ---
 class:
 
-# Títulos
+## Títulos
 
 
 
@@ -286,8 +518,8 @@ class:
 ---
 class:
 
-# Listas
-
+## Listas
+.pull-left[
 Você pode fazer uma lista escrevendo com hifens ou asteriscos, como a seguir:
 
 `* Maçã`
@@ -303,17 +535,21 @@ ou desta forma:
 `- Banana`
 
 `- Uva`
+]
 
+.pull-right[
 Cada um vai aparecer como:
 
 - Maçã
 - Banana
 - Uva
+]
+
 
 ---
 class:
 
-# Fazendo uma lista enumerada
+## Fazendo uma lista enumerada
 Você pode fazer uma lista numerada usando somente números. Você pode usar o mesmo número quantas vezes quiser: 
 
 `1. Maçã`
@@ -329,10 +565,9 @@ Isso irá aparecer como:
 1. Uva
 
 ---
-class:
 
 
-# Outros elementos em markdown
+## Outros elementos em markdown
 
 - Você pode fazer um hiperlink dessa forma: `[texto para mostrar](http://the-web-page.com)`.
 
@@ -342,46 +577,48 @@ class:
 
 
 ---
-class: 
 
-# Equações
+## Equações
 
 
-## Equação centralizada
+### Equação centralizada
 
 $$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
 
-## Equação junto ao texto
+### Equação junto ao texto
 
 Ou também na linha $y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$, junto ao texto!
 
 **Código Markdown:**
 
 
-```{r, echo=TRUE, eval=FALSE}
+```md
 $$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
 ```
 
 
-$$y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon$$
+---
+name: adicionando_conteudo_rmd
+class: middle, center, inverse
+
+# Adicionando conteúdo no arquivo .Rmd
 
 ---
-class:
 
-# Chunks de Código R
+## Chunks de Código R
 
 Os chunks são campos onde podemos inserir código de R (ou Python, SQL,  Bash...) em um arquivo RMarkdown. Existe um atalho do teclado para criar chunks no RStudio:  `Ctrl + ALt + I`. Também é possível criar um chunk clicando no seguinte botão do RStudio:
 
 
 ```{r echo=FALSE, out.width="90%"}
-knitr::include_graphics("../img/rmarkdown/create-chunck.png")
+knitr::include_graphics("https://beatrizmilz.github.io/slidesR/img/rmarkdown/create-chunck.png")
 ```
 
 ---
 
 class:
 
-# Exemplo:
+## Exemplo:
 
 ```{r echo=TRUE}
 summary(mtcars)
@@ -390,7 +627,7 @@ summary(mtcars)
 ---
 class:
 
-# Exemplo:
+## Exemplo:
 
 .left-code[
 ```{r plot-exemplo-ggplot2, echo=TRUE, fig.show="hide", out.width="95%", echo=TRUE}
@@ -411,7 +648,7 @@ ggplot(mtcars) +
 ---
 class:
 
-# Opções de Chunk
+## Opções de Chunk
 
 - Há uma variedade de opções de chunk que podem afetar como os chunks de código são compilados. Exemplos: 
 
@@ -429,10 +666,10 @@ class:
 ---
 class:
 
-# Códigos em R - Opções de chunk
+## Códigos em R - Opções de chunk
 
 .pull-left[
-### Código + Resultado
+#### Código + Resultado
 - `echo=TRUE`
 ```{r echo=TRUE}
 nrow(mtcars)
@@ -441,13 +678,13 @@ nrow(mtcars)
 
 .pull-right[
 
-### Apenas código
+#### Apenas código
 - `echo=TRUE, eval=FALSE`
 ```{r echo=TRUE, eval=FALSE}
 nrow(mtcars)
 ```
 
-### Apenas resultado
+#### Apenas resultado
 - `echo=FALSE`
 ```{r echo=FALSE}
 nrow(mtcars)
@@ -456,26 +693,34 @@ nrow(mtcars)
 ]
 
 ---
-class:
+class: 
 
-# Código inline
+## Dicas - RStudio
+
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("img/rmd-dicas.png")
+```
+---
+
+
+## Código inline
 
 A base mtcars possui `r nrow(mtcars)` carros.
 
 **Código Markdown:**
 
-```{r echo=TRUE}
-#   A base mtcars possui `r nrow(mtcars)` carros.
+```{r,  eval=F, echo=T}
+A base mtcars possui `r nrow(mtcars)` carros.
 ```
 
 
 ---
-class:
 
-# Opções globais de Chunk
+## Opções globais de Chunk
 
 As opções globais de chunk são opções de chunk que são válidas para o documento inteiro. Algumas opções são úteis, como `fig.align = "center"`.
-Para configurar as opções globais de chunk, modifique o código abaixo e insira após o código `yaml` (retire os `#` no início de cada linha):
+Para configurar as opções globais de chunk, modifique o código abaixo e insira após o código `YAML` (retire os `#` no início de cada linha):
 
 - Ex:
   - Configurações do chunk:
@@ -486,28 +731,28 @@ Para configurar as opções globais de chunk, modifique o código abaixo e insir
 
 
 ---
-class:
 
-# Adicionando imagens usando o knitr
+
+## Adicionando imagens usando o knitr
 
 Função: `knitr::include_graphics()`
 
 Exemplo:
-```{r  out.width = "50%"}
+```{r  out.width = "30%"}
 knitr::include_graphics("https://www.r-project.org/Rlogo.png")
 ```
 
 ---
 class:
 
-# Adicionando imagens usando knitr
+## Adicionando imagens usando knitr
 
-## Opções de Chunk 
+### Opções de Chunk 
 
-- `out.width = "50%"` - tamanho da imagem
+- `out.width = "30%"` - tamanho da imagem
 
 
-```{r echo=FALSE, out.width = "50%"}
+```{r echo=FALSE, out.width = "30%"}
 knitr::include_graphics("https://www.r-project.org/Rlogo.png")
 ```
 
@@ -516,79 +761,80 @@ knitr::include_graphics("https://www.r-project.org/Rlogo.png")
 ---
 class:
 
-# Adicionando imagens usando knitr
+## Adicionando imagens usando knitr
 
-## Opções de Chunk 
+### Opções de Chunk 
 
 - **Alinhamento da figura**
 - `fig.align = 'center', 'default', **'left'**,'right'` 
 
-```{r echo=FALSE,  out.width="20%", fig.align='left'} 
+```{r echo=FALSE,  out.width="10%", fig.align='left'} 
 knitr::include_graphics("https://www.r-project.org/Rlogo.png")
 ```
 
 - `fig.align = 'center', 'default', 'left', **'right' **`
 
-```{r echo=FALSE,  out.width="20%", fig.align='right'}
+```{r echo=FALSE,  out.width="10%", fig.align='right'}
 knitr::include_graphics("https://www.r-project.org/Rlogo.png")
 ```
 
 ---
-class:
 
-# Adicionando imagens usando knitr
 
-## Opções de Chunk 
+## Adicionando imagens usando knitr
+
+### Opções de Chunk 
 
 - Legenda de figura 
 
 - `fig.cap="Logo R"`
 
 
-```{r echo=FALSE,  out.width="50%", fig.cap="R Logo", fig.align='center'}
+```{r echo=FALSE,  out.width="30%", fig.cap="R Logo", fig.align='center'}
 knitr::include_graphics("https://www.r-project.org/Rlogo.png")
 ```
 
 
 
 ---
-class: 
 
-# Tabelas
+### Tabelas em Markdown
 
-## Tabelas em Markdown
+.pull-left[
 
-| Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |
-|------------:|-----------:|------------:|-----------:|:-------|
-|          5.1|         3.5|          1.4|         0.2|setosa  |
-|          4.9|         3.0|          1.4|         0.2|setosa  |
-|          4.7|         3.2|          1.3|         0.2|setosa  |
-|          4.6|         3.1|          1.5|         0.2|setosa  |
-|          5.0|         3.6|          1.4|         0.2|setosa  |
-|          5.4|         3.9|          1.7|         0.4|setosa  |
+- **Resultado:**
 
+
+|Petal.Length|Petal.Width|Species|
+|-----------:|----------:|:------|
+|        1.4|       0.2|setosa  |
+|        1.4|       0.2|setosa  |
+|        1.3|       0.2|setosa  |
+|        1.5|       0.2|setosa  |
+|        1.4|       0.2|setosa  |
+|        1.7|       0.4|setosa  |
+]
+
+.pull-right[
 - **Código Markdown**:
 
 
-```{r echo=TRUE}
-# | Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |
-# |------------:|-----------:|------------:|-----------:|:-------|
-# |          5.1|         3.5|          1.4|         0.2|setosa  |
-# |          4.9|         3.0|          1.4|         0.2|setosa  |
-# |          4.7|         3.2|          1.3|         0.2|setosa  |
-# |          4.6|         3.1|          1.5|         0.2|setosa  |
-# |          5.0|         3.6|          1.4|         0.2|setosa  |
-# |          5.4|         3.9|          1.7|         0.4|setosa  |
+```{r  eval=F, echo=T}
+| Petal.Length| Petal.Width|Species |
+|------------:|-----------:|:-------|
+|          1.4|         0.2|setosa  |
+|          1.4|         0.2|setosa  |
+|          1.3|         0.2|setosa  |
+|          1.5|         0.2|setosa  |
+|          1.4|         0.2|setosa  |
+|          1.7|         0.4|setosa  |
 ```
 
-
+]
 
 ---
-class: 
 
-# Tabelas
-
-## Tabelas com R
+### Tabelas com R
 
 ```{r echo=TRUE}
 knitr::kable(x = head(iris), format = "html")
@@ -599,107 +845,60 @@ knitr::kable(x = head(iris), format = "html")
 
 
 ---
-class: 
 
-## GIFs
+## ERRO!
 
-```{r echo=TRUE, out.width="60%"}
-knitr::include_graphics("https://media2.giphy.com/media/S857VNxM6HwlZuYXrU/giphy.gif")
+- Boa prática: compilar com frequência. 
+
+- É bem comum dar erro ao compilar o arquivo pois **qualquer** código errado causa isso. Algumas coisas pra se observar:
+
+  - **YAML header** - se algo estiver errado, vai dar erro ao compilar. 
+Muito cuidado com a identação!
+
+  - **Código nos chunks** - teste o _Run All Chunks_ e veja se aparece erro em algum chunk específico.
+Se descobrir, tente verificar o que há de errado no código (pode ser a falta de um parênteses, vírgula, entre outros).
+
+  - Todos os objetos e pacotes usados no seu script precisam estar disponíveis no seu `.Rmd`. Verifique isso :)
+
+```{r echo=FALSE, out.width="10%"}
+knitr::include_graphics("https://media.giphy.com/media/j9GASQ5ocrIRicnmyq/giphy.gif")
 ```
-
-
-- O Addin [giphyr](https://github.com/haozhu233/giphyr) ajuda a procurar Gifs diretamente do RStudio!
-
-```{r echo=TRUE, eval=FALSE}
-devtools::install_github("haozhu233/giphyr")
-```
-
----
-class: 
-
-# Tweets 
-<center><blockquote class="twitter-tweet" data-lang="pt"><p lang="pt" dir="ltr">Sábado passado aconteceu o <a href="https://twitter.com/hashtag/meetup?src=hash&amp;ref_src=twsrc%5Etfw">#meetup</a> de aniversário de 1 ano da <a href="https://twitter.com/hashtag/RLadies?src=hash&amp;ref_src=twsrc%5Etfw">#RLadies</a> São Paulo! O evento aconteceu lá na <a href="https://twitter.com/thoughtworksbr?ref_src=twsrc%5Etfw">@thoughtworksbr</a> , fomos super bem recebidas pela Chris, agradecemos muito pelo espaço e coffe break! Segue algumas fotos: <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/rstatsbr?src=hash&amp;ref_src=twsrc%5Etfw">#rstatsbr</a> <a href="https://t.co/FfW8Et1FVx">pic.twitter.com/FfW8Et1FVx</a></p>&mdash; R-Ladies São Paulo (@RLadiesSaoPaulo) <a href="https://twitter.com/RLadiesSaoPaulo/status/1165359598376771585?ref_src=twsrc%5Etfw">24 de agosto de 2019</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
-
 
 
 
 ---
-class: 
+name: coisas_legais
+class: middle, center, inverse
 
-# Tweets 
-
-- Adicione o seguinte código no `yaml`:
-```{r echo=TRUE, eval=FALSE}
-    # nature:
-    #   beforeInit: "https://platform.twitter.com/widgets.js"
-```
-
-
-- No twitter, copie o código disponível em "Incorporar esse tweet".
-
-
+# Coisas legais com R Markdown
 ---
-Class:
 
-# Emojis
+## Coisas legais com R Markdown
 
-- Para utilizar emojis, instale o pacote:
-```{r echo=TRUE, eval=FALSE}
-devtools::install_github("hadley/emo")
-```
+- Gerar um PDF! - Apenas na versão desktop, não funciona no RStudio Cloud
 
+- Visualizar uma prévia enquanto estamos escrevendo: `xaringan::inf_mr()` - Funciona melhor na versão Desktop
+  
+- RStudio Visual editor 
+  
+- Exemplos mostrados no RStudio Cloud, Código em: https://rstudio.cloud/project/3072545
+  - Adicionar código em Python
+  - Relatórios com parâmetros
 
-- Exemplo:
-```{r echo=TRUE}
-# `r emo::ji("purple_heart")`
-```
-
-`r emo::ji("purple_heart")`
-
-- O addin `ermoji` ajuda a procurar emojis!
-
-```{r echo=TRUE, eval=FALSE}
-devtools::install_github("gadenbuie/ermoji")
-```
-
-
----
-Class:
-
-# Videos do YouTube
-
-- Opção Compartilhar > Incorporar: 
-
-<center><iframe width="720" height="405" src="https://www.youtube.com/embed/sNphW6nBNU8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-
-`r emo::ji("musical_note")` - Cuando Los Ángeles Lloran - Maná
-
-
----
-class: 
-
-# Dicas - RStudio
-
-- __atualizar essa imagem!__
-
-```{r echo=FALSE, out.width="100%"}
-knitr::include_graphics("../img/xaringan/rmd-dicas.png")
-```
+  
 
 
 ---
 class: 
 
 ```{r, out.width="50%", fig.cap="<center><b>Ilustração por Allison Horst - Twitter: <a href='https://twitter.com/allison_horst/'> @allison_horst</a> </b></center>"}
-knitr::include_graphics("../img/Horst/community1.jpg")
+knitr::include_graphics("https://beatrizmilz.github.io/slidesR/img/Horst/community1.jpg")
 ```
 
 
 ---
-class: 
 
-# Referências
+## Referências
 
 - **RMarkdown**:
   - [RMarkdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
@@ -714,43 +913,79 @@ class:
 
   - [Advanced R Markdown](https://slides.yihui.name/2017-rstudio-conf-rmarkdown-Yihui-Xie.html)
 
+---
+
+## Referências
+
+- [Relatórios com parâmetros](https://rmarkdown.rstudio.com/developer_parameterized_reports.html)
+
+
+## Cheatsheets
+
+- **Online**: [https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+- **No RStudio**: No RStudio > Help > Cheatsheets > RMarkdown CheatCheet
+
+- Outras Cheatsheets: [RStudio Resources](https://www.rstudio.com/resources/cheatsheets/)
+
+---
+
+
+## Agradecimentos especiais:
+
+- [AI Inclusive](https://linktr.ee/ai_inclusive) - Gabriela e Fernanda, obrigada pelo convite!
+
+- [R-Ladies](https://linktr.ee/rladies_sp) - Sem essa comunidade, nada disso seria possível :)
+
+- [Yihui Xie](https://github.com/yihui) - Pelo pacotes, livros, blogposts, vídeos 
+
+- [Julio Trecenti](https://github.com/jtrecenti), [Curso-R](https://www.curso-r.com/) e [13 aMostra de Estatística - IME  USP](https://www.ime.usp.br/~amostra/) pelo mini-curso de RMarkdown (em 2018! `r emo::ji("purple_heart")`)
+
+
+
+
+
 
 
 ---
-class:  
+class: center
 
-## Obrigada!
+## Muito obrigada!
+
 .pull-left[
 
-```{r, out.width="100%"}
-knitr::include_graphics("https://media1.giphy.com/media/3oz8xIsloV7zOmt81G/giphy.gif")
+```{r echo=FALSE, fig.align='center', out.width="50%"}
+knitr::include_graphics("https://media.giphy.com/media/M9NbzZjAcxq9jS9LZJ/giphy.gif")
 ```
 
-- **Contato**:
 
-  - Email: <a href="mailto:beatriz.milz@usp.br">beatriz.milz@usp.br</a>
-  - Webpage: https://beatrizmilz.com
-  - Github: <a href="http://github.com/beatrizmilz">@beatrizmilz</a>
-  - Twitter: <a href="http://twitter.com/beatrizmilz">@BeaMilz</a> 
-  - Linkedin: <a href="https://www.linkedin.com/in/beatrizmilz">Beatriz Milz</a>
+Slides criados usando os pacotes em R  📦 :
 
+[**xaringan**](https://github.com/yihui/xaringan)<br>
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
 
-- Apresentação feita com [Xaringan](https://github.com/yihui/xaringan) e o tema Metropolis modificado.
-
+O chakra vem da biblioteca javascript [remark.js](https://remarkjs.com), e os pacotes  [**knitr**](http://yihui.name/knitr), e [R Markdown](https://rmarkdown.rstudio.com).
 ]
-
 
 .pull-right[
-**Agradecimentos especiais**:
-- [R-Ladies](https://www.meetup.com/pt-BR/R-Ladies-Sao-Paulo) - Sem essa comunidade, nada disso seria possível :)
-- [Yihui Xie](https://github.com/yihui) - Pelo pacotes, livros, blogposts, vídeos 
-- [Bruna Wundervald](http://brunaw.com/), [Haydee Svab](https://br.linkedin.com/in/hsvab), Mariana Guilardi - Por ajudar nas apresentações anteriores sobre xaringan (e pelas sugestões!)
-- [Julio Trecenti](https://github.com/jtrecenti), [Curso-R](https://www.curso-r.com/) e [13 aMostra de Estatística - IME  USP](https://www.ime.usp.br/~amostra/) pelo mini-curso de RMarkdown (em 2018! `r emo::ji("purple_heart")`)
 
+<center>
+<img src="https://avatars.githubusercontent.com/u/42153618?v=4" alt="Avatar" style="border-radius: 50%; max-width: 50%; "></center>
+
+<i class="fas fa-home"></i> [beatrizmilz.com](https://beatrizmilz.com)
+
+<i class="fab fa-twitter"></i> [@BeaMilz](https://twitter.com/BeaMilz)
+
+<!-- <i class="far fa-envelope"></i> [milz.bea@gmail.com](mailto:milz.bea@gmail.com) -->
 ]
 
 
 
+ 
+<!-- inicio font awesome -->
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+
+<!-- final font awesome -->
 
 
 

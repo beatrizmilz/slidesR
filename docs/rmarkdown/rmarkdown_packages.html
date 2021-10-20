@@ -4,6 +4,7 @@
     <title>R Markdown</title>
     <meta charset="utf-8" />
     <meta name="author" content="Beatriz Milz" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
     <script src="libs/shareon/shareon.min.js"></script>
@@ -13,7 +14,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"d471ab3cd4a84e5daa7a83caf26f6e6c","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x66c9f68e38f4a5a8812cf5b5d493c70","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -26,7 +27,7 @@
     <meta name="twitter:title" content="R Markdown - Usando R para gerar diferentes tipos de relatórios"/>
     <meta name="twitter:description" content="Apresentação sobre R Markdown e pacotes utuilizados para gerar diferentes tipos de relatórios,"/>
     <meta name="twitter:url" content="https://beatrizmilz.github.io/slidesR/rmarkdown/rmarkdown_packages.html"/>
-    <meta name="twitter:image:src" content="https://beatrizmilz.github.io/slidesR/rmarkdown/img/share-card-packages.png"/>
+    <meta name="twitter:image" content="https://beatrizmilz.github.io/slidesR/rmarkdown/img/share-card-packages.png"/>
     <meta name="twitter:image:alt" content="Primeiro slide da apresentação sobre  R Markdown e pacotes utuilizados para gerar diferentes tipos de relatórios. Apresentado por Beatriz Milz."/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@beamilz"/>
@@ -83,7 +84,12 @@ top:1em;right:1em;
       }
     } else {
       document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
-        .forEach(el => { el.innerHTML += '<a href="https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil" class="xaringan-extra-logo"></a>' })
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil'
+          slide.appendChild(logo)
+        })
     }
   }
   document.addEventListener('DOMContentLoaded', addLogo)
@@ -116,7 +122,7 @@ Ilustração por [@Allison Horst](https://github.com/allisonhorst/stats-illustra
 
 __.can-edit[We R Live - Canal [GeoCast Brasil](https://www.youtube.com/c/geocastbrasil/about)]__
 
-.minirodape[Atualizado em 29 de setembro de 2020.]
+.minirodape[Atualizado em 19 de October de 2021.]
 
 ---
 class:  middle
