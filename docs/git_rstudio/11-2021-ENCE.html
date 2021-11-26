@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introdução à utilização do Git e GitHub no RStudio</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Beatriz Milz" />
+    <script src="11-2021-ENCE_files/header-attrs/header-attrs.js"></script>
+    <script src="11-2021-ENCE_files/clipboard/clipboard.min.js"></script>
+    <link href="11-2021-ENCE_files/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="11-2021-ENCE_files/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link rel="stylesheet" href="xaringan-themer2021-nov.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introdução à utilização do Git e GitHub no RStudio
+## 5ª Semana de Iniciação Científica da ENCE
+### Beatriz Milz
+### 26 de novembro de 2021
+
+---
+
+class: middle
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+blockquote {
+    background-color: lavender; !important
+}
+
+a, a &gt; code {
+    color: #145683;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.inverse a, .inverse a &gt; code {
+    color: #ffdfb9;
+}
+
+
+.remark-inline-code{
+    color: #3bc6c7;
+}
+&lt;/style&gt;
+
+
+.pull-left[
+
+## Beatriz Milz      
+[&lt;svg viewBox="0 0 384 512" style="position:relative;display:inline-block;top:.1em;fill:#145683;height:1.7em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M202.021 0C122.202 0 70.503 32.703 29.914 91.026c-7.363 10.58-5.093 25.086 5.178 32.874l43.138 32.709c10.373 7.865 25.132 6.026 33.253-4.148 25.049-31.381 43.63-49.449 82.757-49.449 30.764 0 68.816 19.799 68.816 49.631 0 22.552-18.617 34.134-48.993 51.164-35.423 19.86-82.299 44.576-82.299 106.405V320c0 13.255 10.745 24 24 24h72.471c13.255 0 24-10.745 24-24v-5.773c0-42.86 125.268-44.645 125.268-160.627C377.504 66.256 286.902 0 202.021 0zM192 373.459c-38.196 0-69.271 31.075-69.271 69.271 0 38.195 31.075 69.27 69.271 69.27s69.271-31.075 69.271-69.271-31.075-69.27-69.271-69.27z"&gt;&lt;/path&gt;&lt;/svg&gt;](https://discourse.curso-r.com/u/beatrizmilz/summary) 
+[&lt;svg viewBox="0 0 576 512" style="position:relative;display:inline-block;top:.1em;fill:#145683;height:1.7em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"&gt;&lt;/path&gt;&lt;/svg&gt;](https://beatrizmilz.com/)
+[&lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#145683;height:2em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"&gt;&lt;/path&gt;&lt;/svg&gt;](https://twitter.com/BeaMilz)
+[&lt;svg viewBox="0 0 496 512" style="position:relative;display:inline-block;top:.1em;fill:#145683;height:2em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"&gt;&lt;/path&gt;&lt;/svg&gt;](https://github.com/beatrizmilz)
+[&lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#145683;height:2em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;g label="icon" id="layer6" groupmode="layer"&gt;    &lt;path id="path2" d="m 336.6206,194.53756 c -7.12991,-3.32734 -13.8671,-5.55949 -20.25334,-6.61343 -6.36534,-1.09517 -16.57451,-1.61223 -30.71059,-1.61223 h -36.70409 v 152.74712 h 37.63425 c 14.6735,0 26.08126,-1.01267 34.22385,-3.01709 8.14259,-2.00442 14.92159,-4.52592 20.35674,-7.62608 5.43519,-3.07925 10.416,-6.8615 14.94192,-11.38742 14.4876,-14.71475 21.74129,-33.27334 21.74129,-55.7176 0,-22.05151 -7.44016,-40.05177 -22.34085,-53.98159 -5.49732,-5.16674 -11.82143,-9.44459 -18.88918,-12.79281 z M 255.99999,8.0000031 C 119.02153,8.0000031 8.0000034,119.04185 8.0000034,255.99998 8.0000034,392.95812 119.02153,504 255.99999,504 392.97849,504 504,392.95812 504,255.99998 504,119.04185 392.97849,8.0000031 255.99999,8.0000031 Z M 173.66372,365.51268 H 144.27546 V 160.1481 h 29.38826 z M 158.94954,138.69619 c -11.13935,0 -20.21208,-9.01056 -20.21208,-20.21208 0,-11.11841 9.05183,-20.191181 20.21208,-20.191181 11.18058,0 20.23244,9.051831 20.23244,20.191181 -0.0219,11.22184 -9.05186,20.21208 -20.23244,20.21208 z m 241.3866,163.59715 c -5.29051,12.54475 -12.83407,23.58066 -22.65053,33.08742 -9.98203,9.83734 -21.59659,17.19443 -34.84378,22.19616 -7.74983,3.01709 -14.83852,5.06335 -21.30725,6.11726 -6.4891,1.01267 -18.82759,1.50883 -37.07593,1.50883 H 219.5033 V 160.1481 h 69.23318 c 27.96195,0 50.03378,4.1541 66.31951,12.54476 16.26485,8.36977 29.18144,20.72859 38.79164,36.97254 9.61013,16.26483 14.4254,34.01757 14.4254,53.19607 0.0227,13.76426 -2.66619,26.90802 -7.93576,39.43187 z" style="stroke-width:0.07717"&gt;&lt;/path&gt;  &lt;/g&gt;&lt;/svg&gt;](https://orcid.org/0000-0002-3064-4486)
+[&lt;svg viewBox="0 0 448 512" style="position:relative;display:inline-block;top:.1em;fill:#145683;height:2em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;g label="icon" id="layer6" groupmode="layer"&gt;    &lt;path id="path2" d="M 97.871854,434.73261 C 51.534463,339.78442 23.965602,282.44369 23.965602,281.02029 c 0,-2.32214 2.831558,-1.99974 30.672084,3.45957 48.965204,9.61389 75.126384,12.32631 118.735104,12.34258 57.69707,0.0159 104.6807,-9.1222 141.18473,-27.4842 19.31194,-9.71476 30.92555,-18.32755 40.43708,-29.99337 11.716,-14.37824 15.47977,-24.28004 15.61512,-40.94646 0.11867,-15.85237 -2.01801,-24.21167 -11.19035,-43.60874 -3.62892,-7.66433 -6.8168,-16.46265 -7.12098,-19.54964 -0.47493,-4.96814 -0.0684,-5.68084 3.59445,-6.10361 8.00292,-0.94846 47.50732,37.40224 62.05491,60.24069 25.07592,39.38574 27.11161,81.99337 5.88408,123.1953 -13.03903,25.31314 -27.44972,42.82712 -51.57723,62.73362 -40.09844,33.06211 -86.70754,56.08608 -151.06833,74.63514 C 186.61557,459.91141 130.71496,472 119.20225,472 c -2.44075,0 -7.02006,-8.00296 -21.295953,-37.28315 l -0.03402,0.0151 z M 110.77601,281.61191 C 65.760136,275.77998 27.985273,270.70947 26.81537,270.33687 24.815625,269.6926 17.660677,245.82107 13.624773,226.39004 12.607902,221.4726 11.11559,208.45131 10.30202,197.43174 6.6716589,148.26132 17.370799,114.26648 46.041165,83.697237 94.583571,31.98518 198.51713,25.694031 315.77765,67.369458 c 20.58274,7.324215 28.75504,12.410983 24.975,15.580668 -2.79708,2.339846 -21.75315,2.305883 -54.50916,-0.102387 -51.20464,-3.763759 -90.18335,3.357226 -110.27491,20.176211 -30.58742,25.60158 -25.92345,81.72365 13.53071,162.68196 4.27316,8.76586 8.57881,17.34466 9.56318,19.09094 2.28966,4.01773 0.62803,7.74899 -3.3572,7.56196 -1.69755,-0.0813 -39.91486,-4.91203 -84.92926,-10.74592 z m 151.01614,-44.04726 c -35.92814,-6.45997 -68.22691,-28.7388 -78.65437,-54.22127 -5.00209,-12.24165 -4.76437,-28.2131 0.57585,-37.77483 4.83279,-8.64723 17.3107,-18.64993 28.48481,-22.83843 18.59924,-6.96791 51.17019,-4.18853 74.90688,6.40975 22.53229,10.05487 42.50672,27.73816 49.93183,44.18457 9.52925,21.10841 1.59321,44.65955 -18.82072,55.90059 -13.5307,7.44285 -39.82676,11.32572 -56.44249,8.34109 h 0.0181 z" style="stroke-width:0.0675235"&gt;&lt;/path&gt;  &lt;/g&gt;&lt;/svg&gt;](http://lattes.cnpq.br/5150665880581477)
+
+
+ 
+]
+
+.pull-right[
+
+
+- 2019 - * - Doutoranda em Ciência Ambiental - PROCAM/IEE/USP
+
+- 2016-2018 - Mestrado em Ciências - Programa de Pós-Graduação em Análise Ambiental Integrada - UNIFESP
+
+- 2012-2015 - Bacharelado em Gestão Ambiental - EACH/USP
+
+]
+
+
+
+---
+
+
+### R: Comunidades, eventos, pacotes, livros..
+&lt;center&gt;
+
+
+&lt;a href='https://curso-r.com/'&gt;  &lt;img src="img/Hex/curso-r-azul.jpg" width="150px"&gt;&lt;/a&gt;
+
+&lt;a href='https://education.rstudio.com/trainers/'&gt;  &lt;img src='img/Hex/CertifiedRstudioTrainer.png' width="150px"&gt;&lt;/a&gt;
+
+
+&lt;a href='https://rladies.org/'&gt;  &lt;img src='img/Hex/1hexlogorladies.jpeg' width="150px"&gt;&lt;/a&gt;
+
+
+&lt;a href='https://livro.curso-r.com/'&gt;  &lt;img src='https://curso-r.com/images/produtos/hex-livro.png' width="150px"&gt;&lt;/a&gt;
+
+
+
+&lt;a href='https://saopaulo2019.satrdays.org/'&gt;  &lt;img src='img/Hex/2satrdaysp.png' width="150px"&gt;&lt;/a&gt;
+&lt;a href='https://latin-r.com/'&gt;  &lt;img src='img/Hex/4LatinR_hex_violeta-cut.jpg' width="150px"&gt;&lt;/a&gt;&lt;a href='https://carpentries.org/'&gt;&lt;img src='img/Hex/carpentries.png' width="150px"&gt;&lt;/a&gt;
+&lt;a href='https://user2021.r-project.org/'&gt;&lt;img src='https://user2021.r-project.org/img/artwork/user-logo-color.png' width="150px"&gt;&lt;/a&gt;&lt;a href='https://cienciadedatos.github.io/dados/'&gt;&lt;img src='https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png' width="150px"&gt;&lt;/a&gt;
+&lt;a href='https://beatrizmilz.github.io/mananciais/'&gt;  &lt;img src='https://beatrizmilz.github.io/mananciais/reference/figures/hexlogo.png' width="150px"&gt;&lt;/a&gt;
+&lt;a href='https://ropensci.org/'&gt;  &lt;img src='img/Hex/ropensci.png' width="170px"&gt;&lt;/a&gt;
+
+
+&lt;/center&gt;
+
+---
+
+## Conteúdo
+
+- [Pré-requisitos](#prerequisitos)
+
+- [Conceitos básicos importantes](#conceitosimportantes)
+
+- [Configurando o Git e GitHub no RStudio](#configurando)
+
+- [Primeiros passos com o Git e GitHub no RStudio](#primeirospassos)
+
+---
+class: middle, center, inverse
+name: prerequisitos
+
+## Pré-requisitos
+
+
+
+
+---
+class: middle
+
+.pull-left[
+### R 
+  - [Download neste link](https://cran.r-project.org/)
+  - Use a versão mais recente 😉
+
+
+  
+]
+
+.pull-right[
+&lt;img src="img/R_logo.svg.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+class:middle
+
+&lt;img src="img/prints/install_R.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle
+
+
+.pull-left[
+### RStudio
+  - [Download neste link](https://www.rstudio.com/products/rstudio/download/)
+  - Use a versão mais recente 😉
+  
+
+  
+]
+
+.pull-right[
+&lt;img src="img/rstudio.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: middle
+
+&lt;img src="img/prints/install_RStudio.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+.pull-left[
+
+### Git 
+  - [Download neste link](https://git-scm.com/downloads)
+
+  
+
+]
+
+
+.pull-right[
+&lt;img src="https://git-scm.com/images/logo@2x.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+class:middle
+
+&lt;img src="img/prints/install-git.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+
+.pull-left[
+### Conta no GitHub
+  - [Neste link](https://github.com/)
+  - Caso já tenha, não é preciso criar uma nova conta.
+  
+  
+
+  
+]
+
+.pull-right[
+&lt;img src="img/github-logo.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+  - Se for estudante: 
+    - [GitHub Student Developer Pack](https://education.github.com/pack) - utiliza email institucional da universidade.
+
+
+---
+class: middle
+
+
+### Instalação de pacotes
+
+.pull-left[
+- Instalar o Pacote [`usethis`](https://usethis.r-lib.org/)
+
+
+```r
+install.packages("usethis")
+library(usethis)
+```
+]
+
+.pull-right[
+&lt;img src="https://usethis.r-lib.org/reference/figures/logo.png" width="50%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: middle, center, inverse
+name: conceitosimportantes
+
+## Conceitos básicos importantes
+
+
+
+---
+
+### O que é Git?
+
+- Git é um **sistema de versionamento**, criado por Linus Torvalds, autor do Linux.
+
+- É capaz de guardar o histórico de alterações de todos os arquivos dentro de uma pasta, que chamamos de repositório.
+
+- Funciona como o "*Track changes*" do word, mas muito melhor.
+
+- Torna-se importante à medida que seu trabalho é __colaborativo__.
+
+- Git é um software que você instala no computador.
+
+  
+
+&lt;img src="https://git-scm.com/images/logo@2x.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+&gt; &lt;i class="far fa-flag"&gt;&lt;/i&gt; [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
+---
+
+### O que é GitHub?
+
+
+- GitHub é um site onde você coloca e compartilha repositórios Git.
+
+- Utilizado por milhões de pessoas em projetos de código aberto ou fechado.
+
+- Útil para colaborar com outros programadores em projetos de ciência de dados.
+
+- Existem alternativas, como [GitLab](https://about.gitlab.com/) e [BitBucket](https://bitbucket.org/product).
+
+- GitHub é um site que você acessa na internet.
+
+&lt;img src="img/github-logo.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+
+&gt; &lt;i class="far fa-flag"&gt;&lt;/i&gt; [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
+---
+class: middle, center
+
+&lt;a href='https://github.com/beatrizmilz' target="_blank"&gt;
+&lt;img src="img/github2021.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;/a&gt;
+
+---
+
+### Comentários importantes
+
+- Você pode usar o Git através:
+  -  __Linha de comando__ :
+      - [git](https://git-scm.com/)
+      - terminal do RStudio
+  - __Interfaces gráficas__:
+      - [GitHub Desktop](https://desktop.github.com/)
+      - [Sourcetree](https://www.sourcetreeapp.com/)
+      - Git Pane do RStudio
+      - Entre outros!
+    
+Aqui apresento com o RStudio, mas escolha o que é mais confortável para você :)
+
+- Independente de qual ferramenta você escolher, é importante qual comando do Git equivale a um "botão" na interface gráfica. É muito importante entender as equivalências!
+
+---
+class: middle,  inverse, center
+name: configurando
+
+## Configurando o Git e GitHub no RStudio
+
+👩‍💻 É necessário fazer apenas uma vez (por usuário do computador)!
+
+
+#### ...Depende do sistema operacional que você utiliza!
+
+
+
+---
+class: middle,  inverse
+
+### Configurando o Git e GitHub no RStudio
+
+.pull-left[
+#### Se você usa Windows ou MacOS - Usando HTTPS
+
+
+
+- ⬜ Ter o pacote `usethis` instalado 
+
+- ⬜ Se apresentar para o `git` 
+
+- ⬜ Abrir o arquivo `.Renviron` 
+
+- ⬜ Criar um GitHub Token/PAT
+
+- ⬜ Armazenar o GitHub Token/PAT 
+
+- ⬜ Reiniciar o RStudio
+]
+
+.pull-right[
+#### Se você usa Linux - Usando SSH
+
+
+
+- ⬜ Ter o pacote `usethis` instalado 
+
+- ⬜ Se apresentar para o `git`
+
+- ⬜ Seguir este tutorial para configurar as chaves `SSH`: https://happygitwithr.com/ssh-keys.html 
+
+
+
+]
+&lt;!-- ✔️ --&gt;
+
+&lt;!--  ❌ --&gt;
+
+---
+class: middle
+
+### Configurando o Git
+
+- Informar para o Git seu nome, e email.
+
+- Utilize o mesmo email associado à sua conta do GitHub.
+
+
+  - Com o `usethis`:
+
+
+```r
+usethis::use_git_config(# Seu nome
+                        user.name = "Beatriz Milz", 
+                        # Seu email
+                        user.email = "beatriz.milz@hotmail.com") 
+```
+
+
+---
+
+### Configure o Personal Access Token 
+
+- Ao conectar com o GitHub, você será instruída(o) a criar um *Personal Access Token* (PAT).
+
+- O PAT serve para autenticar ao GitHub, podendo ser utilizado como senha de acesso ou internamente para automatizar tarefas (como criar um repositório).
+
+- Para criar um novo PAT, use a função `usethis::create_github_token()`. Uma janela do navegador será aberta, e você deve autenticar no GitHub (se necessário), criar o novo token, e copiá-lo. 
+
+
+```r
+usethis::create_github_token()
+```
+
+
+&gt; &lt;i class="far fa-flag"&gt;&lt;/i&gt; [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
+---
+
+### Armazenar o Personal Access Token 
+
+#### Método 1 - `gitcreds::gitcreds_set()`
+
+
+.pull-left[
+
+```r
+gitcreds::gitcreds_set()
+# -&gt; Your current credentials for 'https://github.com':
+#   protocol: https
+#   host    : github.com
+#   username: beatrizmilz
+#   password: &lt;-- hidden --&gt;
+#     
+# -&gt; What would you like to do? 
+# 1: Keep these credentials
+# 2: Replace these credentials
+# 3: See the password / token
+```
+]
+
+
+.pull-right[
+Siga as instruções e cole o PAT quando for solicitado as credenciais.
+
+
+```r
+# -&gt; Adding new credentials...
+# -&gt; Removing credetials from cache...
+# -&gt; Done.
+```
+]
+
+
+
+
+---
+
+### Armazenar o Personal Access Token 
+
+#### Método 2 - Armazenar manualmente no `.Renviron`
+
+- Use a função `usethis::edit_r_environ()` para abrir o arquivo `.Renviron` para salvar seu token. 
+
+
+```r
+usethis::edit_r_environ()
+# ● Modify 'C:/Users/beatr/Documents/.Renviron'
+# ● Restart R for changes to take effect
+```
+
+- Crie uma nova linha na forma `GITHUB_PAT=SEU_TOKEN`, adicione o token, **pule uma linha** e salve o arquivo. Se certifique que o arquivo termina com uma linha vazia!
+
+
+Use essa estrutura, substituindo os 0 pelo código copiado na etapa anterior:
+
+
+```r
+GITHUB_PAT="0000000000000000000000000000000000000000"
+```
+
+
+
+
+---
+
+### Reiniciar a sessão 
+
+- Lembre-se de reiniciar sua sessão do R!
+
+
+
+- **Reinicie o R usando o RStudio**:  CTRL + SHIFT + F10
+
+
+---
+
+
+### Checando se a configuração deu certo
+
+Utilize a função `usethis::git_sitrep()` e leia o resultado que aparece no console. A mensagem abaixo foi cortada para mostrar os trechos de interesse!
+
+
+
+```r
+usethis::git_sitrep()
+#&gt; Git config (global)
+#&gt; ● Name: 'SEU NOME DEVE APARECER AQUI'
+#&gt; ● Email: 'SEU EMAIL DEVE APARECER AQUI'
+
+#&gt; GitHub
+#&gt; ● Default GitHub host: 'https://github.com'
+#&gt; ● Personal access token for 'https://github.com': '&lt;discovered&gt;'
+#&gt; ● GitHub user: 'SEU NOME DE USUÁRIO(A) DEVE APARECER AQUI'
+#&gt; ● Token scopes: 'gist, repo, user, workflow'
+#&gt; ● Email(s): 'SEU EMAIL DEVE APARECER AQUI'
+```
+
+&gt; &lt;i class="far fa-flag"&gt;&lt;/i&gt; [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+---
+class: middle, center
+
+### Momento mão na massa!
+
+Tente configurar o Git e GitHub no RStudio.
+
+Caso não funcione, não esqueça de informar o resultado da função `usethis::git_sitrep()`.
+
+&lt;img src="https://i.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.webp" width="30%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+class: middle, center, inverse
+name: primeirospassos
+
+## Primeiros passos com o Git e GitHub no RStudio
+
+
+Dica: comece praticando nos seus projetos. Quando estiver confortável, pode começar a contribuir com projetos de outras pessoas! :)
+
+---
+
+### Fluxo de trabalho
+
+O diagrama abaixo exemplifica o fluxo de trabalho de um projeto com versionamento.
+
+
+&lt;img src="img/fluxo_github_rstudio.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+&gt; &lt;i class="far fa-flag"&gt;&lt;/i&gt; [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
+
+---
+class: middle
+
+### Interface Gráfica RStudio
+
+- O RStudio oferece um cliente Git **simples**, na aba "Git" (em inglês, é chamado de Git Pane).
+
+- Esse painel somente aparecerá em projetos que estejam versionados com Git.
+
+&lt;img src="img/prints/git-pane.PNG" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle
+
+### Git pane - Staged  ✅
+
+&lt;img src="img/prints/git-pane-stage.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+### Git pane - Commit
+
+&lt;img src="img/prints/git-pane-commit.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+### Git pane - Commit
+
+&lt;img src="img/prints/git_commit.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle
+
+### Botão Diff -&gt; Review changes
+
+&lt;img src="img/prints/git-pane-diff.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle
+
+### Botão 🕒 (history) -&gt; Review changes
+
+&lt;img src="img/prints/git-pane-history.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+class: middle, center, inverse
+
+# Trabalhando com projetos no RStudio + GitHub
+
+
+---
+## Método 1 - **Clonando um repositório do GitHub**
+
+- [Crie um repositório no GitHub](https://github.com/new), ou abra a página de um repositório já existente. 
+
+.pull-left[
+- Criando um repositório no GitHub:
+
+&lt;img src="img/prints/novo-repo.PNG" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+Se o repositório não for "seu", faça um fork primeiro, e clone o seu fork. 
+
+&lt;img src="img/prints/fork.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+
+
+
+---
+
+
+- No RStudio, crie um novo projeto: File &gt; New Project 
+.pull-left[
+- Na aba "Create Project", selecione a opção **Version Control**.
+
+&lt;img src="img/prints/proj-version-control-1.PNG" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+- Na aba "Create Project from Version Control", selecione a opção **Git**.
+&lt;img src="img/prints/proj-version-control-2.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+
+---
+- Na aba "Clone Git Repository":
+  - **Repository URL**: Cole o link para o repositório
+  - **Project directory name**: Após inserir o repository URL, esse campo será preenchido automaticamente.
+  - **Create project as subdirectory of**: Selecione o diretório onde você deseja manter sua cópia local do repositório.
+&lt;img src="img/prints/proj-version-control-3.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+- O **RStudio** irá fazer o clone do repositório, e abrirá um RProj para ele (caso não exista um ainda, será criado).
+
+---
+
+## Método 2
+
+- **Criando um repositório novo, diretamente do RStudio**
+
+- Vamos usar a função `usethis::create_project()` 
+  - Cria um projeto `.Rproj`
+  - Argumento importante: `path = ` 	É o "caminho" para o diretório (pasta). Se o diretório já existe, é utilizado. Se não existe, é criado. 
+  - Cuidado com o nome do projeto, pois será o mesmo nome que será utilizado no repositório. Você não deve usar o nome de algum repositório já existente no seu GitHub.
+
+---
+
+### Criando um projeto
+- No meu caso, tenho o hábito de deixar todos os repositórios do GitHub, na pasta `GitHub/`. No exemplo abaixo, dentro da pasta GitHub, criei o projeto chamado Teste-MeetupR. Esse será o nome da pasta criada e posteriormente do repositório no GitHub.
+
+
+```r
+usethis::create_project("~/GitHub/Teste-MeetupR") 
+# ✔ Creating 'GitHub/Teste-MeetupR/'
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/Teste-MeetupR'
+# ✔ Creating 'R/'
+# ✔ Writing 'Teste-MeetupR.Rproj'
+# ✔ Adding '.Rproj.user' to '.gitignore'
+# ✔ Opening 'GitHub/Teste-MeetupR/' in new RStudio session
+# ✔ Setting active project to '&lt;no active project&gt;'
+```
+- O RStudio abrirá outra janela, com o novo projeto criado.
+
+---
+### Novo projeto criado! 
+
+- Projeto ✔️
+
+- Git ❌
+
+- GitHub ❌
+
+&lt;img src="img/prints/novo_projeto.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+usethis::use_git()
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/Teste-MeetupR'
+# ✔ Initialising Git repo
+# ✔ Adding '.Rhistory', '.RData' to '.gitignore'
+# There are 2 uncommitted files:
+# * '.gitignore'
+# * 'Teste-MeetupR.Rproj'
+# Is it ok to commit them?
+# 
+*# 1: Absolutely  
+# 2: Negative
+# 3: No
+# 
+# Selection: 1
+# ✔ Adding files
+# ✔ Commit with message 'Initial commit'
+# ● A restart of RStudio is required to activate the Git pane
+# Restart now?
+# 
+# 1: No way
+*# 2: For sure
+# 3: Negative
+# 
+# Selection: 2
+```
+
+- O RStudio irá reiniciar para que apareça o painel do Git
+
+---
+### Usando Git
+
+- Projeto ✔️
+
+- Git ✔️
+
+- GitHub ❌
+
+&lt;img src="img/prints/novo_projeto_com_git.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+```r
+usethis::use_github()
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/Teste-MeetupR'
+# ✔ Checking that current branch is 'master'
+# Which git protocol to use? (enter 0 to exit) 
+# 
+# 1: ssh   &lt;-- presumes that you have set up ssh keys
+*# 2: https &lt;-- choose this if you don't have ssh keys (or don't know if you do)
+# 
+# Selection: 2
+# ● Tip: To suppress this menu in future, put
+#   `options(usethis.protocol = "https")`
+#   in your script or in a user- or project-level startup file, '.Rprofile'.
+#   Call `usethis::edit_r_profile()` to open it for editing.
+# ● Check title and description
+#   Name:        Teste-MeetupR
+#   Description: 
+# Are title and description ok?
+# 
+# 1: No way
+*# 2: Definitely
+# 3: Nope
+# 
+# Selection: 2
+# ✔ Creating GitHub repository
+# ✔ Setting remote 'origin' to 'https://github.com/beatrizmilz/Teste-MeetupR.git'
+# ✔ Pushing 'master' branch to GitHub and setting remote tracking branch
+# ✔ Opening URL 'https://github.com/beatrizmilz/Teste-MeetupR'
+```
+
+---
+### Repositório criado!
+
+- Projeto ✔️
+
+- Git ✔️
+
+- GitHub ✔️
+
+&lt;img src="img/prints/criou-repositorio-github.PNG" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Função para criar um arquivo `README.md`
+
+
+```r
+usethis::use_readme_md()
+```
+- O arquivo será criado e aberto, para ser editado e salvo.
+
+&lt;img src="https://media2.giphy.com/media/1iu8uG2cjYFZS6wTxv/giphy-downsized.gif" width="20%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: middle
+
+### Exemplo:
+
+&lt;img src="img/gifs/create-proj2.gif" width="100%" style="display: block; margin: auto;" /&gt;
+
+.minirodape[Caso você esteja vendo a versão em PDF, o video acima não irá funcionar. Veja clicando [neste link](https://beatrizmilz.github.io/slidesR/git_rstudio/img/gifs/create-proj2.gif).]
+
+---
+
+## Método 3
+
+- **A partir de um repositório existente, fazer um fork e clonar diretamente do RStudio**
+
+- Para isso, usaremos a função `usethis::create_from_github()`.
+
+- Argumentos importantes:
+  - `repo_spec = ` repositório que quer trabalhar. Deve estar no formato: "usuario_github/repositorio". Veja o exemplo abaixo.
+  - `destdir =` diretório onde quer que os arquivos sejam salvos
+  - `fork =` se igual a TRUE, irá fazer o fork do repositório. Só funcionará se o token do GitHub foi configurado corretamente.
+
+---
+### Exemplo do uso da função `create_from_github()`
+
+- Exemplo: fork e clone do projeto [Lista de meetups R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil):
+
+
+
+```r
+usethis::create_from_github("R-Ladies-Sao-Paulo/RLadies-Brasil",
+                   destdir = "C:/Users/beatr/Documents/GitHub", 
+                   fork = TRUE)
+# ✔ Creating 'C:/Users/beatr/Documents/GitHub/datascience-box/'
+# ✔ Forking 'R-Ladies-Sao-Paulo/RLadies-Brasil'
+# ✔ Cloning repo from 'https://github.com/beatrizmilz/RLadies-Brasil.git' into 'C:/Users/beatr/Documents/GitHub/RLadies-Brasil'
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/RLadies-Brasil'
+# ✔ Adding 'upstream' remote: 'https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil.git'
+# ✔ Pulling changes from GitHub source repo 'upstream/master'
+# ✔ Setting remote tracking branch for local 'master' branch to 'upstream/master'
+# ✔ Opening 'C:/Users/beatr/Documents/GitHub/RLadies-Brasil/' in new RStudio session
+# ✔ Setting active project to 'C:/Users/beatr/Documents/GitHub/RLadies-Git-RStudio-2019'
+```
+
+---
+class: middle, center, inverse
+
+## Trabalhando colaborativamente
+
+---
+class: middle
+
+## Branch
+
+&lt;img src="img/prints/git-pane-branch.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+### Crie uma branch
+
+- Antes de fazer qualquer modificação, crie uma branch, usando a função `usethis::pr_init()`. 
+- Argumento importante: `branch =` indica o nome da branch que você quer criar. 
+
+
+```r
+usethis::pr_init(branch = "teste")
+
+# ✔ Checking that local branch 'master' has the changes in 'origin/master'
+# ✔ Creating local PR branch 'teste'
+# ✔ Switching to branch 'teste'
+# ● Use `pr_push()` to create PR
+```
+
+---
+### Faça alterações e commits
+
+- Faça suas contribuições, e sempre faça commits com mensagens que deixem claro as mudanças.
+
+- Quando terminar as contribuições necessárias, utilizar a função `pr_push()`:
+
+
+```r
+usethis::pr_push()
+# ✔ Pushing local 'teste' branch to 'origin:teste'
+# ✔ Setting upstream tracking branch for 'teste' to 'origin/teste'
+# ✔ Create PR at link given below
+# ✔ Opening URL 'https://github.com/beatrizmilz/RLadies-Git-RStudio-2019/compare/teste'
+```
+
+- A página do GitHub será aberta, para que possa completar o Pull Request.
+
+---
+class: middle 
+
+### Crie um Pull Request: 
+&lt;img src="img/prints/pr-push.PNG" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle 
+
+### Open a Pull Request: 
+&lt;img src="img/prints/pr-push2.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+### Exemplo: PR foi aberto
+
+&lt;img src="img/prints/pr-push3.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+- Depois dessa etapa, você deve esperar a pessoa que mantém o repositório responder fazendo sugestões para melhorias, aceitando seu PR, etc.
+
+
+---
+
+### Modificar o PR
+
+- Alguém fez uma sugestão, como alterar o PR enviado? Ex:
+
+&lt;img src="img/prints/sugestoes-git.PNG" width="30%" style="display: block; margin: auto;" /&gt;
+- No mesmo projeto e na __mesma branch__ que você usou para enviar o PR, faça as alterações.
+
+- Selecione o arquivo modificado para deixá-lo disponível para criar um Commit. Faça o commit.
+
+- Para enviar o novo commit, use o Git Push (aperte a seta verde para cima no painel do Git do RStudio).
+
+
+
+
+
+---
+
+### Depois que o PR é aceito:  Merged
+
+&lt;img src="img/prints/pr-push4.PNG" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+class: middle 
+
+### Última etapa: __APÓS__ o PR ter sido aceito (merged)
+
+- A função `usethis::pr_finish()`:
+  - Retorna para master
+  - Atualiza (usando o pull) o conteúdo 
+  - Deleta a branch criada para enviar o PR
+
+
+```r
+usethis::pr_finish()
+# ✔ Switching back to 'master' branch
+# ✔ Pulling changes from GitHub source repo 'origin/master'
+# ✔ Deleting local 'teste' branch
+```
+
+- Pronto! 
+
+
+---
+class: center, middle 
+
+## Linha de comando ou interface gráfica?
+## Use o que for melhor para **você**!
+
+&lt;img src="https://media0.giphy.com/media/dNgK7Ws7y176U/giphy.gif" width="30%" style="display: block; margin: auto;" /&gt;
+
+Confira a [cheatsheet do Git](https://github.github.com/training-kit/downloads/pt_BR/github-git-cheat-sheet.pdf)!
+
+
+
+
+---
+class: middle 
+
+# Referências
+
+- [Slide](https://curso-r.github.io/main-pacotes/slides/index.html) do curso de [Pacotes](https://curso-r.com/cursos/pacotes/), da [Curso-R](https://curso-r.com/).
+
+
+- Parte deste material foi baseado/inspirado neste post do blog da [Curso-R](https://www.curso-r.com/), escrito por [Caio Lente](https://lente.dev/):
+  - [Git e GitHub (Zen do R - Parte 4)](https://www.curso-r.com/blog/2019-07-23-zen-do-r-4/)
+  
+- Outra referência importante: [Happy Git and GitHub for the useR - 
+Jenny Bryan](https://happygitwithr.com/)
+
+
+- Documentação do pacote [usethis](https://usethis.r-lib.org/reference/create_package.html)
+
+- Evento da R-Ladies SP de 2020: https://r-ladies-sao-paulo.github.io/2020-hacktoberfest/
+
+---
+class: middle, center
+
+# Referências
+
+##  [Palestra](https://youtu.be/ZCeBnQBQ1h8) (em inglês) da [Jenny Bryan](https://jennybryan.org/):
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ZCeBnQBQ1h8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+class: middle
+
+## Interface Gráfica RStudio
+
+&lt;img src="img/prints/cheatsheet.PNG" width="70%" style="display: block; margin: auto;" /&gt;
+
+Fonte: [RStudio Cheatsheet](https://www.rstudio.com/wp-content/uploads/2019/01/Cheatsheets_2019.pdf)
+
+---
+class: center
+
+## Muito obrigada!
+
+.pull-left[
+
+&lt;img src="https://media.giphy.com/media/M9NbzZjAcxq9jS9LZJ/giphy.gif" width="40%" style="display: block; margin: auto;" /&gt;
+
+
+Slides criados usando os pacotes em R  📦 :
+
+[**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+O chakra vem da biblioteca javascript [remark.js](https://remarkjs.com), e os pacotes  [**knitr**](http://yihui.name/knitr), e [R Markdown](https://rmarkdown.rstudio.com).
+]
+
+.pull-right[
+
+&lt;center&gt;
+&lt;img src="img/avatar.jpeg" alt="Avatar" style="border-radius: 50%; max-width: 50%; "&gt;&lt;/center&gt;
+
+&lt;i class="fas fa-home"&gt;&lt;/i&gt; [beatrizmilz.com](https://beatrizmilz.com)
+
+&lt;i class="fab fa-twitter"&gt;&lt;/i&gt; [@BeaMilz](https://twitter.com/BeaMilz)
+
+&lt;i class="far fa-envelope"&gt;&lt;/i&gt; [milz.bea@gmail.com](mailto:milz.bea@gmail.com)
+]
+
+
+
+&lt;!-- inicio academic icons --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"&gt;
+&lt;!-- final academic icons --&gt;
+
+ 
+&lt;!-- inicio font awesome --&gt;
+&lt;script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+&lt;!-- final font awesome --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
